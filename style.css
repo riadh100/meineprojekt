@@ -1,73 +1,68 @@
-body{
+<div class="grid">
 
-margin:0;
+<div class="card" onclick="location.href='trading.html'">
 
-background:#000d2b;
+📈
 
-font-family:Arial,sans-serif;
+<h3>Trading Center</h3>
 
-color:white;
+<p>Analysen und Marktübersicht</p>
 
-}
+</div>
 
-header{
 
-display:flex;
+<div class="card" onclick="location.href='setup.html'">
 
-justify-content:space-between;
+📊
 
-align-items:center;
+<h3>Tages-Setups</h3>
 
-padding:25px;
+<p>Tägliche Ideen</p>
 
-background:#101f52;
+</div>
 
-}
 
-.container{
+<div class="card" onclick="location.href='telegram.html'">
 
-padding:30px;
+📲
 
-}
+<h3>Telegram Center</h3>
 
-.grid{
+<p>Telegram Verwaltung</p>
 
-display:flex;
+</div>
 
-gap:25px;
 
-flex-wrap:wrap;
+<div class="card" onclick="location.href='video.html'">
 
-}
+🎥
 
-.tool-btn{
+<h3>Video Studio</h3>
 
-width:280px;
+<p>KI Video Werkzeuge</p>
 
-height:110px;
+</div>
 
-font-size:28px;
 
-font-weight:bold;
+<div class="card" onclick="location.href='game.html'">
 
-background:#182b63;
+🎮
 
-color:white;
+<h3>Game Studio</h3>
 
-border:none;
+<p>KI Spiele erstellen</p>
 
-border-radius:20px;
+</div>
 
-cursor:pointer;
 
-transition:0.3s;
+<div class="card" onclick="location.href='assistant.html'">
 
-}
+🧠
 
-.tool-btn:hover{
+<h3>KI Werkzeuge</h3>
 
-transform:translateY(-5px);
+<p>Deine Tools</p>
 
-background:#27418f;
+</div>
 
-}
+</div>
