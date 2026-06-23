@@ -2,9 +2,9 @@ body{
 
 margin:0;
 
-font-family:Arial;
+background:#000d2b;
 
-background:#020b22;
+font-family:Arial,sans-serif;
 
 color:white;
 
@@ -12,23 +12,15 @@ color:white;
 
 header{
 
-padding:20px;
-
-background:#111f45;
-
 display:flex;
 
 justify-content:space-between;
 
 align-items:center;
 
-}
+padding:25px;
 
-a{
-
-color:white;
-
-text-decoration:none;
+background:#101f52;
 
 }
 
@@ -40,19 +32,29 @@ padding:30px;
 
 .grid{
 
-display:grid;
+display:flex;
 
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 
-gap:20px;
+flex-wrap:wrap;
 
 }
 
-.card{
+.tool-btn{
 
-background:#182857;
+width:280px;
 
-padding:30px;
+height:110px;
+
+font-size:28px;
+
+font-weight:bold;
+
+background:#182b63;
+
+color:white;
+
+border:none;
 
 border-radius:20px;
 
@@ -62,40 +64,10 @@ transition:0.3s;
 
 }
 
-.card:hover{
-
-transform:translateY(-5px);
-
-background:#2454ff;
-
-}
-
-.tool-btn{
-
-background:#182857;
-
-border:none;
-
-padding:25px;
-
-color:white;
-
-font-size:20px;
-
-font-weight:bold;
-
-border-radius:15px;
-
-cursor:pointer;
-
-transition:0.3s;
-
-}
-
 .tool-btn:hover{
 
-background:#2454ff;
-
 transform:translateY(-5px);
+
+background:#27418f;
 
 }
