@@ -1,60 +1,15 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
 
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI Empire Pro - Riadh Edition</title>
+<title>AI Empire Pro</title>
 
-<style>
-
-body{
-margin:0;
-font-family:Arial;
-background:#0b0f19;
-color:white;
-}
-
-header{
-padding:20px;
-background:#151b2e;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-size:28px;
-font-weight:bold;
-}
-
-.container{
-padding:30px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
-background:#151b2e;
-padding:25px;
-border-radius:20px;
-}
-
-button{
-padding:12px 20px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-font-size:16px;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -62,80 +17,61 @@ font-size:16px;
 
 <header>
 
-<div class="logo">
+<h1>AI Empire Pro</h1>
 
-AI Empire Pro
-
-</div>
-
-<div>
-
-Riadh Edition
-
-</div>
+<span>Riadh Edition</span>
 
 </header>
 
 <div class="container">
 
-<h1>Willkommen Riadh</h1>
+<h2>Willkommen Riadh</h2>
 
-<h2>🤖 Persönlicher Assistent: Yasin</h2>
+<h3>🤖 Persönlicher Assistent: Yasin</h3>
 
 <div class="grid">
 
-<div class="card">
-
-<h3>📈 Trading Center</h3>
-
-<p>Analysen und Marktübersicht.</p>
-
+<div class="card" onclick="openTool('Trading Center')">
+📈
+<h3>Trading Center</h3>
+<p>Analysen und Marktübersicht</p>
 </div>
 
-<div class="card">
-
-<h3>📊 Tages-Setups</h3>
-
-<p>Platzhalter für tägliche Ideen.</p>
-
+<div class="card" onclick="openTool('Tages-Setups')">
+📊
+<h3>Tages-Setups</h3>
+<p>Tägliche Ideen</p>
 </div>
 
-<div class="card">
-
-<h3>📲 Telegram Center</h3>
-
-<p>Telegram-Verwaltung.</p>
-
+<div class="card" onclick="openTool('Telegram Center')">
+📲
+<h3>Telegram Center</h3>
+<p>Telegram Verwaltung</p>
 </div>
 
-<div class="card">
-
-<h3>🎥 Video Studio</h3>
-
-<p>KI-Video-Werkzeuge.</p>
-
+<div class="card" onclick="openTool('Video Studio')">
+🎥
+<h3>Video Studio</h3>
+<p>KI Video Werkzeuge</p>
 </div>
 
-<div class="card">
-
-<h3>🎮 Game Studio</h3>
-
-<p>KI-Spiele erstellen.</p>
-
+<div class="card" onclick="openTool('Game Studio')">
+🎮
+<h3>Game Studio</h3>
+<p>KI Spiele erstellen</p>
 </div>
 
-<div class="card">
-
-<h3>🧠 KI-Werkzeuge</h3>
-
-<p>Sammlung deiner KI-Tools.</p>
-
+<div class="card" onclick="openTool('KI Werkzeuge')">
+🧠
+<h3>KI Werkzeuge</h3>
+<p>Deine Tools</p>
 </div>
 
 </div>
 
 </div>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
