@@ -30,7 +30,7 @@
 
 <a href="trading.html">📈 Trading Center</a>
 
-<a href="setup.html">🎯 Trading Chancen</a>
+<a href="setup.html">📊 Tages-Setups</a>
 
 <a href="telegram.html">📨 Telegram Center</a>
 
@@ -46,15 +46,35 @@
 
 <div class="main">
 
-<header>
+<div class="topbar">
+
+<div>
 
 <h1>Willkommen Riadh 👋</h1>
 
-<h2>Yasin ist bereit</h2>
+<p>Yasin ist bereit.</p>
 
-<p>Dein persönliches AI Empire Dashboard.</p>
+</div>
 
-</header>
+<div class="profile">
+
+<div>
+
+<div id="datum"></div>
+
+<div id="uhr"></div>
+
+</div>
+
+<div class="avatar">
+
+R
+
+</div>
+
+</div>
+
+</div>
 
 <div class="quick">
 
@@ -66,7 +86,7 @@
 
 <button onclick="location.href='setup.html'">
 
-🎯 Chancen
+📊 Setups
 
 </button>
 
@@ -102,13 +122,7 @@
 
 <h2>🤖 Yasin AI</h2>
 
-<p>Dein persönlicher Assistent.</p>
-
-<button onclick="location.href='assistant.html'">
-
-Öffnen
-
-</button>
+<p>Persönlicher KI Assistent</p>
 
 </div>
 
@@ -116,13 +130,7 @@
 
 <h2>📈 Trading Center</h2>
 
-<p>Analysen und Strategien.</p>
-
-<button onclick="location.href='trading.html'">
-
-Öffnen
-
-</button>
+<p>Marktanalysen</p>
 
 </div>
 
@@ -130,13 +138,7 @@
 
 <h2>📨 Telegram Center</h2>
 
-<p>Kanäle und Bots verwalten.</p>
-
-<button onclick="location.href='telegram.html'">
-
-Öffnen
-
-</button>
+<p>Kanäle verwalten</p>
 
 </div>
 
@@ -144,13 +146,7 @@
 
 <h2>🎥 Video Studio</h2>
 
-<p>KI Videos erstellen.</p>
-
-<button onclick="location.href='video.html'">
-
-Öffnen
-
-</button>
+<p>Videos erstellen</p>
 
 </div>
 
@@ -158,13 +154,7 @@
 
 <h2>🎮 Game Studio</h2>
 
-<p>Eigene Spiele erstellen.</p>
-
-<button onclick="location.href='game.html'">
-
-Öffnen
-
-</button>
+<p>Spiele entwickeln</p>
 
 </div>
 
@@ -172,19 +162,35 @@
 
 <h2>🧠 AI Tools</h2>
 
-<p>Business und Werkzeuge.</p>
-
-<button onclick="location.href='tools.html'">
-
-Öffnen
-
-</button>
+<p>Business Werkzeuge</p>
 
 </div>
 
 </div>
 
 </div>
+
+<script>
+
+function updateClock(){
+
+const now=new Date();
+
+document.getElementById("uhr").innerHTML=
+
+now.toLocaleTimeString("de-DE");
+
+document.getElementById("datum").innerHTML=
+
+now.toLocaleDateString("de-DE");
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+</script>
 
 </body>
 
