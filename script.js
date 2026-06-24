@@ -1,19 +1,19 @@
-function addTask(){
+function login(){
 
-const input=document.getElementById("taskInput");
+const username=document.getElementById("username").value;
 
-const text=input.value.trim();
+const password=document.getElementById("password").value;
 
-if(text==="") return;
+if(username==="Riadh" && password==="1234"){
 
-const list=document.getElementById("taskList");
+window.location.href="index.html";
 
-const li=document.createElement("li");
+}
 
-li.innerHTML="✅ "+text;
+else{
 
-list.appendChild(li);
+alert("Falsche Anmeldedaten");
 
-input.value="";
+}
 
 }
