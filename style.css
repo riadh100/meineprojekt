@@ -1,59 +1,154 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#050505;
+color:white;
+display:flex;
+}
+
+/* LOGIN */
+
 .login-container{
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
 
-width:400px;
-
-margin:120px auto;
-
+.login-box{
+width:420px;
 background:#111;
-
 border:2px solid gold;
-
 padding:40px;
-
 border-radius:20px;
-
 text-align:center;
-
 }
 
-.login-container h1{
-
+.login-box h1{
 color:gold;
-
 margin-bottom:20px;
-
 }
 
-.login-container input{
+.login-box p{
+margin-bottom:25px;
+color:#bbb;
+}
 
+.login-box input{
 width:100%;
-
 padding:15px;
-
 margin:10px 0;
-
 border:none;
-
 border-radius:10px;
-
+font-size:16px;
 }
 
-.login-container button{
-
+.login-box button{
 width:100%;
-
 padding:15px;
-
 margin-top:20px;
-
-background:gold;
-
 border:none;
-
 border-radius:10px;
-
+background:gold;
+font-size:18px;
 font-weight:bold;
-
 cursor:pointer;
+}
 
+.login-box button:hover{
+background:white;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+width:280px;
+height:100vh;
+background:#0d0d0d;
+border-right:2px solid gold;
+padding:25px;
+}
+
+.sidebar h1{
+color:gold;
+font-size:30px;
+}
+
+.sidebar p{
+color:#999;
+margin-top:10px;
+}
+
+.sidebar nav{
+display:flex;
+flex-direction:column;
+margin-top:40px;
+}
+
+.sidebar nav a{
+text-decoration:none;
+color:white;
+padding:15px;
+margin:5px 0;
+border-radius:10px;
+transition:0.3s;
+}
+
+.sidebar nav a:hover{
+background:gold;
+color:black;
+}
+
+/* DASHBOARD */
+
+.main{
+flex:1;
+padding:35px;
+}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:40px;
+}
+
+.avatar{
+width:60px;
+height:60px;
+background:gold;
+color:black;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+font-weight:bold;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#111;
+border:1px solid gold;
+border-radius:20px;
+padding:30px;
+}
+
+.card h2{
+margin-bottom:15px;
+}
+
+.card p{
+color:#bbb;
 }
