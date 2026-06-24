@@ -1,189 +1,59 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+.login-container{
 
-body{
+width:400px;
 
-display:flex;
-
-font-family:Arial,sans-serif;
-
-background:#050505;
-
-color:white;
-}
-
-.sidebar{
-
-width:280px;
-
-height:100vh;
-
-background:#0d0d0d;
-
-border-right:2px solid gold;
-
-padding:25px;
-}
-
-.sidebar h1{
-
-color:gold;
-
-font-size:30px;
-}
-
-.sidebar h3{
-
-color:#999;
-
-margin-top:10px;
-}
-
-nav{
-
-display:flex;
-
-flex-direction:column;
-
-margin-top:40px;
-}
-
-nav a{
-
-text-decoration:none;
-
-color:white;
-
-padding:15px;
-
-margin:6px 0;
-
-border-radius:10px;
-
-transition:0.3s;
-}
-
-nav a:hover{
-
-background:gold;
-
-color:black;
-}
-
-.main{
-
-flex:1;
-
-padding:35px;
-}
-
-.topbar{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-}
-
-.top-icons{
-
-display:flex;
-
-gap:15px;
-
-align-items:center;
-}
-
-.top-icons input{
-
-padding:12px;
-
-width:220px;
-
-border:none;
-
-border-radius:10px;
-}
-
-.top-icons button{
-
-width:45px;
-
-height:45px;
-
-border:none;
-
-border-radius:50%;
-
-cursor:pointer;
-}
-
-.avatar{
-
-width:55px;
-
-height:55px;
-
-background:gold;
-
-color:black;
-
-border-radius:50%;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-font-size:24px;
-
-font-weight:bold;
-}
-
-.dashboard-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:20px;
-
-margin-top:40px;
-}
-
-.bottom-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-
-gap:20px;
-
-margin-top:30px;
-}
-
-.box{
+margin:120px auto;
 
 background:#111;
 
-border:1px solid gold;
+border:2px solid gold;
+
+padding:40px;
 
 border-radius:20px;
 
-padding:30px;
+text-align:center;
+
 }
 
-.box h2{
+.login-container h1{
 
-margin-bottom:15px;
+color:gold;
+
+margin-bottom:20px;
+
 }
 
-.box p{
+.login-container input{
 
-color:#bbb;
+width:100%;
+
+padding:15px;
+
+margin:10px 0;
+
+border:none;
+
+border-radius:10px;
+
+}
+
+.login-container button{
+
+width:100%;
+
+padding:15px;
+
+margin-top:20px;
+
+background:gold;
+
+border:none;
+
+border-radius:10px;
+
+font-weight:bold;
+
+cursor:pointer;
+
 }
