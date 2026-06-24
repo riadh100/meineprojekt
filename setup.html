@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="de">
 
 <head>
@@ -15,37 +16,83 @@
 
 <body>
 
+<div class="sidebar">
+
+<h1>👑 AI EMPIRE PRO</h1>
+
+<h3>Riadh Edition</h3>
+
 <nav>
 
-<button onclick="location.href='index.html'">🏠 Home</button>
+<a href="index.html">🏠 Dashboard</a>
 
-<button onclick="location.href='trading.html'">📈 Trading</button>
+<a href="assistant.html">🤖 Yasin AI</a>
 
-<button onclick="location.href='telegram.html'">📲 Telegram</button>
+<a href="trading.html">📈 Trading Center</a>
 
-<button onclick="location.href='video.html'">🎥 Video</button>
+<a href="setup.html">📊 Tages-Setups</a>
 
-<button onclick="location.href='game.html'">🎮 Game</button>
+<a href="telegram.html">📨 Telegram Center</a>
 
-<button onclick="location.href='tools.html'">🧠 KI</button>
+<a href="video.html">🎥 Video Studio</a>
+
+<a href="game.html">🎮 Game Studio</a>
+
+<a href="tools.html">🧠 AI Tools</a>
 
 </nav>
 
-<header>
+</div>
+
+<div class="main">
 
 <h1>📊 Tages-Setups</h1>
 
-<a href="index.html">← Zurück</a>
+<p>Deine Aufgaben für heute.</p>
 
-</header>
+<div class="box">
 
-<div class="container">
+<input id="taskInput"
 
-<h2>Tages-Setups</h2>
+type="text"
 
-<p>Tägliche Ideen</p>
+placeholder="Neue Aufgabe">
+
+<button onclick="addTask()">
+
+➕ Hinzufügen
+
+</button>
 
 </div>
+
+<div class="box">
+
+<ul id="taskList">
+
+<li>
+
+<input type="checkbox">
+
+<span>Trading analysieren</span>
+
+</li>
+
+<li>
+
+<input type="checkbox">
+
+<span>Telegram Beitrag erstellen</span>
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 
