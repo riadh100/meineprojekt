@@ -1,26 +1,16 @@
 function login() {
 
-const username = document.getElementById("username");
+let username = document.getElementById("username").value;
 
-const password = document.getElementById("password");
+let password = document.getElementById("password").value;
 
-if (!username || !password) {
-
-return;
-
-}
-
-const user = username.value.trim();
-
-const pass = password.value.trim();
-
-if (user === "Riadh" && pass === "1234") {
+if(username === "Riadh" && password === "1234"){
 
 window.location.href = "index.html";
 
-} else {
+}else{
 
-alert("Falscher Benutzername oder Passwort");
+alert("Benutzername oder Passwort falsch");
 
 }
 
