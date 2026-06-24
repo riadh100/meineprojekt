@@ -1,18 +1,26 @@
-function login(){
+function login() {
 
-const username=document.getElementById("username").value;
+const username = document.getElementById("username");
 
-const password=document.getElementById("password").value;
+const password = document.getElementById("password");
 
-if(username==="Riadh" && password==="1234"){
+if (!username || !password) {
 
-window.location.href="index.html";
+return;
 
 }
 
-else{
+const user = username.value.trim();
 
-alert("Falsche Anmeldedaten");
+const pass = password.value.trim();
+
+if (user === "Riadh" && pass === "1234") {
+
+window.location.href = "index.html";
+
+} else {
+
+alert("Falscher Benutzername oder Passwort");
 
 }
 
