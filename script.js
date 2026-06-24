@@ -1,22 +1,19 @@
-function addTask() {
+function addTask(){
 
-const input = document.getElementById("taskInput");
+const input=document.getElementById("taskInput");
 
-const task = input.value.trim();
+const text=input.value.trim();
 
-if(task === "") return;
+if(text==="") return;
 
-const list = document.getElementById("taskList");
+const list=document.getElementById("taskList");
 
-const li = document.createElement("li");
+const li=document.createElement("li");
 
-li.innerHTML = `
-<input type="checkbox">
-<span>${task}</span>
-`;
+li.innerHTML="✅ "+text;
 
 list.appendChild(li);
 
-input.value = "";
+input.value="";
 
 }
