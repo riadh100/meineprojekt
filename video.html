@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Video Studio Pro - AI Empire Pro</title>
+<title>Video Studio V5 - AI Empire Pro</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -20,8 +20,11 @@
         <div>
 
             <div class="logo">
-                <h1>AI Empire Pro</h1>
+
+                <h1>👑 AI Empire Pro</h1>
+
                 <p>Riadh Edition</p>
+
             </div>
 
             <nav class="menu">
@@ -48,9 +51,9 @@
 
         <div class="profile-box">
 
-            <h3>👑 Riadh</h3>
+            <h3 id="profileName">👑 Riadh</h3>
 
-            <p>PRO MEMBER</p>
+            <p>CONTENT COMMANDER</p>
 
             <br>
 
@@ -62,17 +65,19 @@
 
     </aside>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN -->
 
     <main class="main-content">
 
+        <!-- TOPBAR -->
+
         <div class="topbar">
 
-            <div class="topbar-title">
+            <div>
 
-                <h2>🎬 Video Studio Pro</h2>
+                <h2>🎬 Video Studio V5</h2>
 
-                <p>Content Produktion & Video Management</p>
+                <p>Content Creation & Video Management Center</p>
 
             </div>
 
@@ -110,8 +115,8 @@
 
                 <h3>Ideen</h3>
 
-                <div class="card-value">
-                    37
+                <div class="card-value" id="ideaCounter">
+                    0
                 </div>
 
             </div>
@@ -128,38 +133,38 @@
 
         </div>
 
-        <!-- VIDEO PROJECTS -->
+        <!-- PROJECT MANAGER -->
 
         <div class="section">
 
-            <h2>🎥 Aktive Projekte</h2>
+            <h2>🎥 YouTube Projekt Manager</h2>
 
             <div class="item">
-                <span>YouTube Automation</span>
+                <span>AI Empire Channel</span>
                 <span class="online">Aktiv</span>
             </div>
 
             <div class="item">
-                <span>Trading Kanal</span>
+                <span>Trading Academy</span>
                 <span class="online">Produktion</span>
             </div>
 
             <div class="item">
-                <span>AI Empire Trailer</span>
-                <span class="online">Fertig</span>
+                <span>Business Automation</span>
+                <span class="online">Planung</span>
             </div>
 
         </div>
 
-        <!-- AI IDEAS -->
+        <!-- IDEA GENERATOR -->
 
         <div class="section">
 
-            <h2>🤖 Video Ideen Generator</h2>
+            <h2>🤖 AI Video Ideen Generator V2</h2>
 
             <textarea
                 id="videoIdea"
-                placeholder="Neue Videoideen erscheinen hier..."></textarea>
+                placeholder="Neue Videoidee generieren..."></textarea>
 
             <br><br>
 
@@ -167,23 +172,31 @@
                 Idee generieren
             </button>
 
+            <button
+                class="btn"
+                onclick="saveNote('video_idea_v5','videoIdea')">
+
+                Speichern
+
+            </button>
+
         </div>
 
-        <!-- SCRIPT CREATOR -->
+        <!-- SCRIPT BUILDER -->
 
         <div class="section">
 
-            <h2>✍️ Script Creator</h2>
+            <h2>✍️ Script Builder Pro</h2>
 
             <textarea
                 id="videoScript"
-                placeholder="Videodrehbuch schreiben..."></textarea>
+                placeholder="Video Script erstellen..."></textarea>
 
             <br><br>
 
             <button
                 class="btn"
-                onclick="saveNote('video_script','videoScript')">
+                onclick="saveNote('video_script_v5','videoScript')">
 
                 Script speichern
 
@@ -191,25 +204,81 @@
 
         </div>
 
-        <!-- CONTENT PLAN -->
+        <!-- CONTENT CALENDAR -->
 
         <div class="section">
 
-            <h2>📅 Content Plan</h2>
+            <h2>📅 Content Kalender</h2>
 
             <textarea
-                id="contentPlan"
-                placeholder="Content Plan und Veröffentlichungen..."></textarea>
+                id="contentCalendar"
+                placeholder="Veröffentlichungen planen..."></textarea>
 
             <br><br>
 
             <button
                 class="btn"
-                onclick="saveNote('content_plan','contentPlan')">
+                onclick="saveNote('video_calendar_v5','contentCalendar')">
 
-                Plan speichern
+                Kalender speichern
 
             </button>
+
+        </div>
+
+        <!-- PRODUCTION STATUS -->
+
+        <div class="section">
+
+            <h2>🚀 Produktionsstatus</h2>
+
+            <div class="item">
+                <span>Recherche</span>
+                <span>100%</span>
+            </div>
+
+            <div class="item">
+                <span>Script</span>
+                <span>85%</span>
+            </div>
+
+            <div class="item">
+                <span>Bearbeitung</span>
+                <span>65%</span>
+            </div>
+
+            <div class="item">
+                <span>Upload</span>
+                <span>40%</span>
+            </div>
+
+        </div>
+
+        <!-- ANALYTICS -->
+
+        <div class="section">
+
+            <h2>📊 Video Analytics</h2>
+
+            <div class="item">
+                <span>Aufrufe</span>
+                <span>45.800</span>
+            </div>
+
+            <div class="item">
+                <span>Abonnenten</span>
+                <span>3.420</span>
+            </div>
+
+            <div class="item">
+                <span>Watch Time</span>
+                <span>1.280 Std.</span>
+            </div>
+
+            <div class="item">
+                <span>CTR</span>
+                <span>7.4%</span>
+            </div>
 
         </div>
 
@@ -221,13 +290,13 @@
 
             <textarea
                 id="videoNotes"
-                placeholder="Video Strategien und Ideen..."></textarea>
+                placeholder="Ideen, Strategien und Produktionsnotizen..."></textarea>
 
             <br><br>
 
             <button
                 class="btn"
-                onclick="saveNote('video_notes','videoNotes')">
+                onclick="saveNote('video_notes_v5','videoNotes')">
 
                 Notizen speichern
 
@@ -235,9 +304,11 @@
 
         </div>
 
+        <!-- FOOTER -->
+
         <div class="footer">
 
-            AI Empire Pro - Video Studio Pro © 2026
+            AI Empire Pro - Video Studio V5 © 2026
 
         </div>
 
@@ -249,23 +320,37 @@
 
 <script>
 
+const savedUser =
+localStorage.getItem(
+    "empire_user"
+);
+
+if(savedUser){
+
+    document.getElementById(
+        "profileName"
+    ).innerHTML =
+    "👑 " + savedUser;
+
+}
+
 function generateIdea(){
 
     const ideas = [
 
-        "10 AI Tools für Unternehmer",
+        "10 AI Tools für Unternehmer 2026",
 
-        "Trading Fehler die Anfänger machen",
+        "Wie man mit KI ein Online Business startet",
 
-        "Wie man mit KI Geld verdient",
+        "Trading Fehler die Anfänger vermeiden sollten",
 
-        "YouTube Automation Schritt für Schritt",
-
-        "Telegram Wachstum in 30 Tagen",
+        "YouTube Automation mit AI",
 
         "Die Zukunft künstlicher Intelligenz",
 
-        "Top Business Ideen 2026",
+        "Top Business Ideen für 2026",
+
+        "Telegram Wachstum Schritt für Schritt",
 
         "AI Empire Erfolgsstrategie"
 
@@ -273,33 +358,57 @@ function generateIdea(){
 
     document.getElementById(
         "videoIdea"
-    ).value = ideas[
+    ).value =
+
+    ideas[
         Math.floor(
             Math.random() *
             ideas.length
         )
     ];
 
-    showNotification(
-        "Neue Videoidee erstellt"
-    );
+    updateIdeaCounter();
+
+}
+
+function updateIdeaCounter(){
+
+    const value =
+    document.getElementById(
+        "videoIdea"
+    ).value;
+
+    document.getElementById(
+        "ideaCounter"
+    ).innerHTML =
+
+    value.trim() === ""
+    ? 0
+    : 1;
 
 }
 
 loadNote(
-    "video_script",
+    "video_idea_v5",
+    "videoIdea"
+);
+
+loadNote(
+    "video_script_v5",
     "videoScript"
 );
 
 loadNote(
-    "content_plan",
-    "contentPlan"
+    "video_calendar_v5",
+    "contentCalendar"
 );
 
 loadNote(
-    "video_notes",
+    "video_notes_v5",
     "videoNotes"
 );
+
+updateIdeaCounter();
 
 </script>
 
