@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Game Studio V5 - AI Empire Pro</title>
+<title>Game Studio V6 Ultimate - AI Empire Pro</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -20,31 +20,19 @@
         <div>
 
             <div class="logo">
-
                 <h1>👑 AI Empire Pro</h1>
-
-                <p>Riadh Edition</p>
-
+                <p>Riadh Edition V6 Ultimate</p>
             </div>
 
             <nav class="menu">
-
                 <a href="index.html">🏠 Dashboard</a>
-
                 <a href="assistant.html">🤖 Yasin AI</a>
-
                 <a href="trading.html">📈 Trading Pro</a>
-
                 <a href="telegram.html">📱 Telegram Center</a>
-
                 <a href="video.html">🎬 Video Studio</a>
-
                 <a href="game.html">🎮 Game Studio</a>
-
                 <a href="tools.html">🛠 Tools Center</a>
-
                 <a href="setup.html">⚙ Setup Center</a>
-
             </nav>
 
         </div>
@@ -53,13 +41,13 @@
 
             <h3 id="profileName">👑 Riadh</h3>
 
-            <p>GAME COMMANDER</p>
+            <p>GAME COMMAND CENTER</p>
 
             <br>
 
-            <button class="btn btn-danger" onclick="logout()">
-                Logout
-            </button>
+            <div class="online">
+                STUDIO ONLINE
+            </div>
 
         </div>
 
@@ -75,9 +63,9 @@
 
             <div>
 
-                <h2>🎮 Game Studio V5</h2>
+                <h2>🎮 Game Studio V6 Ultimate</h2>
 
-                <p>Game Development & Creative Center</p>
+                <p>Game Development & Publishing Center</p>
 
             </div>
 
@@ -92,89 +80,72 @@
         <div class="grid">
 
             <div class="card">
-
                 <h3>Projekte</h3>
-
-                <div class="card-value">
-                    4
-                </div>
-
+                <div class="card-value" id="projectCount">0</div>
             </div>
 
             <div class="card">
-
-                <h3>Charaktere</h3>
-
-                <div class="card-value">
-                    16
-                </div>
-
-            </div>
-
-            <div class="card">
-
                 <h3>Ideen</h3>
-
-                <div class="card-value" id="ideaCounter">
-                    0
-                </div>
-
+                <div class="card-value" id="ideaCount">0</div>
             </div>
 
             <div class="card">
+                <h3>Level</h3>
+                <div class="card-value">PRO</div>
+            </div>
 
+            <div class="card">
                 <h3>Status</h3>
-
-                <div class="card-value online">
-                    AKTIV
-                </div>
-
+                <div class="card-value online">AKTIV</div>
             </div>
 
         </div>
 
-        <!-- PROJECT MANAGER -->
+        <!-- GAME PROJECTS -->
 
         <div class="section">
 
-            <h2>🕹 Projekt Manager</h2>
-
-            <div class="item">
-                <span>Empire Runner</span>
-                <span class="online">Entwicklung</span>
-            </div>
-
-            <div class="item">
-                <span>AI Battle Arena</span>
-                <span class="online">Planung</span>
-            </div>
-
-            <div class="item">
-                <span>Crypto Quest</span>
-                <span class="online">Beta</span>
-            </div>
-
-        </div>
-
-        <!-- AI IDEA GENERATOR -->
-
-        <div class="section">
-
-            <h2>🤖 AI Game Ideen Generator V2</h2>
+            <h2>🎮 Game Projekte</h2>
 
             <textarea
-                id="gameIdea"
-                placeholder="Neue Spielidee generieren..."></textarea>
+                id="gameProjects"
+                placeholder="Game Projekte verwalten..."></textarea>
 
             <br><br>
 
-            <button class="btn" onclick="generateGameIdea()">
+            <button
+                class="btn"
+                onclick="saveProjects()">
+
+                Projekte speichern
+
+            </button>
+
+        </div>
+
+        <!-- IDEA GENERATOR -->
+
+        <div class="section">
+
+            <h2>💡 Game Ideen Generator</h2>
+
+            <textarea
+                id="gameIdeas"
+                placeholder="Game Ideen erscheinen hier..."></textarea>
+
+            <br><br>
+
+            <button
+                class="btn"
+                onclick="generateGameIdea()">
+
                 Idee generieren
+
             </button>
 
             <button
                 class="btn"
-                onclick="saveNote('game_idea_v5','gameIdea')">
+                onclick="saveNote('game_ideas_v6','gameIdeas')">
 
                 Speichern
 
@@ -182,21 +153,21 @@
 
         </div>
 
-        <!-- CHARACTER MANAGER -->
+        <!-- GAME DESIGN -->
 
         <div class="section">
 
-            <h2>👥 Charakter Manager</h2>
+            <h2>📝 Game Design Dokument</h2>
 
             <textarea
-                id="characterManager"
-                placeholder="Charaktere, Fähigkeiten und Klassen..."></textarea>
+                id="gameDesign"
+                placeholder="Gameplay, Story, Charaktere..."></textarea>
 
             <br><br>
 
             <button
                 class="btn"
-                onclick="saveNote('character_manager_v5','characterManager')">
+                onclick="saveNote('game_design_v6','gameDesign')">
 
                 Speichern
 
@@ -204,66 +175,80 @@
 
         </div>
 
-        <!-- QUEST GENERATOR -->
+        <!-- DEVELOPMENT -->
 
         <div class="section">
 
-            <h2>📜 Quest Generator</h2>
+            <h2>⚙ Entwicklungsplanung</h2>
 
             <textarea
-                id="questOutput"
-                placeholder="Quest erscheint hier..."
-                readonly></textarea>
-
-            <br><br>
-
-            <button class="btn" onclick="generateQuest()">
-                Quest generieren
-            </button>
-
-        </div>
-
-        <!-- GAME DESIGN DOCUMENT -->
-
-        <div class="section">
-
-            <h2>📘 Game Design Dokument</h2>
-
-            <textarea
-                id="gameGDD"
-                placeholder="Story, Gameplay, Features und Mechaniken..."></textarea>
+                id="developmentPlan"
+                placeholder="Roadmap und Entwicklungsschritte..."></textarea>
 
             <br><br>
 
             <button
                 class="btn"
-                onclick="saveNote('game_gdd_v5','gameGDD')">
+                onclick="saveNote('development_plan_v6','developmentPlan')">
 
-                GDD speichern
+                Speichern
 
             </button>
 
         </div>
 
-        <!-- ROADMAP -->
+        <!-- MONETIZATION -->
 
         <div class="section">
 
-            <h2>🚀 Entwicklungs-Roadmap</h2>
+            <h2>💰 Monetarisierung</h2>
 
             <textarea
-                id="gameRoadmap"
-                placeholder="Roadmap und Entwicklungsziele..."></textarea>
+                id="monetizationPlan"
+                placeholder="Einnahmequellen und Strategien..."></textarea>
 
             <br><br>
 
             <button
                 class="btn"
-                onclick="saveNote('game_roadmap_v5','gameRoadmap')">
+                onclick="saveNote('monetization_plan_v6','monetizationPlan')">
 
-                Roadmap speichern
+                Speichern
 
             </button>
+
+        </div>
+
+        <!-- GAME PIPELINE -->
+
+        <div class="section">
+
+            <h2>🚀 Entwicklungsstatus</h2>
+
+            <div class="item">
+                <span>Idee</span>
+                <span>100%</span>
+            </div>
+
+            <div class="item">
+                <span>Planung</span>
+                <span>85%</span>
+            </div>
+
+            <div class="item">
+                <span>Entwicklung</span>
+                <span>60%</span>
+            </div>
+
+            <div class="item">
+                <span>Testing</span>
+                <span>35%</span>
+            </div>
+
+            <div class="item">
+                <span>Launch</span>
+                <span>15%</span>
+            </div>
 
         </div>
 
@@ -271,27 +256,49 @@
 
         <div class="section">
 
-            <h2>📊 Game Analytics</h2>
+            <h2>📊 Studio Analytics</h2>
 
             <div class="item">
-                <span>Level Design</span>
-                <span>72%</span>
+                <span>Aktive Projekte</span>
+                <span id="activeProjects">0</span>
             </div>
 
             <div class="item">
-                <span>Story Entwicklung</span>
-                <span>84%</span>
+                <span>Produktivität</span>
+                <span>91%</span>
             </div>
 
             <div class="item">
-                <span>Gameplay Systeme</span>
+                <span>Fertigstellung</span>
                 <span>68%</span>
             </div>
 
             <div class="item">
-                <span>Testing</span>
-                <span>41%</span>
+                <span>Wachstum</span>
+                <span>+22%</span>
             </div>
+
+        </div>
+
+        <!-- PUBLISHING -->
+
+        <div class="section">
+
+            <h2>🌍 Publishing Center</h2>
+
+            <textarea
+                id="publishingCenter"
+                placeholder="Steam, Mobile, Web und Release Planung..."></textarea>
+
+            <br><br>
+
+            <button
+                class="btn"
+                onclick="saveNote('publishing_center_v6','publishingCenter')">
+
+                Speichern
+
+            </button>
 
         </div>
 
@@ -299,19 +306,19 @@
 
         <div class="section">
 
-            <h2>📝 Entwickler Notizen</h2>
+            <h2>📒 Studio Notizen</h2>
 
             <textarea
                 id="gameNotes"
-                placeholder="Ideen, Bugs und Aufgaben..."></textarea>
+                placeholder="Eigene Notizen und Ideen..."></textarea>
 
             <br><br>
 
             <button
                 class="btn"
-                onclick="saveNote('game_notes_v5','gameNotes')">
+                onclick="saveNote('game_notes_v6','gameNotes')">
 
-                Notizen speichern
+                Speichern
 
             </button>
 
@@ -320,9 +327,7 @@
         <!-- FOOTER -->
 
         <div class="footer">
-
-            AI Empire Pro - Game Studio V5 © 2026
-
+            AI Empire Pro - Game Studio V6 Ultimate © 2026
         </div>
 
     </main>
@@ -333,17 +338,14 @@
 
 <script>
 
-const savedUser =
-localStorage.getItem(
-    "empire_user"
-);
+const user = localStorage.getItem("empire_user");
 
-if(savedUser){
+if(user){
 
     document.getElementById(
         "profileName"
     ).innerHTML =
-    "👑 " + savedUser;
+    "👑 " + user;
 
 }
 
@@ -351,28 +353,29 @@ function generateGameIdea(){
 
     const ideas = [
 
-        "Open World Empire Builder",
+        "Open World Survival Empire",
 
-        "Cyberpunk Trading Simulator",
+        "AI Business Tycoon Simulator",
 
-        "AI Strategy Warfare",
+        "Cyberpunk Trading Strategy Game",
 
-        "Fantasy RPG mit KI NPCs",
+        "Telegram Empire Builder",
 
-        "Space Colony Manager",
+        "Space Mining Idle Game",
 
-        "Crypto Survival Adventure",
+        "Zombie Survival RPG",
 
-        "Multiplayer Arena mit KI Gegnern",
+        "Fantasy Kingdom Simulator",
 
-        "Business Tycoon Simulator"
+        "AI Startup Management Game",
+
+        "Crypto Trading Simulator",
+
+        "Empire Conquest Strategy"
 
     ];
 
-    document.getElementById(
-        "gameIdea"
-    ).value =
-
+    const result =
     ideas[
         Math.floor(
             Math.random() *
@@ -380,85 +383,97 @@ function generateGameIdea(){
         )
     ];
 
-    updateIdeaCounter();
-
-}
-
-function generateQuest(){
-
-    const quests = [
-
-        "Besiege den AI Overlord und rette die Hauptstadt.",
-
-        "Sammle 10 seltene Ressourcen im Cyber-Sektor.",
-
-        "Verteidige deine Kolonie gegen feindliche Drohnen.",
-
-        "Finde das verlorene Artefakt der Empire Dynastie.",
-
-        "Errichte ein Handelsimperium mit 1 Million Credits.",
-
-        "Rekrutiere drei Elite-Kämpfer für deine Armee.",
-
-        "Erforsche den verbotenen Planeten Omega-X."
-
-    ];
-
     document.getElementById(
-        "questOutput"
+        "gameIdeas"
     ).value =
+    result;
 
-    quests[
-        Math.floor(
-            Math.random() *
-            quests.length
-        )
-    ];
+    updateIdeaCounter();
 
 }
 
 function updateIdeaCounter(){
 
-    const value =
+    const text =
     document.getElementById(
-        "gameIdea"
+        "gameIdeas"
     ).value;
 
     document.getElementById(
-        "ideaCounter"
+        "ideaCount"
     ).innerHTML =
 
-    value.trim() === ""
+    text.trim() === ""
     ? 0
     : 1;
 
 }
 
+function saveProjects(){
+
+    saveNote(
+        "game_projects_v6",
+        "gameProjects"
+    );
+
+    const text =
+    document.getElementById(
+        "gameProjects"
+    ).value;
+
+    const count =
+    text.trim() === ""
+    ? 0
+    : text.split("\n").length;
+
+    document.getElementById(
+        "projectCount"
+    ).innerHTML =
+    count;
+
+    document.getElementById(
+        "activeProjects"
+    ).innerHTML =
+    count;
+
+}
+
 loadNote(
-    "game_idea_v5",
-    "gameIdea"
+    "game_projects_v6",
+    "gameProjects"
 );
 
 loadNote(
-    "character_manager_v5",
-    "characterManager"
+    "game_ideas_v6",
+    "gameIdeas"
 );
 
 loadNote(
-    "game_gdd_v5",
-    "gameGDD"
+    "game_design_v6",
+    "gameDesign"
 );
 
 loadNote(
-    "game_roadmap_v5",
-    "gameRoadmap"
+    "development_plan_v6",
+    "developmentPlan"
 );
 
 loadNote(
-    "game_notes_v5",
+    "monetization_plan_v6",
+    "monetizationPlan"
+);
+
+loadNote(
+    "publishing_center_v6",
+    "publishingCenter"
+);
+
+loadNote(
+    "game_notes_v6",
     "gameNotes"
 );
 
+saveProjects();
 updateIdeaCounter();
 
 </script>
