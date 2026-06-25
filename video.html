@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Video Studio V5 - AI Empire Pro</title>
+<title>Video Studio V6 Ultimate - AI Empire Pro</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -20,31 +20,19 @@
         <div>
 
             <div class="logo">
-
                 <h1>👑 AI Empire Pro</h1>
-
-                <p>Riadh Edition</p>
-
+                <p>Riadh Edition V6 Ultimate</p>
             </div>
 
             <nav class="menu">
-
                 <a href="index.html">🏠 Dashboard</a>
-
                 <a href="assistant.html">🤖 Yasin AI</a>
-
                 <a href="trading.html">📈 Trading Pro</a>
-
                 <a href="telegram.html">📱 Telegram Center</a>
-
                 <a href="video.html">🎬 Video Studio</a>
-
                 <a href="game.html">🎮 Game Studio</a>
-
                 <a href="tools.html">🛠 Tools Center</a>
-
                 <a href="setup.html">⚙ Setup Center</a>
-
             </nav>
 
         </div>
@@ -53,13 +41,13 @@
 
             <h3 id="profileName">👑 Riadh</h3>
 
-            <p>CONTENT COMMANDER</p>
+            <p>VIDEO COMMAND CENTER</p>
 
             <br>
 
-            <button class="btn btn-danger" onclick="logout()">
-                Logout
-            </button>
+            <div class="online">
+                STUDIO ONLINE
+            </div>
 
         </div>
 
@@ -74,11 +62,8 @@
         <div class="topbar">
 
             <div>
-
-                <h2>🎬 Video Studio V5</h2>
-
-                <p>Content Creation & Video Management Center</p>
-
+                <h2>🎬 Video Studio V6 Ultimate</h2>
+                <p>YouTube Management & Content Produktion</p>
             </div>
 
             <div class="clock" id="clock">
@@ -92,89 +77,80 @@
         <div class="grid">
 
             <div class="card">
-
-                <h3>Projekte</h3>
-
-                <div class="card-value">
-                    12
-                </div>
-
-            </div>
-
-            <div class="card">
-
                 <h3>Videos</h3>
-
-                <div class="card-value">
-                    84
+                <div class="card-value" id="videoCounter">
+                    0
                 </div>
-
             </div>
 
             <div class="card">
-
                 <h3>Ideen</h3>
-
                 <div class="card-value" id="ideaCounter">
                     0
                 </div>
-
             </div>
 
             <div class="card">
+                <h3>Kanäle</h3>
+                <div class="card-value">
+                    3
+                </div>
+            </div>
 
+            <div class="card">
                 <h3>Status</h3>
-
                 <div class="card-value online">
                     AKTIV
                 </div>
-
             </div>
 
         </div>
 
-        <!-- PROJECT MANAGER -->
+        <!-- CHANNEL MANAGER -->
 
         <div class="section">
 
-            <h2>🎥 YouTube Projekt Manager</h2>
-
-            <div class="item">
-                <span>AI Empire Channel</span>
-                <span class="online">Aktiv</span>
-            </div>
-
-            <div class="item">
-                <span>Trading Academy</span>
-                <span class="online">Produktion</span>
-            </div>
-
-            <div class="item">
-                <span>Business Automation</span>
-                <span class="online">Planung</span>
-            </div>
-
-        </div>
-
-        <!-- IDEA GENERATOR -->
-
-        <div class="section">
-
-            <h2>🤖 AI Video Ideen Generator V2</h2>
+            <h2>📺 YouTube Kanal Manager</h2>
 
             <textarea
-                id="videoIdea"
-                placeholder="Neue Videoidee generieren..."></textarea>
+                id="channelManager"
+                placeholder="Kanäle und Projekte verwalten..."></textarea>
 
             <br><br>
 
-            <button class="btn" onclick="generateIdea()">
+            <button
+                class="btn"
+                onclick="saveNote('video_channels_v6','channelManager')">
+
+                Speichern
+
+            </button>
+
+        </div>
+
+        <!-- AI IDEAS -->
+
+        <div class="section">
+
+            <h2>🤖 AI Video Ideen Generator</h2>
+
+            <textarea
+                id="videoIdeas"
+                placeholder="Video Ideen erscheinen hier..."></textarea>
+
+            <br><br>
+
+            <button
+                class="btn"
+                onclick="generateIdea()">
+
                 Idee generieren
+
             </button>
 
             <button
                 class="btn"
-                onclick="saveNote('video_idea_v5','videoIdea')">
+                onclick="saveNote('video_ideas_v6','videoIdeas')">
 
                 Speichern
 
@@ -186,19 +162,19 @@
 
         <div class="section">
 
-            <h2>✍️ Script Builder Pro</h2>
+            <h2>✍ Script Builder Ultimate</h2>
 
             <textarea
-                id="videoScript"
-                placeholder="Video Script erstellen..."></textarea>
+                id="scriptBuilder"
+                placeholder="Video Skript erstellen..."></textarea>
 
             <br><br>
 
             <button
                 class="btn"
-                onclick="saveNote('video_script_v5','videoScript')">
+                onclick="saveNote('video_script_v6','scriptBuilder')">
 
-                Script speichern
+                Speichern
 
             </button>
 
@@ -208,29 +184,73 @@
 
         <div class="section">
 
-            <h2>📅 Content Kalender</h2>
+            <h2>📅 Content Kalender V6</h2>
 
             <textarea
                 id="contentCalendar"
-                placeholder="Veröffentlichungen planen..."></textarea>
+                placeholder="Content Planung..."></textarea>
 
             <br><br>
 
             <button
                 class="btn"
-                onclick="saveNote('video_calendar_v5','contentCalendar')">
+                onclick="saveNote('video_calendar_v6','contentCalendar')">
 
-                Kalender speichern
+                Speichern
 
             </button>
 
         </div>
 
-        <!-- PRODUCTION STATUS -->
+        <!-- UPLOAD PLANNER -->
 
         <div class="section">
 
-            <h2>🚀 Produktionsstatus</h2>
+            <h2>🚀 Upload Planung</h2>
+
+            <textarea
+                id="uploadPlanner"
+                placeholder="Upload Termine und Veröffentlichungen..."></textarea>
+
+            <br><br>
+
+            <button
+                class="btn"
+                onclick="saveNote('upload_planner_v6','uploadPlanner')">
+
+                Speichern
+
+            </button>
+
+        </div>
+
+        <!-- THUMBNAIL CENTER -->
+
+        <div class="section">
+
+            <h2>🖼 Thumbnail Ideen Center</h2>
+
+            <textarea
+                id="thumbnailIdeas"
+                placeholder="Thumbnail Konzepte und Ideen..."></textarea>
+
+            <br><br>
+
+            <button
+                class="btn"
+                onclick="saveNote('thumbnail_ideas_v6','thumbnailIdeas')">
+
+                Speichern
+
+            </button>
+
+        </div>
+
+        <!-- PRODUCTION PIPELINE -->
+
+        <div class="section">
+
+            <h2>⚙ Produktions Pipeline</h2>
 
             <div class="item">
                 <span>Recherche</span>
@@ -238,18 +258,18 @@
             </div>
 
             <div class="item">
-                <span>Script</span>
-                <span>85%</span>
+                <span>Skript</span>
+                <span>88%</span>
+            </div>
+
+            <div class="item">
+                <span>Aufnahme</span>
+                <span>70%</span>
             </div>
 
             <div class="item">
                 <span>Bearbeitung</span>
-                <span>65%</span>
-            </div>
-
-            <div class="item">
-                <span>Upload</span>
-                <span>40%</span>
+                <span>61%</span>
             </div>
 
         </div>
@@ -262,22 +282,22 @@
 
             <div class="item">
                 <span>Aufrufe</span>
-                <span>45.800</span>
+                <span>48.500</span>
             </div>
 
             <div class="item">
                 <span>Abonnenten</span>
-                <span>3.420</span>
+                <span>3.840</span>
             </div>
 
             <div class="item">
-                <span>Watch Time</span>
-                <span>1.280 Std.</span>
+                <span>Watchtime</span>
+                <span>1.480 Std.</span>
             </div>
 
             <div class="item">
                 <span>CTR</span>
-                <span>7.4%</span>
+                <span>8.2%</span>
             </div>
 
         </div>
@@ -286,19 +306,19 @@
 
         <div class="section">
 
-            <h2>📝 Video Notizen</h2>
+            <h2>📝 Video Strategien</h2>
 
             <textarea
                 id="videoNotes"
-                placeholder="Ideen, Strategien und Produktionsnotizen..."></textarea>
+                placeholder="Notizen, Ideen und Strategien..."></textarea>
 
             <br><br>
 
             <button
                 class="btn"
-                onclick="saveNote('video_notes_v5','videoNotes')">
+                onclick="saveNote('video_notes_v6','videoNotes')">
 
-                Notizen speichern
+                Speichern
 
             </button>
 
@@ -307,9 +327,7 @@
         <!-- FOOTER -->
 
         <div class="footer">
-
-            AI Empire Pro - Video Studio V5 © 2026
-
+            AI Empire Pro - Video Studio V6 Ultimate © 2026
         </div>
 
     </main>
@@ -320,17 +338,17 @@
 
 <script>
 
-const savedUser =
+const user =
 localStorage.getItem(
     "empire_user"
 );
 
-if(savedUser){
+if(user){
 
     document.getElementById(
         "profileName"
     ).innerHTML =
-    "👑 " + savedUser;
+    "👑 " + user;
 
 }
 
@@ -338,34 +356,36 @@ function generateIdea(){
 
     const ideas = [
 
-        "10 AI Tools für Unternehmer 2026",
+        "10 KI Tools die dein Business verändern",
 
-        "Wie man mit KI ein Online Business startet",
+        "Trading Strategie für Anfänger",
 
-        "Trading Fehler die Anfänger vermeiden sollten",
+        "Wie man mit AI Geld verdient",
 
-        "YouTube Automation mit AI",
+        "Telegram Wachstum in 30 Tagen",
 
-        "Die Zukunft künstlicher Intelligenz",
+        "Top Business Ideen 2026",
 
-        "Top Business Ideen für 2026",
+        "YouTube Automation Schritt für Schritt",
 
-        "Telegram Wachstum Schritt für Schritt",
+        "AI Empire Erfolgsplan",
 
-        "AI Empire Erfolgsstrategie"
+        "Passive Einkommensquellen mit KI"
 
     ];
 
-    document.getElementById(
-        "videoIdea"
-    ).value =
-
+    const result =
     ideas[
         Math.floor(
             Math.random() *
             ideas.length
         )
     ];
+
+    document.getElementById(
+        "videoIdeas"
+    ).value =
+    result;
 
     updateIdeaCounter();
 
@@ -375,7 +395,7 @@ function updateIdeaCounter(){
 
     const value =
     document.getElementById(
-        "videoIdea"
+        "videoIdeas"
     ).value;
 
     document.getElementById(
@@ -389,26 +409,46 @@ function updateIdeaCounter(){
 }
 
 loadNote(
-    "video_idea_v5",
-    "videoIdea"
+    "video_channels_v6",
+    "channelManager"
 );
 
 loadNote(
-    "video_script_v5",
-    "videoScript"
+    "video_ideas_v6",
+    "videoIdeas"
 );
 
 loadNote(
-    "video_calendar_v5",
+    "video_script_v6",
+    "scriptBuilder"
+);
+
+loadNote(
+    "video_calendar_v6",
     "contentCalendar"
 );
 
 loadNote(
-    "video_notes_v5",
+    "upload_planner_v6",
+    "uploadPlanner"
+);
+
+loadNote(
+    "thumbnail_ideas_v6",
+    "thumbnailIdeas"
+);
+
+loadNote(
+    "video_notes_v6",
     "videoNotes"
 );
 
 updateIdeaCounter();
+
+document.getElementById(
+    "videoCounter"
+).innerHTML =
+localStorage.length;
 
 </script>
 
