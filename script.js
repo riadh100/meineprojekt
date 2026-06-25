@@ -1,135 +1,80 @@
-/* ==================================================
-   AI EMPIRE PRO
-   UNIFIED SCRIPT V4
-   RIADH EDITION
-================================================== */
+/* =======================================
+   AI EMPIRE PRO V5 PREMIUM
+   Riadh Edition
+======================================= */
 
-/* ==================================================
-   LIVE CLOCK
-================================================== */
+/* CLOCK */
 
-function startClock() {
+function updateClock(){
 
-    const clockElement =
-    document.getElementById("clock");
+    const now = new Date();
 
-    if (!clockElement) return;
+    const time =
+        now.toLocaleTimeString(
+            "de-DE"
+        );
 
-    function updateClock() {
+    const clock =
+        document.getElementById(
+            "clock"
+        );
 
-        const now = new Date();
+    if(clock){
 
-        clockElement.innerHTML =
-        now.toLocaleTimeString("de-DE");
-
-    }
-
-    updateClock();
-
-    setInterval(updateClock, 1000);
-
-}
-
-/* ==================================================
-   LOGOUT
-================================================== */
-
-function logout() {
-
-    const confirmLogout =
-    confirm("Wirklich ausloggen?");
-
-    if(confirmLogout){
-
-        window.location.href =
-        "login.html";
+        clock.innerHTML = time;
 
     }
 
 }
 
-/* ==================================================
-   NOTIFICATION SYSTEM
-================================================== */
+setInterval(
+    updateClock,
+    1000
+);
 
-function showNotification(message) {
+updateClock();
 
-    const notification =
-    document.createElement("div");
+/* NOTES SYSTEM */
 
-    notification.innerHTML =
-    message;
-
-    notification.style.position =
-    "fixed";
-
-    notification.style.top =
-    "20px";
-
-    notification.style.right =
-    "20px";
-
-    notification.style.padding =
-    "15px 20px";
-
-    notification.style.background =
-    "#FFD700";
-
-    notification.style.color =
-    "#000";
-
-    notification.style.borderRadius =
-    "10px";
-
-    notification.style.fontWeight =
-    "bold";
-
-    notification.style.zIndex =
-    "9999";
-
-    document.body.appendChild(
-        notification
-    );
-
-    setTimeout(() => {
-
-        notification.remove();
-
-    }, 3000);
-
-}
-
-/* ==================================================
-   NOTES SYSTEM
-================================================== */
-
-function saveNote(storageKey, elementId) {
+function saveNote(
+    key,
+    elementId
+){
 
     const element =
-    document.getElementById(elementId);
+        document.getElementById(
+            elementId
+        );
 
     if(!element) return;
 
     localStorage.setItem(
-        storageKey,
+        key,
         element.value
     );
 
     showNotification(
-        "Notiz gespeichert"
+        "Gespeichert: " + key
     );
 
 }
 
-function loadNote(storageKey, elementId) {
+function loadNote(
+    key,
+    elementId
+){
 
     const element =
-    document.getElementById(elementId);
+        document.getElementById(
+            elementId
+        );
 
     if(!element) return;
 
     const saved =
-    localStorage.getItem(storageKey);
+        localStorage.getItem(
+            key
+        );
 
     if(saved){
 
@@ -139,336 +84,400 @@ function loadNote(storageKey, elementId) {
 
 }
 
-/* ==================================================
-   STORAGE HELPER
-================================================== */
+/* LOGOUT */
 
-function saveData(key, data){
+function logout(){
 
-    localStorage.setItem(
-        key,
-        JSON.stringify(data)
-    );
-
-}
-
-function loadData(key){
-
-    const data =
-    localStorage.getItem(key);
-
-    if(!data) return null;
-
-    return JSON.parse(data);
-
-}
-
-function removeData(key){
-
-    localStorage.removeItem(key);
-
-}
-
-/* ==================================================
-   MODULE STATUS
-================================================== */
-
-const empireModules = {
-
-    dashboard : true,
-    assistant : true,
-    trading : true,
-    telegram : true,
-    video : true,
-    game : true,
-    tools : true,
-    setup : true
-
-};
-
-function getOnlineModules(){
-
-    return Object.values(
-        empireModules
-    ).filter(Boolean).length;
-
-}
-
-function getModuleStatus(name){
-
-    return empireModules[name]
-    ? "ONLINE"
-    : "OFFLINE";
-
-}
-
-/* ==================================================
-   QUICK NAVIGATION
-================================================== */
-
-function openModule(page){
-
-    window.location.href = page;
-
-}
-
-/* ==================================================
-   USER PROFILE
-================================================== */
-
-const defaultProfile = {
-
-    name : "Riadh",
-    edition : "AI Empire Pro",
-    level : "PRO"
-
-};
-
-function getProfile(){
-
-    return loadData(
-        "aiempire_profile"
-    ) || defaultProfile;
-
-}
-
-function saveProfile(profile){
-
-    saveData(
-        "aiempire_profile",
-        profile
-    );
-
-}
-
-/* ==================================================
-   ACTIVITY LOG
-================================================== */
-
-function addActivity(text){
-
-    let activities =
-    loadData(
-        "aiempire_activity"
-    ) || [];
-
-    activities.unshift({
-
-        text:text,
-
-        time:
-        new Date().toLocaleString("de-DE")
-
-    });
-
-    activities =
-    activities.slice(0,50);
-
-    saveData(
-        "aiempire_activity",
-        activities
-    );
-
-}
-
-function getActivities(){
-
-    return loadData(
-        "aiempire_activity"
-    ) || [];
-
-}
-
-/* ==================================================
-   AI CHAT STORAGE
-================================================== */
-
-function saveChat(chatHtml){
-
-    localStorage.setItem(
-        "yasin_ai_chat",
-        chatHtml
-    );
-
-}
-
-function loadChat(){
-
-    return localStorage.getItem(
-        "yasin_ai_chat"
-    );
-
-}
-
-function clearChat(){
-
-    if(confirm(
-        "Chat wirklich löschen?"
-    )){
-
-        localStorage.removeItem(
-            "yasin_ai_chat"
+    const confirmLogout =
+        confirm(
+            "Wirklich ausloggen?"
         );
 
-        location.reload();
+    if(confirmLogout){
+
+        window.location.href =
+            "login.html";
 
     }
 
 }
 
-/* ==================================================
-   IDEA GENERATOR
-================================================== */
+/* ONLINE MODULES */
 
-function getRandomIdea(array){
+function getOnlineModules(){
 
-    return array[
-        Math.floor(
-            Math.random() *
-            array.length
-        )
-    ];
+    return 8;
 
 }
 
-/* ==================================================
-   SYSTEM INFO
-================================================== */
+/* NOTIFICATION SYSTEM */
+
+function showNotification(
+    message
+){
+
+    const old =
+        document.getElementById(
+            "empireNotification"
+        );
+
+    if(old){
+
+        old.remove();
+
+    }
+
+    const notification =
+        document.createElement(
+            "div"
+        );
+
+    notification.id =
+        "empireNotification";
+
+    notification.innerHTML =
+        message;
+
+    notification.style.position =
+        "fixed";
+
+    notification.style.top =
+        "20px";
+
+    notification.style.right =
+        "20px";
+
+    notification.style.zIndex =
+        "99999";
+
+    notification.style.padding =
+        "15px 20px";
+
+    notification.style.background =
+        "#d4af37";
+
+    notification.style.color =
+        "#000";
+
+    notification.style.fontWeight =
+        "bold";
+
+    notification.style.borderRadius =
+        "10px";
+
+    notification.style.boxShadow =
+        "0 0 20px rgba(212,175,55,0.4)";
+
+    document.body.appendChild(
+        notification
+    );
+
+    setTimeout(function(){
+
+        notification.remove();
+
+    },2500);
+
+}
+
+/* STORAGE INFO */
+
+function getStorageCount(){
+
+    return localStorage.length;
+
+}
+
+/* STORAGE SIZE */
+
+function getStorageSize(){
+
+    let total = 0;
+
+    for(
+        let key in localStorage
+    ){
+
+        if(
+            localStorage.hasOwnProperty(
+                key
+            )
+        ){
+
+            total +=
+                localStorage[key]
+                .length;
+
+        }
+
+    }
+
+    return (
+        total / 1024
+    ).toFixed(2);
+
+}
+
+/* SYSTEM INFO */
 
 function getSystemInfo(){
 
     return {
 
-        version : "V4",
+        version:
+            "V5 Premium",
 
-        project :
-        "AI Empire Pro",
+        edition:
+            "Riadh Edition",
 
-        edition :
-        "Riadh Edition",
+        modules:
+            8,
 
-        modules :
-        getOnlineModules(),
+        storage:
+            getStorageCount(),
 
-        date :
-        new Date()
-        .toLocaleDateString("de-DE")
+        size:
+            getStorageSize() + " KB"
 
     };
 
 }
 
-/* ==================================================
-   DASHBOARD COUNTERS
-================================================== */
+/* DASHBOARD ACTIVITY */
 
-function updateCounter(
-    elementId,
-    value
+function addActivity(
+    text
+){
+
+    const feed =
+        document.getElementById(
+            "activityFeed"
+        );
+
+    if(!feed) return;
+
+    const item =
+        document.createElement(
+            "div"
+        );
+
+    item.className =
+        "item";
+
+    item.innerHTML =
+        "<span>" +
+        text +
+        "</span><span class='online'>OK</span>";
+
+    feed.prepend(
+        item
+    );
+
+}
+
+/* AUTO SAVE */
+
+function enableAutoSave(
+    key,
+    elementId
 ){
 
     const element =
-    document.getElementById(
-        elementId
+        document.getElementById(
+            elementId
+        );
+
+    if(!element) return;
+
+    element.addEventListener(
+        "keyup",
+        function(){
+
+            localStorage.setItem(
+                key,
+                element.value
+            );
+
+        }
     );
-
-    if(element){
-
-        element.innerHTML =
-        value;
-
-    }
 
 }
 
-/* ==================================================
-   EXPORT ALL NOTES
-================================================== */
+/* RANDOM SYSTEM VALUES */
 
-function exportNotes(){
+function randomCpu(){
 
-    const data = {
+    return Math.floor(
+        Math.random() * 40
+    ) + 20;
 
-        dashboard :
-        localStorage.getItem(
-        "aiempire_notes"
-        ),
+}
 
-        trading :
-        localStorage.getItem(
-        "trading_notes"
-        ),
+function randomMemory(){
 
-        telegram :
-        localStorage.getItem(
-        "telegram_notes"
-        ),
+    return Math.floor(
+        Math.random() * 30
+    ) + 50;
 
-        video :
-        localStorage.getItem(
-        "video_notes"
-        ),
+}
 
-        game :
-        localStorage.getItem(
-        "game_notes"
-        ),
+/* EXPORT DATA */
 
-        setup :
-        localStorage.getItem(
-        "setup_admin_notes"
-        )
+function exportEmpireData(){
+
+    const data =
+        JSON.stringify(
+            localStorage,
+            null,
+            2
+        );
+
+    const blob =
+        new Blob(
+            [data],
+            {
+                type:
+                "application/json"
+            }
+        );
+
+    const link =
+        document.createElement(
+            "a"
+        );
+
+    link.href =
+        URL.createObjectURL(
+            blob
+        );
+
+    link.download =
+        "ai-empire-pro-backup.json";
+
+    link.click();
+
+}
+
+/* IMPORT DATA */
+
+function importEmpireData(
+    file
+){
+
+    const reader =
+        new FileReader();
+
+    reader.onload =
+        function(event){
+
+        const data =
+            JSON.parse(
+                event.target.result
+            );
+
+        Object.keys(data)
+        .forEach(function(key){
+
+            localStorage.setItem(
+                key,
+                data[key]
+            );
+
+        });
+
+        showNotification(
+            "Backup importiert"
+        );
+
+        setTimeout(
+            function(){
+
+                location.reload();
+
+            },
+            1000
+        );
 
     };
 
-    const blob =
-    new Blob(
-
-        [
-            JSON.stringify(
-                data,
-                null,
-                2
-            )
-        ],
-
-        {
-            type:
-            "application/json"
-        }
-
+    reader.readAsText(
+        file
     );
-
-    const url =
-    URL.createObjectURL(blob);
-
-    const a =
-    document.createElement("a");
-
-    a.href = url;
-
-    a.download =
-    "ai-empire-backup.json";
-
-    a.click();
-
-    URL.revokeObjectURL(url);
 
 }
 
-/* ==================================================
-   APP STARTUP
-================================================== */
+/* WELCOME MESSAGE */
 
-document.addEventListener(
-    "DOMContentLoaded",
+window.addEventListener(
+    "load",
     function(){
 
-        startClock();
+    const user =
+        localStorage.getItem(
+            "empire_user"
+        );
+
+    if(user){
 
         console.log(
-        "AI Empire Pro V4 gestartet"
+            "AI Empire Pro geladen: " +
+            user
         );
 
     }
+
+});
+
+/* KEYBOARD SHORTCUTS */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+    if(
+        event.ctrlKey &&
+        event.key === "s"
+    ){
+
+        event.preventDefault();
+
+        showNotification(
+            "Auto Save aktiviert"
+        );
+
+    }
+
+});
+
+/* AI GREETING */
+
+function getGreeting(){
+
+    const hour =
+        new Date().getHours();
+
+    if(hour < 12){
+
+        return "Guten Morgen 👑";
+
+    }
+
+    if(hour < 18){
+
+        return "Guten Tag 👑";
+
+    }
+
+    return "Guten Abend 👑";
+
+}
+
+/* STARTUP LOG */
+
+console.log(
+    "AI Empire Pro V5 Premium gestartet"
+);
+
+console.log(
+    "Riadh Edition aktiv"
 );
