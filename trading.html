@@ -1,216 +1,334 @@
-```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trading Center</title>
+
+<title>Trading Pro | AI Empire Pro</title>
+
 <link rel="stylesheet" href="style.css">
 
 <style>
 
-.main-content{
-margin-left:260px;
-padding:40px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
-.page-title{
-font-size:50px;
-font-weight:bold;
-margin-bottom:30px;
+body{
+    background:#0b0b0b;
+    color:white;
+    min-height:100vh;
 }
 
-.market-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-margin-bottom:30px;
+.header{
+    background:#111;
+    border-bottom:2px solid gold;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-.market-card{
-background:#111;
-border:1px solid gold;
-border-radius:20px;
-padding:20px;
-text-align:center;
+.logo{
+    color:gold;
+    font-size:28px;
+    font-weight:bold;
 }
 
-.market-card h2{
-font-size:30px;
-margin-bottom:10px;
+.status{
+    color:#00ff66;
+    font-weight:bold;
 }
 
-.price{
-font-size:28px;
-font-weight:bold;
-color:gold;
+.nav{
+    display:flex;
+    gap:10px;
+    padding:15px;
+    background:#161616;
+    border-bottom:1px solid #333;
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
-.chart-box{
-background:#111;
-border:1px solid gold;
-border-radius:20px;
-padding:30px;
-height:300px;
-margin-bottom:30px;
+.nav a{
+    text-decoration:none;
+    color:white;
+    border:1px solid gold;
+    padding:10px 15px;
+    border-radius:8px;
+    transition:0.3s;
 }
 
-.chart-title{
-font-size:30px;
-margin-bottom:20px;
+.nav a:hover{
+    background:gold;
+    color:black;
 }
 
-.fake-chart{
-height:180px;
-background:linear-gradient(
-to top,
-#111,
-#222
-);
-border-radius:15px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:26px;
-color:gold;
+.container{
+    padding:25px;
 }
 
-.bottom-grid{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:20px;
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-bottom:25px;
 }
 
-.panel{
-background:#111;
-border:1px solid gold;
-border-radius:20px;
-padding:20px;
+.card{
+    background:#161616;
+    border:1px solid gold;
+    border-radius:15px;
+    padding:20px;
+    transition:0.3s;
 }
 
-.panel h2{
-margin-bottom:15px;
+.card:hover{
+    box-shadow:0 0 20px rgba(255,215,0,0.3);
 }
 
-.panel ul{
-padding-left:20px;
+.card h3{
+    color:gold;
+    margin-bottom:10px;
 }
 
-.panel li{
-margin-bottom:10px;
+.value{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.green{
+    color:#00ff66;
+}
+
+.red{
+    color:#ff4444;
+}
+
+.section{
+    background:#161616;
+    border:1px solid gold;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.section h2{
+    color:gold;
+    margin-bottom:15px;
+}
+
+.list-item{
+    display:flex;
+    justify-content:space-between;
+    padding:12px;
+    border-bottom:1px solid #2a2a2a;
+}
+
+.signal-buy{
+    color:#00ff66;
+    font-weight:bold;
+}
+
+.signal-hold{
+    color:orange;
+    font-weight:bold;
+}
+
+.notes{
+    width:100%;
+    height:180px;
+    background:#0d0d0d;
+    color:white;
+    border:1px solid #333;
+    border-radius:10px;
+    padding:10px;
+    resize:none;
+}
+
+.btn{
+    margin-top:10px;
+    padding:12px 20px;
+    background:gold;
+    color:black;
+    border:none;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.footer{
+    text-align:center;
+    color:#777;
+    padding:25px;
 }
 
 </style>
-
 </head>
-
 <body>
 
-<div class="sidebar">
+<div class="header">
 
-<h1>👑 AI EMPIRE PRO</h1>
-
-<p>Riadh Edition</p>
-
-<br>
-
-<a href="index.html">🏠 Dashboard</a><br><br>
-<a href="assistant.html">🤖 Yasin AI</a><br><br>
-<a href="trading.html">📈 Trading</a><br><br>
-<a href="setup.html">📅 Setups</a><br><br>
-<a href="telegram.html">📨 Telegram</a><br><br>
-<a href="video.html">🎥 Video</a><br><br>
-<a href="game.html">🎮 Game</a><br><br>
-<a href="tools.html">🧠 AI Tools</a>
-
+<div class="logo">
+📈 Trading Pro
 </div>
 
-<div class="main-content">
-
-<div class="page-title">
-📈 Trading Center
-</div>
-
-<div class="market-grid">
-
-<div class="market-card">
-<h2>₿ Bitcoin</h2>
-<div class="price">$64.250</div>
-</div>
-
-<div class="market-card">
-<h2>🥇 Gold</h2>
-<div class="price">$2.350</div>
-</div>
-
-<div class="market-card">
-<h2>💱 EUR/USD</h2>
-<div class="price">1.0845</div>
-</div>
-
-<div class="market-card">
-<h2>📊 Nasdaq</h2>
-<div class="price">18.420</div>
+<div class="status">
+● MARKT AKTIV
 </div>
 
 </div>
 
-<div class="chart-box">
+<div class="nav">
 
-<div class="chart-title">
-📉 Marktanalyse
-</div>
-
-<div class="fake-chart">
-Live Chart folgt später
-</div>
-
-</div>
-
-<div class="bottom-grid">
-
-<div class="panel">
-
-<h2>💡 Trading Ideen</h2>
-
-<ul>
-<li>Bitcoin Long Setup</li>
-<li>Gold Buy Zone</li>
-<li>EUR/USD Breakout</li>
-<li>Nasdaq Momentum</li>
-</ul>
+<a href="index.html">Dashboard</a>
+<a href="assistant.html">Yasin AI</a>
+<a href="telegram.html">Telegram</a>
+<a href="video.html">Video</a>
+<a href="game.html">Game</a>
+<a href="tools.html">Tools</a>
 
 </div>
 
-<div class="panel">
+<div class="container">
+
+<div class="grid">
+
+<div class="card">
+<h3>Portfolio Wert</h3>
+<div class="value">$12,450</div>
+</div>
+
+<div class="card">
+<h3>Tagesgewinn</h3>
+<div class="value green">+3.8%</div>
+</div>
+
+<div class="card">
+<h3>Offene Positionen</h3>
+<div class="value">5</div>
+</div>
+
+<div class="card">
+<h3>Risiko</h3>
+<div class="value">Mittel</div>
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📡 Signal Center</h2>
+
+<div class="list-item">
+<span>Bitcoin (BTC)</span>
+<span class="signal-buy">BUY</span>
+</div>
+
+<div class="list-item">
+<span>Ethereum (ETH)</span>
+<span class="signal-hold">HOLD</span>
+</div>
+
+<div class="list-item">
+<span>Solana (SOL)</span>
+<span class="signal-buy">BUY</span>
+</div>
+
+<div class="list-item">
+<span>XRP</span>
+<span class="signal-hold">HOLD</span>
+</div>
+
+</div>
+
+<div class="section">
 
 <h2>⭐ Watchlist</h2>
 
-<ul>
-<li>BTC/USD</li>
-<li>XAU/USD</li>
-<li>EUR/USD</li>
-<li>US100</li>
-</ul>
-
+<div class="list-item">
+<span>BTC</span>
+<span>$108,500</span>
 </div>
 
-<div class="panel">
-
-<h2>🤖 Trading Bot</h2>
-
-<p>Status: Online 🟢</p>
-
-<p>Analyse bereit</p>
-
-<p>Signal Engine aktiv</p>
-
+<div class="list-item">
+<span>ETH</span>
+<span>$6,200</span>
 </div>
 
+<div class="list-item">
+<span>SOL</span>
+<span>$290</span>
+</div>
+
+<div class="list-item">
+<span>XRP</span>
+<span>$2.10</span>
 </div>
 
 </div>
+
+<div class="section">
+
+<h2>📝 Trading Notizen</h2>
+
+<textarea
+class="notes"
+id="notes"
+placeholder="Eigene Trading-Ideen speichern..."></textarea>
+
+<br>
+
+<button
+class="btn"
+onclick="saveNotes()">
+Notizen speichern
+</button>
+
+</div>
+
+</div>
+
+<div class="footer">
+AI Empire Pro – Trading Pro © 2026
+</div>
+
+<script>
+
+function saveNotes(){
+
+    const notes =
+    document.getElementById("notes").value;
+
+    localStorage.setItem(
+        "trading_notes",
+        notes
+    );
+
+    alert("Trading Notizen gespeichert");
+
+}
+
+window.onload = function(){
+
+    const saved =
+    localStorage.getItem(
+        "trading_notes"
+    );
+
+    if(saved){
+
+        document.getElementById("notes").value =
+        saved;
+
+    }
+
+};
+
+</script>
 
 </body>
 </html>
-```
