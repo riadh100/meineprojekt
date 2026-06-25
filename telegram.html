@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Telegram Center V5 - AI Empire Pro</title>
+<title>Telegram Center V6 Ultimate - AI Empire Pro</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -20,31 +20,19 @@
         <div>
 
             <div class="logo">
-
                 <h1>👑 AI Empire Pro</h1>
-
-                <p>Riadh Edition</p>
-
+                <p>Riadh Edition V6 Ultimate</p>
             </div>
 
             <nav class="menu">
-
                 <a href="index.html">🏠 Dashboard</a>
-
                 <a href="assistant.html">🤖 Yasin AI</a>
-
                 <a href="trading.html">📈 Trading Pro</a>
-
                 <a href="telegram.html">📱 Telegram Center</a>
-
                 <a href="video.html">🎬 Video Studio</a>
-
                 <a href="game.html">🎮 Game Studio</a>
-
                 <a href="tools.html">🛠 Tools Center</a>
-
                 <a href="setup.html">⚙ Setup Center</a>
-
             </nav>
 
         </div>
@@ -53,13 +41,13 @@
 
             <h3 id="profileName">👑 Riadh</h3>
 
-            <p>TELEGRAM COMMANDER</p>
+            <p>TELEGRAM COMMAND CENTER</p>
 
             <br>
 
-            <button class="btn btn-danger" onclick="logout()">
-                Logout
-            </button>
+            <div class="online">
+                TELEGRAM ONLINE
+            </div>
 
         </div>
 
@@ -74,11 +62,8 @@
         <div class="topbar">
 
             <div>
-
-                <h2>📱 Telegram Center V5</h2>
-
-                <p>Telegram Management & Growth Center</p>
-
+                <h2>📱 Telegram Center V6 Ultimate</h2>
+                <p>Kanal Management & Wachstumssystem</p>
             </div>
 
             <div class="clock" id="clock">
@@ -92,43 +77,29 @@
         <div class="grid">
 
             <div class="card">
-
                 <h3>Kanäle</h3>
-
-                <div class="card-value">
-                    3
-                </div>
-
+                <div class="card-value">3</div>
             </div>
 
             <div class="card">
-
                 <h3>Mitglieder</h3>
-
-                <div class="card-value">
-                    2450
-                </div>
-
-            </div>
-
-            <div class="card">
-
-                <h3>Beiträge</h3>
-
-                <div class="card-value" id="postCount">
+                <div class="card-value" id="memberDisplay">
                     0
                 </div>
-
             </div>
 
             <div class="card">
-
-                <h3>Status</h3>
-
-                <div class="card-value online">
-                    ONLINE
+                <h3>Posts</h3>
+                <div class="card-value" id="postCounter">
+                    0
                 </div>
+            </div>
 
+            <div class="card">
+                <h3>Status</h3>
+                <div class="card-value online">
+                    AKTIV
+                </div>
             </div>
 
         </div>
@@ -137,44 +108,17 @@
 
         <div class="section">
 
-            <h2>📢 Kanal Manager</h2>
-
-            <div class="item">
-                <span>AI Empire News</span>
-                <span class="online">850 User</span>
-            </div>
-
-            <div class="item">
-                <span>Trading Signals</span>
-                <span class="online">1200 User</span>
-            </div>
-
-            <div class="item">
-                <span>Business Community</span>
-                <span class="online">400 User</span>
-            </div>
-
-        </div>
-
-        <!-- AI POST GENERATOR -->
-
-        <div class="section">
-
-            <h2>🤖 AI Post Generator V2</h2>
+            <h2>📢 Kanal Manager Pro</h2>
 
             <textarea
-                id="telegramPost"
-                placeholder="Telegram Beitrag erstellen..."></textarea>
+                id="channelManager"
+                placeholder="Kanäle verwalten..."></textarea>
 
             <br><br>
 
-            <button class="btn" onclick="generatePost()">
-                Beitrag generieren
-            </button>
-
             <button
                 class="btn"
-                onclick="saveNote('telegram_post_v5','telegramPost')">
+                onclick="saveNote('telegram_channels_v6','channelManager')">
 
                 Speichern
 
@@ -182,70 +126,122 @@
 
         </div>
 
-        <!-- POST PLANER -->
+        <!-- MEMBER TRACKER -->
 
         <div class="section">
 
-            <h2>📅 Post Planer</h2>
+            <h2>👥 Mitglieder Tracker</h2>
 
-            <textarea
-                id="postPlan"
-                placeholder="Geplante Beiträge..."></textarea>
+            <input
+                type="number"
+                id="memberInput"
+                placeholder="Mitgliederzahl">
 
             <br><br>
 
             <button
                 class="btn"
-                onclick="saveNote('telegram_plan_v5','postPlan')">
+                onclick="saveMembers()">
 
-                Plan speichern
+                Aktualisieren
 
             </button>
 
         </div>
 
-        <!-- CAMPAIGNS -->
+        <!-- POST GENERATOR -->
+
+        <div class="section">
+
+            <h2>🤖 Post Generator</h2>
+
+            <textarea
+                id="postGenerator"
+                placeholder="Generierter Telegram Post..."></textarea>
+
+            <br><br>
+
+            <button
+                class="btn"
+                onclick="generatePost()">
+
+                Post generieren
+
+            </button>
+
+            <button
+                class="btn"
+                onclick="saveNote('telegram_post_v6','postGenerator')">
+
+                Speichern
+
+            </button>
+
+        </div>
+
+        <!-- CONTENT PLANNER -->
+
+        <div class="section">
+
+            <h2>📅 Content Planer</h2>
+
+            <textarea
+                id="contentPlanner"
+                placeholder="Content Planung..."></textarea>
+
+            <br><br>
+
+            <button
+                class="btn"
+                onclick="saveNote('telegram_content_v6','contentPlanner')">
+
+                Speichern
+
+            </button>
+
+        </div>
+
+        <!-- CAMPAIGN MANAGER -->
 
         <div class="section">
 
             <h2>🚀 Kampagnen Manager</h2>
 
-            <div class="item">
-                <span>AI Empire Launch</span>
-                <span class="online">Aktiv</span>
-            </div>
+            <textarea
+                id="campaignManager"
+                placeholder="Werbekampagnen und Promotionen..."></textarea>
 
-            <div class="item">
-                <span>Premium Community</span>
-                <span class="online">Aktiv</span>
-            </div>
+            <br><br>
 
-            <div class="item">
-                <span>Trading Promotion</span>
-                <span class="online">Aktiv</span>
-            </div>
+            <button
+                class="btn"
+                onclick="saveNote('telegram_campaigns_v6','campaignManager')">
+
+                Speichern
+
+            </button>
 
         </div>
 
-        <!-- BOT CENTER -->
+        <!-- AUTOMATION CENTER -->
 
         <div class="section">
 
-            <h2>🤖 Bot Center</h2>
+            <h2>⚙ Automatisierungs Center</h2>
 
             <div class="item">
-                <span>Welcome Bot</span>
-                <span class="online">ONLINE</span>
+                <span>Auto Posting</span>
+                <span class="online">AKTIV</span>
             </div>
 
             <div class="item">
-                <span>Auto Reply Bot</span>
-                <span class="online">ONLINE</span>
+                <span>Lead Sammlung</span>
+                <span class="online">AKTIV</span>
             </div>
 
             <div class="item">
-                <span>Signal Bot</span>
-                <span class="online">ONLINE</span>
+                <span>Content Planung</span>
+                <span class="online">AKTIV</span>
             </div>
 
         </div>
@@ -258,43 +254,43 @@
 
             <div class="item">
                 <span>Wachstum</span>
-                <span>+12%</span>
+                <span>+18%</span>
             </div>
 
             <div class="item">
                 <span>Engagement</span>
-                <span>78%</span>
-            </div>
-
-            <div class="item">
-                <span>Klickrate</span>
-                <span>24%</span>
+                <span>92%</span>
             </div>
 
             <div class="item">
                 <span>Aktive Nutzer</span>
-                <span>1.980</span>
+                <span>84%</span>
+            </div>
+
+            <div class="item">
+                <span>Conversion</span>
+                <span>11%</span>
             </div>
 
         </div>
 
-        <!-- NOTES -->
+        <!-- STRATEGY NOTES -->
 
         <div class="section">
 
-            <h2>📝 Telegram Notizen</h2>
+            <h2>📝 Telegram Strategien</h2>
 
             <textarea
                 id="telegramNotes"
-                placeholder="Ideen, Strategien und Aufgaben..."></textarea>
+                placeholder="Strategien, Ideen und Notizen..."></textarea>
 
             <br><br>
 
             <button
                 class="btn"
-                onclick="saveNote('telegram_notes_v5','telegramNotes')">
+                onclick="saveNote('telegram_notes_v6','telegramNotes')">
 
-                Notizen speichern
+                Speichern
 
             </button>
 
@@ -303,9 +299,7 @@
         <!-- FOOTER -->
 
         <div class="footer">
-
-            AI Empire Pro - Telegram Center V5 © 2026
-
+            AI Empire Pro - Telegram Center V6 Ultimate © 2026
         </div>
 
     </main>
@@ -316,17 +310,40 @@
 
 <script>
 
-const savedUser =
+const user =
 localStorage.getItem(
     "empire_user"
 );
 
-if(savedUser){
+if(user){
 
     document.getElementById(
         "profileName"
     ).innerHTML =
-    "👑 " + savedUser;
+    "👑 " + user;
+
+}
+
+function saveMembers(){
+
+    const value =
+    document.getElementById(
+        "memberInput"
+    ).value;
+
+    localStorage.setItem(
+        "telegram_members_v6",
+        value
+    );
+
+    document.getElementById(
+        "memberDisplay"
+    ).innerHTML =
+    value;
+
+    showNotification(
+        "Mitglieder aktualisiert"
+    );
 
 }
 
@@ -334,26 +351,21 @@ function generatePost(){
 
     const posts = [
 
-        "🚀 Willkommen bei AI Empire Pro – die Zukunft beginnt heute.",
+        "🚀 Neue AI Business Strategie online. Jetzt umsetzen!",
 
-        "📈 Neues Trading Signal verfügbar. Jetzt analysieren.",
+        "💰 Trading Tipp des Tages: Risikomanagement zuerst.",
 
-        "🤖 Nutze KI um dein Business zu automatisieren.",
+        "🤖 Die besten KI Tools für Unternehmer 2026.",
 
-        "🔥 Heute: Produktivität mit AI steigern.",
+        "📈 So wächst dein Telegram Kanal schneller.",
 
-        "💰 Digitale Geschäftsmodelle erfolgreich skalieren.",
+        "👑 AI Empire Daily Mission: Heute ein Ziel erreichen.",
 
-        "📢 Exklusives Update für unsere Community.",
-
-        "⚡ Neue Chancen im Bereich AI & Automation."
+        "🔥 Erfolgreiche Menschen planen ihren Tag am Vorabend."
 
     ];
 
-    document.getElementById(
-        "telegramPost"
-    ).value =
-
+    const result =
     posts[
         Math.floor(
             Math.random() *
@@ -361,45 +373,75 @@ function generatePost(){
         )
     ];
 
+    document.getElementById(
+        "postGenerator"
+    ).value =
+    result;
+
     updatePostCounter();
 
 }
 
 function updatePostCounter(){
 
-    const content =
+    const value =
     document.getElementById(
-        "telegramPost"
+        "postGenerator"
     ).value;
 
-    let count = 0;
-
-    if(content.trim() !== ""){
-
-        count = 1;
-
-    }
-
     document.getElementById(
-        "postCount"
-    ).innerHTML = count;
+        "postCounter"
+    ).innerHTML =
+
+    value.trim() === ""
+    ? 0
+    : 1;
 
 }
 
 loadNote(
-    "telegram_post_v5",
-    "telegramPost"
+    "telegram_channels_v6",
+    "channelManager"
 );
 
 loadNote(
-    "telegram_plan_v5",
-    "postPlan"
+    "telegram_post_v6",
+    "postGenerator"
 );
 
 loadNote(
-    "telegram_notes_v5",
+    "telegram_content_v6",
+    "contentPlanner"
+);
+
+loadNote(
+    "telegram_campaigns_v6",
+    "campaignManager"
+);
+
+loadNote(
+    "telegram_notes_v6",
     "telegramNotes"
 );
+
+const members =
+localStorage.getItem(
+    "telegram_members_v6"
+);
+
+if(members){
+
+    document.getElementById(
+        "memberInput"
+    ).value =
+    members;
+
+    document.getElementById(
+        "memberDisplay"
+    ).innerHTML =
+    members;
+
+}
 
 updatePostCounter();
 
