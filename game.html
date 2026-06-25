@@ -1,16 +1,58 @@
+```html
 <!DOCTYPE html>
-
 <html lang="de">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Game Studio</title>
-
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+.main-content{
+margin-left:260px;
+padding:40px;
+}
+
+.page-title{
+font-size:50px;
+margin-bottom:30px;
+}
+
+.game-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.game-card{
+background:#111;
+border:1px solid gold;
+border-radius:20px;
+padding:25px;
+text-align:center;
+}
+
+.game-card h2{
+margin-bottom:15px;
+}
+
+.game-card p{
+color:#ccc;
+margin-bottom:20px;
+}
+
+.btn{
+background:gold;
+color:black;
+border:none;
+padding:12px 20px;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+}
+
+</style>
 
 </head>
 
@@ -19,89 +61,61 @@
 <div class="sidebar">
 
 <h1>👑 AI EMPIRE PRO</h1>
+<p>Riadh Edition</p>
 
-<h3>Riadh Edition</h3>
+<br>
 
-<nav>
-
-<a href="index.html">🏠 Dashboard</a>
-
-<a href="assistant.html">🤖 Yasin AI</a>
-
-<a href="trading.html">📈 Trading Center</a>
-
-<a href="setup.html">📊 Tages-Setups</a>
-
-<a href="telegram.html">📨 Telegram Center</a>
-
-<a href="video.html">🎥 Video Studio</a>
-
-<a href="game.html">🎮 Game Studio</a>
-
+<a href="index.html">🏠 Dashboard</a><br><br>
+<a href="assistant.html">🤖 Yasin AI</a><br><br>
+<a href="trading.html">📈 Trading</a><br><br>
+<a href="setup.html">📅 Setups</a><br><br>
+<a href="telegram.html">📨 Telegram</a><br><br>
+<a href="video.html">🎥 Video</a><br><br>
+<a href="game.html">🎮 Game</a><br><br>
 <a href="tools.html">🧠 AI Tools</a>
 
-</nav>
-
 </div>
 
-<div class="main">
+<div class="main-content">
 
-<h1>🎮 Game Studio</h1>
+<h1 class="page-title">🎮 Game Studio</h1>
 
-<p>Erstelle deine eigenen Spiele.</p>
+<div class="game-grid">
 
-<div class="dashboard-grid">
-
-<div class="box">
-
-<h2>🕹️ Neues Spiel</h2>
-
-<p>Ein neues Projekt starten.</p>
-
+<div class="game-card">
+<h2>🕹️ Jump Game</h2>
+<p>Einfaches Arcade-Spiel erstellen.</p>
+<button class="btn">Starten</button>
 </div>
 
-<div class="box">
-
-<h2>👤 Charaktere</h2>
-
-<p>Figuren erstellen.</p>
-
+<div class="game-card">
+<h2>🚗 Racing Game</h2>
+<p>Autorennen entwickeln.</p>
+<button class="btn">Starten</button>
 </div>
 
-<div class="box">
-
-<h2>🌍 Welten</h2>
-
-<p>Spielwelten aufbauen.</p>
-
+<div class="game-card">
+<h2>⚔️ Battle Game</h2>
+<p>Kampfspiel erstellen.</p>
+<button class="btn">Starten</button>
 </div>
 
-<div class="box">
-
-<h2>🏆 Projekte</h2>
-
-<p>Gespeicherte Spiele ansehen.</p>
-
+<div class="game-card">
+<h2>🌍 Open World</h2>
+<p>Große Spielwelt erzeugen.</p>
+<button class="btn">Starten</button>
 </div>
 
+<div class="game-card">
+<h2>🤖 AI NPC Creator</h2>
+<p>Intelligente Figuren erzeugen.</p>
+<button class="btn">Starten</button>
 </div>
 
-<div class="bottom-grid">
-
-<div class="box">
-
-<h2>⚡ Schnellstart</h2>
-
-<p>Spielidee auswählen und starten.</p>
-
-</div>
-
-<div class="box">
-
-<h2>📂 Meine Spiele</h2>
-
-<p>Hier erscheinen deine Projekte.</p>
-
+<div class="game-card">
+<h2>📦 Asset Generator</h2>
+<p>Objekte und Items generieren.</p>
+<button class="btn">Starten</button>
 </div>
 
 </div>
@@ -109,5 +123,5 @@
 </div>
 
 </body>
-
 </html>
+```
