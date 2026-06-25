@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tools Center Pro - AI Empire Pro</title>
+<title>Tools Center V5 - AI Empire Pro</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -20,8 +20,11 @@
         <div>
 
             <div class="logo">
-                <h1>AI Empire Pro</h1>
+
+                <h1>👑 AI Empire Pro</h1>
+
                 <p>Riadh Edition</p>
+
             </div>
 
             <nav class="menu">
@@ -48,9 +51,9 @@
 
         <div class="profile-box">
 
-            <h3>👑 Riadh</h3>
+            <h3 id="profileName">👑 Riadh</h3>
 
-            <p>PRO MEMBER</p>
+            <p>TOOLS COMMANDER</p>
 
             <br>
 
@@ -62,17 +65,17 @@
 
     </aside>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN -->
 
     <main class="main-content">
 
         <div class="topbar">
 
-            <div class="topbar-title">
+            <div>
 
-                <h2>🛠 Tools Center Pro</h2>
+                <h2>🛠 Tools Center V5</h2>
 
-                <p>Produktivität, Business & AI Werkzeuge</p>
+                <p>Business, Produktivität & AI Werkzeuge</p>
 
             </div>
 
@@ -98,10 +101,10 @@
 
             <div class="card">
 
-                <h3>Aktive Tools</h3>
+                <h3>Aufgaben</h3>
 
-                <div class="card-value online">
-                    8
+                <div class="card-value" id="taskCount">
+                    0
                 </div>
 
             </div>
@@ -111,7 +114,7 @@
                 <h3>Version</h3>
 
                 <div class="card-value">
-                    V4
+                    V5
                 </div>
 
             </div>
@@ -132,7 +135,7 @@
 
         <div class="section">
 
-            <h2>🔐 Passwort Generator</h2>
+            <h2>🔐 Passwort Generator V2</h2>
 
             <input
                 type="text"
@@ -147,21 +150,21 @@
 
         </div>
 
-        <!-- BUSINESS NAME GENERATOR -->
+        <!-- BUSINESS GENERATOR -->
 
         <div class="section">
 
-            <h2>🏢 Business Name Generator</h2>
+            <h2>🏢 Business Generator Pro</h2>
 
             <input
                 type="text"
-                id="businessName"
-                placeholder="Business Name erscheint hier">
+                id="businessOutput"
+                placeholder="Business Name">
 
             <br><br>
 
-            <button class="btn" onclick="generateBusinessName()">
-                Namen generieren
+            <button class="btn" onclick="generateBusiness()">
+                Business generieren
             </button>
 
         </div>
@@ -170,7 +173,7 @@
 
         <div class="section">
 
-            <h2>🤖 AI Prompt Generator</h2>
+            <h2>🤖 AI Prompt Generator V2</h2>
 
             <textarea
                 id="promptOutput"
@@ -184,21 +187,51 @@
 
         </div>
 
+        <!-- PROJECT CALCULATOR -->
+
+        <div class="section">
+
+            <h2>💰 Projekt Kalkulator</h2>
+
+            <input
+                type="number"
+                id="projectRevenue"
+                placeholder="Monatsumsatz">
+
+            <br><br>
+
+            <input
+                type="number"
+                id="projectCost"
+                placeholder="Monatskosten">
+
+            <br><br>
+
+            <button class="btn" onclick="calculateProfit()">
+                Gewinn berechnen
+            </button>
+
+            <br><br>
+
+            <div id="profitResult"></div>
+
+        </div>
+
         <!-- TASK MANAGER -->
 
         <div class="section">
 
-            <h2>📋 Task Manager</h2>
+            <h2>📋 Task Manager Pro</h2>
 
             <textarea
-                id="taskNotes"
+                id="taskManager"
                 placeholder="Aufgaben und Ziele..."></textarea>
 
             <br><br>
 
             <button
                 class="btn"
-                onclick="saveNote('tools_tasks','taskNotes')">
+                onclick="saveTasks()">
 
                 Aufgaben speichern
 
@@ -206,30 +239,56 @@
 
         </div>
 
-        <!-- QUICK TOOLS -->
+        <!-- GOAL PLANNER -->
 
         <div class="section">
 
-            <h2>⚡ Quick Tools</h2>
+            <h2>🎯 Zielplaner</h2>
+
+            <textarea
+                id="goalPlanner"
+                placeholder="Monats- und Jahresziele..."></textarea>
+
+            <br><br>
+
+            <button
+                class="btn"
+                onclick="saveNote('tools_goals_v5','goalPlanner')">
+
+                Ziele speichern
+
+            </button>
+
+        </div>
+
+        <!-- PRODUCTIVITY -->
+
+        <div class="section">
+
+            <h2>📊 Produktivitäts Statistik</h2>
 
             <div class="item">
-                <span>Passwort Generator</span>
-                <span class="online">Bereit</span>
+                <span>Abgeschlossene Aufgaben</span>
+                <span id="completedTasks">
+                    0
+                </span>
             </div>
 
             <div class="item">
-                <span>Business Generator</span>
-                <span class="online">Bereit</span>
+                <span>Aktive Ziele</span>
+                <span>5</span>
             </div>
 
             <div class="item">
-                <span>AI Prompt Builder</span>
-                <span class="online">Bereit</span>
+                <span>Tools Verfügbar</span>
+                <span>12</span>
             </div>
 
             <div class="item">
-                <span>Task Manager</span>
-                <span class="online">Bereit</span>
+                <span>Produktivität</span>
+                <span class="online">
+                    Hoch
+                </span>
             </div>
 
         </div>
@@ -238,17 +297,17 @@
 
         <div class="section">
 
-            <h2>📝 Tool Notizen</h2>
+            <h2>📝 Tools Notizen</h2>
 
             <textarea
                 id="toolsNotes"
-                placeholder="Werkzeuge, Ideen und Prozesse..."></textarea>
+                placeholder="Eigene Notizen..."></textarea>
 
             <br><br>
 
             <button
                 class="btn"
-                onclick="saveNote('tools_notes','toolsNotes')">
+                onclick="saveNote('tools_notes_v5','toolsNotes')">
 
                 Notizen speichern
 
@@ -256,9 +315,11 @@
 
         </div>
 
+        <!-- FOOTER -->
+
         <div class="footer">
 
-            AI Empire Pro - Tools Center Pro © 2026
+            AI Empire Pro - Tools Center V5 © 2026
 
         </div>
 
@@ -270,6 +331,20 @@
 
 <script>
 
+const savedUser =
+localStorage.getItem(
+    "empire_user"
+);
+
+if(savedUser){
+
+    document.getElementById(
+        "profileName"
+    ).innerHTML =
+    "👑 " + savedUser;
+
+}
+
 function generatePassword(){
 
     const chars =
@@ -277,7 +352,7 @@ function generatePassword(){
 
     let password = "";
 
-    for(let i = 0; i < 12; i++){
+    for(let i = 0; i < 14; i++){
 
         password += chars.charAt(
             Math.floor(
@@ -291,50 +366,33 @@ function generatePassword(){
         "passwordOutput"
     ).value = password;
 
-    showNotification(
-        "Passwort erstellt"
-    );
-
 }
 
-function generateBusinessName(){
+function generateBusiness(){
 
     const names = [
 
-        "Empire AI",
-
-        "Golden Vision",
-
-        "Future Labs",
-
-        "Nova Empire",
-
-        "AI Titans",
-
+        "Empire AI Labs",
+        "Nova Automation",
+        "Golden Vision AI",
+        "Future Empire",
+        "Titan Systems",
         "Digital Kings",
-
-        "Empire Systems",
-
-        "Next Level AI",
-
-        "Vision Forge",
-
-        "Elite Automation"
+        "Elite Automation",
+        "NextGen Empire"
 
     ];
 
     document.getElementById(
-        "businessName"
-    ).value = names[
+        "businessOutput"
+    ).value =
+
+    names[
         Math.floor(
             Math.random() *
             names.length
         )
     ];
-
-    showNotification(
-        "Business Name generiert"
-    );
 
 }
 
@@ -342,47 +400,131 @@ function generatePrompt(){
 
     const prompts = [
 
-        "Erstelle einen professionellen Businessplan für ein KI Startup.",
+        "Erstelle einen Businessplan für ein KI Startup.",
 
-        "Entwickle eine Marketingstrategie für ein digitales Produkt.",
+        "Schreibe eine Marketingstrategie für 2026.",
 
-        "Erstelle einen Contentplan für 30 Tage.",
+        "Erstelle einen 30 Tage Content Plan.",
 
-        "Entwickle eine profitable AI Geschäftsidee.",
+        "Analysiere die besten AI Geschäftsmodelle.",
 
-        "Erstelle einen Verkaufsfunnel für Online Produkte.",
+        "Erstelle einen automatisierten Sales Funnel.",
 
-        "Analysiere die besten Trends für 2026.",
-
-        "Schreibe eine komplette Markenstrategie.",
-
-        "Erstelle eine Automatisierung für Social Media."
+        "Entwickle eine Telegram Wachstumsstrategie."
 
     ];
 
     document.getElementById(
         "promptOutput"
-    ).value = prompts[
+    ).value =
+
+    prompts[
         Math.floor(
             Math.random() *
             prompts.length
         )
     ];
 
-    showNotification(
-        "AI Prompt erstellt"
+}
+
+function calculateProfit(){
+
+    const revenue =
+    Number(
+        document.getElementById(
+            "projectRevenue"
+        ).value
     );
+
+    const cost =
+    Number(
+        document.getElementById(
+            "projectCost"
+        ).value
+    );
+
+    const profit =
+    revenue - cost;
+
+    document.getElementById(
+        "profitResult"
+    ).innerHTML =
+
+    "<strong>Gewinn: € " +
+    profit.toFixed(2) +
+    "</strong>";
+
+}
+
+function saveTasks(){
+
+    const tasks =
+    document.getElementById(
+        "taskManager"
+    ).value;
+
+    localStorage.setItem(
+        "tools_tasks_v5",
+        tasks
+    );
+
+    updateTaskCounter();
+
+}
+
+function updateTaskCounter(){
+
+    const tasks =
+    document.getElementById(
+        "taskManager"
+    ).value;
+
+    const count =
+    tasks.trim() === ""
+    ? 0
+    : tasks.split("\n").length;
+
+    document.getElementById(
+        "taskCount"
+    ).innerHTML = count;
+
+    document.getElementById(
+        "completedTasks"
+    ).innerHTML = count;
 
 }
 
 loadNote(
-    "tools_tasks",
-    "taskNotes"
+    "tools_goals_v5",
+    "goalPlanner"
 );
 
 loadNote(
-    "tools_notes",
+    "tools_notes_v5",
     "toolsNotes"
+);
+
+const savedTasks =
+localStorage.getItem(
+    "tools_tasks_v5"
+);
+
+if(savedTasks){
+
+    document.getElementById(
+        "taskManager"
+    ).value =
+    savedTasks;
+
+}
+
+updateTaskCounter();
+
+document.getElementById(
+    "taskManager"
+).addEventListener(
+    "keyup",
+    updateTaskCounter
 );
 
 </script>
