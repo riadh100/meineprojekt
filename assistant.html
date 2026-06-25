@@ -1,16 +1,91 @@
 <!DOCTYPE html>
-
 <html lang="de">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Yasin AI</title>
 
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+.main-content{
+margin-left:260px;
+padding:40px;
+}
+
+.ai-box{
+background:#111;
+border:1px solid gold;
+border-radius:20px;
+padding:25px;
+max-width:900px;
+}
+
+.ai-header{
+font-size:32px;
+font-weight:bold;
+color:white;
+margin-bottom:20px;
+}
+
+.chat-window{
+height:400px;
+background:#000;
+border:1px solid #333;
+border-radius:15px;
+padding:20px;
+overflow-y:auto;
+margin-bottom:20px;
+}
+
+.message{
+padding:15px;
+margin-bottom:15px;
+border-radius:12px;
+max-width:80%;
+}
+
+.user{
+background:#222;
+color:white;
+margin-left:auto;
+}
+
+.ai{
+background:gold;
+color:black;
+font-weight:bold;
+}
+
+.chat-input{
+display:flex;
+gap:10px;
+}
+
+.chat-input input{
+flex:1;
+padding:15px;
+border:none;
+border-radius:10px;
+font-size:16px;
+}
+
+.chat-input button{
+padding:15px 25px;
+background:gold;
+border:none;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.chat-input button:hover{
+opacity:0.9;
+}
+
+</style>
 
 </head>
 
@@ -20,68 +95,93 @@
 
 <h1>👑 AI EMPIRE PRO</h1>
 
-<h3>Riadh Edition</h3>
+<p>Riadh Edition</p>
 
-<nav>
+<br>
 
-<a href="index.html">🏠 Dashboard</a>
-
-<a href="assistant.html">🤖 Yasin AI</a>
-
-<a href="trading.html">📈 Trading</a>
-
-<a href="setup.html">📊 Setups</a>
-
-<a href="telegram.html">📨 Telegram</a>
-
-<a href="video.html">🎥 Video</a>
-
-<a href="game.html">🎮 Game</a>
-
+<a href="index.html">🏠 Dashboard</a><br><br>
+<a href="assistant.html">🤖 Yasin AI</a><br><br>
+<a href="trading.html">📈 Trading</a><br><br>
+<a href="setup.html">🗓️ Setups</a><br><br>
+<a href="telegram.html">📨 Telegram</a><br><br>
+<a href="video.html">🎥 Video</a><br><br>
+<a href="game.html">🎮 Game</a><br><br>
 <a href="tools.html">🧠 AI Tools</a>
 
-</nav>
+</div>
+
+<div class="main-content">
+
+<div class="ai-box">
+
+<div class="ai-header">
+🤖 Yasin AI Assistant
+</div>
+
+<div id="chat" class="chat-window">
+
+<div class="message ai">
+Hallo Riadh 👋<br>
+Ich bin dein persönlicher AI Assistent.
+</div>
 
 </div>
 
-<div class="main">
+<div class="chat-input">
 
-<h1>🤖 Yasin AI</h1>
+<input
+type="text"
+id="userInput"
+placeholder="Schreibe deine Nachricht..."
+>
 
-<p>Hallo Riadh 👋</p>
-
-<p>Ich bin dein persönlicher Assistent.</p>
-
-<div class="box">
-
-<h2>Schnellbefehle</h2>
-
-<button>📈 Analysiere Bitcoin</button>
-
-<button>📅 Plane meinen Tag</button>
-
-<button>📨 Erstelle Telegram Text</button>
-
-<button>💼 Neue Business Idee</button>
-
-</div>
-
-<div class="box">
-
-<h2>Später echte Funktionen</h2>
-
-<p>✔️ KI Chat</p>
-
-<p>✔️ Trading Analyse</p>
-
-<p>✔️ Aufgabenplanung</p>
-
-<p>✔️ Erinnerungen</p>
+<button onclick="sendMessage()">
+Senden
+</button>
 
 </div>
 
 </div>
+
+</div>
+
+<script>
+
+function sendMessage(){
+
+let input=document.getElementById("userInput");
+
+let text=input.value;
+
+if(text==="") return;
+
+let chat=document.getElementById("chat");
+
+chat.innerHTML+=`
+<div class="message user">
+${text}
+</div>
+`;
+
+setTimeout(()=>{
+
+chat.innerHTML+=`
+<div class="message ai">
+Ich habe deine Nachricht erhalten:
+<br><br>
+"${text}"
+</div>
+`;
+
+chat.scrollTop=chat.scrollHeight;
+
+},500);
+
+input.value="";
+
+}
+
+</script>
 
 </body>
-
 </html>
