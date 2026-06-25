@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI Empire Pro - Dashboard V5</title>
+<title>AI Empire Pro - Dashboard V6 Ultimate</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -23,7 +23,7 @@
 
                 <h1>👑 AI Empire Pro</h1>
 
-                <p>Riadh Edition</p>
+                <p>Riadh Edition V6 Ultimate</p>
 
             </div>
 
@@ -53,13 +53,13 @@
 
             <h3 id="profileName">👑 Riadh</h3>
 
-            <p>PRO MEMBER</p>
+            <p>EMPIRE COMMANDER</p>
 
             <br>
 
-            <button class="btn btn-danger" onclick="logout()">
-                Logout
-            </button>
+            <div class="online">
+                SYSTEM ONLINE
+            </div>
 
         </div>
 
@@ -75,9 +75,11 @@
 
             <div>
 
-                <h2>Dashboard V5 Premium</h2>
+                <h2>🚀 Dashboard V6 Ultimate</h2>
 
-                <p>AI Empire Pro Control Center</p>
+                <p id="welcomeText">
+                    Willkommen zurück Commander
+                </p>
 
             </div>
 
@@ -87,38 +89,27 @@
 
         </div>
 
-        <!-- SEARCH -->
+        <!-- EMPIRE SCORE -->
 
         <div class="section">
 
-            <h2>🔍 Global Search</h2>
+            <h2>👑 Empire Score</h2>
 
-            <input
-                type="text"
-                id="globalSearch"
-                placeholder="Modul suchen...">
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="searchModule()">
-
-                Suchen
-
-            </button>
+            <div class="card-value" id="empireScore">
+                0
+            </div>
 
         </div>
 
-        <!-- KPI DASHBOARD -->
+        <!-- KPI -->
 
         <div class="grid">
 
             <div class="card">
 
-                <h3>Aktive Module</h3>
+                <h3>Module</h3>
 
-                <div class="card-value" id="moduleCount">
+                <div class="card-value">
                     8
                 </div>
 
@@ -126,9 +117,19 @@
 
             <div class="card">
 
-                <h3>Notizen</h3>
+                <h3>Projekte</h3>
 
-                <div class="card-value" id="notesCount">
+                <div class="card-value">
+                    12
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Gespeicherte Daten</h3>
+
+                <div class="card-value" id="storageCount">
                     0
                 </div>
 
@@ -136,87 +137,126 @@
 
             <div class="card">
 
-                <h3>Aktivitäten</h3>
-
-                <div class="card-value" id="activityCount">
-                    0
-                </div>
-
-            </div>
-
-            <div class="card">
-
-                <h3>System</h3>
+                <h3>Aktivität</h3>
 
                 <div class="card-value online">
-                    ONLINE
+                    AKTIV
                 </div>
 
             </div>
 
         </div>
 
-        <!-- QUICK CENTER -->
+        <!-- DAILY MISSIONS -->
 
         <div class="section">
 
-            <h2>⚡ Quick Launch Center</h2>
+            <h2>🎯 Daily Mission Center</h2>
+
+            <div class="item">
+
+                <span>1. Neue Business Idee entwickeln</span>
+
+                <span class="online">OFFEN</span>
+
+            </div>
+
+            <div class="item">
+
+                <span>2. Trading Analyse durchführen</span>
+
+                <span class="online">OFFEN</span>
+
+            </div>
+
+            <div class="item">
+
+                <span>3. Video Content planen</span>
+
+                <span class="online">OFFEN</span>
+
+            </div>
+
+        </div>
+
+        <!-- PROJECT CENTER -->
+
+        <div class="section">
+
+            <h2>📂 Projekt Manager</h2>
+
+            <textarea
+                id="projectManager"
+                placeholder="Projekte und Aufgaben..."></textarea>
+
+            <br><br>
+
+            <button
+                class="btn"
+                onclick="saveNote('empire_projects_v6','projectManager')">
+
+                Projekte speichern
+
+            </button>
+
+        </div>
+
+        <!-- QUICK ACCESS -->
+
+        <div class="section">
+
+            <h2>⚡ Quick Access V2</h2>
 
             <div class="quick-grid">
 
-                <a href="assistant.html" class="quick-btn">
-                    🤖 Yasin AI
-                </a>
+                <a href="assistant.html" class="quick-btn">🤖 AI</a>
 
-                <a href="trading.html" class="quick-btn">
-                    📈 Trading
-                </a>
+                <a href="trading.html" class="quick-btn">📈 Trading</a>
 
-                <a href="telegram.html" class="quick-btn">
-                    📱 Telegram
-                </a>
+                <a href="telegram.html" class="quick-btn">📱 Telegram</a>
 
-                <a href="video.html" class="quick-btn">
-                    🎬 Video
-                </a>
+                <a href="video.html" class="quick-btn">🎬 Video</a>
 
-                <a href="game.html" class="quick-btn">
-                    🎮 Game
-                </a>
+                <a href="game.html" class="quick-btn">🎮 Game</a>
 
-                <a href="tools.html" class="quick-btn">
-                    🛠 Tools
-                </a>
+                <a href="tools.html" class="quick-btn">🛠 Tools</a>
 
-                <a href="setup.html" class="quick-btn">
-                    ⚙ Setup
-                </a>
+                <a href="setup.html" class="quick-btn">⚙ Setup</a>
 
             </div>
 
         </div>
 
-        <!-- ACTIVITY FEED -->
+        <!-- NOTIFICATIONS -->
 
         <div class="section">
 
-            <h2>📋 Activity Feed</h2>
+            <h2>🔔 Notification Center</h2>
 
-            <div id="activityFeed">
+            <div id="notificationFeed">
 
                 <div class="item">
-                    <span>Dashboard gestartet</span>
+
+                    <span>Dashboard erfolgreich geladen</span>
+
                     <span class="online">OK</span>
+
                 </div>
 
                 <div class="item">
-                    <span>Alle Module geladen</span>
+
+                    <span>Alle Module verfügbar</span>
+
                     <span class="online">OK</span>
+
                 </div>
 
                 <div class="item">
-                    <span>System bereit</span>
+
+                    <span>Lokaler Speicher aktiv</span>
+
                     <span class="online">OK</span>
+
                 </div>
 
             </div>
@@ -230,73 +270,84 @@
             <h2>📊 Empire Analytics</h2>
 
             <div class="item">
-                <span>Projekte</span>
-                <span>12</span>
+
+                <span>Produktivität</span>
+
+                <span>89%</span>
+
             </div>
 
             <div class="item">
-                <span>Video Ideen</span>
-                <span>84</span>
+
+                <span>System Gesundheit</span>
+
+                <span>96%</span>
+
             </div>
 
             <div class="item">
-                <span>Trading Signale</span>
-                <span>47</span>
+
+                <span>Wachstum</span>
+
+                <span>+18%</span>
+
             </div>
 
             <div class="item">
-                <span>Gespeicherte Notizen</span>
-                <span id="analyticsNotes">
-                    0
-                </span>
+
+                <span>Aktive Module</span>
+
+                <span>8/8</span>
+
             </div>
 
         </div>
 
-        <!-- SYSTEM MONITOR -->
+        <!-- ADMIN PANEL -->
 
         <div class="section">
 
-            <h2>🖥 System Monitor</h2>
+            <h2>🛡 Admin Panel V1</h2>
 
-            <div class="item">
-                <span>CPU Auslastung</span>
-                <span id="cpuValue">
-                    22%
-                </span>
-            </div>
+            <button
+                class="btn"
+                onclick="exportEmpireData()">
 
-            <div class="item">
-                <span>Speicher</span>
-                <span id="memoryValue">
-                    61%
-                </span>
-            </div>
+                Backup Export
 
-            <div class="item">
-                <span>Netzwerk</span>
-                <span class="online">
-                    Verbunden
-                </span>
-            </div>
+            </button>
 
-        </div>
+            <button
+                class="btn"
+                onclick="showSystemInfo()">
 
-        <!-- DASHBOARD NOTES -->
+                System Info
 
-        <div class="section">
+            </button>
 
-            <h2>📝 Dashboard Notizen</h2>
+            <br><br>
 
             <textarea
-                id="dashboardNotes"
-                placeholder="Deine Empire Notizen..."></textarea>
+                id="systemOutput"
+                placeholder="System Informationen..."></textarea>
+
+        </div>
+
+        <!-- NOTES -->
+
+        <div class="section">
+
+            <h2>📝 Empire Notizen</h2>
+
+            <textarea
+                id="empireNotes"
+                placeholder="Deine AI Empire Notizen..."></textarea>
 
             <br><br>
 
             <button
                 class="btn"
-                onclick="saveNote('aiempire_notes','dashboardNotes')">
+                onclick="saveNote('empire_notes_v6','empireNotes')">
 
                 Speichern
 
@@ -308,7 +359,7 @@
 
         <div class="footer">
 
-            AI Empire Pro V5 Premium |
+            AI Empire Pro V6 Ultimate |
             Riadh Edition © 2026
 
         </div>
@@ -320,16 +371,6 @@
 <script src="script.js"></script>
 
 <script>
-
-loadNote(
-    "aiempire_notes",
-    "dashboardNotes"
-);
-
-document.getElementById(
-    "moduleCount"
-).innerHTML =
-getOnlineModules();
 
 const user =
 localStorage.getItem(
@@ -343,92 +384,63 @@ if(user){
     ).innerHTML =
     "👑 " + user;
 
-}
-
-function searchModule(){
-
-    const value =
     document.getElementById(
-        "globalSearch"
-    ).value.toLowerCase();
-
-    if(value.includes("assistant"))
-        location.href="assistant.html";
-
-    else if(value.includes("trading"))
-        location.href="trading.html";
-
-    else if(value.includes("telegram"))
-        location.href="telegram.html";
-
-    else if(value.includes("video"))
-        location.href="video.html";
-
-    else if(value.includes("game"))
-        location.href="game.html";
-
-    else if(value.includes("tools"))
-        location.href="tools.html";
-
-    else if(value.includes("setup"))
-        location.href="setup.html";
-
-    else
-
-        alert(
-            "Modul nicht gefunden."
-        );
-
-}
-
-function updateStats(){
-
-    let count = 0;
-
-    for(let i = 0; i < localStorage.length; i++){
-
-        const key =
-        localStorage.key(i);
-
-        if(key.includes("notes"))
-            count++;
-
-    }
-
-    document.getElementById(
-        "notesCount"
-    ).innerHTML = count;
-
-    document.getElementById(
-        "analyticsNotes"
-    ).innerHTML = count;
-
-}
-
-function randomMonitor(){
-
-    document.getElementById(
-        "cpuValue"
+        "welcomeText"
     ).innerHTML =
-    Math.floor(
-        Math.random()*40+20
-    ) + "%";
-
-    document.getElementById(
-        "memoryValue"
-    ).innerHTML =
-    Math.floor(
-        Math.random()*30+50
-    ) + "%";
+    getGreeting() + " " + user;
 
 }
 
-updateStats();
-
-setInterval(
-    randomMonitor,
-    3000
+loadNote(
+    "empire_projects_v6",
+    "projectManager"
 );
+
+loadNote(
+    "empire_notes_v6",
+    "empireNotes"
+);
+
+document.getElementById(
+    "storageCount"
+).innerHTML =
+localStorage.length;
+
+function calculateEmpireScore(){
+
+    let score = 100;
+
+    score += localStorage.length * 10;
+
+    document.getElementById(
+        "empireScore"
+    ).innerHTML =
+    score;
+
+}
+
+function showSystemInfo(){
+
+    const info =
+    getSystemInfo();
+
+    document.getElementById(
+        "systemOutput"
+    ).value =
+
+`Version: ${info.version}
+
+Edition: ${info.edition}
+
+Module: ${info.modules}
+
+Speicher Einträge: ${info.storage}
+
+Speicher Größe: ${info.size}`;
+
+}
+
+calculateEmpireScore();
 
 </script>
 
