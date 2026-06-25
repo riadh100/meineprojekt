@@ -1,16 +1,58 @@
+```html
 <!DOCTYPE html>
-
 <html lang="de">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Video Studio</title>
-
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+.main-content{
+margin-left:260px;
+padding:40px;
+}
+
+.page-title{
+font-size:50px;
+margin-bottom:30px;
+}
+
+.video-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.video-card{
+background:#111;
+border:1px solid gold;
+border-radius:20px;
+padding:25px;
+text-align:center;
+}
+
+.video-card h2{
+margin-bottom:15px;
+}
+
+.video-card p{
+color:#ccc;
+margin-bottom:20px;
+}
+
+.btn{
+background:gold;
+color:black;
+border:none;
+padding:12px 20px;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+}
+
+</style>
 
 </head>
 
@@ -19,89 +61,61 @@
 <div class="sidebar">
 
 <h1>👑 AI EMPIRE PRO</h1>
+<p>Riadh Edition</p>
 
-<h3>Riadh Edition</h3>
+<br>
 
-<nav>
-
-<a href="index.html">🏠 Dashboard</a>
-
-<a href="assistant.html">🤖 Yasin AI</a>
-
-<a href="trading.html">📈 Trading Center</a>
-
-<a href="setup.html">📊 Tages-Setups</a>
-
-<a href="telegram.html">📨 Telegram Center</a>
-
-<a href="video.html">🎥 Video Studio</a>
-
-<a href="game.html">🎮 Game Studio</a>
-
+<a href="index.html">🏠 Dashboard</a><br><br>
+<a href="assistant.html">🤖 Yasin AI</a><br><br>
+<a href="trading.html">📈 Trading</a><br><br>
+<a href="setup.html">📅 Setups</a><br><br>
+<a href="telegram.html">📨 Telegram</a><br><br>
+<a href="video.html">🎥 Video</a><br><br>
+<a href="game.html">🎮 Game</a><br><br>
 <a href="tools.html">🧠 AI Tools</a>
 
-</nav>
-
 </div>
 
-<div class="main">
+<div class="main-content">
 
-<h1>🎥 Video Studio</h1>
+<h1 class="page-title">🎥 Video Studio</h1>
 
-<p>Erstelle deine KI-Videos.</p>
+<div class="video-grid">
 
-<div class="dashboard-grid">
-
-<div class="box">
-
+<div class="video-card">
 <h2>📝 Text → Video</h2>
-
-<p>Verwandle Texte in Videos.</p>
-
+<p>Erstelle Videos aus Texten.</p>
+<button class="btn">Starten</button>
 </div>
 
-<div class="box">
-
-<h2>🖼️ Bild → Video</h2>
-
-<p>Verwandle Bilder in Videos.</p>
-
+<div class="video-card">
+<h2>🖼 Bild → Video</h2>
+<p>Animiere Bilder automatisch.</p>
+<button class="btn">Starten</button>
 </div>
 
-<div class="box">
-
-<h2>🧑 Avatar Video</h2>
-
-<p>Erstelle Avatar-Videos.</p>
-
+<div class="video-card">
+<h2>🎭 Avatar Video</h2>
+<p>KI Sprecher erstellen.</p>
+<button class="btn">Starten</button>
 </div>
 
-<div class="box">
-
-<h2>✂️ Video Editor</h2>
-
-<p>Bearbeite deine Videos.</p>
-
+<div class="video-card">
+<h2>🎬 Video Editor</h2>
+<p>Videos bearbeiten.</p>
+<button class="btn">Starten</button>
 </div>
 
+<div class="video-card">
+<h2>📢 YouTube Shorts</h2>
+<p>Shorts automatisch erzeugen.</p>
+<button class="btn">Starten</button>
 </div>
 
-<div class="bottom-grid">
-
-<div class="box">
-
-<h2>📂 Projekte</h2>
-
-<p>Hier erscheinen deine Videos.</p>
-
-</div>
-
-<div class="box">
-
-<h2>⚡ Schnellstart</h2>
-
-<p>Neue Videos erstellen.</p>
-
+<div class="video-card">
+<h2>🚀 Viral Creator</h2>
+<p>Trend Videos erstellen.</p>
+<button class="btn">Starten</button>
 </div>
 
 </div>
@@ -109,5 +123,5 @@
 </div>
 
 </body>
-
 </html>
+```
