@@ -1,35 +1,450 @@
 <!DOCTYPE html>
-
 <html lang="de">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Trading Bot</title>
+<title>Trading Pro V5 - AI Empire Pro</title>
 
 <link rel="stylesheet" href="style.css">
 
 </head>
-
 <body>
 
-<header>
+<div class="app">
 
-<h1>🤖 Trading Bot</h1>
+    <!-- SIDEBAR -->
 
-<a href="trading.html">← Zurück</a>
+    <aside class="sidebar">
 
-</header>
+        <div>
 
-<div class="container">
+            <div class="logo">
 
-<h2>Trading Bot</h2>
+                <h1>👑 AI Empire Pro</h1>
 
-<p>Hier kommen später deine Bots.</p>
+                <p>Riadh Edition</p>
+
+            </div>
+
+            <nav class="menu">
+
+                <a href="index.html">🏠 Dashboard</a>
+
+                <a href="assistant.html">🤖 Yasin AI</a>
+
+                <a href="trading.html">📈 Trading Pro</a>
+
+                <a href="telegram.html">📱 Telegram Center</a>
+
+                <a href="video.html">🎬 Video Studio</a>
+
+                <a href="game.html">🎮 Game Studio</a>
+
+                <a href="tools.html">🛠 Tools Center</a>
+
+                <a href="setup.html">⚙ Setup Center</a>
+
+            </nav>
+
+        </div>
+
+        <div class="profile-box">
+
+            <h3 id="profileName">👑 Riadh</h3>
+
+            <p>TRADING COMMANDER</p>
+
+            <br>
+
+            <button class="btn btn-danger" onclick="logout()">
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <div>
+
+                <h2>📈 Trading Pro V5</h2>
+
+                <p>Portfolio, Signale & Risiko Management</p>
+
+            </div>
+
+            <div class="clock" id="clock">
+                00:00:00
+            </div>
+
+        </div>
+
+        <!-- KPI -->
+
+        <div class="grid">
+
+            <div class="card">
+
+                <h3>Portfolio</h3>
+
+                <div class="card-value" id="portfolioValue">
+                    $10,000
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Tages P/L</h3>
+
+                <div class="card-value online">
+                    +2.4%
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Trades</h3>
+
+                <div class="card-value" id="tradeCounter">
+                    0
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Status</h3>
+
+                <div class="card-value online">
+                    AKTIV
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- WATCHLIST -->
+
+        <div class="section">
+
+            <h2>📊 Watchlist</h2>
+
+            <input
+                type="text"
+                id="watchInput"
+                placeholder="Asset hinzufügen">
+
+            <br><br>
+
+            <button class="btn" onclick="addWatchItem()">
+                Hinzufügen
+            </button>
+
+            <br><br>
+
+            <div id="watchList">
+
+            </div>
+
+        </div>
+
+        <!-- SIGNAL CENTER -->
+
+        <div class="section">
+
+            <h2>🚀 Signal Center V2</h2>
+
+            <textarea
+                id="signalOutput"
+                placeholder="Trading Signal erscheint hier..."
+                readonly></textarea>
+
+            <br><br>
+
+            <button class="btn" onclick="generateSignal()">
+                Signal erzeugen
+            </button>
+
+        </div>
+
+        <!-- RISK MANAGER -->
+
+        <div class="section">
+
+            <h2>🛡 Risiko Rechner</h2>
+
+            <input
+                type="number"
+                id="capital"
+                placeholder="Kontogröße">
+
+            <br><br>
+
+            <input
+                type="number"
+                id="riskPercent"
+                placeholder="Risiko %">
+
+            <br><br>
+
+            <button class="btn" onclick="calculateRisk()">
+                Berechnen
+            </button>
+
+            <br><br>
+
+            <div id="riskResult">
+
+            </div>
+
+        </div>
+
+        <!-- TRADE JOURNAL -->
+
+        <div class="section">
+
+            <h2>📒 Trading Journal</h2>
+
+            <textarea
+                id="tradeJournal"
+                placeholder="Trades dokumentieren..."></textarea>
+
+            <br><br>
+
+            <button
+                class="btn"
+                onclick="saveNote('trade_journal_v5','tradeJournal')">
+
+                Journal speichern
+
+            </button>
+
+        </div>
+
+        <!-- GOALS -->
+
+        <div class="section">
+
+            <h2>🎯 Trading Ziele</h2>
+
+            <textarea
+                id="tradingGoals"
+                placeholder="Monatsziele und Strategien..."></textarea>
+
+            <br><br>
+
+            <button
+                class="btn"
+                onclick="saveNote('trading_goals_v5','tradingGoals')">
+
+                Ziele speichern
+
+            </button>
+
+        </div>
+
+        <!-- PERFORMANCE -->
+
+        <div class="section">
+
+            <h2>📈 Performance Übersicht</h2>
+
+            <div class="item">
+                <span>Gewinnrate</span>
+                <span>68%</span>
+            </div>
+
+            <div class="item">
+                <span>Beste Woche</span>
+                <span>+12.8%</span>
+            </div>
+
+            <div class="item">
+                <span>Max Drawdown</span>
+                <span>-4.1%</span>
+            </div>
+
+            <div class="item">
+                <span>Strategie</span>
+                <span>Trend Following</span>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+
+            AI Empire Pro - Trading Pro V5 © 2026
+
+        </div>
+
+    </main>
 
 </div>
 
-</body>
+<script src="script.js"></script>
 
+<script>
+
+const savedUser =
+localStorage.getItem(
+    "empire_user"
+);
+
+if(savedUser){
+
+    document.getElementById(
+        "profileName"
+    ).innerHTML =
+    "👑 " + savedUser;
+
+}
+
+loadNote(
+    "trade_journal_v5",
+    "tradeJournal"
+);
+
+loadNote(
+    "trading_goals_v5",
+    "tradingGoals"
+);
+
+function addWatchItem(){
+
+    const input =
+    document.getElementById(
+        "watchInput"
+    );
+
+    const value =
+    input.value.trim();
+
+    if(value === "") return;
+
+    const div =
+    document.createElement(
+        "div"
+    );
+
+    div.className =
+    "item";
+
+    div.innerHTML =
+    "<span>" +
+    value +
+    "</span><span class='online'>WATCH</span>";
+
+    document.getElementById(
+        "watchList"
+    ).appendChild(div);
+
+    input.value = "";
+
+}
+
+function generateSignal(){
+
+    const signals = [
+
+        "BTC LONG - Bullisches Momentum erkannt",
+
+        "ETH LONG - Trendfortsetzung möglich",
+
+        "SOL LONG - Breakout Setup aktiv",
+
+        "BTC SHORT - Widerstand erreicht",
+
+        "ETH SHORT - Korrektur wahrscheinlich",
+
+        "XAUUSD LONG - Gold Stärke bestätigt",
+
+        "NASDAQ LONG - Aufwärtstrend intakt"
+
+    ];
+
+    document.getElementById(
+        "signalOutput"
+    ).value =
+
+    signals[
+        Math.floor(
+            Math.random() *
+            signals.length
+        )
+    ];
+
+}
+
+function calculateRisk(){
+
+    const capital =
+    Number(
+        document.getElementById(
+            "capital"
+        ).value
+    );
+
+    const risk =
+    Number(
+        document.getElementById(
+            "riskPercent"
+        ).value
+    );
+
+    const result =
+    (capital * risk) / 100;
+
+    document.getElementById(
+        "riskResult"
+    ).innerHTML =
+
+    "<strong>Max Risiko pro Trade: $" +
+    result.toFixed(2) +
+    "</strong>";
+
+}
+
+function updateTradeCounter(){
+
+    const journal =
+    document.getElementById(
+        "tradeJournal"
+    ).value;
+
+    const trades =
+    journal.length > 0
+    ? journal.split("\n").length
+    : 0;
+
+    document.getElementById(
+        "tradeCounter"
+    ).innerHTML =
+    trades;
+
+}
+
+document.getElementById(
+    "tradeJournal"
+).addEventListener(
+    "keyup",
+    updateTradeCounter
+);
+
+updateTradeCounter();
+
+</script>
+
+</body>
 </html>
