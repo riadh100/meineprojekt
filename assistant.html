@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Yasin AI Pro - AI Empire Pro</title>
+<title>Yasin AI Pro V5 - AI Empire Pro</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -20,8 +20,11 @@
         <div>
 
             <div class="logo">
-                <h1>AI Empire Pro</h1>
+
+                <h1>👑 AI Empire Pro</h1>
+
                 <p>Riadh Edition</p>
+
             </div>
 
             <nav class="menu">
@@ -48,9 +51,9 @@
 
         <div class="profile-box">
 
-            <h3>👑 Riadh</h3>
+            <h3 id="profileName">👑 Riadh</h3>
 
-            <p>PRO MEMBER</p>
+            <p>AI COMMANDER</p>
 
             <br>
 
@@ -62,17 +65,19 @@
 
     </aside>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN -->
 
     <main class="main-content">
 
+        <!-- TOPBAR -->
+
         <div class="topbar">
 
-            <div class="topbar-title">
+            <div>
 
-                <h2>🤖 Yasin AI Pro</h2>
+                <h2>🤖 Yasin AI Pro V5</h2>
 
-                <p>Persönlicher KI-Assistent für AI Empire Pro</p>
+                <p>Persönlicher KI-Assistent</p>
 
             </div>
 
@@ -88,7 +93,7 @@
 
             <div class="card">
 
-                <h3>AI Status</h3>
+                <h3>Status</h3>
 
                 <div class="card-value online">
                     ONLINE
@@ -98,9 +103,9 @@
 
             <div class="card">
 
-                <h3>Gespräche</h3>
+                <h3>Chats</h3>
 
-                <div class="card-value" id="chatCount">
+                <div class="card-value" id="chatCounter">
                     0
                 </div>
 
@@ -111,7 +116,7 @@
                 <h3>Version</h3>
 
                 <div class="card-value">
-                    V4
+                    V5
                 </div>
 
             </div>
@@ -121,8 +126,36 @@
                 <h3>Modus</h3>
 
                 <div class="card-value">
-                    PRO
+                    PREMIUM
                 </div>
+
+            </div>
+
+        </div>
+
+        <!-- QUICK COMMANDS -->
+
+        <div class="section">
+
+            <h2>⚡ Schnellbefehle</h2>
+
+            <div class="quick-grid">
+
+                <button class="btn" onclick="quickPrompt('Erstelle einen Businessplan')">
+                    Businessplan
+                </button>
+
+                <button class="btn" onclick="quickPrompt('Gib mir Trading Ideen')">
+                    Trading Ideen
+                </button>
+
+                <button class="btn" onclick="quickPrompt('Erstelle Content Ideen')">
+                    Content Ideen
+                </button>
+
+                <button class="btn" onclick="quickPrompt('Marketing Strategie erstellen')">
+                    Marketing
+                </button>
 
             </div>
 
@@ -134,63 +167,30 @@
 
             <h2>💬 AI Chat</h2>
 
-            <div class="chat-container" id="chatContainer">
-
-                <div class="message ai">
-                    Hallo Riadh 👋<br>
-                    Ich bin Yasin AI Pro. Wie kann ich dir helfen?
-                </div>
+            <div id="chatBox" class="chat-container">
 
             </div>
 
             <br>
 
-            <input
-                type="text"
-                id="userInput"
-                placeholder="Nachricht eingeben...">
+            <textarea
+                id="userMessage"
+                placeholder="Nachricht an Yasin AI senden..."
+                rows="4"></textarea>
 
             <br><br>
 
             <button class="btn" onclick="sendMessage()">
-                Nachricht senden
+                Senden
             </button>
 
-            <button class="btn btn-danger" onclick="clearConversation()">
-                Chat löschen
+            <button class="btn" onclick="exportChat()">
+                Export
             </button>
 
-        </div>
-
-        <!-- QUICK PROMPTS -->
-
-        <div class="section">
-
-            <h2>⚡ Schnellbefehle</h2>
-
-            <div class="quick-grid">
-
-                <a href="#" class="quick-btn" onclick="quickPrompt('Erstelle einen Business Plan')">
-                    Business Plan
-                </a>
-
-                <a href="#" class="quick-btn" onclick="quickPrompt('Gib mir Trading Ideen')">
-                    Trading Ideen
-                </a>
-
-                <a href="#" class="quick-btn" onclick="quickPrompt('Telegram Wachstum')">
-                    Telegram Wachstum
-                </a>
-
-                <a href="#" class="quick-btn" onclick="quickPrompt('Video Content Ideen')">
-                    Video Ideen
-                </a>
-
-                <a href="#" class="quick-btn" onclick="quickPrompt('Game Konzept erstellen')">
-                    Game Konzept
-                </a>
-
-            </div>
+            <button class="btn btn-danger" onclick="clearChatHistory()">
+                Löschen
+            </button>
 
         </div>
 
@@ -202,7 +202,7 @@
 
             <textarea
                 id="assistantNotes"
-                placeholder="Notizen speichern..."></textarea>
+                placeholder="Eigene Notizen..."></textarea>
 
             <br><br>
 
@@ -210,15 +210,17 @@
                 class="btn"
                 onclick="saveNote('assistant_notes','assistantNotes')">
 
-                Notizen speichern
+                Speichern
 
             </button>
 
         </div>
 
+        <!-- FOOTER -->
+
         <div class="footer">
 
-            AI Empire Pro - Yasin AI Pro © 2026
+            AI Empire Pro - Yasin AI V5 © 2026
 
         </div>
 
@@ -230,103 +232,22 @@
 
 <script>
 
-const chatContainer =
-document.getElementById("chatContainer");
+const chatBox =
+document.getElementById(
+    "chatBox"
+);
 
-function sendMessage(){
+const savedUser =
+localStorage.getItem(
+    "empire_user"
+);
 
-    const input =
-    document.getElementById("userInput");
-
-    const text =
-    input.value.trim();
-
-    if(text === "") return;
-
-    const userMessage =
-    document.createElement("div");
-
-    userMessage.className =
-    "message user";
-
-    userMessage.innerHTML =
-    text;
-
-    chatContainer.appendChild(
-        userMessage
-    );
-
-    const aiMessage =
-    document.createElement("div");
-
-    aiMessage.className =
-    "message ai";
-
-    aiMessage.innerHTML =
-    "Yasin AI verarbeitet: <br><br>" + text;
-
-    chatContainer.appendChild(
-        aiMessage
-    );
-
-    input.value = "";
-
-    saveChat(
-        chatContainer.innerHTML
-    );
-
-    updateChatCount();
-
-    addActivity(
-        "Neue AI Unterhaltung"
-    );
-
-}
-
-function quickPrompt(text){
+if(savedUser){
 
     document.getElementById(
-        "userInput"
-    ).value = text;
-
-}
-
-function clearConversation(){
-
-    if(confirm(
-        "Chat wirklich löschen?"
-    )){
-
-        localStorage.removeItem(
-            "yasin_ai_chat"
-        );
-
-        location.reload();
-
-    }
-
-}
-
-function updateChatCount(){
-
-    const count =
-    document.querySelectorAll(
-        ".message"
-    ).length;
-
-    document.getElementById(
-        "chatCount"
-    ).innerHTML = count;
-
-}
-
-const savedChat =
-loadChat();
-
-if(savedChat){
-
-    chatContainer.innerHTML =
-    savedChat;
+        "profileName"
+    ).innerHTML =
+    "👑 " + savedUser;
 
 }
 
@@ -335,7 +256,165 @@ loadNote(
     "assistantNotes"
 );
 
-updateChatCount();
+function updateCounter(){
+
+    const count =
+    document.querySelectorAll(
+        ".chat-message"
+    ).length;
+
+    document.getElementById(
+        "chatCounter"
+    ).innerHTML =
+    count;
+
+}
+
+function quickPrompt(text){
+
+    document.getElementById(
+        "userMessage"
+    ).value = text;
+
+}
+
+function sendMessage(){
+
+    const input =
+    document.getElementById(
+        "userMessage"
+    );
+
+    const message =
+    input.value.trim();
+
+    if(message === "") return;
+
+    const userDiv =
+    document.createElement("div");
+
+    userDiv.className =
+    "chat-message";
+
+    userDiv.innerHTML =
+    "<strong>Du:</strong><br>" +
+    message;
+
+    chatBox.appendChild(
+        userDiv
+    );
+
+    const aiDiv =
+    document.createElement("div");
+
+    aiDiv.className =
+    "chat-message";
+
+    aiDiv.innerHTML =
+    "<strong>Yasin AI:</strong><br>" +
+    generateAIResponse(message);
+
+    chatBox.appendChild(
+        aiDiv
+    );
+
+    localStorage.setItem(
+        "assistant_chat_v5",
+        chatBox.innerHTML
+    );
+
+    input.value = "";
+
+    updateCounter();
+
+}
+
+function generateAIResponse(text){
+
+    const responses = [
+
+        "Interessante Anfrage. Ich empfehle eine detaillierte Analyse.",
+
+        "Das ist eine starke Business-Idee mit Potenzial.",
+
+        "Für dieses Ziel solltest du einen klaren Plan erstellen.",
+
+        "Die Daten sprechen für eine weitere Optimierung.",
+
+        "Ich empfehle eine Kombination aus KI und Automatisierung.",
+
+        "Diese Strategie kann langfristig erfolgreich sein.",
+
+        "Fokus auf Skalierung und Prozesse bringt die besten Ergebnisse."
+
+    ];
+
+    return responses[
+        Math.floor(
+            Math.random() *
+            responses.length
+        )
+    ];
+
+}
+
+function exportChat(){
+
+    const text =
+    chatBox.innerText;
+
+    const blob =
+    new Blob(
+        [text],
+        {
+            type:"text/plain"
+        }
+    );
+
+    const link =
+    document.createElement("a");
+
+    link.href =
+    URL.createObjectURL(blob);
+
+    link.download =
+    "yasin-ai-chat.txt";
+
+    link.click();
+
+}
+
+function clearChatHistory(){
+
+    if(confirm(
+        "Chat löschen?"
+    )){
+
+        localStorage.removeItem(
+            "assistant_chat_v5"
+        );
+
+        chatBox.innerHTML = "";
+
+        updateCounter();
+
+    }
+
+}
+
+const savedChat =
+localStorage.getItem(
+    "assistant_chat_v5"
+);
+
+if(savedChat){
+
+    chatBox.innerHTML =
+    savedChat;
+
+}
+
+updateCounter();
 
 </script>
 
