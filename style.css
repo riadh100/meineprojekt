@@ -1,154 +1,596 @@
+/* ==================================================
+   AI EMPIRE PRO - UNIFIED PREMIUM STYLE V4
+   RIADH EDITION
+================================================== */
+
+:root{
+
+    --bg:#0b0b0b;
+    --bg2:#111111;
+    --card:#161616;
+
+    --gold:#FFD700;
+    --gold-hover:#ffea70;
+
+    --text:#ffffff;
+    --text-soft:#aaaaaa;
+
+    --success:#00ff66;
+    --danger:#ff4444;
+
+    --border:#2a2a2a;
+
+    --radius:16px;
+
+}
+
+/* ==================================================
+   RESET
+================================================== */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,sans-serif;
-background:#050505;
-color:white;
-display:flex;
+    background:var(--bg);
+    color:var(--text);
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+    min-height:100vh;
 }
 
-/* LOGIN */
+/* ==================================================
+   LAYOUT
+================================================== */
 
-.login-container{
-width:100%;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
+.app{
+    display:flex;
+    min-height:100vh;
 }
 
-.login-box{
-width:420px;
-background:#111;
-border:2px solid gold;
-padding:40px;
-border-radius:20px;
-text-align:center;
+.main-content{
+    flex:1;
+    padding:30px;
 }
 
-.login-box h1{
-color:gold;
-margin-bottom:20px;
-}
-
-.login-box p{
-margin-bottom:25px;
-color:#bbb;
-}
-
-.login-box input{
-width:100%;
-padding:15px;
-margin:10px 0;
-border:none;
-border-radius:10px;
-font-size:16px;
-}
-
-.login-box button{
-width:100%;
-padding:15px;
-margin-top:20px;
-border:none;
-border-radius:10px;
-background:gold;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.login-box button:hover{
-background:white;
-}
-
-/* SIDEBAR */
+/* ==================================================
+   SIDEBAR
+================================================== */
 
 .sidebar{
-width:280px;
-height:100vh;
-background:#0d0d0d;
-border-right:2px solid gold;
-padding:25px;
+
+    width:260px;
+
+    background:var(--bg2);
+
+    border-right:2px solid var(--gold);
+
+    padding:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
 }
 
-.sidebar h1{
-color:gold;
-font-size:30px;
+.logo{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
 }
 
-.sidebar p{
-color:#999;
-margin-top:10px;
+.logo h1{
+
+    color:var(--gold);
+
+    font-size:28px;
+
 }
 
-.sidebar nav{
-display:flex;
-flex-direction:column;
-margin-top:40px;
+.logo p{
+
+    color:var(--text-soft);
+
+    margin-top:5px;
+
+    font-size:13px;
+
 }
 
-.sidebar nav a{
-text-decoration:none;
-color:white;
-padding:15px;
-margin:5px 0;
-border-radius:10px;
-transition:0.3s;
+.menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
 }
 
-.sidebar nav a:hover{
-background:gold;
-color:black;
+.menu a{
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:14px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    transition:.3s;
+
 }
 
-/* DASHBOARD */
+.menu a:hover{
 
-.main{
-flex:1;
-padding:35px;
+    background:var(--gold);
+
+    color:black;
+
+    font-weight:bold;
+
 }
+
+.profile-box{
+
+    margin-top:30px;
+
+    padding:15px;
+
+    border:1px solid var(--gold);
+
+    border-radius:12px;
+
+    text-align:center;
+
+}
+
+.profile-box h3{
+
+    color:var(--gold);
+
+}
+
+.profile-box p{
+
+    color:var(--text-soft);
+
+    margin-top:5px;
+
+}
+
+/* ==================================================
+   TOPBAR
+================================================== */
 
 .topbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
 }
 
-.avatar{
-width:60px;
-height:60px;
-background:gold;
-color:black;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:28px;
-font-weight:bold;
+.topbar-title h2{
+
+    color:var(--gold);
+
 }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.topbar-title p{
+
+    color:var(--text-soft);
+
+    margin-top:5px;
+
 }
+
+.clock{
+
+    padding:12px 18px;
+
+    border:1px solid var(--gold);
+
+    border-radius:12px;
+
+    background:var(--card);
+
+}
+
+/* ==================================================
+   GRID
+================================================== */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+
+}
+
+/* ==================================================
+   CARD
+================================================== */
 
 .card{
-background:#111;
-border:1px solid gold;
-border-radius:20px;
-padding:30px;
+
+    background:var(--card);
+
+    border:1px solid var(--gold);
+
+    border-radius:var(--radius);
+
+    padding:20px;
+
+    transition:.3s;
+
 }
 
-.card h2{
-margin-bottom:15px;
+.card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 0 20px rgba(255,215,0,.25);
+
 }
 
-.card p{
-color:#bbb;
+.card h3{
+
+    color:var(--gold);
+
+    margin-bottom:10px;
+
+}
+
+.card-value{
+
+    font-size:30px;
+
+    font-weight:bold;
+
+}
+
+/* ==================================================
+   SECTION
+================================================== */
+
+.section{
+
+    background:var(--card);
+
+    border:1px solid var(--gold);
+
+    border-radius:var(--radius);
+
+    padding:20px;
+
+    margin-top:20px;
+
+}
+
+.section h2{
+
+    color:var(--gold);
+
+    margin-bottom:15px;
+
+}
+
+/* ==================================================
+   LIST ITEMS
+================================================== */
+
+.item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 0;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.item:last-child{
+
+    border-bottom:none;
+
+}
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+.btn{
+
+    background:var(--gold);
+
+    color:black;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:var(--gold-hover);
+
+}
+
+.btn-danger{
+
+    background:var(--danger);
+
+    color:white;
+
+}
+
+/* ==================================================
+   INPUTS
+================================================== */
+
+input,
+textarea{
+
+    width:100%;
+
+    background:#0d0d0d;
+
+    color:white;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    padding:12px;
+
+    outline:none;
+
+}
+
+input:focus,
+textarea:focus{
+
+    border-color:var(--gold);
+
+}
+
+textarea{
+
+    resize:vertical;
+
+    min-height:150px;
+
+}
+
+/* ==================================================
+   STATUS
+================================================== */
+
+.online{
+
+    color:var(--success);
+
+    font-weight:bold;
+
+}
+
+.offline{
+
+    color:var(--danger);
+
+    font-weight:bold;
+
+}
+
+/* ==================================================
+   QUICK ACTIONS
+================================================== */
+
+.quick-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:15px;
+
+}
+
+.quick-btn{
+
+    display:block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    background:var(--gold);
+
+    color:black;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.quick-btn:hover{
+
+    transform:scale(1.03);
+
+}
+
+/* ==================================================
+   CHAT
+================================================== */
+
+.chat-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    max-height:65vh;
+
+    overflow-y:auto;
+
+}
+
+.message{
+
+    padding:15px;
+
+    border-radius:15px;
+
+    max-width:75%;
+
+    line-height:1.5;
+
+}
+
+.user{
+
+    background:var(--gold);
+
+    color:black;
+
+    align-self:flex-end;
+
+}
+
+.ai{
+
+    background:#1b1b1b;
+
+    border:1px solid var(--gold);
+
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.footer{
+
+    margin-top:30px;
+
+    text-align:center;
+
+    color:var(--text-soft);
+
+}
+
+/* ==================================================
+   SCROLLBAR
+================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--gold);
+
+    border-radius:20px;
+
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media(max-width:900px){
+
+    .app{
+
+        flex-direction:column;
+
+    }
+
+    .sidebar{
+
+        width:100%;
+
+        border-right:none;
+
+        border-bottom:2px solid var(--gold);
+
+    }
+
+    .main-content{
+
+        padding:20px;
+
+    }
+
+    .topbar{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        align-items:flex-start;
+
+    }
+
+    .message{
+
+        max-width:95%;
+
+    }
+
 }
