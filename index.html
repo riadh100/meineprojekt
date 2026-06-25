@@ -1,117 +1,240 @@
 <!DOCTYPE html>
-
 <html lang="de">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI Empire Pro Dashboard</title>
+<title>AI Empire Pro - Dashboard</title>
 
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    background:#0d0d0d;
+    font-family:Arial, sans-serif;
+    color:white;
+}
+
+.header{
+    background:#111;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid gold;
+}
+
+.logo{
+    color:gold;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.clock{
+    color:white;
+    font-size:18px;
+}
+
+.container{
+    padding:30px;
+}
+
+.welcome{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.welcome h1{
+    color:gold;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-bottom:40px;
+}
+
+.stat-card{
+    background:#161616;
+    border:1px solid gold;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+}
+
+.stat-card h2{
+    color:gold;
+}
+
+.modules{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#161616;
+    border:1px solid gold;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px gold;
+}
+
+.card h2{
+    color:gold;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:gold;
+    color:black;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:8px;
+}
+
+.logout{
+    background:red;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.footer{
+    margin-top:50px;
+    text-align:center;
+    color:gray;
+}
+
+</style>
 
 </head>
 
 <body>
 
-<div class="sidebar">
+<div class="header">
 
-<h1>👑 AI EMPIRE PRO</h1>
+<div class="logo">
+AI Empire Pro
+</div>
 
-<p>Riadh Edition</p>
+<div class="clock" id="clock">
+00:00:00
+</div>
 
-<nav>
-
-<a href="index.html">🏠 Dashboard</a>
-
-<a href="assistant.html">🤖 Yasin AI</a>
-
-<a href="trading.html">📈 Trading</a>
-
-<a href="setup.html">📅 Setups</a>
-
-<a href="telegram.html">📨 Telegram</a>
-
-<a href="video.html">🎥 Video</a>
-
-<a href="game.html">🎮 Game</a>
-
-<a href="tools.html">🧠 AI Tools</a>
-
-</nav>
+<button class="logout" onclick="logout()">
+Logout
+</button>
 
 </div>
 
-<div class="main">
+<div class="container">
 
-<div class="topbar">
+<div class="welcome">
 
-<h1>Willkommen Riadh 👋</h1>
+<h1>Willkommen Riadh 👑</h1>
 
-<div class="profile">
+<p>Dein persönliches AI Empire Dashboard</p>
 
-<div class="avatar">R</div>
+</div>
 
+<div class="stats">
+
+<div class="stat-card">
+<h2>6</h2>
+<p>Aktive Module</p>
+</div>
+
+<div class="stat-card">
+<h2>100%</h2>
+<p>System Online</p>
+</div>
+
+<div class="stat-card">
+<h2>PRO</h2>
+<p>Premium Status</p>
 </div>
 
 </div>
 
-<div class="cards">
+<div class="modules">
 
 <div class="card">
-
 <h2>🤖 Yasin AI</h2>
-
-<p>Persönlicher KI Assistent</p>
-
+<p>Dein persönlicher Assistent</p>
+<a href="assistant.html" class="btn">Öffnen</a>
 </div>
 
 <div class="card">
-
 <h2>📈 Trading</h2>
-
-<p>Märkte analysieren</p>
-
+<p>Trading Bereich</p>
+<a href="trading.html" class="btn">Öffnen</a>
 </div>
 
 <div class="card">
-
-<h2>📨 Telegram</h2>
-
-<p>Beiträge verwalten</p>
-
+<h2>📱 Telegram</h2>
+<p>Telegram Automation</p>
+<a href="telegram.html" class="btn">Öffnen</a>
 </div>
 
 <div class="card">
-
-<h2>🎥 Video Studio</h2>
-
-<p>Videos erstellen</p>
-
+<h2>🎬 Video Creator</h2>
+<p>AI Video Tools</p>
+<a href="video.html" class="btn">Öffnen</a>
 </div>
 
 <div class="card">
-
 <h2>🎮 Game Studio</h2>
-
-<p>Spiele entwickeln</p>
-
+<p>Game Development</p>
+<a href="game.html" class="btn">Öffnen</a>
 </div>
 
 <div class="card">
+<h2>🛠 Tools Center</h2>
+<p>Alle AI Werkzeuge</p>
+<a href="tools.html" class="btn">Öffnen</a>
+</div>
 
-<h2>🧠 AI Tools</h2>
+</div>
 
-<p>Business Werkzeuge</p>
+<div class="footer">
+
+<p>AI Empire Pro – Riadh Edition © 2026</p>
 
 </div>
 
 </div>
 
-</div>
+<script>
+
+function updateClock(){
+    const now = new Date();
+
+    document.getElementById("clock").innerHTML =
+        now.toLocaleTimeString();
+}
+
+setInterval(updateClock,1000);
+
+function logout(){
+    window.location.href="login.html";
+}
+
+</script>
 
 </body>
-
 </html>
