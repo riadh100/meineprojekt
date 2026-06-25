@@ -1,16 +1,71 @@
+```html
 <!DOCTYPE html>
-
 <html lang="de">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Telegram Center</title>
-
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+.main-content{
+margin-left:260px;
+padding:40px;
+}
+
+.page-title{
+font-size:50px;
+font-weight:bold;
+margin-bottom:30px;
+}
+
+.telegram-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.panel{
+background:#111;
+border:1px solid gold;
+border-radius:20px;
+padding:25px;
+}
+
+.panel h2{
+margin-bottom:20px;
+color:gold;
+}
+
+.message-box{
+background:#1c1c1c;
+padding:15px;
+border-radius:12px;
+margin-bottom:10px;
+}
+
+.btn{
+background:gold;
+color:black;
+border:none;
+padding:12px 25px;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+margin-top:15px;
+}
+
+textarea{
+width:100%;
+height:150px;
+padding:15px;
+border-radius:10px;
+border:none;
+font-size:16px;
+}
+
+</style>
 
 </head>
 
@@ -19,88 +74,58 @@
 <div class="sidebar">
 
 <h1>👑 AI EMPIRE PRO</h1>
+<p>Riadh Edition</p>
 
-<h3>Riadh Edition</h3>
+<br>
 
-<nav>
-
-<a href="index.html">🏠 Dashboard</a>
-
-<a href="assistant.html">🤖 Yasin AI</a>
-
-<a href="trading.html">📈 Trading Center</a>
-
-<a href="setup.html">📊 Tages-Setups</a>
-
-<a href="telegram.html">📨 Telegram Center</a>
-
-<a href="video.html">🎥 Video Studio</a>
-
-<a href="game.html">🎮 Game Studio</a>
-
+<a href="index.html">🏠 Dashboard</a><br><br>
+<a href="assistant.html">🤖 Yasin AI</a><br><br>
+<a href="trading.html">📈 Trading</a><br><br>
+<a href="setup.html">📅 Setups</a><br><br>
+<a href="telegram.html">📨 Telegram</a><br><br>
+<a href="video.html">🎥 Video</a><br><br>
+<a href="game.html">🎮 Game</a><br><br>
 <a href="tools.html">🧠 AI Tools</a>
 
-</nav>
-
 </div>
 
-<div class="main">
+<div class="main-content">
 
-<h1>📨 Telegram Center</h1>
-
-<p>Verwalte deine Telegram-Projekte.</p>
-
-<div class="dashboard-grid">
-
-<div class="box">
-
-<h2>📢 Kanäle</h2>
-
-<p>Eigene Telegram-Kanäle verwalten</p>
-
+<div class="page-title">
+📨 Telegram Center
 </div>
 
-<div class="box">
+<div class="telegram-grid">
 
-<h2>👥 Gruppen</h2>
+<div class="panel">
 
-<p>Gruppen organisieren</p>
+<h2>📬 Letzte Beiträge</h2>
 
+<div class="message-box">
+Bitcoin Analyse veröffentlicht
 </div>
 
-<div class="box">
-
-<h2>🤖 Bots</h2>
-
-<p>Telegram Bots verwalten</p>
-
+<div class="message-box">
+Gold Signal gesendet
 </div>
 
-<div class="box">
-
-<h2>✉️ Nachrichten</h2>
-
-<p>Beiträge vorbereiten</p>
-
+<div class="message-box">
+EUR/USD Update gepostet
 </div>
 
 </div>
 
-<div class="bottom-grid">
+<div class="panel">
 
-<div class="box">
+<h2>✍️ Neuer Beitrag</h2>
 
-<h2>📅 Geplante Beiträge</h2>
+<textarea placeholder="Telegram Beitrag schreiben..."></textarea>
 
-<p>Noch keine Beiträge geplant.</p>
+<br>
 
-</div>
-
-<div class="box">
-
-<h2>⚡ Schnellaktionen</h2>
-
-<p>Später kommen echte Telegram-Funktionen.</p>
+<button class="btn">
+Beitrag senden
+</button>
 
 </div>
 
@@ -109,5 +134,5 @@
 </div>
 
 </body>
-
 </html>
+```
