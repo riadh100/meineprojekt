@@ -1,127 +1,373 @@
-```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Game Studio</title>
+
+<title>Game Studio Pro | AI Empire Pro</title>
+
 <link rel="stylesheet" href="style.css">
 
 <style>
 
-.main-content{
-margin-left:260px;
-padding:40px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
-.page-title{
-font-size:50px;
-margin-bottom:30px;
+body{
+    background:#0b0b0b;
+    color:white;
+    min-height:100vh;
 }
 
-.game-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
+.header{
+    background:#111;
+    border-bottom:2px solid gold;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-.game-card{
-background:#111;
-border:1px solid gold;
-border-radius:20px;
-padding:25px;
-text-align:center;
+.logo{
+    color:gold;
+    font-size:28px;
+    font-weight:bold;
 }
 
-.game-card h2{
-margin-bottom:15px;
+.status{
+    color:#00ff66;
+    font-weight:bold;
 }
 
-.game-card p{
-color:#ccc;
-margin-bottom:20px;
+.nav{
+    background:#161616;
+    padding:15px;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.nav a{
+    text-decoration:none;
+    color:white;
+    border:1px solid gold;
+    padding:10px 15px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.nav a:hover{
+    background:gold;
+    color:black;
+}
+
+.container{
+    padding:25px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.card{
+    background:#161616;
+    border:1px solid gold;
+    border-radius:15px;
+    padding:20px;
+}
+
+.card h3{
+    color:gold;
+    margin-bottom:10px;
+}
+
+.value{
+    font-size:30px;
+    font-weight:bold;
+}
+
+.section{
+    background:#161616;
+    border:1px solid gold;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.section h2{
+    color:gold;
+    margin-bottom:15px;
+}
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    padding:12px;
+    border-bottom:1px solid #2a2a2a;
+}
+
+.idea-box{
+    background:#111;
+    border:1px solid #333;
+    border-radius:10px;
+    padding:15px;
+    margin-top:10px;
+}
+
+textarea{
+    width:100%;
+    height:180px;
+    background:#0d0d0d;
+    color:white;
+    border:1px solid #333;
+    border-radius:10px;
+    padding:10px;
+    resize:none;
 }
 
 .btn{
-background:gold;
-color:black;
-border:none;
-padding:12px 20px;
-border-radius:10px;
-font-weight:bold;
-cursor:pointer;
+    background:gold;
+    color:black;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#777;
+    padding:25px;
+}
+
+@media(max-width:768px){
+
+.header{
+    flex-direction:column;
+    gap:10px;
+}
+
 }
 
 </style>
-
 </head>
-
 <body>
 
-<div class="sidebar">
+<div class="header">
 
-<h1>👑 AI EMPIRE PRO</h1>
-<p>Riadh Edition</p>
-
-<br>
-
-<a href="index.html">🏠 Dashboard</a><br><br>
-<a href="assistant.html">🤖 Yasin AI</a><br><br>
-<a href="trading.html">📈 Trading</a><br><br>
-<a href="setup.html">📅 Setups</a><br><br>
-<a href="telegram.html">📨 Telegram</a><br><br>
-<a href="video.html">🎥 Video</a><br><br>
-<a href="game.html">🎮 Game</a><br><br>
-<a href="tools.html">🧠 AI Tools</a>
-
+<div class="logo">
+🎮 Game Studio Pro
 </div>
 
-<div class="main-content">
-
-<h1 class="page-title">🎮 Game Studio</h1>
-
-<div class="game-grid">
-
-<div class="game-card">
-<h2>🕹️ Jump Game</h2>
-<p>Einfaches Arcade-Spiel erstellen.</p>
-<button class="btn">Starten</button>
-</div>
-
-<div class="game-card">
-<h2>🚗 Racing Game</h2>
-<p>Autorennen entwickeln.</p>
-<button class="btn">Starten</button>
-</div>
-
-<div class="game-card">
-<h2>⚔️ Battle Game</h2>
-<p>Kampfspiel erstellen.</p>
-<button class="btn">Starten</button>
-</div>
-
-<div class="game-card">
-<h2>🌍 Open World</h2>
-<p>Große Spielwelt erzeugen.</p>
-<button class="btn">Starten</button>
-</div>
-
-<div class="game-card">
-<h2>🤖 AI NPC Creator</h2>
-<p>Intelligente Figuren erzeugen.</p>
-<button class="btn">Starten</button>
-</div>
-
-<div class="game-card">
-<h2>📦 Asset Generator</h2>
-<p>Objekte und Items generieren.</p>
-<button class="btn">Starten</button>
+<div class="status">
+● DEV ONLINE
 </div>
 
 </div>
 
+<div class="nav">
+
+<a href="index.html">Dashboard</a>
+<a href="assistant.html">Yasin AI</a>
+<a href="trading.html">Trading</a>
+<a href="telegram.html">Telegram</a>
+<a href="video.html">Video</a>
+<a href="tools.html">Tools</a>
+
 </div>
+
+<div class="container">
+
+<div class="grid">
+
+<div class="card">
+<h3>Aktive Projekte</h3>
+<div class="value">4</div>
+</div>
+
+<div class="card">
+<h3>Fertige Spiele</h3>
+<div class="value">2</div>
+</div>
+
+<div class="card">
+<h3>Charaktere</h3>
+<div class="value">16</div>
+</div>
+
+<div class="card">
+<h3>Status</h3>
+<div class="value">PRO</div>
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>🕹️ Projektübersicht</h2>
+
+<div class="item">
+<span>Empire Runner</span>
+<span>Entwicklung</span>
+</div>
+
+<div class="item">
+<span>AI Battle Arena</span>
+<span>Planung</span>
+</div>
+
+<div class="item">
+<span>Crypto Quest</span>
+<span>Beta</span>
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>👥 Charakter Center</h2>
+
+<div class="item">
+<span>Commander Riadh</span>
+<span>Level 10</span>
+</div>
+
+<div class="item">
+<span>AI Guardian</span>
+<span>Level 8</span>
+</div>
+
+<div class="item">
+<span>Crypto Hunter</span>
+<span>Level 6</span>
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>🤖 AI Game Ideen Generator</h2>
+
+<div class="idea-box" id="ideaBox">
+Klicke auf „Neue Idee“, um ein Spielkonzept zu generieren.
+</div>
+
+<button class="btn" onclick="generateIdea()">
+Neue Idee
+</button>
+
+</div>
+
+<div class="section">
+
+<h2>📜 Game Design Dokument</h2>
+
+<textarea
+id="gdd"
+placeholder="Spielidee, Story, Mechaniken, Leveldesign ..."></textarea>
+
+<button class="btn" onclick="saveGDD()">
+GDD speichern
+</button>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Entwickler Notizen</h2>
+
+<textarea
+id="notes"
+placeholder="Entwicklungsnotizen speichern..."></textarea>
+
+<button class="btn" onclick="saveNotes()">
+Notizen speichern
+</button>
+
+</div>
+
+</div>
+
+<div class="footer">
+AI Empire Pro – Game Studio Pro © 2026
+</div>
+
+<script>
+
+const gameIdeas = [
+
+"Open-World Empire Builder mit KI-gesteuerten Fraktionen.",
+"Cyberpunk Trading Simulator mit AI Gegnern.",
+"Strategie-Spiel über den Aufbau eines Tech-Imperiums.",
+"Fantasy RPG mit dynamischer KI-Story.",
+"Space Colony Manager mit Ressourcenhandel.",
+"Multiplayer Arena mit KI-generierten Missionen.",
+"Tycoon Game für Social-Media- und AI-Unternehmen.",
+"Survival Game mit adaptiver Gegner-KI."
+
+];
+
+function generateIdea(){
+
+    const randomIdea =
+    gameIdeas[Math.floor(Math.random()*gameIdeas.length)];
+
+    document.getElementById("ideaBox").innerHTML =
+    randomIdea;
+
+}
+
+function saveGDD(){
+
+    localStorage.setItem(
+        "game_gdd",
+        document.getElementById("gdd").value
+    );
+
+    alert("Game Design Dokument gespeichert");
+
+}
+
+function saveNotes(){
+
+    localStorage.setItem(
+        "game_notes",
+        document.getElementById("notes").value
+    );
+
+    alert("Entwickler Notizen gespeichert");
+
+}
+
+window.onload = function(){
+
+    const gdd =
+    localStorage.getItem("game_gdd");
+
+    const notes =
+    localStorage.getItem("game_notes");
+
+    if(gdd){
+        document.getElementById("gdd").value = gdd;
+    }
+
+    if(notes){
+        document.getElementById("notes").value = notes;
+    }
+
+};
+
+</script>
 
 </body>
 </html>
-```
