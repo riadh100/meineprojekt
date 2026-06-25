@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI Empire Pro - Dashboard V4</title>
+<title>AI Empire Pro - Dashboard V5</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -20,8 +20,11 @@
         <div>
 
             <div class="logo">
-                <h1>AI Empire Pro</h1>
+
+                <h1>👑 AI Empire Pro</h1>
+
                 <p>Riadh Edition</p>
+
             </div>
 
             <nav class="menu">
@@ -48,7 +51,7 @@
 
         <div class="profile-box">
 
-            <h3>👑 Riadh</h3>
+            <h3 id="profileName">👑 Riadh</h3>
 
             <p>PRO MEMBER</p>
 
@@ -66,13 +69,15 @@
 
     <main class="main-content">
 
+        <!-- HEADER -->
+
         <div class="topbar">
 
-            <div class="topbar-title">
+            <div>
 
-                <h2>AI Empire Dashboard</h2>
+                <h2>Dashboard V5 Premium</h2>
 
-                <p>Zentrale Steuerung aller Module</p>
+                <p>AI Empire Pro Control Center</p>
 
             </div>
 
@@ -82,7 +87,30 @@
 
         </div>
 
-        <!-- KPI CARDS -->
+        <!-- SEARCH -->
+
+        <div class="section">
+
+            <h2>🔍 Global Search</h2>
+
+            <input
+                type="text"
+                id="globalSearch"
+                placeholder="Modul suchen...">
+
+            <br><br>
+
+            <button
+                class="btn"
+                onclick="searchModule()">
+
+                Suchen
+
+            </button>
+
+        </div>
+
+        <!-- KPI DASHBOARD -->
 
         <div class="grid">
 
@@ -98,7 +126,27 @@
 
             <div class="card">
 
-                <h3>System Status</h3>
+                <h3>Notizen</h3>
+
+                <div class="card-value" id="notesCount">
+                    0
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Aktivitäten</h3>
+
+                <div class="card-value" id="activityCount">
+                    0
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>System</h3>
 
                 <div class="card-value online">
                     ONLINE
@@ -106,29 +154,9 @@
 
             </div>
 
-            <div class="card">
-
-                <h3>Version</h3>
-
-                <div class="card-value">
-                    V4
-                </div>
-
-            </div>
-
-            <div class="card">
-
-                <h3>Mitgliedschaft</h3>
-
-                <div class="card-value">
-                    PRO
-                </div>
-
-            </div>
-
         </div>
 
-        <!-- QUICK ACTIONS -->
+        <!-- QUICK CENTER -->
 
         <div class="section">
 
@@ -149,74 +177,26 @@
                 </a>
 
                 <a href="video.html" class="quick-btn">
-                    🎬 Video Studio
+                    🎬 Video
                 </a>
 
                 <a href="game.html" class="quick-btn">
-                    🎮 Game Studio
+                    🎮 Game
                 </a>
 
                 <a href="tools.html" class="quick-btn">
-                    🛠 Tools Center
+                    🛠 Tools
                 </a>
 
                 <a href="setup.html" class="quick-btn">
-                    ⚙ Setup Center
+                    ⚙ Setup
                 </a>
 
             </div>
 
         </div>
 
-        <!-- SYSTEM STATUS -->
-
-        <div class="section">
-
-            <h2>📡 System Status</h2>
-
-            <div class="item">
-                <span>Dashboard</span>
-                <span class="online">ONLINE</span>
-            </div>
-
-            <div class="item">
-                <span>Yasin AI</span>
-                <span class="online">ONLINE</span>
-            </div>
-
-            <div class="item">
-                <span>Trading Pro</span>
-                <span class="online">ONLINE</span>
-            </div>
-
-            <div class="item">
-                <span>Telegram Center</span>
-                <span class="online">ONLINE</span>
-            </div>
-
-            <div class="item">
-                <span>Video Studio</span>
-                <span class="online">ONLINE</span>
-            </div>
-
-            <div class="item">
-                <span>Game Studio</span>
-                <span class="online">ONLINE</span>
-            </div>
-
-            <div class="item">
-                <span>Tools Center</span>
-                <span class="online">ONLINE</span>
-            </div>
-
-            <div class="item">
-                <span>Setup Center</span>
-                <span class="online">ONLINE</span>
-            </div>
-
-        </div>
-
-        <!-- ACTIVITY -->
+        <!-- ACTIVITY FEED -->
 
         <div class="section">
 
@@ -225,17 +205,17 @@
             <div id="activityFeed">
 
                 <div class="item">
-                    <span>AI Empire Pro gestartet</span>
+                    <span>Dashboard gestartet</span>
                     <span class="online">OK</span>
                 </div>
 
                 <div class="item">
-                    <span>Dashboard geladen</span>
+                    <span>Alle Module geladen</span>
                     <span class="online">OK</span>
                 </div>
 
                 <div class="item">
-                    <span>Alle Module verbunden</span>
+                    <span>System bereit</span>
                     <span class="online">OK</span>
                 </div>
 
@@ -243,7 +223,66 @@
 
         </div>
 
-        <!-- NOTES -->
+        <!-- ANALYTICS -->
+
+        <div class="section">
+
+            <h2>📊 Empire Analytics</h2>
+
+            <div class="item">
+                <span>Projekte</span>
+                <span>12</span>
+            </div>
+
+            <div class="item">
+                <span>Video Ideen</span>
+                <span>84</span>
+            </div>
+
+            <div class="item">
+                <span>Trading Signale</span>
+                <span>47</span>
+            </div>
+
+            <div class="item">
+                <span>Gespeicherte Notizen</span>
+                <span id="analyticsNotes">
+                    0
+                </span>
+            </div>
+
+        </div>
+
+        <!-- SYSTEM MONITOR -->
+
+        <div class="section">
+
+            <h2>🖥 System Monitor</h2>
+
+            <div class="item">
+                <span>CPU Auslastung</span>
+                <span id="cpuValue">
+                    22%
+                </span>
+            </div>
+
+            <div class="item">
+                <span>Speicher</span>
+                <span id="memoryValue">
+                    61%
+                </span>
+            </div>
+
+            <div class="item">
+                <span>Netzwerk</span>
+                <span class="online">
+                    Verbunden
+                </span>
+            </div>
+
+        </div>
+
+        <!-- DASHBOARD NOTES -->
 
         <div class="section">
 
@@ -251,7 +290,7 @@
 
             <textarea
                 id="dashboardNotes"
-                placeholder="Notizen für dein AI Empire speichern..."></textarea>
+                placeholder="Deine Empire Notizen..."></textarea>
 
             <br><br>
 
@@ -259,43 +298,18 @@
                 class="btn"
                 onclick="saveNote('aiempire_notes','dashboardNotes')">
 
-                Notizen speichern
+                Speichern
 
             </button>
 
         </div>
 
-        <!-- SYSTEM INFO -->
-
-        <div class="section">
-
-            <h2>💻 Systeminformationen</h2>
-
-            <div class="item">
-                <span>Projekt</span>
-                <span>AI Empire Pro</span>
-            </div>
-
-            <div class="item">
-                <span>Edition</span>
-                <span>Riadh Edition</span>
-            </div>
-
-            <div class="item">
-                <span>Dashboard Version</span>
-                <span>V4 Unified Premium</span>
-            </div>
-
-            <div class="item">
-                <span>Aktive Module</span>
-                <span id="systemModules">8</span>
-            </div>
-
-        </div>
+        <!-- FOOTER -->
 
         <div class="footer">
 
-            AI Empire Pro © 2026 | Riadh Edition
+            AI Empire Pro V5 Premium |
+            Riadh Edition © 2026
 
         </div>
 
@@ -317,10 +331,104 @@ document.getElementById(
 ).innerHTML =
 getOnlineModules();
 
-document.getElementById(
-    "systemModules"
-).innerHTML =
-getOnlineModules();
+const user =
+localStorage.getItem(
+    "empire_user"
+);
+
+if(user){
+
+    document.getElementById(
+        "profileName"
+    ).innerHTML =
+    "👑 " + user;
+
+}
+
+function searchModule(){
+
+    const value =
+    document.getElementById(
+        "globalSearch"
+    ).value.toLowerCase();
+
+    if(value.includes("assistant"))
+        location.href="assistant.html";
+
+    else if(value.includes("trading"))
+        location.href="trading.html";
+
+    else if(value.includes("telegram"))
+        location.href="telegram.html";
+
+    else if(value.includes("video"))
+        location.href="video.html";
+
+    else if(value.includes("game"))
+        location.href="game.html";
+
+    else if(value.includes("tools"))
+        location.href="tools.html";
+
+    else if(value.includes("setup"))
+        location.href="setup.html";
+
+    else
+
+        alert(
+            "Modul nicht gefunden."
+        );
+
+}
+
+function updateStats(){
+
+    let count = 0;
+
+    for(let i = 0; i < localStorage.length; i++){
+
+        const key =
+        localStorage.key(i);
+
+        if(key.includes("notes"))
+            count++;
+
+    }
+
+    document.getElementById(
+        "notesCount"
+    ).innerHTML = count;
+
+    document.getElementById(
+        "analyticsNotes"
+    ).innerHTML = count;
+
+}
+
+function randomMonitor(){
+
+    document.getElementById(
+        "cpuValue"
+    ).innerHTML =
+    Math.floor(
+        Math.random()*40+20
+    ) + "%";
+
+    document.getElementById(
+        "memoryValue"
+    ).innerHTML =
+    Math.floor(
+        Math.random()*30+50
+    ) + "%";
+
+}
+
+updateStats();
+
+setInterval(
+    randomMonitor,
+    3000
+);
 
 </script>
 
