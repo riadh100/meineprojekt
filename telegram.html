@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Telegram Center Pro - AI Empire Pro</title>
+<title>Telegram Center V5 - AI Empire Pro</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -20,8 +20,11 @@
         <div>
 
             <div class="logo">
-                <h1>AI Empire Pro</h1>
+
+                <h1>👑 AI Empire Pro</h1>
+
                 <p>Riadh Edition</p>
+
             </div>
 
             <nav class="menu">
@@ -48,9 +51,9 @@
 
         <div class="profile-box">
 
-            <h3>👑 Riadh</h3>
+            <h3 id="profileName">👑 Riadh</h3>
 
-            <p>PRO MEMBER</p>
+            <p>TELEGRAM COMMANDER</p>
 
             <br>
 
@@ -62,17 +65,19 @@
 
     </aside>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN -->
 
     <main class="main-content">
 
+        <!-- TOPBAR -->
+
         <div class="topbar">
 
-            <div class="topbar-title">
+            <div>
 
-                <h2>📱 Telegram Center Pro</h2>
+                <h2>📱 Telegram Center V5</h2>
 
-                <p>Telegram Management & Automation Hub</p>
+                <p>Telegram Management & Growth Center</p>
 
             </div>
 
@@ -101,17 +106,17 @@
                 <h3>Mitglieder</h3>
 
                 <div class="card-value">
-                    2.450
+                    2450
                 </div>
 
             </div>
 
             <div class="card">
 
-                <h3>Posts Heute</h3>
+                <h3>Beiträge</h3>
 
-                <div class="card-value">
-                    12
+                <div class="card-value" id="postCount">
+                    0
                 </div>
 
             </div>
@@ -128,11 +133,11 @@
 
         </div>
 
-        <!-- CHANNELS -->
+        <!-- CHANNEL MANAGER -->
 
         <div class="section">
 
-            <h2>📢 Kanal Übersicht</h2>
+            <h2>📢 Kanal Manager</h2>
 
             <div class="item">
                 <span>AI Empire News</span>
@@ -141,7 +146,7 @@
 
             <div class="item">
                 <span>Trading Signals</span>
-                <span class="online">1.200 User</span>
+                <span class="online">1200 User</span>
             </div>
 
             <div class="item">
@@ -151,11 +156,11 @@
 
         </div>
 
-        <!-- POST GENERATOR -->
+        <!-- AI POST GENERATOR -->
 
         <div class="section">
 
-            <h2>🤖 Post Generator</h2>
+            <h2>🤖 AI Post Generator V2</h2>
 
             <textarea
                 id="telegramPost"
@@ -169,9 +174,31 @@
 
             <button
                 class="btn"
-                onclick="saveNote('telegram_post','telegramPost')">
+                onclick="saveNote('telegram_post_v5','telegramPost')">
 
-                Beitrag speichern
+                Speichern
+
+            </button>
+
+        </div>
+
+        <!-- POST PLANER -->
+
+        <div class="section">
+
+            <h2>📅 Post Planer</h2>
+
+            <textarea
+                id="postPlan"
+                placeholder="Geplante Beiträge..."></textarea>
+
+            <br><br>
+
+            <button
+                class="btn"
+                onclick="saveNote('telegram_plan_v5','postPlan')">
+
+                Plan speichern
 
             </button>
 
@@ -181,7 +208,7 @@
 
         <div class="section">
 
-            <h2>🚀 Marketing Kampagnen</h2>
+            <h2>🚀 Kampagnen Manager</h2>
 
             <div class="item">
                 <span>AI Empire Launch</span>
@@ -189,12 +216,12 @@
             </div>
 
             <div class="item">
-                <span>Trading Promotion</span>
+                <span>Premium Community</span>
                 <span class="online">Aktiv</span>
             </div>
 
             <div class="item">
-                <span>Community Growth</span>
+                <span>Trading Promotion</span>
                 <span class="online">Aktiv</span>
             </div>
 
@@ -207,18 +234,46 @@
             <h2>🤖 Bot Center</h2>
 
             <div class="item">
-                <span>Auto Reply Bot</span>
+                <span>Welcome Bot</span>
                 <span class="online">ONLINE</span>
             </div>
 
             <div class="item">
-                <span>Welcome Bot</span>
+                <span>Auto Reply Bot</span>
                 <span class="online">ONLINE</span>
             </div>
 
             <div class="item">
                 <span>Signal Bot</span>
                 <span class="online">ONLINE</span>
+            </div>
+
+        </div>
+
+        <!-- ANALYTICS -->
+
+        <div class="section">
+
+            <h2>📊 Telegram Analytics</h2>
+
+            <div class="item">
+                <span>Wachstum</span>
+                <span>+12%</span>
+            </div>
+
+            <div class="item">
+                <span>Engagement</span>
+                <span>78%</span>
+            </div>
+
+            <div class="item">
+                <span>Klickrate</span>
+                <span>24%</span>
+            </div>
+
+            <div class="item">
+                <span>Aktive Nutzer</span>
+                <span>1.980</span>
             </div>
 
         </div>
@@ -231,13 +286,13 @@
 
             <textarea
                 id="telegramNotes"
-                placeholder="Telegram Strategien und Notizen..."></textarea>
+                placeholder="Ideen, Strategien und Aufgaben..."></textarea>
 
             <br><br>
 
             <button
                 class="btn"
-                onclick="saveNote('telegram_notes','telegramNotes')">
+                onclick="saveNote('telegram_notes_v5','telegramNotes')">
 
                 Notizen speichern
 
@@ -245,9 +300,11 @@
 
         </div>
 
+        <!-- FOOTER -->
+
         <div class="footer">
 
-            AI Empire Pro - Telegram Center Pro © 2026
+            AI Empire Pro - Telegram Center V5 © 2026
 
         </div>
 
@@ -259,46 +316,92 @@
 
 <script>
 
+const savedUser =
+localStorage.getItem(
+    "empire_user"
+);
+
+if(savedUser){
+
+    document.getElementById(
+        "profileName"
+    ).innerHTML =
+    "👑 " + savedUser;
+
+}
+
 function generatePost(){
 
     const posts = [
 
-        "🚀 Willkommen bei AI Empire Pro. Heute zeigen wir die besten AI Business Strategien.",
+        "🚀 Willkommen bei AI Empire Pro – die Zukunft beginnt heute.",
 
-        "📈 Neues Trading Update verfügbar. Bleibe dem Markt einen Schritt voraus.",
+        "📈 Neues Trading Signal verfügbar. Jetzt analysieren.",
 
-        "🤖 KI verändert die Welt. Nutze AI Empire Pro für dein Wachstum.",
+        "🤖 Nutze KI um dein Business zu automatisieren.",
 
-        "🔥 Erfolgreiche Unternehmer nutzen Automatisierung. Starte noch heute.",
+        "🔥 Heute: Produktivität mit AI steigern.",
 
-        "💰 Neue Möglichkeiten für passives Einkommen mit AI und digitalen Produkten."
+        "💰 Digitale Geschäftsmodelle erfolgreich skalieren.",
+
+        "📢 Exklusives Update für unsere Community.",
+
+        "⚡ Neue Chancen im Bereich AI & Automation."
 
     ];
 
     document.getElementById(
         "telegramPost"
-    ).value = posts[
+    ).value =
+
+    posts[
         Math.floor(
             Math.random() *
             posts.length
         )
     ];
 
-    showNotification(
-        "Telegram Beitrag erstellt"
-    );
+    updatePostCounter();
+
+}
+
+function updatePostCounter(){
+
+    const content =
+    document.getElementById(
+        "telegramPost"
+    ).value;
+
+    let count = 0;
+
+    if(content.trim() !== ""){
+
+        count = 1;
+
+    }
+
+    document.getElementById(
+        "postCount"
+    ).innerHTML = count;
 
 }
 
 loadNote(
-    "telegram_post",
+    "telegram_post_v5",
     "telegramPost"
 );
 
 loadNote(
-    "telegram_notes",
+    "telegram_plan_v5",
+    "postPlan"
+);
+
+loadNote(
+    "telegram_notes_v5",
     "telegramNotes"
 );
+
+updatePostCounter();
 
 </script>
 
