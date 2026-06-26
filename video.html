@@ -1,456 +1,365 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Empire Pro V7 - Video Studio</title>
 
-<title>Video Studio V6 Ultimate - AI Empire Pro</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
+
 <body>
 
-<div class="app">
+<div class="app-layout">
 
     <!-- SIDEBAR -->
-
     <aside class="sidebar">
 
-        <div>
-
-            <div class="logo">
-                <h1>👑 AI Empire Pro</h1>
-                <p>Riadh Edition V6 Ultimate</p>
-            </div>
-
-            <nav class="menu">
-                <a href="index.html">🏠 Dashboard</a>
-                <a href="assistant.html">🤖 Yasin AI</a>
-                <a href="trading.html">📈 Trading Pro</a>
-                <a href="telegram.html">📱 Telegram Center</a>
-                <a href="video.html">🎬 Video Studio</a>
-                <a href="game.html">🎮 Game Studio</a>
-                <a href="tools.html">🛠 Tools Center</a>
-                <a href="setup.html">⚙ Setup Center</a>
-            </nav>
-
+        <div class="logo">
+            <h2>🚀 AI Empire</h2>
+            <span>V7 Video Studio</span>
         </div>
 
-        <div class="profile-box">
-
-            <h3 id="profileName">👑 Riadh</h3>
-
-            <p>VIDEO COMMAND CENTER</p>
-
-            <br>
-
-            <div class="online">
-                STUDIO ONLINE
-            </div>
-
-        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="assistant.html">🤖 Assistant</a></li>
+                <li><a href="trading.html">📈 Trading</a></li>
+                <li><a href="telegram.html">💬 Telegram</a></li>
+                <li class="active"><a href="video.html">🎬 Video</a></li>
+                <li><a href="game.html">🎮 Game</a></li>
+                <li><a href="tools.html">🛠 Tools</a></li>
+                <li><a href="setup.html">⚙ Setup</a></li>
+            </ul>
+        </nav>
 
     </aside>
 
     <!-- MAIN -->
-
     <main class="main-content">
 
         <!-- TOPBAR -->
-
-        <div class="topbar">
+        <header class="topbar">
 
             <div>
-                <h2>🎬 Video Studio V6 Ultimate</h2>
-                <p>YouTube Management & Content Produktion</p>
+                <h1>Video Studio</h1>
+                <p>AI Video Generator & Rendering System</p>
             </div>
 
-            <div class="clock" id="clock">
-                00:00:00
+            <div class="topbar-right">
+
+                <button class="icon-btn">🎬 Render</button>
+                <button class="icon-btn">⚙</button>
+
             </div>
 
-        </div>
+        </header>
 
-        <!-- KPI -->
+        <!-- STATS -->
+        <section class="stats-grid">
 
-        <div class="grid">
+            <div class="stat-card">
+                <h3>Projekte</h3>
+                <span class="number">14</span>
+                <small>Gesamt</small>
+            </div>
 
-            <div class="card">
-                <h3>Videos</h3>
-                <div class="card-value" id="videoCounter">
-                    0
+            <div class="stat-card">
+                <h3>Gerendert</h3>
+                <span class="number">38</span>
+                <small>Videos</small>
+            </div>
+
+            <div class="stat-card">
+                <h3>Warteschlange</h3>
+                <span class="number">3</span>
+                <small>Aktiv</small>
+            </div>
+
+            <div class="stat-card">
+                <h3>Speicher</h3>
+                <span class="number">72%</span>
+                <small>Belegt</small>
+            </div>
+
+        </section>
+
+        <!-- VIDEO GENERATOR -->
+        <section class="modules-section">
+
+            <div class="section-title">
+                <h2>🎬 AI Video Generator</h2>
+                <p>Erstelle Videos mit KI-Unterstützung</p>
+            </div>
+
+            <div class="module-card">
+
+                <h3>Neues Video Projekt</h3>
+
+                <p>Beschreibe dein Video Projekt:</p>
+
+                <input type="text" placeholder="z.B. Trading Analyse Video" style="
+                    width:100%;
+                    padding:12px;
+                    border-radius:10px;
+                    border:none;
+                    background:#1e293b;
+                    color:white;
+                    margin-top:10px;
+                ">
+
+                <button class="module-btn">
+                    🎥 Generieren
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- PROJECT LIBRARY -->
+        <section class="modules-section">
+
+            <div class="section-title">
+                <h2>📁 Projekt Bibliothek</h2>
+                <p>Alle Video Projekte im Überblick</p>
+            </div>
+
+            <div class="modules-grid">
+
+                <div class="module-card">
+                    <div class="module-icon">🎥</div>
+                    <h3>Trading Intro</h3>
+                    <p>Status: Fertig</p>
+                    <div class="module-status online">● Exportiert</div>
                 </div>
-            </div>
 
-            <div class="card">
-                <h3>Ideen</h3>
-                <div class="card-value" id="ideaCounter">
-                    0
+                <div class="module-card">
+                    <div class="module-icon">📊</div>
+                    <h3>Market Analysis</h3>
+                    <p>Status: Rendering</p>
+                    <div class="module-status">● In Arbeit</div>
                 </div>
-            </div>
 
-            <div class="card">
-                <h3>Kanäle</h3>
-                <div class="card-value">
-                    3
+                <div class="module-card">
+                    <div class="module-icon">🤖</div>
+                    <h3>AI Promo</h3>
+                    <p>Status: Warteschlange</p>
+                    <div class="module-status">● Pending</div>
                 </div>
+
             </div>
 
-            <div class="card">
-                <h3>Status</h3>
-                <div class="card-value online">
-                    AKTIV
-                </div>
-            </div>
-
-        </div>
-
-        <!-- CHANNEL MANAGER -->
-
-        <div class="section">
-
-            <h2>📺 YouTube Kanal Manager</h2>
-
-            <textarea
-                id="channelManager"
-                placeholder="Kanäle und Projekte verwalten..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('video_channels_v6','channelManager')">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- AI IDEAS -->
-
-        <div class="section">
-
-            <h2>🤖 AI Video Ideen Generator</h2>
-
-            <textarea
-                id="videoIdeas"
-                placeholder="Video Ideen erscheinen hier..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="generateIdea()">
-
-                Idee generieren
-
-            </button>
-
-            <button
-                class="btn"
-                onclick="saveNote('video_ideas_v6','videoIdeas')">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- SCRIPT BUILDER -->
-
-        <div class="section">
-
-            <h2>✍ Script Builder Ultimate</h2>
-
-            <textarea
-                id="scriptBuilder"
-                placeholder="Video Skript erstellen..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('video_script_v6','scriptBuilder')">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- CONTENT CALENDAR -->
-
-        <div class="section">
-
-            <h2>📅 Content Kalender V6</h2>
-
-            <textarea
-                id="contentCalendar"
-                placeholder="Content Planung..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('video_calendar_v6','contentCalendar')">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- UPLOAD PLANNER -->
-
-        <div class="section">
-
-            <h2>🚀 Upload Planung</h2>
-
-            <textarea
-                id="uploadPlanner"
-                placeholder="Upload Termine und Veröffentlichungen..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('upload_planner_v6','uploadPlanner')">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- THUMBNAIL CENTER -->
-
-        <div class="section">
-
-            <h2>🖼 Thumbnail Ideen Center</h2>
-
-            <textarea
-                id="thumbnailIdeas"
-                placeholder="Thumbnail Konzepte und Ideen..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('thumbnail_ideas_v6','thumbnailIdeas')">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- PRODUCTION PIPELINE -->
-
-        <div class="section">
-
-            <h2>⚙ Produktions Pipeline</h2>
-
-            <div class="item">
-                <span>Recherche</span>
-                <span>100%</span>
-            </div>
-
-            <div class="item">
-                <span>Skript</span>
-                <span>88%</span>
-            </div>
-
-            <div class="item">
-                <span>Aufnahme</span>
-                <span>70%</span>
-            </div>
-
-            <div class="item">
-                <span>Bearbeitung</span>
-                <span>61%</span>
-            </div>
-
-        </div>
-
-        <!-- ANALYTICS -->
-
-        <div class="section">
-
-            <h2>📊 Video Analytics</h2>
-
-            <div class="item">
-                <span>Aufrufe</span>
-                <span>48.500</span>
-            </div>
-
-            <div class="item">
-                <span>Abonnenten</span>
-                <span>3.840</span>
-            </div>
-
-            <div class="item">
-                <span>Watchtime</span>
-                <span>1.480 Std.</span>
-            </div>
-
-            <div class="item">
-                <span>CTR</span>
-                <span>8.2%</span>
-            </div>
-
-        </div>
-
-        <!-- NOTES -->
-
-        <div class="section">
-
-            <h2>📝 Video Strategien</h2>
-
-            <textarea
-                id="videoNotes"
-                placeholder="Notizen, Ideen und Strategien..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('video_notes_v6','videoNotes')">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- FOOTER -->
-
-        <div class="footer">
-            AI Empire Pro - Video Studio V6 Ultimate © 2026
-        </div>
+        </section>
 
     </main>
 
 </div>
 
-<script src="script.js"></script>
+</body>
+</html>
+<!-- ========================================= -->
+<!-- LIVE RENDERING QUEUE -->
+<!-- ========================================= -->
+
+<section class="system-status">
+
+    <div class="section-title">
+        <h2>📊 Rendering Queue</h2>
+        <p>Aktuelle Video Verarbeitung</p>
+    </div>
+
+    <div class="status-card">
+
+        <h3>Trading Intro</h3>
+
+        <div class="progress">
+            <div class="progress-bar" id="vid1" style="width:30%;"></div>
+        </div>
+
+        <span id="vid1txt">30%</span>
+
+    </div>
+
+    <div class="status-card">
+
+        <h3>Market Analysis</h3>
+
+        <div class="progress">
+            <div class="progress-bar" id="vid2" style="width:55%;"></div>
+        </div>
+
+        <span id="vid2txt">55%</span>
+
+    </div>
+
+    <div class="status-card">
+
+        <h3>AI Promo</h3>
+
+        <div class="progress">
+            <div class="progress-bar" id="vid3" style="width:80%;"></div>
+        </div>
+
+        <span id="vid3txt">80%</span>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- LIVE ACTIVITY FEED -->
+<!-- ========================================= -->
+
+<section class="activity-section">
+
+    <div class="section-title">
+        <h2>📡 Video Activity Feed</h2>
+    </div>
+
+    <div class="activity-card" id="videoLog">
+
+        <div class="activity-item">
+            <span class="activity-time">SYSTEM</span>
+            <span>Video Studio gestartet</span>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- SCRIPT -->
+<!-- ========================================= -->
 
 <script>
 
-const user =
-localStorage.getItem(
-    "empire_user"
-);
+/* =======================================================
+   Random Helper
+======================================================= */
 
-if(user){
+function random(min,max){
+    return Math.floor(Math.random()*(max-min+1))+min;
+}
 
-    document.getElementById(
-        "profileName"
-    ).innerHTML =
-    "👑 " + user;
+/* =======================================================
+   Render Progress Simulation
+======================================================= */
+
+function updateRendering(){
+
+    const v1=random(10,100);
+    const v2=random(20,100);
+    const v3=random(30,100);
+
+    document.getElementById("vid1").style.width=v1+"%";
+    document.getElementById("vid2").style.width=v2+"%";
+    document.getElementById("vid3").style.width=v3+"%";
+
+    document.getElementById("vid1txt").textContent=v1+"%";
+    document.getElementById("vid2txt").textContent=v2+"%";
+    document.getElementById("vid3txt").textContent=v3+"%";
 
 }
 
-function generateIdea(){
+/* =======================================================
+   Activity Log System
+======================================================= */
 
-    const ideas = [
+function addVideoLog(type,msg){
 
-        "10 KI Tools die dein Business verändern",
+    const log=document.getElementById("videoLog");
 
-        "Trading Strategie für Anfänger",
+    if(!log) return;
 
-        "Wie man mit AI Geld verdient",
+    const item=document.createElement("div");
 
-        "Telegram Wachstum in 30 Tagen",
+    item.className="activity-item";
 
-        "Top Business Ideen 2026",
+    const time=new Date().toLocaleTimeString("de-DE",{
+        hour:"2-digit",
+        minute:"2-digit"
+    });
 
-        "YouTube Automation Schritt für Schritt",
+    item.innerHTML=`
+        <span class="activity-time">${type}</span>
+        <span>${msg}</span>
+    `;
 
-        "AI Empire Erfolgsplan",
+    log.prepend(item);
 
-        "Passive Einkommensquellen mit KI"
+    if(log.children.length>8){
+
+        log.removeChild(log.lastElementChild);
+
+    }
+
+}
+
+/* =======================================================
+   Auto Video Events
+======================================================= */
+
+function autoVideoEvents(){
+
+    const events=[
+
+        "Rendering gestartet",
+
+        "Frames verarbeitet",
+
+        "Audio synchronisiert",
+
+        "Export vorbereitet",
+
+        "AI Szene generiert"
 
     ];
 
-    const result =
-    ideas[
-        Math.floor(
-            Math.random() *
-            ideas.length
-        )
+    const event=events[random(0,events.length-1)];
+
+    addVideoLog("AI",event);
+
+}
+
+/* =======================================================
+   Auto Project Generator
+======================================================= */
+
+function generateProject(){
+
+    const projects=[
+
+        "Trading Breakdown Video",
+
+        "AI Market Analysis",
+
+        "Crypto Update Clip",
+
+        "Profit Strategy Video"
+
     ];
 
-    document.getElementById(
-        "videoIdeas"
-    ).value =
-    result;
+    const project=projects[random(0,projects.length-1)];
 
-    updateIdeaCounter();
+    addVideoLog("NEW","Projekt erstellt: "+project);
 
 }
 
-function updateIdeaCounter(){
+/* =======================================================
+   INIT SYSTEM
+======================================================= */
 
-    const value =
-    document.getElementById(
-        "videoIdeas"
-    ).value;
+document.addEventListener("DOMContentLoaded",()=>{
 
-    document.getElementById(
-        "ideaCounter"
-    ).innerHTML =
+    updateRendering();
 
-    value.trim() === ""
-    ? 0
-    : 1;
+    setInterval(updateRendering,5000);
 
-}
+    setInterval(autoVideoEvents,6000);
 
-loadNote(
-    "video_channels_v6",
-    "channelManager"
-);
+    setInterval(generateProject,10000);
 
-loadNote(
-    "video_ideas_v6",
-    "videoIdeas"
-);
-
-loadNote(
-    "video_script_v6",
-    "scriptBuilder"
-);
-
-loadNote(
-    "video_calendar_v6",
-    "contentCalendar"
-);
-
-loadNote(
-    "upload_planner_v6",
-    "uploadPlanner"
-);
-
-loadNote(
-    "thumbnail_ideas_v6",
-    "thumbnailIdeas"
-);
-
-loadNote(
-    "video_notes_v6",
-    "videoNotes"
-);
-
-updateIdeaCounter();
-
-document.getElementById(
-    "videoCounter"
-).innerHTML =
-localStorage.length;
+});
 
 </script>
-
-</body>
-</html>
