@@ -1,584 +1,319 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Empire Pro V7 - Trading</title>
 
-<title>Trading Pro V6 Ultimate - AI Empire Pro</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
+
 <body>
 
-<div class="app">
+<div class="app-layout">
 
     <!-- SIDEBAR -->
-
     <aside class="sidebar">
 
-        <div>
-
-            <div class="logo">
-                <h1>👑 AI Empire Pro</h1>
-                <p>Riadh Edition V6 Ultimate</p>
-            </div>
-
-            <nav class="menu">
-                <a href="index.html">🏠 Dashboard</a>
-                <a href="assistant.html">🤖 Yasin AI</a>
-                <a href="trading.html">📈 Trading Pro</a>
-                <a href="telegram.html">📱 Telegram Center</a>
-                <a href="video.html">🎬 Video Studio</a>
-                <a href="game.html">🎮 Game Studio</a>
-                <a href="tools.html">🛠 Tools Center</a>
-                <a href="setup.html">⚙ Setup Center</a>
-            </nav>
-
+        <div class="logo">
+            <h2>🚀 AI Empire</h2>
+            <span>V7 Trading</span>
         </div>
 
-        <div class="profile-box">
-
-            <h3 id="profileName">👑 Riadh</h3>
-
-            <p>TRADING COMMAND CENTER</p>
-
-            <br>
-
-            <div class="online">
-                MARKET READY
-            </div>
-
-        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="assistant.html">🤖 Assistant</a></li>
+                <li class="active"><a href="trading.html">📈 Trading</a></li>
+                <li><a href="telegram.html">💬 Telegram</a></li>
+                <li><a href="video.html">🎬 Video</a></li>
+                <li><a href="game.html">🎮 Game</a></li>
+                <li><a href="tools.html">🛠 Tools</a></li>
+                <li><a href="setup.html">⚙ Setup</a></li>
+            </ul>
+        </nav>
 
     </aside>
 
     <!-- MAIN -->
-
     <main class="main-content">
 
         <!-- TOPBAR -->
-
-        <div class="topbar">
+        <header class="topbar">
 
             <div>
+                <h1>Trading Dashboard</h1>
+                <p>Live Marktübersicht & KI Trading Signale</p>
+            </div>
 
-                <h2>📈 Trading Pro V6 Ultimate</h2>
+            <div class="topbar-right">
 
-                <p>Portfolio, Journal & Risiko Management</p>
+                <button class="icon-btn">📊 Live</button>
+                <button class="icon-btn">⚙</button>
 
             </div>
 
-            <div class="clock" id="clock">
-                00:00:00
-            </div>
+        </header>
 
-        </div>
+        <!-- KPI SECTION -->
+        <section class="stats-grid">
 
-        <!-- KPI -->
-
-        <div class="grid">
-
-            <div class="card">
-                <h3>Trades</h3>
-                <div class="card-value" id="tradeCount">0</div>
-            </div>
-
-            <div class="card">
+            <div class="stat-card">
                 <h3>Portfolio</h3>
-                <div class="card-value" id="portfolioValue">0 €</div>
+                <span class="number">+18.240 €</span>
+                <small>Gesamtwert</small>
             </div>
 
-            <div class="card">
-                <h3>Watchlist</h3>
-                <div class="card-value" id="watchCount">0</div>
+            <div class="stat-card">
+                <h3>Gewinn heute</h3>
+                <span class="number">+540 €</span>
+                <small>24h Performance</small>
             </div>
 
-            <div class="card">
-                <h3>Status</h3>
-                <div class="card-value online">AKTIV</div>
+            <div class="stat-card">
+                <h3>Aktive Trades</h3>
+                <span class="number">7</span>
+                <small>Laufend</small>
             </div>
 
-        </div>
-
-        <!-- PORTFOLIO -->
-
-        <div class="section">
-
-            <h2>💼 Portfolio Tracker</h2>
-
-            <input
-                type="number"
-                id="portfolioInput"
-                placeholder="Portfolio Wert in Euro">
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="savePortfolio()">
-
-                Portfolio speichern
-
-            </button>
-
-        </div>
-
-        <!-- TRADE JOURNAL -->
-
-        <div class="section">
-
-            <h2>📔 Trade Journal</h2>
-
-            <textarea
-                id="tradeJournal"
-                placeholder="Trades dokumentieren..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveTradeJournal()">
-
-                Journal speichern
-
-            </button>
-
-        </div>
-
-        <!-- WATCHLIST -->
-
-        <div class="section">
-
-            <h2>👀 Watchlist</h2>
-
-            <textarea
-                id="watchlist"
-                placeholder="BTCUSD&#10;EURUSD&#10;NASDAQ"></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveWatchlist()">
-
-                Watchlist speichern
-
-            </button>
-
-        </div>
-
-        <!-- RISK MANAGER -->
-
-        <div class="section">
-
-            <h2>⚠ Risiko Manager</h2>
-
-            <input
-                type="number"
-                id="accountSize"
-                placeholder="Kontogröße">
-
-            <br><br>
-
-            <input
-                type="number"
-                id="riskPercent"
-                placeholder="Risiko % pro Trade">
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="calculateRisk()">
-
-                Risiko berechnen
-
-            </button>
-
-            <br><br>
-
-            <textarea
-                id="riskResult"
-                readonly
-                placeholder="Risiko Ergebnis..."></textarea>
-
-        </div>
-
-        <!-- PROFIT CALCULATOR -->
-
-        <div class="section">
-
-            <h2>💰 Gewinn / Verlust Rechner</h2>
-
-            <input
-                type="number"
-                id="entryPrice"
-                placeholder="Einstieg">
-
-            <br><br>
-
-            <input
-                type="number"
-                id="exitPrice"
-                placeholder="Ausstieg">
-
-            <br><br>
-
-            <input
-                type="number"
-                id="positionSize"
-                placeholder="Positionsgröße">
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="calculatePnL()">
-
-                Berechnen
-
-            </button>
-
-            <br><br>
-
-            <textarea
-                id="pnlResult"
-                readonly
-                placeholder="Ergebnis..."></textarea>
-
-        </div>
-
-        <!-- DAILY GOALS -->
-
-        <div class="section">
-
-            <h2>🎯 Trading Tagesziele</h2>
-
-            <textarea
-                id="dailyGoals"
-                placeholder="Tagesziele definieren..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('trading_goals_v6','dailyGoals')">
-
-                Ziele speichern
-
-            </button>
-
-        </div>
-
-        <!-- MARKET ANALYSIS -->
-
-        <div class="section">
-
-            <h2>📊 Marktanalyse Center</h2>
-
-            <textarea
-                id="marketAnalysis"
-                placeholder="Marktanalyse und Setups..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('market_analysis_v6','marketAnalysis')">
-
-                Analyse speichern
-
-            </button>
-
-        </div>
-
-        <!-- PERFORMANCE -->
-
-        <div class="section">
-
-            <h2>🏆 Trading Performance</h2>
-
-            <div class="item">
-                <span>Disziplin</span>
-                <span>92%</span>
+            <div class="stat-card">
+                <h3>Signal Accuracy</h3>
+                <span class="number">92%</span>
+                <small>KI Bewertung</small>
             </div>
 
-            <div class="item">
-                <span>Risikomanagement</span>
-                <span>88%</span>
+        </section>
+
+        <!-- SIGNAL SECTION -->
+        <section class="modules-section">
+
+            <div class="section-title">
+                <h2>📡 Trading Signale</h2>
+                <p>KI-generierte Marktchancen in Echtzeit</p>
             </div>
 
-            <div class="item">
-                <span>Strategie</span>
-                <span>90%</span>
+            <div class="modules-grid">
+
+                <div class="module-card">
+                    <div class="module-icon">📈</div>
+                    <h3>BTC/USDT</h3>
+                    <p>Long Signal erkannt</p>
+                    <div class="module-status online">● Strong Buy</div>
+                    <a href="#" class="module-btn">Details</a>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-icon">📉</div>
+                    <h3>ETH/USDT</h3>
+                    <p>Seitwärtsbewegung</p>
+                    <div class="module-status">● Neutral</div>
+                    <a href="#" class="module-btn">Details</a>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-icon">⚡</div>
+                    <h3>SOL/USDT</h3>
+                    <p>Volatilität hoch</p>
+                    <div class="module-status online">● Watch</div>
+                    <a href="#" class="module-btn">Details</a>
+                </div>
+
             </div>
 
-            <div class="item">
-                <span>Konsistenz</span>
-                <span>85%</span>
+        </section>
+
+        <!-- PORTFOLIO SECTION -->
+        <section class="activity-section">
+
+            <div class="section-title">
+                <h2>Portfolio Übersicht</h2>
             </div>
 
-        </div>
+            <div class="activity-card">
 
-        <!-- NOTES -->
+                <div class="activity-item">
+                    <span class="activity-time">BTC</span>
+                    <span>+12% Position offen</span>
+                </div>
 
-        <div class="section">
+                <div class="activity-item">
+                    <span class="activity-time">ETH</span>
+                    <span>-2% leicht im Minus</span>
+                </div>
 
-            <h2>📝 Trading Notizen</h2>
+                <div class="activity-item">
+                    <span class="activity-time">SOL</span>
+                    <span>+6% im Gewinn</span>
+                </div>
 
-            <textarea
-                id="tradingNotes"
-                placeholder="Eigene Trading Notizen..."></textarea>
+            </div>
 
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('trading_notes_v6','tradingNotes')">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- FOOTER -->
-
-        <div class="footer">
-            AI Empire Pro - Trading Pro V6 Ultimate © 2026
-        </div>
+        </section>
 
     </main>
 
 </div>
 
-<script src="script.js"></script>
+</body>
+</html>
+<!-- ========================================= -->
+<!-- LIVE CHART SIMULATION -->
+<!-- ========================================= -->
+
+<section class="system-status">
+
+    <div class="section-title">
+        <h2>📊 Markt Chart (Simulation)</h2>
+        <p>Echtzeit Bewegungen (UI Demo)</p>
+    </div>
+
+    <div class="status-card">
+
+        <h3>BTC/USDT Trend</h3>
+
+        <div class="progress">
+            <div class="progress-bar" id="btcBar" style="width:65%;"></div>
+        </div>
+
+        <span id="btcValue">65%</span>
+
+    </div>
+
+    <div class="status-card">
+
+        <h3>ETH/USDT Trend</h3>
+
+        <div class="progress">
+            <div class="progress-bar" id="ethBar" style="width:45%;"></div>
+        </div>
+
+        <span id="ethValue">45%</span>
+
+    </div>
+
+    <div class="status-card">
+
+        <h3>SOL/USDT Trend</h3>
+
+        <div class="progress">
+            <div class="progress-bar" id="solBar" style="width:72%;"></div>
+        </div>
+
+        <span id="solValue">72%</span>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- TRADE HISTORY -->
+<!-- ========================================= -->
+
+<section class="activity-section">
+
+    <div class="section-title">
+        <h2>📜 Trade History</h2>
+    </div>
+
+    <div class="activity-card" id="tradeHistory">
+
+        <div class="activity-item">
+            <span class="activity-time">BTC</span>
+            <span>+120€ Profit abgeschlossen</span>
+        </div>
+
+        <div class="activity-item">
+            <span class="activity-time">ETH</span>
+            <span>-35€ Stop Loss</span>
+        </div>
+
+        <div class="activity-item">
+            <span class="activity-time">SOL</span>
+            <span>+78€ Take Profit</span>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- SCRIPT: LIVE UPDATES -->
+<!-- ========================================= -->
 
 <script>
 
-const user =
-localStorage.getItem(
-    "empire_user"
-);
+/* =======================================================
+   Trading Live Simulation Engine
+======================================================= */
 
-if(user){
+function random(min,max){
+    return Math.floor(Math.random()*(max-min+1))+min;
+}
 
-    document.getElementById(
-        "profileName"
-    ).innerHTML =
-    "👑 " + user;
+function updateMarket(){
+
+    const btc=random(40,85);
+    const eth=random(30,70);
+    const sol=random(50,90);
+
+    document.getElementById("btcBar").style.width=btc+"%";
+    document.getElementById("ethBar").style.width=eth+"%";
+    document.getElementById("solBar").style.width=sol+"%";
+
+    document.getElementById("btcValue").textContent=btc+"%";
+    document.getElementById("ethValue").textContent=eth+"%";
+    document.getElementById("solValue").textContent=sol+"%";
 
 }
 
-function savePortfolio(){
+/* =======================================================
+   Fake Trade Generator
+======================================================= */
 
-    const value =
-    document.getElementById(
-        "portfolioInput"
-    ).value;
+function addTrade(){
 
-    localStorage.setItem(
-        "portfolio_value_v6",
-        value
-    );
+    const list=document.getElementById("tradeHistory");
 
-    document.getElementById(
-        "portfolioValue"
-    ).innerHTML =
-    value + " €";
+    if(!list) return;
 
-    showNotification(
-        "Portfolio gespeichert"
-    );
+    const coins=["BTC","ETH","SOL"];
 
-}
+    const coin=coins[random(0,2)];
 
-function saveTradeJournal(){
+    const profit=random(-50,150);
 
-    saveNote(
-        "trade_journal_v6",
-        "tradeJournal"
-    );
+    const item=document.createElement("div");
 
-    const trades =
-    document.getElementById(
-        "tradeJournal"
-    ).value;
+    item.className="activity-item";
 
-    const count =
-    trades.trim() === ""
-    ? 0
-    : trades.split("\n").length;
+    item.innerHTML=`
+        <span class="activity-time">${coin}</span>
+        <span>${profit >= 0 ? "+" : ""}${profit}€ Trade ${profit >= 0 ? "Profit" : "Loss"}</span>
+    `;
 
-    document.getElementById(
-        "tradeCount"
-    ).innerHTML =
-    count;
+    list.prepend(item);
+
+    if(list.children.length>6){
+
+        list.removeChild(list.lastElementChild);
+
+    }
 
 }
 
-function saveWatchlist(){
+/* =======================================================
+   INIT
+======================================================= */
 
-    const list =
-    document.getElementById(
-        "watchlist"
-    ).value;
+document.addEventListener("DOMContentLoaded",()=>{
 
-    localStorage.setItem(
-        "watchlist_v6",
-        list
-    );
+    updateMarket();
 
-    updateWatchlist();
+    setInterval(updateMarket,4000);
 
-    showNotification(
-        "Watchlist gespeichert"
-    );
+    setInterval(addTrade,6000);
 
-}
-
-function updateWatchlist(){
-
-    const list =
-    document.getElementById(
-        "watchlist"
-    ).value;
-
-    const count =
-    list.trim() === ""
-    ? 0
-    : list.split("\n").length;
-
-    document.getElementById(
-        "watchCount"
-    ).innerHTML =
-    count;
-
-}
-
-function calculateRisk(){
-
-    const account =
-    Number(
-        document.getElementById(
-            "accountSize"
-        ).value
-    );
-
-    const risk =
-    Number(
-        document.getElementById(
-            "riskPercent"
-        ).value
-    );
-
-    const amount =
-    account * risk / 100;
-
-    document.getElementById(
-        "riskResult"
-    ).value =
-
-    "Maximales Risiko pro Trade: " +
-    amount.toFixed(2) +
-    " €";
-
-}
-
-function calculatePnL(){
-
-    const entry =
-    Number(
-        document.getElementById(
-            "entryPrice"
-        ).value
-    );
-
-    const exit =
-    Number(
-        document.getElementById(
-            "exitPrice"
-        ).value
-    );
-
-    const size =
-    Number(
-        document.getElementById(
-            "positionSize"
-        ).value
-    );
-
-    const result =
-    (exit - entry) * size;
-
-    document.getElementById(
-        "pnlResult"
-    ).value =
-
-    "Gewinn / Verlust: " +
-    result.toFixed(2) +
-    " €";
-
-}
-
-loadNote(
-    "trade_journal_v6",
-    "tradeJournal"
-);
-
-loadNote(
-    "trading_goals_v6",
-    "dailyGoals"
-);
-
-loadNote(
-    "market_analysis_v6",
-    "marketAnalysis"
-);
-
-loadNote(
-    "trading_notes_v6",
-    "tradingNotes"
-);
-
-const portfolio =
-localStorage.getItem(
-    "portfolio_value_v6"
-);
-
-if(portfolio){
-
-    document.getElementById(
-        "portfolioInput"
-    ).value =
-    portfolio;
-
-    document.getElementById(
-        "portfolioValue"
-    ).innerHTML =
-    portfolio + " €";
-
-}
-
-const savedWatchlist =
-localStorage.getItem(
-    "watchlist_v6"
-);
-
-if(savedWatchlist){
-
-    document.getElementById(
-        "watchlist"
-    ).value =
-    savedWatchlist;
-
-}
-
-updateWatchlist();
-saveTradeJournal();
+});
 
 </script>
-
-</body>
-</html>
