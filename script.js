@@ -1,158 +1,91 @@
-//////////////////////////////////////////////////////
-// AI EMPIRE PRO V6 ULTIMATE - SCRIPT ENGINE
-// Riadh Edition
-//////////////////////////////////////////////////////
+/* ==========================================================
+   AI Empire Pro V7 Ultimate
+   File: script.js
+   Version: V7 Ultimate
+========================================================== */
 
-/* =========================
-   CLOCK SYSTEM
-========================= */
+"use strict";
 
-function updateClock(){
+/* ==========================================================
+   APP
+========================================================== */
 
-    const now = new Date();
+const App = {
 
-    const h = String(now.getHours()).padStart(2,"0");
-    const m = String(now.getMinutes()).padStart(2,"0");
-    const s = String(now.getSeconds()).padStart(2,"0");
+    version: "7.0 Ultimate",
 
-    const clock = document.getElementById("clock");
-    if(clock){
-        clock.innerText = `${h}:${m}:${s}`;
-    }
-}
+    initialized: false,
 
-setInterval(updateClock,1000);
-updateClock();
+    data: {
 
+        empireScore: 0,
 
-/* =========================
-   NOTIFICATION SYSTEM
-========================= */
+        level: 1,
 
-function showNotification(message){
+        xp: 0,
 
-    let note = document.createElement("div");
+        missions: [],
 
-    note.innerText = message;
+        projects: [],
 
-    note.style.position = "fixed";
-    note.style.bottom = "20px";
-    note.style.right = "20px";
-    note.style.background = "#d4af37";
-    note.style.color = "#000";
-    note.style.padding = "12px 18px";
-    note.style.borderRadius = "12px";
-    note.style.fontWeight = "bold";
-    note.style.zIndex = "9999";
-    note.style.boxShadow = "0 0 20px rgba(212,175,55,0.4)";
+        notifications: [],
 
-    document.body.appendChild(note);
+        settings: {
 
-    setTimeout(()=>{
-        note.remove();
-    },2500);
-}
+            darkMode: true
 
-
-/* =========================
-   NOTE SYSTEM (LOCAL STORAGE)
-========================= */
-
-function saveNote(key, id){
-
-    const el = document.getElementById(id);
-    if(!el) return;
-
-    localStorage.setItem(key, el.value);
-
-    showNotification("Gespeichert ✔");
-}
-
-function loadNote(key, id){
-
-    const el = document.getElementById(id);
-    if(!el) return;
-
-    const data = localStorage.getItem(key);
-
-    if(data){
-        el.value = data;
-    }
-}
-
-
-/* =========================
-   BACKUP SYSTEM
-========================= */
-
-function exportEmpireData(){
-
-    const data = {
-        ...localStorage
-    };
-
-    const blob = new Blob(
-        [JSON.stringify(data,null,2)],
-        {type:"application/json"}
-    );
-
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "AI_Empire_Backup_V6.json";
-    a.click();
-
-    URL.revokeObjectURL(url);
-
-    showNotification("Backup exportiert ✔");
-}
-
-function importEmpireData(file){
-
-    const reader = new FileReader();
-
-    reader.onload = function(e){
-
-        try{
-
-            const data = JSON.parse(e.target.result);
-
-            Object.keys(data).forEach(key=>{
-                localStorage.setItem(key,data[key]);
-            });
-
-            showNotification("Backup importiert ✔");
-            setTimeout(()=>location.reload(),1200);
-
-        } catch(err){
-            showNotification("Fehler beim Import ❌");
         }
-    };
 
-    reader.readAsText(file);
+    }
+
+};
+
+/* ==========================================================
+   DOM
+========================================================== */
+
+const DOM = {
+
+    score: document.getElementById("empireScore"),
+
+    level: document.getElementById("level"),
+
+    missionCounter: document.getElementById("missionsDone"),
+
+    projectCounter: document.getElementById("projectsCount"),
+
+    notificationPanel: document.getElementById("notificationPanel"),
+
+    notificationBtn: document.getElementById("notificationBtn"),
+
+    themeBtn: document.getElementById("themeBtn"),
+
+    fab: document.getElementById("fab"),
+
+    aiPanel: document.getElementById("aiCommandCenter")
+
+};
+
+/* ==========================================================
+   INIT
+========================================================== */
+
+document.addEventListener("DOMContentLoaded", initApp);
+
+function initApp() {
+
+    console.log("AI Empire Pro V7 gestartet");
+
+    loadStorage();
+
+    initNavigation();
+
+    initTheme();
+
+    initNotifications();
+
+    updateDashboard();
+
+    App.initialized = true;
+
 }
-
-
-/* =========================
-   BASIC UTIL
-========================= */
-
-function random(min,max){
-    return Math.floor(Math.random()*(max-min+1))+min;
-}
-
-function formatEUR(value){
-    return Number(value).toFixed(2) + " €";
-}
-
-
-/* =========================
-   AUTO INIT
-========================= */
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-    updateClock();
-
-});
