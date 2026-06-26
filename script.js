@@ -89,3 +89,167 @@ function initApp() {
     App.initialized = true;
 
 }
+/* ==========================================================
+   NAVIGATION
+========================================================== */
+
+function initNavigation() {
+
+    const links = document.querySelectorAll(".sidebar a");
+
+    links.forEach(link => {
+
+        link.addEventListener("click", function(e){
+
+            e.preventDefault();
+
+            const target = this.getAttribute("href");
+
+            const section = document.querySelector(target);
+
+            if(section){
+
+                section.scrollIntoView({
+
+                    behavior:"smooth"
+
+                });
+
+            }
+
+        });
+
+    });
+
+}
+/* ==========================================================
+   DASHBOARD
+========================================================== */
+
+function updateDashboard(){
+
+    if(DOM.score){
+
+        DOM.score.textContent = App.data.empireScore;
+
+    }
+
+    if(DOM.level){
+
+        DOM.level.textContent = App.data.level;
+
+    }
+
+    if(DOM.missionCounter){
+
+        DOM.missionCounter.textContent =
+        App.data.missions.length;
+
+    }
+
+    if(DOM.projectCounter){
+
+        DOM.projectCounter.textContent =
+        App.data.projects.length;
+
+    }
+
+}
+/* ==========================================================
+   STORAGE
+========================================================== */
+
+function saveStorage(){
+
+    localStorage.setItem(
+
+        "AI_EMPIRE_V7",
+
+        JSON.stringify(App.data)
+
+    );
+
+}
+
+function loadStorage(){
+
+    const data = localStorage.getItem("AI_EMPIRE_V7");
+
+    if(data){
+
+        App.data = JSON.parse(data);
+
+    }
+
+}
+/* ==========================================================
+   THEME
+========================================================== */
+
+function initTheme(){
+
+    if(!DOM.themeBtn) return;
+
+    DOM.themeBtn.addEventListener("click",toggleTheme);
+
+}
+
+function toggleTheme(){
+
+    document.body.classList.toggle("light");
+
+    saveStorage();
+
+}
+/* ==========================================================
+   NOTIFICATIONS
+========================================================== */
+
+function initNotifications(){
+
+    if(!DOM.notificationBtn) return;
+
+    DOM.notificationBtn.addEventListener(
+
+        "click",
+
+        toggleNotifications
+
+    );
+
+}
+
+function toggleNotifications(){
+
+    DOM.notificationPanel.classList.toggle("active");
+
+}
+
+function addNotification(title,text){
+
+    App.data.notifications.push({
+
+        title,
+
+        text,
+
+        date:new Date()
+
+    });
+
+    saveStorage();
+
+}
+/* ==========================================================
+   AI PANEL
+========================================================== */
+
+if(DOM.fab){
+
+    DOM.fab.addEventListener("click",()=>{
+
+        DOM.aiPanel.classList.toggle("active");
+
+    });
+
+}
