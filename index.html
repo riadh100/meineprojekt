@@ -1,448 +1,190 @@
+# AI Empire Pro V7 Ultimate – index.html (Grundstruktur)
+
+```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI Empire Pro - Dashboard V6 Ultimate</title>
+    <title>AI Empire Pro V7 Ultimate</title>
 
-<link rel="stylesheet" href="style.css">
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="app">
+<!-- ========================= -->
+<!-- Sidebar -->
+<!-- ========================= -->
 
-    <!-- SIDEBAR -->
+<aside class="sidebar">
 
-    <aside class="sidebar">
+    <div class="logo">
+        <i class="fa-solid fa-crown"></i>
+        <h2>AI Empire</h2>
+    </div>
 
-        <div>
+    <nav>
 
-            <div class="logo">
+        <a href="#dashboard">
+            <i class="fa-solid fa-chart-line"></i>
+            Dashboard
+        </a>
 
-                <h1>👑 AI Empire Pro</h1>
+        <a href="#assistant">
+            <i class="fa-solid fa-robot"></i>
+            AI Assistant
+        </a>
 
-                <p>Riadh Edition V6 Ultimate</p>
+        <a href="#trading">
+            <i class="fa-solid fa-coins"></i>
+            Trading
+        </a>
 
+        <a href="#telegram">
+            <i class="fa-brands fa-telegram"></i>
+            Telegram
+        </a>
+
+        <a href="#video">
+            <i class="fa-solid fa-video"></i>
+            Video Studio
+        </a>
+
+        <a href="#game">
+            <i class="fa-solid fa-gamepad"></i>
+            Games
+        </a>
+
+        <a href="#tools">
+            <i class="fa-solid fa-toolbox"></i>
+            Tools
+        </a>
+
+        <a href="#missions">
+            <i class="fa-solid fa-bullseye"></i>
+            Daily Missions
+        </a>
+
+        <a href="#projects">
+            <i class="fa-solid fa-folder-open"></i>
+            Projekte
+        </a>
+
+        <a href="#settings">
+            <i class="fa-solid fa-gear"></i>
+            Einstellungen
+        </a>
+
+    </nav>
+
+</aside>
+
+<!-- ========================= -->
+<!-- Main -->
+<!-- ========================= -->
+
+<main class="main-content">
+
+    <!-- Topbar -->
+    <header class="topbar">
+
+        <div class="search-box">
+            <input type="text" placeholder="Suche...">
+        </div>
+
+        <div class="top-actions">
+
+            <button id="notificationBtn">
+                🔔
+            </button>
+
+            <button id="themeBtn">
+                🌙
+            </button>
+
+            <div class="profile">
+                👑 Empire Pro
             </div>
-
-            <nav class="menu">
-
-                <a href="index.html">🏠 Dashboard</a>
-
-                <a href="assistant.html">🤖 Yasin AI</a>
-
-                <a href="trading.html">📈 Trading Pro</a>
-
-                <a href="telegram.html">📱 Telegram Center</a>
-
-                <a href="video.html">🎬 Video Studio</a>
-
-                <a href="game.html">🎮 Game Studio</a>
-
-                <a href="tools.html">🛠 Tools Center</a>
-
-                <a href="setup.html">⚙ Setup Center</a>
-
-            </nav>
 
         </div>
 
-        <div class="profile-box">
+    </header>
 
-            <h3 id="profileName">👑 Riadh</h3>
+    <!-- Dashboard -->
 
-            <p>EMPIRE COMMANDER</p>
+    <section id="dashboard">
 
-            <br>
+        <h1>Dashboard</h1>
 
-            <div class="online">
-                SYSTEM ONLINE
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <h3>Empire Score</h3>
+                <span id="empireScore">0</span>
             </div>
 
-        </div>
-
-    </aside>
-
-    <!-- MAIN -->
-
-    <main class="main-content">
-
-        <!-- HEADER -->
-
-        <div class="topbar">
-
-            <div>
-
-                <h2>🚀 Dashboard V6 Ultimate</h2>
-
-                <p id="welcomeText">
-                    Willkommen zurück Commander
-                </p>
-
+            <div class="stat-card">
+                <h3>Level</h3>
+                <span id="level">1</span>
             </div>
 
-            <div class="clock" id="clock">
-                00:00:00
+            <div class="stat-card">
+                <h3>Missionen</h3>
+                <span id="missionsDone">0</span>
             </div>
 
-        </div>
-
-        <!-- EMPIRE SCORE -->
-
-        <div class="section">
-
-            <h2>👑 Empire Score</h2>
-
-            <div class="card-value" id="empireScore">
-                0
-            </div>
-
-        </div>
-
-        <!-- KPI -->
-
-        <div class="grid">
-
-            <div class="card">
-
-                <h3>Module</h3>
-
-                <div class="card-value">
-                    8
-                </div>
-
-            </div>
-
-            <div class="card">
-
+            <div class="stat-card">
                 <h3>Projekte</h3>
-
-                <div class="card-value">
-                    12
-                </div>
-
-            </div>
-
-            <div class="card">
-
-                <h3>Gespeicherte Daten</h3>
-
-                <div class="card-value" id="storageCount">
-                    0
-                </div>
-
-            </div>
-
-            <div class="card">
-
-                <h3>Aktivität</h3>
-
-                <div class="card-value online">
-                    AKTIV
-                </div>
-
+                <span id="projectsCount">0</span>
             </div>
 
         </div>
 
-        <!-- DAILY MISSIONS -->
+    </section>
 
-        <div class="section">
+    <!-- Weitere Module -->
 
-            <h2>🎯 Daily Mission Center</h2>
+    <section id="assistant"></section>
+    <section id="trading"></section>
+    <section id="telegram"></section>
+    <section id="video"></section>
+    <section id="game"></section>
+    <section id="tools"></section>
+    <section id="missions"></section>
+    <section id="projects"></section>
+    <section id="settings"></section>
 
-            <div class="item">
+</main>
 
-                <span>1. Neue Business Idee entwickeln</span>
+<!-- Notification Center -->
 
-                <span class="online">OFFEN</span>
+<div id="notificationPanel"></div>
 
-            </div>
+<!-- AI Command Center -->
 
-            <div class="item">
+<div id="aiCommandCenter"></div>
 
-                <span>2. Trading Analyse durchführen</span>
+<!-- Floating Action Button -->
 
-                <span class="online">OFFEN</span>
+<button id="fab">
+    +
+</button>
 
-            </div>
-
-            <div class="item">
-
-                <span>3. Video Content planen</span>
-
-                <span class="online">OFFEN</span>
-
-            </div>
-
-        </div>
-
-        <!-- PROJECT CENTER -->
-
-        <div class="section">
-
-            <h2>📂 Projekt Manager</h2>
-
-            <textarea
-                id="projectManager"
-                placeholder="Projekte und Aufgaben..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('empire_projects_v6','projectManager')">
-
-                Projekte speichern
-
-            </button>
-
-        </div>
-
-        <!-- QUICK ACCESS -->
-
-        <div class="section">
-
-            <h2>⚡ Quick Access V2</h2>
-
-            <div class="quick-grid">
-
-                <a href="assistant.html" class="quick-btn">🤖 AI</a>
-
-                <a href="trading.html" class="quick-btn">📈 Trading</a>
-
-                <a href="telegram.html" class="quick-btn">📱 Telegram</a>
-
-                <a href="video.html" class="quick-btn">🎬 Video</a>
-
-                <a href="game.html" class="quick-btn">🎮 Game</a>
-
-                <a href="tools.html" class="quick-btn">🛠 Tools</a>
-
-                <a href="setup.html" class="quick-btn">⚙ Setup</a>
-
-            </div>
-
-        </div>
-
-        <!-- NOTIFICATIONS -->
-
-        <div class="section">
-
-            <h2>🔔 Notification Center</h2>
-
-            <div id="notificationFeed">
-
-                <div class="item">
-
-                    <span>Dashboard erfolgreich geladen</span>
-
-                    <span class="online">OK</span>
-
-                </div>
-
-                <div class="item">
-
-                    <span>Alle Module verfügbar</span>
-
-                    <span class="online">OK</span>
-
-                </div>
-
-                <div class="item">
-
-                    <span>Lokaler Speicher aktiv</span>
-
-                    <span class="online">OK</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- ANALYTICS -->
-
-        <div class="section">
-
-            <h2>📊 Empire Analytics</h2>
-
-            <div class="item">
-
-                <span>Produktivität</span>
-
-                <span>89%</span>
-
-            </div>
-
-            <div class="item">
-
-                <span>System Gesundheit</span>
-
-                <span>96%</span>
-
-            </div>
-
-            <div class="item">
-
-                <span>Wachstum</span>
-
-                <span>+18%</span>
-
-            </div>
-
-            <div class="item">
-
-                <span>Aktive Module</span>
-
-                <span>8/8</span>
-
-            </div>
-
-        </div>
-
-        <!-- ADMIN PANEL -->
-
-        <div class="section">
-
-            <h2>🛡 Admin Panel V1</h2>
-
-            <button
-                class="btn"
-                onclick="exportEmpireData()">
-
-                Backup Export
-
-            </button>
-
-            <button
-                class="btn"
-                onclick="showSystemInfo()">
-
-                System Info
-
-            </button>
-
-            <br><br>
-
-            <textarea
-                id="systemOutput"
-                placeholder="System Informationen..."></textarea>
-
-        </div>
-
-        <!-- NOTES -->
-
-        <div class="section">
-
-            <h2>📝 Empire Notizen</h2>
-
-            <textarea
-                id="empireNotes"
-                placeholder="Deine AI Empire Notizen..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('empire_notes_v6','empireNotes')">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- FOOTER -->
-
-        <div class="footer">
-
-            AI Empire Pro V6 Ultimate |
-            Riadh Edition © 2026
-
-        </div>
-
-    </main>
-
-</div>
+<!-- JavaScript -->
 
 <script src="script.js"></script>
 
-<script>
-
-const user =
-localStorage.getItem(
-    "empire_user"
-);
-
-if(user){
-
-    document.getElementById(
-        "profileName"
-    ).innerHTML =
-    "👑 " + user;
-
-    document.getElementById(
-        "welcomeText"
-    ).innerHTML =
-    getGreeting() + " " + user;
-
-}
-
-loadNote(
-    "empire_projects_v6",
-    "projectManager"
-);
-
-loadNote(
-    "empire_notes_v6",
-    "empireNotes"
-);
-
-document.getElementById(
-    "storageCount"
-).innerHTML =
-localStorage.length;
-
-function calculateEmpireScore(){
-
-    let score = 100;
-
-    score += localStorage.length * 10;
-
-    document.getElementById(
-        "empireScore"
-    ).innerHTML =
-    score;
-
-}
-
-function showSystemInfo(){
-
-    const info =
-    getSystemInfo();
-
-    document.getElementById(
-        "systemOutput"
-    ).value =
-
-`Version: ${info.version}
-
-Edition: ${info.edition}
-
-Module: ${info.modules}
-
-Speicher Einträge: ${info.storage}
-
-Speicher Größe: ${info.size}`;
-
-}
-
-calculateEmpireScore();
-
-</script>
-
 </body>
 </html>
+```
