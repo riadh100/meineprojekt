@@ -1,522 +1,131 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Empire Pro V7 - Tools</title>
 
-<title>Tools Center V6 Ultimate - AI Empire Pro</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
+
 <body>
 
-<div class="app">
+<div class="app-layout">
 
     <!-- SIDEBAR -->
-
     <aside class="sidebar">
 
-        <div>
-
-            <div class="logo">
-                <h1>👑 AI Empire Pro</h1>
-                <p>Riadh Edition V6 Ultimate</p>
-            </div>
-
-            <nav class="menu">
-                <a href="index.html">🏠 Dashboard</a>
-                <a href="assistant.html">🤖 Yasin AI</a>
-                <a href="trading.html">📈 Trading Pro</a>
-                <a href="telegram.html">📱 Telegram Center</a>
-                <a href="video.html">🎬 Video Studio</a>
-                <a href="game.html">🎮 Game Studio</a>
-                <a href="tools.html">🛠 Tools Center</a>
-                <a href="setup.html">⚙ Setup Center</a>
-            </nav>
-
+        <div class="logo">
+            <h2>🚀 AI Empire</h2>
+            <span>V7 Tools</span>
         </div>
 
-        <div class="profile-box">
-
-            <h3 id="profileName">👑 Riadh</h3>
-
-            <p>TOOLS COMMAND CENTER</p>
-
-            <br>
-
-            <div class="online">
-                TOOLS ONLINE
-            </div>
-
-        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="assistant.html">🤖 Assistant</a></li>
+                <li><a href="trading.html">📈 Trading</a></li>
+                <li><a href="telegram.html">💬 Telegram</a></li>
+                <li><a href="video.html">🎬 Video</a></li>
+                <li><a href="game.html">🎮 Game</a></li>
+                <li class="active"><a href="tools.html">🛠 Tools</a></li>
+                <li><a href="setup.html">⚙ Setup</a></li>
+            </ul>
+        </nav>
 
     </aside>
 
     <!-- MAIN -->
-
     <main class="main-content">
 
         <!-- TOPBAR -->
-
-        <div class="topbar">
+        <header class="topbar">
 
             <div>
+                <h1>Tools Center</h1>
+                <p>System Kontrolle & Module Verwaltung</p>
+            </div>
 
-                <h2>🛠 Tools Center V6 Ultimate</h2>
+            <div class="topbar-right">
 
-                <p>Produktivität, Rechner & AI Utilities</p>
+                <button class="icon-btn">⚙ System</button>
+                <button class="icon-btn">📡 Status</button>
 
             </div>
 
-            <div class="clock" id="clock">
-                00:00:00
+        </header>
+
+        <!-- SYSTEM STATUS -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <h3>System Load</h3>
+                <span class="number">42%</span>
+                <small>CPU Usage</small>
             </div>
 
-        </div>
-
-        <!-- KPI -->
-
-        <div class="grid">
-
-            <div class="card">
-                <h3>Tools</h3>
-                <div class="card-value">12</div>
+            <div class="stat-card">
+                <h3>API Calls</h3>
+                <span class="number">1.240</span>
+                <small>Heute</small>
             </div>
 
-            <div class="card">
-                <h3>Berechnungen</h3>
-                <div class="card-value" id="calcCounter">0</div>
+            <div class="stat-card">
+                <h3>Aktive Module</h3>
+                <span class="number">6</span>
+                <small>Running</small>
             </div>
 
-            <div class="card">
-                <h3>Notizen</h3>
-                <div class="card-value" id="noteCounter">0</div>
-            </div>
-
-            <div class="card">
+            <div class="stat-card">
                 <h3>Status</h3>
-                <div class="card-value online">AKTIV</div>
+                <span class="number">OK</span>
+                <small>Stable</small>
             </div>
 
-        </div>
+        </section>
 
-        <!-- QUICK TOOLS -->
+        <!-- MODULE CONTROL -->
+        <section class="modules-section">
 
-        <div class="section">
+            <div class="section-title">
+                <h2>🧩 Modul Steuerung</h2>
+                <p>Aktiviere oder deaktiviere Systemmodule</p>
+            </div>
 
-            <h2>⚡ Schnelltools</h2>
+            <div class="modules-grid">
 
-            <div class="quick-grid">
+                <div class="module-card">
+                    <div class="module-icon">🤖</div>
+                    <h3>Assistant</h3>
+                    <p>KI Chat System</p>
+                    <div class="module-status online">● Active</div>
+                    <a href="#" class="module-btn">Toggle</a>
+                </div>
 
-                <button class="btn" onclick="calculateROI()">
-                    ROI Rechner
-                </button>
+                <div class="module-card">
+                    <div class="module-icon">📈</div>
+                    <h3>Trading</h3>
+                    <p>Signal Engine</p>
+                    <div class="module-status online">● Active</div>
+                    <a href="#" class="module-btn">Toggle</a>
+                </div>
 
-                <button class="btn" onclick="calculateProfit()">
-                    Gewinn Rechner
-                </button>
-
-                <button class="btn" onclick="generatePassword()">
-                    Passwort Generator
-                </button>
-
-                <button class="btn" onclick="generateBusinessIdea()">
-                    Business Idee
-                </button>
+                <div class="module-card">
+                    <div class="module-icon">💬</div>
+                    <h3>Telegram</h3>
+                    <p>Bot System</p>
+                    <div class="module-status online">● Active</div>
+                    <a href="#" class="module-btn">Toggle</a>
+                </div>
 
             </div>
 
-        </div>
-
-        <!-- ROI CALCULATOR -->
-
-        <div class="section">
-
-            <h2>📈 ROI Rechner</h2>
-
-            <input
-                type="number"
-                id="investment"
-                placeholder="Investition">
-
-            <br><br>
-
-            <input
-                type="number"
-                id="returnValue"
-                placeholder="Rückfluss">
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="calculateROI()">
-
-                ROI berechnen
-
-            </button>
-
-            <br><br>
-
-            <textarea
-                id="roiResult"
-                readonly
-                placeholder="ROI Ergebnis..."></textarea>
-
-        </div>
-
-        <!-- PROFIT CALCULATOR -->
-
-        <div class="section">
-
-            <h2>💰 Gewinn Rechner</h2>
-
-            <input
-                type="number"
-                id="revenue"
-                placeholder="Umsatz">
-
-            <br><br>
-
-            <input
-                type="number"
-                id="costs"
-                placeholder="Kosten">
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="calculateProfit()">
-
-                Gewinn berechnen
-
-            </button>
-
-            <br><br>
-
-            <textarea
-                id="profitResult"
-                readonly
-                placeholder="Gewinn Ergebnis..."></textarea>
-
-        </div>
-
-        <!-- PASSWORD GENERATOR -->
-
-        <div class="section">
-
-            <h2>🔐 Passwort Generator</h2>
-
-            <textarea
-                id="passwordResult"
-                readonly
-                placeholder="Generiertes Passwort..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="generatePassword()">
-
-                Passwort erzeugen
-
-            </button>
-
-        </div>
-
-        <!-- BUSINESS IDEAS -->
-
-        <div class="section">
-
-            <h2>🚀 Business Ideen Generator</h2>
-
-            <textarea
-                id="businessIdeas"
-                placeholder="Business Ideen erscheinen hier..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="generateBusinessIdea()">
-
-                Idee generieren
-
-            </button>
-
-        </div>
-
-        <!-- PROMPT LIBRARY -->
-
-        <div class="section">
-
-            <h2>🤖 AI Prompt Bibliothek</h2>
-
-            <textarea
-                id="promptLibrary"
-                placeholder="Prompts und Vorlagen..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('prompt_library_v6','promptLibrary')">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- TOOL NOTES -->
-
-        <div class="section">
-
-            <h2>📝 Tool Notizen</h2>
-
-            <textarea
-                id="toolNotes"
-                placeholder="Eigene Notizen..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveToolNotes()">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- SYSTEM TOOLS -->
-
-        <div class="section">
-
-            <h2>🖥 System Tools</h2>
-
-            <button
-                class="btn"
-                onclick="exportEmpireData()">
-
-                Backup Export
-
-            </button>
-
-            <button
-                class="btn"
-                onclick="showStorageInfo()">
-
-                Speicher Info
-
-            </button>
-
-            <br><br>
-
-            <textarea
-                id="systemInfo"
-                readonly
-                placeholder="System Informationen..."></textarea>
-
-        </div>
-
-        <!-- FOOTER -->
-
-        <div class="footer">
-            AI Empire Pro - Tools Center V6 Ultimate © 2026
-        </div>
+        </section>
 
     </main>
 
 </div>
-
-<script src="script.js"></script>
-
-<script>
-
-const user = localStorage.getItem("empire_user");
-
-if(user){
-
-    document.getElementById(
-        "profileName"
-    ).innerHTML =
-    "👑 " + user;
-
-}
-
-let calculationCounter = 0;
-
-function updateCounter(){
-
-    document.getElementById(
-        "calcCounter"
-    ).innerHTML =
-    calculationCounter;
-
-}
-
-function calculateROI(){
-
-    const investment =
-    Number(document.getElementById("investment").value);
-
-    const returns =
-    Number(document.getElementById("returnValue").value);
-
-    if(investment <= 0) return;
-
-    const roi =
-    ((returns - investment) / investment) * 100;
-
-    document.getElementById(
-        "roiResult"
-    ).value =
-    "ROI: " + roi.toFixed(2) + "%";
-
-    calculationCounter++;
-
-    updateCounter();
-
-}
-
-function calculateProfit(){
-
-    const revenue =
-    Number(document.getElementById("revenue").value);
-
-    const costs =
-    Number(document.getElementById("costs").value);
-
-    const profit =
-    revenue - costs;
-
-    document.getElementById(
-        "profitResult"
-    ).value =
-    "Gewinn: " + profit.toFixed(2) + " €";
-
-    calculationCounter++;
-
-    updateCounter();
-
-}
-
-function generatePassword(){
-
-    const chars =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%";
-
-    let password = "";
-
-    for(let i=0;i<16;i++){
-
-        password += chars.charAt(
-            Math.floor(
-                Math.random()*chars.length
-            )
-        );
-
-    }
-
-    document.getElementById(
-        "passwordResult"
-    ).value =
-    password;
-
-}
-
-function generateBusinessIdea(){
-
-    const ideas = [
-
-        "AI Agentur für KMU",
-
-        "YouTube Automation Service",
-
-        "Telegram Marketing Agentur",
-
-        "Trading Education Plattform",
-
-        "AI Chatbot Service",
-
-        "Online Kurs Business",
-
-        "SaaS für Unternehmer",
-
-        "Content Repurposing Agentur"
-
-    ];
-
-    document.getElementById(
-        "businessIdeas"
-    ).value =
-
-    ideas[
-        Math.floor(
-            Math.random() *
-            ideas.length
-        )
-    ];
-
-}
-
-function saveToolNotes(){
-
-    saveNote(
-        "tool_notes_v6",
-        "toolNotes"
-    );
-
-    updateNotes();
-
-}
-
-function updateNotes(){
-
-    const notes =
-    document.getElementById(
-        "toolNotes"
-    ).value;
-
-    document.getElementById(
-        "noteCounter"
-    ).innerHTML =
-
-    notes.trim() === ""
-    ? 0
-    : notes.split("\n").length;
-
-}
-
-function showStorageInfo(){
-
-    document.getElementById(
-        "systemInfo"
-    ).value =
-
-    "Speicher Einträge: " +
-    localStorage.length +
-    "\n\nSystem: AI Empire Pro V6 Ultimate";
-
-}
-
-loadNote(
-    "prompt_library_v6",
-    "promptLibrary"
-);
-
-loadNote(
-    "tool_notes_v6",
-    "toolNotes"
-);
-
-updateNotes();
-
-</script>
 
 </body>
 </html>
