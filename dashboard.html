@@ -3,49 +3,565 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Empire Pro V7 Ultimate</title>
+    <title>AI Empire Pro V7 Ultimate - Dashboard</title>
 
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
+
+    <meta name="theme-color" content="#0f172a">
+    <meta name="description" content="AI Empire Pro V7 Ultimate Dashboard">
 </head>
 
 <body>
 
+<div class="app-layout">
+
+    <!-- ========================================= -->
+    <!-- SIDEBAR -->
+    <!-- ========================================= -->
+
     <aside class="sidebar">
-        <!-- Navigation -->
+
+        <div class="logo">
+
+            <h2>🚀 AI Empire</h2>
+            <span>V7 Ultimate</span>
+
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li class="active">
+                    <a href="dashboard.html">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="assistant.html">
+                        🤖 Assistant
+                    </a>
+                </li>
+
+                <li>
+                    <a href="trading.html">
+                        📈 Trading
+                    </a>
+                </li>
+
+                <li>
+                    <a href="telegram.html">
+                        💬 Telegram
+                    </a>
+                </li>
+
+                <li>
+                    <a href="video.html">
+                        🎬 Video Studio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="game.html">
+                        🎮 Game Studio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tools.html">
+                        🛠 Tools
+                    </a>
+                </li>
+
+                <li>
+                    <a href="setup.html">
+                        ⚙ Setup
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
     </aside>
 
-    <main class="dashboard">
+    <!-- ========================================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ========================================= -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
 
         <header class="topbar">
-            <!-- Profil • Suche • Benachrichtigungen -->
+
+            <div>
+
+                <h1>Dashboard</h1>
+
+                <p>
+                    Willkommen zurück bei
+                    AI Empire Pro V7 Ultimate
+                </p>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <input
+                    type="text"
+                    placeholder="Suche..."
+                    class="search-box">
+
+                <button class="icon-btn">
+                    🔔
+                </button>
+
+                <button class="icon-btn">
+                    👤
+                </button>
+
+            </div>
+
         </header>
 
-        <section class="hero">
-            <!-- Willkommen -->
+        <!-- HERO -->
+
+        <section class="hero-card">
+
+            <div class="hero-left">
+
+                <h2>
+                    Willkommen zurück!
+                </h2>
+
+                <p>
+
+                    Alle Systeme laufen stabil.
+
+                    Verwalte Trading,
+                    KI-Assistenten,
+                    Telegram,
+                    Videos,
+                    Spiele
+                    und Tools
+                    an einem zentralen Ort.
+
+                </p>
+
+                <button class="primary-btn">
+
+                    Dashboard starten
+
+                </button>
+
+            </div>
+
+            <div class="hero-right">
+
+                <div class="hero-status">
+
+                    <h3>Systemstatus</h3>
+
+                    <p>🟢 Online</p>
+
+                    <p>Trading aktiv</p>
+
+                    <p>KI bereit</p>
+
+                    <p>Telegram verbunden</p>
+
+                </div>
+
+            </div>
+
         </section>
 
-        <section class="quick-actions">
-            <!-- Schnellzugriffe -->
-        </section>
+        <!-- ========================================= -->
+        <!-- STATISTIK -->
+        <!-- ========================================= -->
 
         <section class="stats-grid">
-            <!-- Statistiken -->
+
+            <div class="stat-card">
+
+                <h3>Gewinn</h3>
+
+                <span class="number">
+                    +12.540 €
+                </span>
+
+                <small>letzte 30 Tage</small>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>Trading Signale</h3>
+
+                <span class="number">
+
+                    128
+
+                </span>
+
+                <small>Heute</small>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>Telegram Bots</h3>
+
+                <span class="number">
+
+                    6
+
+                </span>
+
+                <small>Aktiv</small>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>KI Aufgaben</h3>
+
+                <span class="number">
+
+                    24
+
+                </span>
+
+                <small>Offen</small>
+
+            </div>
+
         </section>
 
-        <section class="modules-grid">
-            <!-- Trading • AI • Telegram • Video -->
+                <!-- ========================================= -->
+        <!-- MODULE -->
+        <!-- ========================================= -->
+
+        <section class="modules-section">
+
+            <div class="section-title">
+                <h2>Module</h2>
+                <p>Alle Hauptbereiche von AI Empire Pro</p>
+            </div>
+
+            <div class="modules-grid">
+
+                <div class="module-card">
+                    <div class="module-icon">🤖</div>
+                    <h3>Assistant</h3>
+                    <p>KI-Assistent für Aufgaben und Automatisierungen.</p>
+
+                    <div class="module-status online">
+                        ● Online
+                    </div>
+
+                    <a href="assistant.html" class="module-btn">
+                        Öffnen
+                    </a>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-icon">📈</div>
+                    <h3>Trading</h3>
+                    <p>Trading-Bots, Signale und Portfolio.</p>
+
+                    <div class="module-status online">
+                        ● Aktiv
+                    </div>
+
+                    <a href="trading.html" class="module-btn">
+                        Öffnen
+                    </a>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-icon">💬</div>
+                    <h3>Telegram</h3>
+                    <p>Automatische Nachrichten und Bots.</p>
+
+                    <div class="module-status online">
+                        ● Verbunden
+                    </div>
+
+                    <a href="telegram.html" class="module-btn">
+                        Öffnen
+                    </a>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-icon">🎬</div>
+                    <h3>Video Studio</h3>
+                    <p>Videos erstellen und rendern.</p>
+
+                    <div class="module-status online">
+                        ● Bereit
+                    </div>
+
+                    <a href="video.html" class="module-btn">
+                        Öffnen
+                    </a>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-icon">🎮</div>
+                    <h3>Game Studio</h3>
+                    <p>Game-Projekte verwalten.</p>
+
+                    <div class="module-status online">
+                        ● Online
+                    </div>
+
+                    <a href="game.html" class="module-btn">
+                        Öffnen
+                    </a>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-icon">🛠</div>
+                    <h3>Tools</h3>
+                    <p>Alle Werkzeuge zentral verwalten.</p>
+
+                    <div class="module-status online">
+                        ● Verfügbar
+                    </div>
+
+                    <a href="tools.html" class="module-btn">
+                        Öffnen
+                    </a>
+                </div>
+
+            </div>
+
         </section>
 
-        <section class="activity-feed">
-            <!-- Aktivitäten -->
+        <!-- ========================================= -->
+        <!-- AKTIVITÄTEN -->
+        <!-- ========================================= -->
+
+        <section class="activity-section">
+
+            <div class="section-title">
+                <h2>Letzte Aktivitäten</h2>
+            </div>
+
+            <div class="activity-card">
+
+                <div class="activity-item">
+                    <span class="activity-time">09:42</span>
+                    <span>Trading-Bot erfolgreich gestartet</span>
+                </div>
+
+                <div class="activity-item">
+                    <span class="activity-time">09:45</span>
+                    <span>Telegram-Nachricht gesendet</span>
+                </div>
+
+                <div class="activity-item">
+                    <span class="activity-time">10:02</span>
+                    <span>Video erfolgreich exportiert</span>
+                </div>
+
+                <div class="activity-item">
+                    <span class="activity-time">10:08</span>
+                    <span>Neue KI-Aufgabe erstellt</span>
+                </div>
+
+                <div class="activity-item">
+                    <span class="activity-time">10:15</span>
+                    <span>Backup erfolgreich abgeschlossen</span>
+                </div>
+
+            </div>
+
         </section>
+
+        <!-- ========================================= -->
+        <!-- BENACHRICHTIGUNGEN -->
+        <!-- ========================================= -->
+
+        <section class="notification-section">
+
+            <div class="section-title">
+                <h2>Benachrichtigungen</h2>
+            </div>
+
+            <div class="notification-card success">
+                ✅ Alle Systeme arbeiten fehlerfrei.
+            </div>
+
+            <div class="notification-card info">
+                ℹ Neue Trading-Signale verfügbar.
+            </div>
+
+            <div class="notification-card warning">
+                ⚠ Zwei KI-Aufgaben warten auf Bearbeitung.
+            </div>
+
+        </section>
+
+        <!-- ========================================= -->
+        <!-- PERFORMANCE -->
+        <!-- ========================================= -->
+
+        <section class="performance-grid">
+
+            <div class="performance-card">
+                <h3>Trading Performance</h3>
+                <h2>94%</h2>
+                <p>Systemeffizienz</p>
+            </div>
+
+            <div class="performance-card">
+                <h3>KI-Auslastung</h3>
+                <h2>81%</h2>
+                <p>Aktive Prozesse</p>
+            </div>
+
+            <div class="performance-card">
+                <h3>Automatisierungen</h3>
+                <h2>37</h2>
+                <p>Laufende Workflows</p>
+            </div>
+
+        </section>
+
+                <!-- ========================================= -->
+        <!-- SYSTEMSTATUS -->
+        <!-- ========================================= -->
 
         <section class="system-status">
-            <!-- System -->
+
+            <div class="section-title">
+                <h2>Systemstatus</h2>
+                <p>Aktuelle Auslastung und Verbindungen</p>
+            </div>
+
+            <div class="status-grid">
+
+                <div class="status-card">
+                    <h3>CPU</h3>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:60%;"></div>
+                    </div>
+
+                    <span>60%</span>
+                </div>
+
+                <div class="status-card">
+                    <h3>RAM</h3>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:40%;"></div>
+                    </div>
+
+                    <span>40%</span>
+                </div>
+
+                <div class="status-card">
+                    <h3>Speicher</h3>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:72%;"></div>
+                    </div>
+
+                    <span>72%</span>
+                </div>
+
+                <div class="status-card">
+                    <h3>API</h3>
+                    <span class="status-online">🟢 Online</span>
+                </div>
+
+                <div class="status-card">
+                    <h3>Datenbank</h3>
+                    <span class="status-online">🟢 Verbunden</span>
+                </div>
+
+                <div class="status-card">
+                    <h3>Cloud Sync</h3>
+                    <span class="status-online">🟢 Aktiv</span>
+                </div>
+
+            </div>
+
         </section>
 
+        <!-- ========================================= -->
+        <!-- SCHNELLZUGRIFFE -->
+        <!-- ========================================= -->
+
+        <section class="quick-links">
+
+            <div class="section-title">
+                <h2>Schnellzugriffe</h2>
+            </div>
+
+            <div class="quick-grid">
+
+                <a href="assistant.html" class="quick-card">
+                    🤖
+                    <span>Assistant</span>
+                </a>
+
+                <a href="trading.html" class="quick-card">
+                    📈
+                    <span>Trading</span>
+                </a>
+
+                <a href="telegram.html" class="quick-card">
+                    💬
+                    <span>Telegram</span>
+                </a>
+
+                <a href="video.html" class="quick-card">
+                    🎬
+                    <span>Video</span>
+                </a>
+
+                <a href="game.html" class="quick-card">
+                    🎮
+                    <span>Game</span>
+                </a>
+
+                <a href="tools.html" class="quick-card">
+                    🛠
+                    <span>Tools</span>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- ========================================= -->
+        <!-- FOOTER -->
+        <!-- ========================================= -->
+
+        <footer class="footer">
+
+            <div class="footer-left">
+                <h3>🚀 AI Empire Pro V7 Ultimate</h3>
+                <p>All-in-One KI-, Trading- und Automatisierungsplattform</p>
+            </div>
+
+            <div class="footer-right">
+                <p>Version 7 Ultimate</p>
+                <p>&copy; 2026 AI Empire Pro</p>
+            </div>
+
+        </footer>
+
     </main>
+
+</div>
 
 </body>
 </html>
