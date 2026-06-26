@@ -1,423 +1,202 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Empire Pro V7 - Setup</title>
 
-<title>Setup Center V6 Ultimate - AI Empire Pro</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
+
 <body>
 
-<div class="app">
+<div class="app-layout">
 
     <!-- SIDEBAR -->
-
     <aside class="sidebar">
 
-        <div>
-
-            <div class="logo">
-                <h1>👑 AI Empire Pro</h1>
-                <p>Riadh Edition V6 Ultimate</p>
-            </div>
-
-            <nav class="menu">
-                <a href="index.html">🏠 Dashboard</a>
-                <a href="assistant.html">🤖 Yasin AI</a>
-                <a href="trading.html">📈 Trading Pro</a>
-                <a href="telegram.html">📱 Telegram Center</a>
-                <a href="video.html">🎬 Video Studio</a>
-                <a href="game.html">🎮 Game Studio</a>
-                <a href="tools.html">🛠 Tools Center</a>
-                <a href="setup.html">⚙ Setup Center</a>
-            </nav>
-
+        <div class="logo">
+            <h2>🚀 AI Empire</h2>
+            <span>V7 Setup</span>
         </div>
 
-        <div class="profile-box">
-
-            <h3 id="profileName">👑 Riadh</h3>
-
-            <p>SYSTEM CONTROL CENTER</p>
-
-            <br>
-
-            <div class="online">
-                SYSTEM ONLINE
-            </div>
-
-        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="assistant.html">🤖 Assistant</a></li>
+                <li><a href="trading.html">📈 Trading</a></li>
+                <li><a href="telegram.html">💬 Telegram</a></li>
+                <li><a href="video.html">🎬 Video</a></li>
+                <li><a href="game.html">🎮 Game</a></li>
+                <li><a href="tools.html">🛠 Tools</a></li>
+                <li class="active"><a href="setup.html">⚙ Setup</a></li>
+            </ul>
+        </nav>
 
     </aside>
 
     <!-- MAIN -->
-
     <main class="main-content">
 
         <!-- TOPBAR -->
-
-        <div class="topbar">
+        <header class="topbar">
 
             <div>
+                <h1>System Setup</h1>
+                <p>Konfiguration & API Management</p>
+            </div>
 
-                <h2>⚙ Setup Center V6 Ultimate</h2>
+            <div class="topbar-right">
 
-                <p>Systemverwaltung & Empire Konfiguration</p>
+                <button class="icon-btn">💾 Save</button>
+                <button class="icon-btn">🔄 Reset</button>
 
             </div>
 
-            <div class="clock" id="clock">
-                00:00:00
+        </header>
+
+        <!-- SYSTEM STATUS -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <h3>System Version</h3>
+                <span class="number">V7</span>
+                <small>Ultimate</small>
             </div>
 
-        </div>
-
-        <!-- KPI -->
-
-        <div class="grid">
-
-            <div class="card">
-                <h3>Version</h3>
-                <div class="card-value">V6</div>
-            </div>
-
-            <div class="card">
-                <h3>Module</h3>
-                <div class="card-value">8</div>
-            </div>
-
-            <div class="card">
-                <h3>Speicher</h3>
-                <div class="card-value" id="storageCounter">0</div>
-            </div>
-
-            <div class="card">
+            <div class="stat-card">
                 <h3>Status</h3>
-                <div class="card-value online">ONLINE</div>
+                <span class="number">READY</span>
+                <small>All Systems</small>
             </div>
 
-        </div>
-
-        <!-- PROFILE SETTINGS -->
-
-        <div class="section">
-
-            <h2>👤 Benutzer Einstellungen</h2>
-
-            <input
-                type="text"
-                id="username"
-                placeholder="Benutzername">
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveProfile()">
-
-                Benutzer speichern
-
-            </button>
-
-        </div>
-
-        <!-- SYSTEM SETTINGS -->
-
-        <div class="section">
-
-            <h2>🖥 System Einstellungen</h2>
-
-            <textarea
-                id="systemSettings"
-                placeholder="Eigene Systemeinstellungen..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('system_settings_v6','systemSettings')">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- EMPIRE CONFIG -->
-
-        <div class="section">
-
-            <h2>👑 Empire Konfiguration</h2>
-
-            <textarea
-                id="empireConfig"
-                placeholder="Empire Regeln, Ziele und Konfiguration..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('empire_config_v6','empireConfig')">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- BACKUP CENTER -->
-
-        <div class="section">
-
-            <h2>💾 Backup Center</h2>
-
-            <button
-                class="btn"
-                onclick="exportEmpireData()">
-
-                Backup Exportieren
-
-            </button>
-
-            <br><br>
-
-            <input
-                type="file"
-                id="backupFile">
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="importBackup()">
-
-                Backup Importieren
-
-            </button>
-
-        </div>
-
-        <!-- DATABASE CENTER -->
-
-        <div class="section">
-
-            <h2>🗄 Datenbank Center</h2>
-
-            <textarea
-                id="databaseInfo"
-                readonly
-                placeholder="Datenbank Informationen..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="showDatabaseInfo()">
-
-                Datenbank Anzeigen
-
-            </button>
-
-        </div>
-
-        <!-- SECURITY -->
-
-        <div class="section">
-
-            <h2>🔐 Sicherheit</h2>
-
-            <div class="item">
-                <span>Lokaler Speicher</span>
-                <span class="online">AKTIV</span>
+            <div class="stat-card">
+                <h3>Module Sync</h3>
+                <span class="number">100%</span>
+                <small>Completed</small>
             </div>
 
-            <div class="item">
-                <span>Backup System</span>
-                <span class="online">AKTIV</span>
+            <div class="stat-card">
+                <h3>Security</h3>
+                <span class="number">HIGH</span>
+                <small>Protected</small>
             </div>
 
-            <div class="item">
-                <span>Benutzerprofil</span>
-                <span class="online">AKTIV</span>
+        </section>
+
+        <!-- API SETTINGS -->
+        <section class="modules-section">
+
+            <div class="section-title">
+                <h2>🔑 API Konfiguration</h2>
+                <p>Verwalte deine System-Keys</p>
             </div>
 
-        </div>
+            <div class="module-card">
 
-        <!-- SYSTEM LOG -->
+                <h3>OpenAI API Key</h3>
 
-        <div class="section">
+                <input type="password" placeholder="sk-..." style="
+                    width:100%;
+                    padding:12px;
+                    border-radius:10px;
+                    border:none;
+                    background:#1e293b;
+                    color:white;
+                    margin-top:10px;
+                ">
 
-            <h2>📋 System Log</h2>
+            </div>
 
-            <textarea
-                id="systemLog"
-                placeholder="Systemereignisse..."></textarea>
+            <div class="module-card">
 
-            <br><br>
+                <h3>Telegram Bot Token</h3>
 
-            <button
-                class="btn"
-                onclick="saveNote('system_log_v6','systemLog')">
+                <input type="password" placeholder="Bot Token..." style="
+                    width:100%;
+                    padding:12px;
+                    border-radius:10px;
+                    border:none;
+                    background:#1e293b;
+                    color:white;
+                    margin-top:10px;
+                ">
 
-                Log speichern
+            </div>
 
-            </button>
+            <div class="module-card">
 
-        </div>
+                <h3>Trading API Key</h3>
 
-        <!-- RESET -->
+                <input type="password" placeholder="API Key..." style="
+                    width:100%;
+                    padding:12px;
+                    border-radius:10px;
+                    border:none;
+                    background:#1e293b;
+                    color:white;
+                    margin-top:10px;
+                ">
 
-        <div class="section">
+            </div>
 
-            <h2>⚠ System Aktionen</h2>
+        </section>
 
-            <button
-                class="btn btn-danger"
-                onclick="resetEmpire()">
+        <!-- SETTINGS -->
+        <section class="modules-section">
 
-                Empire zurücksetzen
+            <div class="section-title">
+                <h2>⚙ System Einstellungen</h2>
+                <p>UI & Performance Optionen</p>
+            </div>
 
-            </button>
+            <div class="module-card">
 
-        </div>
+                <h3>Theme Mode</h3>
 
-        <!-- FOOTER -->
+                <select style="
+                    width:100%;
+                    padding:12px;
+                    border-radius:10px;
+                    border:none;
+                    background:#1e293b;
+                    color:white;
+                ">
 
-        <div class="footer">
-            AI Empire Pro - Setup Center V6 Ultimate © 2026
-        </div>
+                    <option>Dark Mode</option>
+                    <option>Light Mode</option>
+
+                </select>
+
+            </div>
+
+            <div class="module-card">
+
+                <h3>Performance Mode</h3>
+
+                <select style="
+                    width:100%;
+                    padding:12px;
+                    border-radius:10px;
+                    border:none;
+                    background:#1e293b;
+                    color:white;
+                ">
+
+                    <option>Balanced</option>
+                    <option>High Performance</option>
+                    <option>Eco Mode</option>
+
+                </select>
+
+            </div>
+
+        </section>
 
     </main>
 
 </div>
-
-<script src="script.js"></script>
-
-<script>
-
-const user =
-localStorage.getItem(
-    "empire_user"
-);
-
-if(user){
-
-    document.getElementById(
-        "profileName"
-    ).innerHTML =
-    "👑 " + user;
-
-    document.getElementById(
-        "username"
-    ).value =
-    user;
-
-}
-
-function saveProfile(){
-
-    const username =
-    document.getElementById(
-        "username"
-    ).value;
-
-    localStorage.setItem(
-        "empire_user",
-        username
-    );
-
-    document.getElementById(
-        "profileName"
-    ).innerHTML =
-    "👑 " + username;
-
-    showNotification(
-        "Profil gespeichert"
-    );
-
-}
-
-function showDatabaseInfo(){
-
-    let info = "";
-
-    for(let i = 0; i < localStorage.length; i++){
-
-        const key =
-        localStorage.key(i);
-
-        info +=
-        key + "\n";
-
-    }
-
-    document.getElementById(
-        "databaseInfo"
-    ).value =
-    info;
-
-}
-
-function importBackup(){
-
-    const file =
-    document.getElementById(
-        "backupFile"
-    ).files[0];
-
-    if(file){
-
-        importEmpireData(file);
-
-    }
-
-}
-
-function resetEmpire(){
-
-    const confirmReset =
-    confirm(
-        "Alle Daten löschen?"
-    );
-
-    if(confirmReset){
-
-        localStorage.clear();
-
-        alert(
-            "Empire zurückgesetzt."
-        );
-
-        location.reload();
-
-    }
-
-}
-
-document.getElementById(
-    "storageCounter"
-).innerHTML =
-localStorage.length;
-
-loadNote(
-    "system_settings_v6",
-    "systemSettings"
-);
-
-loadNote(
-    "empire_config_v6",
-    "empireConfig"
-);
-
-loadNote(
-    "system_log_v6",
-    "systemLog"
-);
-
-</script>
 
 </body>
 </html>
