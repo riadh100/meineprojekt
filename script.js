@@ -1,119 +1,285 @@
-/* ==========================================================
+/* =======================================================
    AI Empire Pro V7 Ultimate
-   File: script.js
-   Version: V7 Ultimate
-========================================================== */
+   script.js
+   Teil 1
+======================================================= */
 
 "use strict";
 
-/* ==========================================================
-   APP
-========================================================== */
+/* =======================================================
+   App Initialisierung
+======================================================= */
 
-const App = {
+document.addEventListener("DOMContentLoaded", () => {
 
-    version: "7.0 Ultimate",
+    console.log("AI Empire Pro V7 gestartet.");
 
-    initialized: false,
+    initGreeting();
+    initClock();
+    initNavigation();
+    animateCounters();
+    showWelcomeNotification();
 
-    data: {
+});
 
-        empireScore: 0,
+/* =======================================================
+   Begrüßung
+======================================================= */
 
-        level: 1,
+function initGreeting(){
 
-        xp: 0,
+    const heroTitle = document.querySelector(".hero-left h2");
 
-        missions: [],
+    if(!heroTitle) return;
 
-        projects: [],
+    const hour = new Date().getHours();
 
-        notifications: [],
+    let greeting = "Willkommen";
 
-        settings: {
+    if(hour >= 5 && hour < 12){
 
-            darkMode: true
+        greeting = "Guten Morgen ☀️";
 
-        }
+    }else if(hour >= 12 && hour < 18){
+
+        greeting = "Guten Tag 🌤️";
+
+    }else{
+
+        greeting = "Guten Abend 🌙";
 
     }
 
-};
-
-/* ==========================================================
-   DOM
-========================================================== */
-
-const DOM = {
-
-    score: document.getElementById("empireScore"),
-
-    level: document.getElementById("level"),
-
-    missionCounter: document.getElementById("missionsDone"),
-
-    projectCounter: document.getElementById("projectsCount"),
-
-    notificationPanel: document.getElementById("notificationPanel"),
-
-    notificationBtn: document.getElementById("notificationBtn"),
-
-    themeBtn: document.getElementById("themeBtn"),
-
-    fab: document.getElementById("fab"),
-
-    aiPanel: document.getElementById("aiCommandCenter")
-
-};
-
-/* ==========================================================
-   INIT
-========================================================== */
-
-document.addEventListener("DOMContentLoaded", initApp);
-
-function initApp() {
-
-    console.log("AI Empire Pro V7 gestartet");
-
-    loadStorage();
-
-    initNavigation();
-
-    initTheme();
-
-    initNotifications();
-
-    updateDashboard();
-
-    App.initialized = true;
+    heroTitle.textContent = greeting;
 
 }
-/* ==========================================================
-   NAVIGATION
-========================================================== */
 
-function initNavigation() {
+/* =======================================================
+   Live Uhr
+======================================================= */
 
-    const links = document.querySelectorAll(".sidebar a");
+function initClock(){
 
-    links.forEach(link => {
+    const clock = document.createElement("div");
 
-        link.addEventListener("click", function(e){
+    clock.id = "liveClock";
 
-            e.preventDefault();
+    clock.style.fontWeight = "600";
 
-            const target = this.getAttribute("href");
+    clock.style.fontSize = "15px";
 
-            const section = document.querySelector(target);
+    clock.style.color = "#60a5fa";
 
-            if(section){
+    const topbar = document.querySelector(".topbar-right");
 
-                section.scrollIntoView({
+    if(topbar){
 
-                    behavior:"smooth"
+        topbar.prepend(clock);
 
-                });
+    }
+
+    function updateClock(){
+
+        const now = new Date();
+
+        clock.textContent = now.toLocaleTimeString("de-DE");
+
+    }
+
+    updateClock();
+
+    setInterval(updateClock,1000);
+
+}
+
+/* =======================================================
+   Navigation
+======================================================= */
+
+function initNavigation(){
+
+    const current = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".sidebar a").forEach(link=>{
+
+        const href = link.getAttribute("href");
+
+        if(href===current){
+
+            link.parentElement.classList.add("active");
+
+        }
+
+    });
+
+}
+
+/* =======================================================
+   Statistik Animation
+======================================================= */
+
+function animateCounters(){
+
+    const counters=document.querySelectorAll(".number");
+
+    counters.forEach(counter=>{
+
+        const raw=counter.textContent;
+
+        const target=parseInt(raw.replace(/\D/g,""));
+
+        if(isNaN(target)) return;
+
+        let value=0;
+
+        const step=Math.max(1,Math.ceil(target/120));
+
+        const timer=setInterval(()=>{
+
+            value+=step;
+
+            if(value>=target){
+
+                value=target;
+
+                clearInterval(timer);
+
+            }
+
+            if(raw.includes("€")){
+
+                counter.textContent=
+                "+"+
+                value.toLocaleString("de-DE")+
+                " €";
+
+            }else{
+
+                counter.textContent=value;
+
+            }
+
+        },15);
+
+    });
+
+}
+
+/* =======================================================
+   Benachrichtigung
+======================================================= */
+
+function showWelcomeNotification(){
+
+    createNotification(
+
+        "AI Empire Pro V7 erfolgreich gestartet.",
+
+        "success"
+
+    );
+
+}
+
+/* =======================================================
+   Notification System
+======================================================= */
+
+function createNotification(message,type="info"){
+
+    const note=document.createElement("div");
+
+    note.className="toast "+type;
+
+    note.textContent=message;
+
+    note.style.position="fixed";
+
+    note.style.right="25px";
+
+    note.style.bottom="25px";
+
+    note.style.padding="15px 20px";
+
+    note.style.borderRadius="12px";
+
+    note.style.zIndex="9999";
+
+    note.style.color="#fff";
+
+    note.style.fontWeight="600";
+
+    note.style.boxShadow="0 12px 30px rgba(0,0,0,.35)";
+
+    switch(type){
+
+        case "success":
+            note.style.background="#22c55e";
+            break;
+
+        case "error":
+            note.style.background="#ef4444";
+            break;
+
+        case "warning":
+            note.style.background="#f59e0b";
+            break;
+
+        default:
+            note.style.background="#3b82f6";
+
+    }
+
+    document.body.appendChild(note);
+
+    setTimeout(()=>{
+
+        note.style.opacity="0";
+
+        note.style.transition=".4s";
+
+    },3000);
+
+    setTimeout(()=>{
+
+        note.remove();
+
+    },3400);
+
+}
+/* =======================================================
+   AI Empire Pro V7 Ultimate
+   script.js
+   Teil 2
+======================================================= */
+
+/* =======================================================
+   Suchfunktion für Module
+======================================================= */
+
+function initSearch(){
+
+    const search = document.querySelector(".search-box");
+
+    if(!search) return;
+
+    search.addEventListener("keyup",function(){
+
+        const value = this.value.toLowerCase();
+
+        const cards = document.querySelectorAll(".module-card");
+
+        cards.forEach(card=>{
+
+            const text = card.innerText.toLowerCase();
+
+            if(text.includes(value)){
+
+                card.style.display="block";
+
+            }else{
+
+                card.style.display="none";
 
             }
 
@@ -122,134 +288,396 @@ function initNavigation() {
     });
 
 }
-/* ==========================================================
-   DASHBOARD
-========================================================== */
 
-function updateDashboard(){
+/* =======================================================
+   Sidebar ein-/ausblenden
+======================================================= */
 
-    if(DOM.score){
+function initSidebar(){
 
-        DOM.score.textContent = App.data.empireScore;
+    const sidebar=document.querySelector(".sidebar");
 
-    }
+    if(!sidebar) return;
 
-    if(DOM.level){
+    const button=document.createElement("button");
 
-        DOM.level.textContent = App.data.level;
+    button.innerHTML="☰";
 
-    }
+    button.className="menu-button";
 
-    if(DOM.missionCounter){
+    document.body.appendChild(button);
 
-        DOM.missionCounter.textContent =
-        App.data.missions.length;
+    button.addEventListener("click",()=>{
 
-    }
+        sidebar.classList.toggle("collapsed");
 
-    if(DOM.projectCounter){
+        localStorage.setItem(
 
-        DOM.projectCounter.textContent =
-        App.data.projects.length;
+            "sidebarCollapsed",
 
-    }
+            sidebar.classList.contains("collapsed")
 
-}
-/* ==========================================================
-   STORAGE
-========================================================== */
+        );
 
-function saveStorage(){
+    });
 
-    localStorage.setItem(
+    const collapsed=
 
-        "AI_EMPIRE_V7",
+        localStorage.getItem("sidebarCollapsed");
 
-        JSON.stringify(App.data)
+    if(collapsed==="true"){
 
-    );
-
-}
-
-function loadStorage(){
-
-    const data = localStorage.getItem("AI_EMPIRE_V7");
-
-    if(data){
-
-        App.data = JSON.parse(data);
+        sidebar.classList.add("collapsed");
 
     }
 
 }
-/* ==========================================================
-   THEME
-========================================================== */
+
+/* =======================================================
+   Theme Vorbereitung
+======================================================= */
 
 function initTheme(){
 
-    if(!DOM.themeBtn) return;
+    const saved=
 
-    DOM.themeBtn.addEventListener("click",toggleTheme);
+        localStorage.getItem("theme");
+
+    if(saved){
+
+        document.body.dataset.theme=saved;
+
+    }
 
 }
+
+/* =======================================================
+   Theme wechseln
+======================================================= */
 
 function toggleTheme(){
 
-    document.body.classList.toggle("light");
+    const current=
 
-    saveStorage();
+        document.body.dataset.theme==="light"
 
-}
-/* ==========================================================
-   NOTIFICATIONS
-========================================================== */
+        ? "dark"
 
-function initNotifications(){
+        : "light";
 
-    if(!DOM.notificationBtn) return;
+    document.body.dataset.theme=current;
 
-    DOM.notificationBtn.addEventListener(
+    localStorage.setItem(
 
-        "click",
+        "theme",
 
-        toggleNotifications
+        current
 
     );
 
 }
 
-function toggleNotifications(){
+/* =======================================================
+   Karten Hover Effekt
+======================================================= */
 
-    DOM.notificationPanel.classList.toggle("active");
+function initCards(){
 
-}
+    const cards=document.querySelectorAll(
 
-function addNotification(title,text){
+        ".module-card,.stat-card,.performance-card"
 
-    App.data.notifications.push({
+    );
 
-        title,
+    cards.forEach(card=>{
 
-        text,
+        card.addEventListener("mouseenter",()=>{
 
-        date:new Date()
+            card.style.transform="translateY(-8px) scale(1.02)";
 
-    });
+        });
 
-    saveStorage();
+        card.addEventListener("mouseleave",()=>{
 
-}
-/* ==========================================================
-   AI PANEL
-========================================================== */
+            card.style.transform="";
 
-if(DOM.fab){
-
-    DOM.fab.addEventListener("click",()=>{
-
-        DOM.aiPanel.classList.toggle("active");
+        });
 
     });
 
 }
+
+/* =======================================================
+   Einstellungen speichern
+======================================================= */
+
+function saveSetting(key,value){
+
+    localStorage.setItem(key,JSON.stringify(value));
+
+}
+
+function loadSetting(key){
+
+    const data=localStorage.getItem(key);
+
+    if(!data) return null;
+
+    return JSON.parse(data);
+
+}
+
+/* =======================================================
+   Dashboard Status merken
+======================================================= */
+
+function saveDashboardState(){
+
+    saveSetting(
+
+        "lastVisit",
+
+        new Date().toLocaleString("de-DE")
+
+    );
+
+}
+
+function showLastVisit(){
+
+    const last=loadSetting("lastVisit");
+
+    if(last){
+
+        console.log("Letzter Besuch:",last);
+
+    }
+
+}
+
+/* =======================================================
+   Initialisierung Teil 2
+======================================================= */
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    initSearch();
+
+    initSidebar();
+
+    initTheme();
+
+    initCards();
+
+    showLastVisit();
+
+    saveDashboardState();
+
+});
+/* =======================================================
+   AI Empire Pro V7 Ultimate
+   script.js
+   Teil 3
+=======================================================*/
+
+/* =======================================================
+   Live System Status
+======================================================= */
+
+function initLiveStatus(){
+
+    const bars=document.querySelectorAll(".progress-bar");
+
+    if(!bars.length) return;
+
+    setInterval(()=>{
+
+        bars.forEach(bar=>{
+
+            const value=Math.floor(Math.random()*35)+50;
+
+            bar.style.width=value+"%";
+
+            const label=bar.parentElement.nextElementSibling;
+
+            if(label){
+
+                label.textContent=value+"%";
+
+            }
+
+        });
+
+    },5000);
+
+}
+
+/* =======================================================
+   Live Aktivitätsfeed
+======================================================= */
+
+const liveEvents=[
+
+    "Trading Signal empfangen",
+    "Telegram Nachricht versendet",
+    "KI Analyse abgeschlossen",
+    "Video Rendering beendet",
+    "Cloud Backup erfolgreich",
+    "Neuer Benutzer angemeldet",
+    "Portfolio aktualisiert",
+    "Systemprüfung abgeschlossen"
+
+];
+
+function initActivityFeed(){
+
+    const list=document.querySelector(".activity-card");
+
+    if(!list) return;
+
+    setInterval(()=>{
+
+        const item=document.createElement("div");
+
+        item.className="activity-item";
+
+        const now=new Date().toLocaleTimeString("de-DE",{
+            hour:"2-digit",
+            minute:"2-digit"
+        });
+
+        const text=liveEvents[
+            Math.floor(Math.random()*liveEvents.length)
+        ];
+
+        item.innerHTML=`
+            <span class="activity-time">${now}</span>
+            <span>${text}</span>
+        `;
+
+        list.prepend(item);
+
+        while(list.children.length>8){
+
+            list.removeChild(list.lastElementChild);
+
+        }
+
+    },8000);
+
+}
+
+/* =======================================================
+   Dashboard Daten aktualisieren
+======================================================= */
+
+function refreshDashboard(){
+
+    const numbers=document.querySelectorAll(".number");
+
+    numbers.forEach(number=>{
+
+        const current=parseInt(
+            number.textContent.replace(/\D/g,"")
+        );
+
+        if(isNaN(current)) return;
+
+        const next=current+Math.floor(Math.random()*5);
+
+        if(number.textContent.includes("€")){
+
+            number.textContent=
+            "+"+next.toLocaleString("de-DE")+" €";
+
+        }else{
+
+            number.textContent=next;
+
+        }
+
+    });
+
+}
+
+/* =======================================================
+   API Platzhalter
+======================================================= */
+
+const API={
+
+    trading:null,
+
+    telegram:null,
+
+    assistant:null,
+
+    video:null,
+
+    game:null
+
+};
+
+function connectModules(){
+
+    console.log("Trading API:",API.trading);
+
+    console.log("Telegram API:",API.telegram);
+
+    console.log("Assistant API:",API.assistant);
+
+    console.log("Video API:",API.video);
+
+    console.log("Game API:",API.game);
+
+}
+
+/* =======================================================
+   Hilfsfunktionen
+======================================================= */
+
+function formatDate(){
+
+    return new Date().toLocaleDateString("de-DE");
+
+}
+
+function formatTime(){
+
+    return new Date().toLocaleTimeString("de-DE");
+
+}
+
+function random(min,max){
+
+    return Math.floor(Math.random()*(max-min+1))+min;
+
+}
+
+/* =======================================================
+   Dashboard Start
+======================================================= */
+
+function startDashboard(){
+
+    initLiveStatus();
+
+    initActivityFeed();
+
+    connectModules();
+
+    setInterval(refreshDashboard,10000);
+
+    console.log("Dashboard gestartet.");
+
+}
+
+/* =======================================================
+   Initialisierung Teil 3
+======================================================= */
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    startDashboard();
+
+});
