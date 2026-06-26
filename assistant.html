@@ -1,491 +1,438 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Empire Pro V7 - Assistant</title>
 
-<title>Yasin AI V6 Ultimate - AI Empire Pro</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
+
 <body>
 
-<div class="app">
+<div class="app-layout">
 
     <!-- SIDEBAR -->
-
     <aside class="sidebar">
 
-        <div>
-
-            <div class="logo">
-
-                <h1>👑 AI Empire Pro</h1>
-
-                <p>Riadh Edition V6 Ultimate</p>
-
-            </div>
-
-            <nav class="menu">
-
-                <a href="index.html">🏠 Dashboard</a>
-
-                <a href="assistant.html">🤖 Yasin AI</a>
-
-                <a href="trading.html">📈 Trading Pro</a>
-
-                <a href="telegram.html">📱 Telegram Center</a>
-
-                <a href="video.html">🎬 Video Studio</a>
-
-                <a href="game.html">🎮 Game Studio</a>
-
-                <a href="tools.html">🛠 Tools Center</a>
-
-                <a href="setup.html">⚙ Setup Center</a>
-
-            </nav>
-
+        <div class="logo">
+            <h2>🚀 AI Empire</h2>
+            <span>V7 Assistant</span>
         </div>
 
-        <div class="profile-box">
-
-            <h3 id="profileName">👑 Riadh</h3>
-
-            <p>YASIN AI COMMAND CENTER</p>
-
-            <br>
-
-            <div class="online">
-                AI ONLINE
-            </div>
-
-        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li class="active"><a href="assistant.html">🤖 Assistant</a></li>
+                <li><a href="trading.html">📈 Trading</a></li>
+                <li><a href="telegram.html">💬 Telegram</a></li>
+                <li><a href="video.html">🎬 Video</a></li>
+                <li><a href="game.html">🎮 Game</a></li>
+                <li><a href="tools.html">🛠 Tools</a></li>
+                <li><a href="setup.html">⚙ Setup</a></li>
+            </ul>
+        </nav>
 
     </aside>
 
     <!-- MAIN -->
-
     <main class="main-content">
 
         <!-- TOPBAR -->
-
-        <div class="topbar">
+        <header class="topbar">
 
             <div>
+                <h1>AI Assistant</h1>
+                <p>Dein intelligenter KI-Arbeitsbereich</p>
+            </div>
 
-                <h2>🤖 Yasin AI V6 Ultimate</h2>
+            <div class="topbar-right">
 
-                <p>Persönlicher Empire Assistent</p>
+                <button class="icon-btn">🧠 Model</button>
+                <button class="icon-btn">⚙</button>
 
             </div>
 
-            <div class="clock" id="clock">
-                00:00:00
-            </div>
+        </header>
 
-        </div>
+        <!-- CHAT LAYOUT -->
+        <section class="assistant-layout">
 
-        <!-- KPI -->
+            <!-- CHAT AREA -->
+            <div class="chat-container">
 
-        <div class="grid">
+                <div class="chat-header">
+                    <h2>Chat</h2>
+                    <p>KI antwortet in Echtzeit</p>
+                </div>
 
-            <div class="card">
+                <div class="chat-box" id="chatBox">
 
-                <h3>Chats</h3>
+                    <div class="message bot">
+                        <span>AI:</span>
+                        Willkommen im AI Assistant. Wie kann ich helfen?
+                    </div>
 
-                <div class="card-value" id="chatCounter">
-                    0
+                </div>
+
+                <div class="chat-input">
+
+                    <input type="text" id="userInput" placeholder="Nachricht eingeben...">
+
+                    <button onclick="sendMessage()">Senden</button>
+
                 </div>
 
             </div>
 
-            <div class="card">
+            <!-- TOOL PANEL -->
+            <aside class="assistant-tools">
 
-                <h3>Prompts</h3>
+                <h3>Tools</h3>
 
-                <div class="card-value">
-                    12
-                </div>
+                <button>📄 Prompt Generator</button>
+                <button>🧠 Ideen</button>
+                <button>📊 Analyse</button>
+                <button>⚡ Quick Tasks</button>
 
-            </div>
+                <hr>
 
-            <div class="card">
+                <h3>Model</h3>
 
-                <h3>Memory</h3>
+                <select>
+                    <option>GPT Mode</option>
+                    <option>Fast Mode</option>
+                    <option>Deep Mode</option>
+                </select>
 
-                <div class="card-value">
-                    LOCAL
-                </div>
+            </aside>
 
-            </div>
-
-            <div class="card">
-
-                <h3>Status</h3>
-
-                <div class="card-value online">
-                    ONLINE
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- QUICK PROMPTS -->
-
-        <div class="section">
-
-            <h2>⚡ Schnellbefehle</h2>
-
-            <button class="btn" onclick="insertPrompt('Erstelle einen Businessplan für ein AI Startup')">
-                Business
-            </button>
-
-            <button class="btn" onclick="insertPrompt('Analysiere einen Trading Plan')">
-                Trading
-            </button>
-
-            <button class="btn" onclick="insertPrompt('Erstelle einen Content Plan für YouTube')">
-                Content
-            </button>
-
-            <button class="btn" onclick="insertPrompt('Wachstumsstrategie für Telegram Kanal')">
-                Telegram
-            </button>
-
-        </div>
-
-        <!-- CHAT -->
-
-        <div class="section">
-
-            <h2>💬 AI Chat Center</h2>
-
-            <div class="chat-container" id="chatBox">
-
-                <div class="chat-message">
-                    👑 Willkommen bei Yasin AI V6 Ultimate.
-                </div>
-
-            </div>
-
-            <br>
-
-            <textarea
-                id="userInput"
-                placeholder="Nachricht eingeben..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="sendMessage()">
-
-                Senden
-
-            </button>
-
-            <button
-                class="btn"
-                onclick="clearChat()">
-
-                Chat löschen
-
-            </button>
-
-        </div>
-
-        <!-- AI MEMORY -->
-
-        <div class="section">
-
-            <h2>🧠 Empire Memory</h2>
-
-            <textarea
-                id="memoryBox"
-                placeholder="Wichtige Informationen speichern..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('empire_memory_v6','memoryBox')">
-
-                Memory speichern
-
-            </button>
-
-        </div>
-
-        <!-- BUSINESS ASSISTANT -->
-
-        <div class="section">
-
-            <h2>🏢 Business Assistent</h2>
-
-            <textarea
-                id="businessAssistant"
-                placeholder="Business Ideen, Strategien und Prozesse..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('business_assistant_v6','businessAssistant')">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- CONTENT ASSISTANT -->
-
-        <div class="section">
-
-            <h2>🎬 Content Assistent</h2>
-
-            <textarea
-                id="contentAssistant"
-                placeholder="Video Ideen, Posts und Content Planung..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('content_assistant_v6','contentAssistant')">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- TRADING ASSISTANT -->
-
-        <div class="section">
-
-            <h2>📈 Trading Assistent</h2>
-
-            <textarea
-                id="tradingAssistant"
-                placeholder="Trading Strategien und Marktanalysen..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('trading_assistant_v6','tradingAssistant')">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- NOTES -->
-
-        <div class="section">
-
-            <h2>📝 AI Notizen</h2>
-
-            <textarea
-                id="assistantNotes"
-                placeholder="Eigene AI Notizen..."></textarea>
-
-            <br><br>
-
-            <button
-                class="btn"
-                onclick="saveNote('assistant_notes_v6','assistantNotes')">
-
-                Speichern
-
-            </button>
-
-        </div>
-
-        <!-- FOOTER -->
-
-        <div class="footer">
-
-            AI Empire Pro - Yasin AI V6 Ultimate © 2026
-
-        </div>
+        </section>
 
     </main>
 
 </div>
 
-<script src="script.js"></script>
-
+</body>
+</html>
 <script>
 
-const user =
-localStorage.getItem(
-    "empire_user"
-);
-
-if(user){
-
-    document.getElementById(
-        "profileName"
-    ).innerHTML =
-    "👑 " + user;
-
-}
-
-function insertPrompt(text){
-
-    document.getElementById(
-        "userInput"
-    ).value = text;
-
-}
+/* =======================================================
+   AI Assistant Chat Engine (V7)
+======================================================= */
 
 function sendMessage(){
 
-    const input =
-    document.getElementById(
-        "userInput"
-    );
+    const input=document.getElementById("userInput");
 
-    const text =
-    input.value.trim();
+    const chat=document.getElementById("chatBox");
 
-    if(text === "") return;
+    if(!input || !chat) return;
 
-    const chat =
-    document.getElementById(
-        "chatBox"
-    );
+    const text=input.value.trim();
 
-    const userMsg =
-    document.createElement(
-        "div"
-    );
+    if(text==="") return;
 
-    userMsg.className =
-    "chat-message";
+    /* USER MESSAGE */
+    const userMsg=document.createElement("div");
 
-    userMsg.innerHTML =
-    "👤 " + text;
+    userMsg.className="message user";
 
-    chat.appendChild(
-        userMsg
-    );
+    userMsg.innerHTML="<span>Du:</span> "+text;
 
-    const aiMsg =
-    document.createElement(
-        "div"
-    );
+    chat.appendChild(userMsg);
 
-    aiMsg.className =
-    "chat-message";
+    input.value="";
 
-    aiMsg.innerHTML =
-    "🤖 Yasin AI: Anfrage gespeichert. Analyse vorbereitet.";
+    chat.scrollTop=chat.scrollHeight;
 
-    chat.appendChild(
-        aiMsg
-    );
+    /* BOT TYPING */
+    const typing=document.createElement("div");
 
-    chat.scrollTop =
-    chat.scrollHeight;
+    typing.className="message bot";
 
-    input.value = "";
+    typing.innerHTML="<span>AI:</span> tippt...";
 
-    saveChat();
+    chat.appendChild(typing);
+
+    chat.scrollTop=chat.scrollHeight;
+
+    /* SIMULATED RESPONSE */
+    setTimeout(()=>{
+
+        typing.remove();
+
+        const reply=document.createElement("div");
+
+        reply.className="message bot";
+
+        reply.innerHTML="<span>AI:</span> "+generateResponse(text);
+
+        chat.appendChild(reply);
+
+        chat.scrollTop=chat.scrollHeight;
+
+    },1000);
 
 }
+
+/* =======================================================
+   Fake AI Engine
+======================================================= */
+
+function generateResponse(input){
+
+    input=input.toLowerCase();
+
+    if(input.includes("hallo") || input.includes("hi")){
+
+        return "Hallo 👋 Ich bin dein AI Assistant. Wie kann ich helfen?";
+
+    }
+
+    if(input.includes("trading")){
+
+        return "Trading-Modul ist aktiv 📈 Soll ich dir aktuelle Signale anzeigen?";
+
+    }
+
+    if(input.includes("video")){
+
+        return "Video Studio bereit 🎬 Ich kann dir ein Video erstellen lassen.";
+
+    }
+
+    if(input.includes("hilfe")){
+
+        return "Ich kann dich bei Trading, KI, Telegram und Automatisierung unterstützen.";
+
+    }
+
+    return "Ich habe deine Anfrage erhalten. Analyse läuft... 🤖";
+
+}
+
+/* =======================================================
+   Enter Taste Support
+======================================================= */
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    const input=document.getElementById("userInput");
+
+    if(input){
+
+        input.addEventListener("keypress",(e)=>{
+
+            if(e.key==="Enter"){
+
+                sendMessage();
+
+            }
+
+        });
+
+    }
+
+});
+
+</script>
+<script>
+
+/* =======================================================
+   AI Assistant PRO FEATURES (V7)
+======================================================= */
+
+/* ================================
+   CHAT HISTORY (LOCALSTORAGE)
+================================ */
 
 function saveChat(){
 
-    localStorage.setItem(
-        "yasin_chat_v6",
-        document.getElementById(
-            "chatBox"
-        ).innerHTML
-    );
+    const chat=document.getElementById("chatBox");
 
-    updateCounter();
+    if(!chat) return;
+
+    localStorage.setItem("ai_chat_v7", chat.innerHTML);
 
 }
+
+function loadChat(){
+
+    const chat=document.getElementById("chatBox");
+
+    if(!chat) return;
+
+    const saved=localStorage.getItem("ai_chat_v7");
+
+    if(saved){
+
+        chat.innerHTML=saved;
+
+    }
+
+}
+
+/* ================================
+   AUTO SAVE CHAT
+================================ */
+
+setInterval(()=>{
+
+    saveChat();
+
+},5000);
+
+/* ================================
+   EXPORT CHAT
+================================ */
+
+function exportChat(){
+
+    const chat=document.getElementById("chatBox");
+
+    if(!chat) return;
+
+    const text=chat.innerText;
+
+    const blob=new Blob([text],{type:"text/plain"});
+
+    const url=URL.createObjectURL(blob);
+
+    const a=document.createElement("a");
+
+    a.href=url;
+
+    a.download="ai-chat-export.txt";
+
+    a.click();
+
+    URL.revokeObjectURL(url);
+
+}
+
+/* ================================
+   PROMPT SHORTCUTS
+================================ */
+
+function insertPrompt(text){
+
+    const input=document.getElementById("userInput");
+
+    if(!input) return;
+
+    input.value=text;
+
+    input.focus();
+
+}
+
+/* ================================
+   SHORTCUT BUTTONS (optional UI)
+================================ */
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    loadChat();
+
+    const tools=document.querySelector(".assistant-tools");
+
+    if(tools){
+
+        const box=document.createElement("div");
+
+        box.style.marginTop="15px";
+
+        box.innerHTML=`
+
+            <h3>Shortcuts</h3>
+
+            <button onclick="insertPrompt('Erstelle eine Trading Analyse')">📈 Trading Analyse</button>
+
+            <button onclick="insertPrompt('Gib mir 5 Business Ideen')">💡 Ideen</button>
+
+            <button onclick="insertPrompt('Erstelle ein Video Script')">🎬 Video Script</button>
+
+            <button onclick="exportChat()">⬇ Chat Export</button>
+
+        `;
+
+        tools.appendChild(box);
+
+    }
+
+});
+
+/* ================================
+   CLEAR CHAT
+================================ */
 
 function clearChat(){
 
-    document.getElementById(
-        "chatBox"
-    ).innerHTML =
+    const chat=document.getElementById("chatBox");
 
-    '<div class="chat-message">🤖 Chat zurückgesetzt.</div>';
+    if(!chat) return;
 
-    localStorage.removeItem(
-        "yasin_chat_v6"
-    );
+    chat.innerHTML=`
 
-    updateCounter();
+        <div class="message bot">
 
-}
+            <span>AI:</span>
 
-function updateCounter(){
+            Chat wurde zurückgesetzt.
 
-    const messages =
-    document.querySelectorAll(
-        ".chat-message"
-    );
+        </div>
 
-    document.getElementById(
-        "chatCounter"
-    ).innerHTML =
-    messages.length;
+    `;
+
+    localStorage.removeItem("ai_chat_v7");
 
 }
 
-const savedChat =
-localStorage.getItem(
-    "yasin_chat_v6"
-);
+/* ================================
+   ENHANCED RESPONSE HOOK (FUTURE AI API)
+================================ */
 
-if(savedChat){
+function setAIResponseHandler(callback){
 
-    document.getElementById(
-        "chatBox"
-    ).innerHTML =
-    savedChat;
+    window.aiResponseHandler=callback;
 
 }
 
-loadNote(
-    "empire_memory_v6",
-    "memoryBox"
-);
+/* ================================
+   OVERRIDE generateResponse (optional upgrade hook)
+================================ */
 
-loadNote(
-    "business_assistant_v6",
-    "businessAssistant"
-);
+function generateResponse(input){
 
-loadNote(
-    "content_assistant_v6",
-    "contentAssistant"
-);
+    if(window.aiResponseHandler){
 
-loadNote(
-    "trading_assistant_v6",
-    "tradingAssistant"
-);
+        return window.aiResponseHandler(input);
 
-loadNote(
-    "assistant_notes_v6",
-    "assistantNotes"
-);
+    }
 
-updateCounter();
+    input=input.toLowerCase();
+
+    if(input.includes("hallo")) return "Hallo 👋";
+
+    if(input.includes("trading")) return "📈 Trading Analyse bereit.";
+
+    if(input.includes("video")) return "🎬 Video Modul aktiv.";
+
+    if(input.includes("hilfe")) return "Ich unterstütze dich im gesamten System.";
+
+    return "Analyse abgeschlossen 🤖";
+}
+
+/* ================================
+   INIT
+================================ */
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    loadChat();
+
+});
 
 </script>
-
-</body>
-</html>
