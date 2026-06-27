@@ -1,0 +1,195 @@
+/*
+=====================================================
+AI Empire Pro V8
+Login Styles
+Datei: assets/css/login.css
+=====================================================
+*/
+
+.login-page{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b
+    );
+
+}
+
+.login-card{
+
+    width:420px;
+
+    max-width:95%;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:40px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+}
+
+.login-logo{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.login-logo h1{
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+.login-logo p{
+
+    color:var(--text-secondary);
+
+}
+
+.login-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.login-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.login-group label{
+
+    font-weight:600;
+
+}
+
+.login-group input{
+
+    padding:14px;
+
+    border-radius:10px;
+
+    border:1px solid var(--border);
+
+    background:var(--bg-secondary);
+
+    color:var(--text);
+
+}
+
+.login-group input:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+}
+
+.login-button{
+
+    margin-top:10px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.login-button:hover{
+
+    background:#2563eb;
+
+}
+
+.login-footer{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    color:var(--text-secondary);
+
+    font-size:13px;
+
+}
+
+.login-error{
+
+    background:rgba(239,68,68,.15);
+
+    color:#ef4444;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    display:none;
+
+}
+
+.login-success{
+
+    background:rgba(34,197,94,.15);
+
+    color:#22c55e;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    display:none;
+
+}
+
+@media(max-width:600px){
+
+    .login-card{
+
+        padding:25px;
+
+    }
+
+}
