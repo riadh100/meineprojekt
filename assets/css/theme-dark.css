@@ -1,0 +1,156 @@
+/*
+=====================================================
+AI Empire Pro V8
+Dark Theme
+Datei: assets/css/theme-dark.css
+=====================================================
+*/
+
+:root{
+
+    --bg:#0f172a;
+
+    --bg-secondary:#1e293b;
+
+    --bg-tertiary:#273449;
+
+    --card:#1e293b;
+
+    --sidebar:#111827;
+
+    --navbar:#1e293b;
+
+    --border:#334155;
+
+    --text:#ffffff;
+
+    --text-secondary:#94a3b8;
+
+    --primary:#3b82f6;
+
+    --primary-hover:#2563eb;
+
+    --success:#22c55e;
+
+    --warning:#f59e0b;
+
+    --danger:#ef4444;
+
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+
+}
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+}
+
+.card,
+.panel,
+.widget,
+.modal-window,
+.dialog{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+#sidebar{
+
+    background:var(--sidebar);
+
+}
+
+#navbar{
+
+    background:var(--navbar);
+
+}
+
+input,
+textarea,
+select{
+
+    background:var(--bg-secondary);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+}
+
+input::placeholder,
+textarea::placeholder{
+
+    color:var(--text-secondary);
+
+}
+
+table{
+
+    background:var(--card);
+
+}
+
+thead{
+
+    background:var(--bg-secondary);
+
+}
+
+tbody tr:nth-child(even){
+
+    background:rgba(255,255,255,.02);
+
+}
+
+tbody tr:hover{
+
+    background:rgba(59,130,246,.12);
+
+}
+
+.sidebar-item:hover{
+
+    background:var(--primary);
+
+}
+
+.sidebar-item.active{
+
+    background:var(--primary);
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-hover);
+
+}
+
+.toast{
+
+    background:var(--bg-secondary);
+
+    color:var(--text);
+
+}
+
+.loader-box{
+
+    background:var(--bg-secondary);
+
+}
