@@ -1,0 +1,36 @@
+{
+  "name": "ai-empire-pro-v8",
+  "version": "8.0.0",
+  "description": "AI Empire Pro Backend",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "ai",
+    "trading",
+    "telegram",
+    "dashboard",
+    "assistant",
+    "video",
+    "game"
+  ],
+  "author": "AI Empire Pro",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "mongoose": "^8.10.1",
+    "ws": "^8.18.0",
+    "axios": "^1.7.9",
+    "node-telegram-bot-api": "^0.66.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
