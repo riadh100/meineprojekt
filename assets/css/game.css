@@ -1,0 +1,211 @@
+/*
+=====================================================
+AI Empire Pro V8
+Game Hub Styles
+Datei: assets/css/game.css
+=====================================================
+*/
+
+.game-page{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.game-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+.game-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:20px;
+
+}
+
+.game-panel{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:20px;
+
+}
+
+.level-card{
+
+    text-align:center;
+
+    padding:25px;
+
+}
+
+.level-number{
+
+    font-size:60px;
+
+    font-weight:bold;
+
+    color:var(--primary);
+
+}
+
+.level-title{
+
+    margin-top:10px;
+
+    color:var(--text-secondary);
+
+}
+
+.xp-bar{
+
+    width:100%;
+
+    height:14px;
+
+    background:var(--border);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-top:15px;
+
+}
+
+.xp-fill{
+
+    height:100%;
+
+    width:0;
+
+    background:linear-gradient(90deg,var(--primary),var(--success));
+
+    transition:.4s;
+
+}
+
+.achievement-card{
+
+    background:var(--bg-secondary);
+
+    border-left:5px solid gold;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+}
+
+.achievement-title{
+
+    font-weight:600;
+
+    margin-bottom:6px;
+
+}
+
+.achievement-description{
+
+    color:var(--text-secondary);
+
+    font-size:14px;
+
+}
+
+.mission-card{
+
+    background:var(--bg-secondary);
+
+    border-left:4px solid var(--primary);
+
+    border-radius:12px;
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+}
+
+.mission-complete{
+
+    border-left-color:var(--success);
+
+}
+
+.reward-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px;
+
+    background:var(--bg-secondary);
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    margin-bottom:12px;
+
+}
+
+.reward-cost{
+
+    font-weight:bold;
+
+    color:var(--warning);
+
+}
+
+.reward-claimed{
+
+    color:var(--success);
+
+    font-weight:bold;
+
+}
+
+.reward-available{
+
+    color:var(--primary);
+
+    font-weight:bold;
+
+}
+
+@media(max-width:992px){
+
+    .game-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
