@@ -1,189 +1,132 @@
-
-```html
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AI Empire Pro V7 Ultimate</title>
+    <title>AI Empire Pro V8</title>
 
-    <!-- Premium Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Icons -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ========================= -->
-<!-- Sidebar -->
-<!-- ========================= -->
+    <div id="sidebar"></div>
 
-<aside class="sidebar">
+    <div class="main-layout">
 
-    <div class="logo">
-        <i class="fa-solid fa-crown"></i>
-        <h2>AI Empire</h2>
+        <div id="navbar"></div>
+
+        <main id="app"></main>
+
     </div>
 
-    <nav>
+    <!-- Core -->
 
-        <a href="#dashboard">
-            <i class="fa-solid fa-chart-line"></i>
-            Dashboard
-        </a>
+    <script src="core/state.js"></script>
+    <script src="core/storage.js"></script>
+    <script src="core/router.js"></script>
+    <script src="core/app.js"></script>
+    <script src="core/theme.js"></script>
+    <script src="core/settings.js"></script>
+    <script src="core/notifications.js"></script>
+    <script src="core/utils.js"></script>
 
-        <a href="#assistant">
-            <i class="fa-solid fa-robot"></i>
-            AI Assistant
-        </a>
+    <!-- Components -->
 
-        <a href="#trading">
-            <i class="fa-solid fa-coins"></i>
-            Trading
-        </a>
-
-        <a href="#telegram">
-            <i class="fa-brands fa-telegram"></i>
-            Telegram
-        </a>
-
-        <a href="#video">
-            <i class="fa-solid fa-video"></i>
-            Video Studio
-        </a>
-
-        <a href="#game">
-            <i class="fa-solid fa-gamepad"></i>
-            Games
-        </a>
-
-        <a href="#tools">
-            <i class="fa-solid fa-toolbox"></i>
-            Tools
-        </a>
-
-        <a href="#missions">
-            <i class="fa-solid fa-bullseye"></i>
-            Daily Missions
-        </a>
-
-        <a href="#projects">
-            <i class="fa-solid fa-folder-open"></i>
-            Projekte
-        </a>
-
-        <a href="#settings">
-            <i class="fa-solid fa-gear"></i>
-            Einstellungen
-        </a>
-
-    </nav>
-
-</aside>
-
-<!-- ========================= -->
-<!-- Main -->
-<!-- ========================= -->
-
-<main class="main-content">
-
-    <!-- Topbar -->
-    <header class="topbar">
-
-        <div class="search-box">
-            <input type="text" placeholder="Suche...">
-        </div>
-
-        <div class="top-actions">
-
-            <button id="notificationBtn">
-                🔔
-            </button>
-
-            <button id="themeBtn">
-                🌙
-            </button>
-
-            <div class="profile">
-                👑 Empire Pro
-            </div>
-
-        </div>
-
-    </header>
+    <script src="components/sidebar.js"></script>
+    <script src="components/navbar.js"></script>
+    <script src="components/card.js"></script>
+    <script src="components/modal.js"></script>
+    <script src="components/table.js"></script>
+    <script src="components/chart.js"></script>
+    <script src="components/toast.js"></script>
+    <script src="components/dialog.js"></script>
+    <script src="components/loader.js"></script>
+    <script src="components/tabs.js"></script>
 
     <!-- Dashboard -->
 
-    <section id="dashboard">
+    <script src="modules/dashboard/dashboard.js"></script>
+    <script src="modules/dashboard/dashboard-ui.js"></script>
+    <script src="modules/dashboard/dashboard-charts.js"></script>
+    <script src="modules/dashboard/dashboard-kpi.js"></script>
+    <script src="modules/dashboard/dashboard-activity.js"></script>
+    <script src="modules/dashboard/dashboard-missions.js"></script>
 
-        <h1>Dashboard</h1>
+    <!-- Assistant -->
 
-        <div class="stats-grid">
+    <script src="modules/assistant/assistant.js"></script>
+    <script src="modules/assistant/chat-engine.js"></script>
+    <script src="modules/assistant/prompt-library.js"></script>
+    <script src="modules/assistant/conversation-history.js"></script>
+    <script src="modules/assistant/openai-api.js"></script>
 
-            <div class="stat-card">
-                <h3>Empire Score</h3>
-                <span id="empireScore">0</span>
-            </div>
+    <!-- Trading -->
 
-            <div class="stat-card">
-                <h3>Level</h3>
-                <span id="level">1</span>
-            </div>
+    <script src="modules/trading/trading.js"></script>
+    <script src="modules/trading/portfolio.js"></script>
+    <script src="modules/trading/signal-engine.js"></script>
+    <script src="modules/trading/trade-history.js"></script>
+    <script src="modules/trading/market-data.js"></script>
 
-            <div class="stat-card">
-                <h3>Missionen</h3>
-                <span id="missionsDone">0</span>
-            </div>
+    <!-- Telegram -->
 
-            <div class="stat-card">
-                <h3>Projekte</h3>
-                <span id="projectsCount">0</span>
-            </div>
+    <script src="modules/telegram/telegram.js"></script>
+    <script src="modules/telegram/bot-manager.js"></script>
+    <script src="modules/telegram/broadcast-system.js"></script>
+    <script src="modules/telegram/webhook.js"></script>
 
-        </div>
+    <!-- Video -->
 
-    </section>
+    <script src="modules/video/video.js"></script>
+    <script src="modules/video/project-manager.js"></script>
+    <script src="modules/video/render-queue.js"></script>
+    <script src="modules/video/export-manager.js"></script>
 
-    <!-- Weitere Module -->
+    <!-- Game -->
 
-    <section id="assistant"></section>
-    <section id="trading"></section>
-    <section id="telegram"></section>
-    <section id="video"></section>
-    <section id="game"></section>
-    <section id="tools"></section>
-    <section id="missions"></section>
-    <section id="projects"></section>
-    <section id="settings"></section>
+    <script src="modules/game/game.js"></script>
+    <script src="modules/game/xp-engine.js"></script>
+    <script src="modules/game/achievement-system.js"></script>
+    <script src="modules/game/daily-missions.js"></script>
+    <script src="modules/game/rewards.js"></script>
 
-</main>
+    <!-- Tools -->
 
-<!-- Notification Center -->
+    <script src="modules/tools/tools.js"></script>
+    <script src="modules/tools/api-manager.js"></script>
+    <script src="modules/tools/log-manager.js"></script>
+    <script src="modules/tools/debug-center.js"></script>
 
-<div id="notificationPanel"></div>
+    <!-- Setup -->
 
-<!-- AI Command Center -->
+    <script src="modules/setup/setup.js"></script>
+    <script src="modules/setup/profile-manager.js"></script>
+    <script src="modules/setup/security-manager.js"></script>
+    <script src="modules/setup/backup-manager.js"></script>
+    <script src="modules/setup/system-config.js"></script>
 
-<div id="aiCommandCenter"></div>
+    <!-- Pages -->
 
-<!-- Floating Action Button -->
+    <script src="pages/dashboard.js"></script>
+    <script src="pages/assistant.js"></script>
+    <script src="pages/trading.js"></script>
+    <script src="pages/telegram.js"></script>
+    <script src="pages/video.js"></script>
+    <script src="pages/game.js"></script>
+    <script src="pages/tools.js"></script>
+    <script src="pages/setup.js"></script>
+    <script src="pages/router.js"></script>
 
-<button id="fab">
-    +
-</button>
+    <!-- Main -->
 
-<!-- JavaScript -->
-
-<script src="script.js"></script>
+    <script src="main.js"></script>
 
 </body>
+
 </html>
-```
