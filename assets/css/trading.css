@@ -1,0 +1,197 @@
+/*
+=====================================================
+AI Empire Pro V8
+Trading Styles
+Datei: assets/css/trading.css
+=====================================================
+*/
+
+.trading-page{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.trading-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+.trading-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:20px;
+
+}
+
+.portfolio-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:20px;
+
+}
+
+.portfolio-title{
+
+    font-size:22px;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.portfolio-value{
+
+    font-size:36px;
+
+    font-weight:bold;
+
+    color:var(--success);
+
+}
+
+.signal-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.signal-card{
+
+    background:var(--bg-secondary);
+
+    border:1px solid var(--border);
+
+    border-left:5px solid var(--primary);
+
+    border-radius:12px;
+
+    padding:15px;
+
+    transition:.25s;
+
+}
+
+.signal-card:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.signal-buy{
+
+    border-left-color:var(--success);
+
+}
+
+.signal-sell{
+
+    border-left-color:var(--danger);
+
+}
+
+.signal-title{
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+.signal-price{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+.signal-confidence{
+
+    margin-top:8px;
+
+    color:var(--text-secondary);
+
+}
+
+.trade-history{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:20px;
+
+}
+
+.trade-profit{
+
+    color:var(--success);
+
+    font-weight:bold;
+
+}
+
+.trade-loss{
+
+    color:var(--danger);
+
+    font-weight:bold;
+
+}
+
+.market-chart{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:20px;
+
+}
+
+.market-chart canvas{
+
+    width:100%;
+
+}
+
+@media(max-width:992px){
+
+    .trading-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
