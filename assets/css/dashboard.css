@@ -1,0 +1,227 @@
+/*
+=====================================================
+AI Empire Pro V8
+Dashboard Styles
+Datei: assets/css/dashboard.css
+=====================================================
+*/
+
+.dashboard{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.dashboard-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+.dashboard-title{
+
+    font-size:32px;
+
+    font-weight:700;
+
+}
+
+.dashboard-subtitle{
+
+    color:var(--text-secondary);
+
+    margin-top:6px;
+
+}
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:20px;
+
+}
+
+.dashboard-widget{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:20px;
+
+    transition:.25s;
+
+}
+
+.dashboard-widget:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.dashboard-widget-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+.dashboard-widget-value{
+
+    font-size:34px;
+
+    font-weight:bold;
+
+}
+
+.dashboard-widget-description{
+
+    margin-top:10px;
+
+    color:var(--text-secondary);
+
+}
+
+.dashboard-row{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:20px;
+
+}
+
+.dashboard-panel{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:20px;
+
+}
+
+.dashboard-panel h2{
+
+    margin-bottom:20px;
+
+}
+
+.activity-feed{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.activity-item{
+
+    padding:15px;
+
+    border-radius:10px;
+
+    background:var(--bg-secondary);
+
+    border-left:4px solid var(--primary);
+
+}
+
+.activity-title{
+
+    font-weight:600;
+
+}
+
+.activity-time{
+
+    font-size:12px;
+
+    color:var(--text-secondary);
+
+    margin-top:5px;
+
+}
+
+.kpi-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:15px;
+
+}
+
+.kpi-card{
+
+    padding:18px;
+
+    border-radius:12px;
+
+    background:var(--bg-secondary);
+
+    border:1px solid var(--border);
+
+}
+
+.kpi-title{
+
+    font-size:13px;
+
+    color:var(--text-secondary);
+
+}
+
+.kpi-value{
+
+    margin-top:8px;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+}
+
+@media(max-width:992px){
+
+    .dashboard-row{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
