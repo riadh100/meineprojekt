@@ -1,0 +1,55 @@
+/**
+ * =====================================================
+ * AI Empire Pro V8
+ * Authentication Routes
+ * Datei: server/routes/authRoutes.js
+ * =====================================================
+ */
+
+const express = require("express");
+
+const router = express.Router();
+
+const AuthController = require("../controllers/authController");
+
+const authMiddleware = require("../middleware/auth");
+
+/*
+|--------------------------------------------------------------------------
+| Public Routes
+|--------------------------------------------------------------------------
+*/
+
+router.post(
+
+    "/login",
+
+    AuthController.login
+
+);
+
+router.post(
+
+    "/register",
+
+    AuthController.register
+
+);
+
+/*
+|--------------------------------------------------------------------------
+| Protected Routes
+|--------------------------------------------------------------------------
+*/
+
+router.get(
+
+    "/me",
+
+    authMiddleware,
+
+    AuthController.me
+
+);
+
+module.exports = router;
