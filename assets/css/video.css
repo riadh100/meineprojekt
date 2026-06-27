@@ -1,0 +1,189 @@
+/*
+=====================================================
+AI Empire Pro V8
+Video Studio Styles
+Datei: assets/css/video.css
+=====================================================
+*/
+
+.video-page{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.video-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+.video-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:20px;
+
+}
+
+.video-panel{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:20px;
+
+}
+
+.video-project{
+
+    background:var(--bg-secondary);
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    padding:16px;
+
+    margin-bottom:15px;
+
+    transition:.25s;
+
+}
+
+.video-project:hover{
+
+    transform:translateY(-2px);
+
+    border-color:var(--primary);
+
+}
+
+.video-project-title{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+.video-project-info{
+
+    color:var(--text-secondary);
+
+    font-size:14px;
+
+}
+
+.render-job{
+
+    background:var(--bg-secondary);
+
+    border-left:4px solid var(--warning);
+
+    border-radius:10px;
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+}
+
+.render-progress{
+
+    width:100%;
+
+    height:10px;
+
+    background:var(--border);
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    margin-top:10px;
+
+}
+
+.render-progress-bar{
+
+    height:100%;
+
+    width:0;
+
+    background:var(--success);
+
+    transition:.3s;
+
+}
+
+.export-card{
+
+    background:var(--bg-secondary);
+
+    border-left:4px solid var(--primary);
+
+    border-radius:10px;
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+}
+
+.export-file{
+
+    font-weight:600;
+
+    margin-top:8px;
+
+}
+
+.video-preview{
+
+    background:#000;
+
+    border-radius:14px;
+
+    aspect-ratio:16/9;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:18px;
+
+}
+
+@media(max-width:992px){
+
+    .video-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
