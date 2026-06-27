@@ -1,0 +1,221 @@
+/*
+=====================================================
+AI Empire Pro V8
+Tools Styles
+Datei: assets/css/tools.css
+=====================================================
+*/
+
+.tools-page{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.tools-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+.tools-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:20px;
+
+}
+
+.tools-panel{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:20px;
+
+}
+
+.api-card{
+
+    background:var(--bg-secondary);
+
+    border-left:4px solid var(--primary);
+
+    border-radius:12px;
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+    transition:.25s;
+
+}
+
+.api-card:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.api-name{
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+.api-url{
+
+    margin-top:8px;
+
+    color:var(--text-secondary);
+
+    font-size:14px;
+
+    word-break:break-all;
+
+}
+
+.api-status{
+
+    margin-top:10px;
+
+    font-weight:bold;
+
+}
+
+.api-online{
+
+    color:var(--success);
+
+}
+
+.api-offline{
+
+    color:var(--danger);
+
+}
+
+.log-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.log-item{
+
+    padding:12px;
+
+    border-radius:10px;
+
+    background:var(--bg-secondary);
+
+    border-left:4px solid var(--primary);
+
+}
+
+.log-info{
+
+    border-left-color:var(--primary);
+
+}
+
+.log-success{
+
+    border-left-color:var(--success);
+
+}
+
+.log-warning{
+
+    border-left-color:var(--warning);
+
+}
+
+.log-error{
+
+    border-left-color:var(--danger);
+
+}
+
+.log-time{
+
+    margin-top:6px;
+
+    font-size:12px;
+
+    color:var(--text-secondary);
+
+}
+
+.debug-card{
+
+    background:var(--bg-secondary);
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+}
+
+.debug-title{
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+.debug-message{
+
+    color:var(--text-secondary);
+
+    word-break:break-word;
+
+}
+
+.debug-date{
+
+    margin-top:10px;
+
+    font-size:12px;
+
+    color:var(--text-secondary);
+
+}
+
+@media(max-width:992px){
+
+    .tools-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
