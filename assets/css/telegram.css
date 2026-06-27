@@ -1,0 +1,193 @@
+/*
+=====================================================
+AI Empire Pro V8
+Telegram Styles
+Datei: assets/css/telegram.css
+=====================================================
+*/
+
+.telegram-page{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.telegram-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+.telegram-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:20px;
+
+}
+
+.bot-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:20px;
+
+    transition:.25s;
+
+}
+
+.bot-card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.bot-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+
+}
+
+.bot-name{
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+
+.bot-status{
+
+    font-weight:bold;
+
+}
+
+.bot-online{
+
+    color:var(--success);
+
+}
+
+.bot-offline{
+
+    color:var(--danger);
+
+}
+
+.bot-details{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    color:var(--text-secondary);
+
+}
+
+.broadcast-panel{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:20px;
+
+}
+
+.broadcast-item{
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:var(--bg-secondary);
+
+    border-left:4px solid var(--primary);
+
+    margin-bottom:12px;
+
+}
+
+.broadcast-title{
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+.broadcast-date{
+
+    color:var(--text-secondary);
+
+    font-size:13px;
+
+}
+
+.webhook-status{
+
+    padding:20px;
+
+    border-radius:14px;
+
+    background:var(--bg-secondary);
+
+    border:1px solid var(--border);
+
+    text-align:center;
+
+}
+
+.webhook-online{
+
+    color:var(--success);
+
+    font-weight:bold;
+
+}
+
+.webhook-offline{
+
+    color:var(--danger);
+
+    font-weight:bold;
+
+}
+
+@media(max-width:992px){
+
+    .telegram-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
