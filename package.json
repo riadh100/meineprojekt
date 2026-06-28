@@ -1,0 +1,56 @@
+{
+  "name": "ai-empire-pro-v8",
+  "version": "8.0.0",
+  "description": "AI Empire Pro V8 - AI Business, Trading & Automation Platform",
+  "main": "server/server.js",
+  "type": "commonjs",
+  "private": true,
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "test": "node tests/run.js",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "ai",
+    "openai",
+    "automation",
+    "dashboard",
+    "trading",
+    "telegram",
+    "video",
+    "nodejs",
+    "express"
+  ],
+  "author": "AI Empire Pro",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.8.2",
+    "bcryptjs": "^3.0.2",
+    "compression": "^1.8.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "node-telegram-bot-api": "^0.66.0",
+    "nodemailer": "^6.10.0",
+    "openai": "^4.86.1",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.20.1",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.5.1"
+  }
+}
