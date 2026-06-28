@@ -1,0 +1,58 @@
+version: "3.9"
+
+services:
+
+  ai-empire:
+
+    container_name: ai-empire-pro
+
+    build: .
+
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    env_file:
+      - .env
+
+    depends_on:
+      - mongodb
+
+    volumes:
+      - ./uploads:/app/uploads
+      - ./logs:/app/logs
+      - ./backups:/app/backups
+      - ./storage:/app/storage
+
+    networks:
+      - aiempire
+
+  mongodb:
+
+    image: mongo:7
+
+    container_name: ai-empire-mongodb
+
+    restart: unless-stopped
+
+    ports:
+      - "27017:27017"
+
+    environment:
+      MONGO_INITDB_DATABASE: aiempire
+
+    volumes:
+      - mongodb_data:/data/db
+
+    networks:
+      - aiempire
+
+volumes:
+
+  mongodb_data:
+
+networks:
+
+  aiempire:
+    driver: bridge
