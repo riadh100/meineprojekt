@@ -1,199 +1,158 @@
 # AI Empire Pro V8
 
-Eine modulare KI-Plattform für Trading, Automatisierung, Telegram, Video, Game Hub und AI-Assistent.
+AI Empire Pro V8 ist eine modulare KI-, Trading-, Video- und Automatisierungsplattform mit modernem Dashboard, REST-API und WebSocket-Unterstützung.
 
 ---
 
-# Features
+# Funktionen
 
-- Dashboard
-- AI Assistant
-- Trading Center
-- Telegram Bot Manager
+- KI-Assistent (OpenAI)
+- Trading Dashboard
+- Portfolio Verwaltung
+- Binance Integration
+- CoinGecko Integration
+- Telegram Bot
 - Video Studio
-- Game Hub
-- Tools Center
-- Setup
+- Gameification
+- Aufgabenverwaltung
+- Job Scheduler
+- Backup System
+- Benutzerverwaltung
+- JWT Login
 - REST API
-- Node.js Backend
-- MongoDB Support
-- JWT Authentication
-- OpenAI Integration
-- Local Storage
-- Backup & Restore
+- WebSocket Live Updates
+- Responsive Dashboard
+
+---
+
+# Voraussetzungen
+
+- Node.js >= 20
+- MongoDB >= 7
+- npm
+
+---
+
+# Installation
+
+Repository klonen
+
+```bash
+git clone <repository>
+cd ai-empire-pro-v8
+```
+
+Pakete installieren
+
+```bash
+npm install
+```
+
+Environment erstellen
+
+```bash
+cp .env.example .env
+```
+
+MongoDB starten
+
+```bash
+mongod
+```
+
+Projekt starten
+
+```bash
+npm run dev
+```
+
+oder
+
+```bash
+npm start
+```
+
+---
+
+# Docker
+
+Projekt starten
+
+```bash
+docker compose up --build
+```
+
+Projekt stoppen
+
+```bash
+docker compose down
+```
 
 ---
 
 # Projektstruktur
 
 ```
-AI-Empire-Pro-V8/
-
 assets/
-core/
-modules/
-api/
-
-backend/
-│
+config/
+server/
 ├── controllers/
-├── routes/
+├── middleware/
 ├── models/
-├── database/
-├── server.js
-├── package.json
-└── .env
+├── routes/
+├── services/
+├── utils/
+uploads/
+storage/
+logs/
+backups/
 ```
 
 ---
 
-# Installation
-
-## Frontend
-
-Einfach den Projektordner mit einem Webserver starten.
-
-Beispiel:
+# API
 
 ```
-Live Server
-```
+POST /api/auth/login
+POST /api/auth/register
 
-oder
+GET /api/dashboard
 
-```
-python -m http.server
-```
+POST /api/assistant/chat
 
----
+GET /api/trading
 
-## Backend
+GET /api/video
 
-```
-cd backend
-```
+GET /api/game
 
-Pakete installieren
+GET /api/tools
 
-```
-npm install
-```
-
-Server starten
-
-```
-npm start
-```
-
-Entwicklungsmodus
-
-```
-npm run dev
+GET /api/setup
 ```
 
 ---
 
-# Standard URL
+# Sicherheit
 
-Frontend
-
-```
-http://localhost:8080
-```
-
-Backend
-
-```
-http://localhost:3000
-```
-
-API Status
-
-```
-http://localhost:3000/api/status
-```
-
----
-
-# Module
-
-## Core
-
-- State Manager
-- Router
-- Storage
-- Theme
-- Notifications
-- Settings
-
-## Dashboard
-
-- KPI Engine
-- Activity Feed
-- Mission Engine
-- Charts
-
-## Assistant
-
-- Chat Engine
-- Prompt Library
-- Conversation History
-- OpenAI API
-
-## Trading
-
-- Portfolio
-- Market Data
-- Signal Engine
-- Trade History
-
-## Telegram
-
-- Bot Manager
-- Broadcast System
-- Webhook
-
-## Video
-
-- Project Manager
-- Render Queue
-- Export Manager
-
-## Game
-
-- XP Engine
-- Achievement System
-- Daily Missions
-- Rewards
-
-## Tools
-
-- API Manager
-- Log Manager
-- Debug Center
-
-## Setup
-
-- Profile Manager
-- Security Manager
-- Backup Manager
-- System Configuration
+- JWT Authentication
+- Helmet
+- Rate Limiter
+- CORS
+- Passwort Hashing
+- Request Logger
+- Error Handler
 
 ---
 
 # Version
 
-```
 AI Empire Pro V8
+
 Version 8.0.0
-```
 
 ---
 
 # Lizenz
 
 MIT License
-
----
-
-© AI Empire Pro
