@@ -1,6 +1,9 @@
-import pytest
+"""
+Unit-Tests für den
+YasinAnalysisService.
+"""
 
-from unittest.mock import Mock
+import pytest
 
 from app.yasin.services.yasin_analysis_service import (
     YasinAnalysisService,
@@ -8,123 +11,79 @@ from app.yasin.services.yasin_analysis_service import (
 
 
 @pytest.fixture
-def market_data():
+def service():
 
-    return Mock()
-
-
-@pytest.fixture
-def indicator_service():
-
-    return Mock()
+    return YasinAnalysisService()
 
 
-@pytest.fixture
-def strategy_service():
+def test_analysis_returns_list(service):
 
-    return Mock()
-
-
-@pytest.fixture
-def ai_service():
-
-    return Mock()
-
-
-@pytest.fixture
-def service(
-    market_data,
-    indicator_service,
-    strategy_service,
-    ai_service,
-):
-
-    return YasinAnalysisService(
-        market_data_service=market_data,
-        indicator_service=indicator_service,
-        strategy_service=strategy_service,
-        ai_service=ai_service,
+    result = service.run(
+        market="GOLD",
+        timeframe="15m",
+        strategy="ALL",
     )
 
+    assert isinstance(result, list)
 
-def test_analyze_market(
-    service,
-    market_data,
-):
 
-    market_data.load.return_value = Mock()
+def test_analysis_contains_signals(service):
 
-    result = service.analyze(
-        "GOLD"
+    signals = service.run(
+        market="GOLD",
+        timeframe="15m",
+        strategy="ALL",
     )
 
-    assert result is not None
+    for signal in signals:
+
+        assert signal.market
+        assert signal.symbol
+        assert signal.direction
 
 
-def test_indicator_analysis(
-    service,
-    indicator_service,
-):
+def test_quality_score(service):
 
-    indicator_service.calculate.return_value = {}
-
-    result = service.calculate_indicators(
-        "GOLD"
+    signals = service.run(
+        market="GOLD",
+        timeframe="15m",
+        strategy="ALL",
     )
 
-    assert isinstance(
-        result,
-        dict,
-    )
+    for signal in signals:
 
-
-def test_strategy_execution(
-    service,
-    strategy_service,
-):
-
-    strategy_service.execute.return_value = []
-
-    result = service.execute_strategy(
-        "GOLD"
-    )
-
-    assert isinstance(
-        result,
-        list,
-    )
-
-
-def test_ai_confirmation(
-    service,
-    ai_service,
-):
-
-    ai_service.confirm.return_value = True
-
-    assert (
-        service.ai_confirmation(
-            Mock()
+        assert (
+            0
+            <= signal.quality_score
+            <= 100
         )
-        is True
+
+
+def test_confidence(service):
+
+    signals = service.run(
+        market="GOLD",
+        timeframe="15m",
+        strategy="ALL",
     )
 
+    for signal in signals:
 
-def test_market_trend(
-    service,
-):
+        assert (
+            0
+            <= signal.confidence
+            <= 100
+        )
 
-    result = service.market_trend(
-        "GOLD"
+
+def test_entry_price(service):
+
+    signals = service.run(
+        market="GOLD",
+        timeframe="15m",
+        strategy="ALL",
     )
 
-    assert result is not None
+    for signal in signals:
 
-
-def test_analysis_status(
-    service,
-):
-
-    result = service.status()
-
-    assert result is not None
+        assert signal.entry > 0
