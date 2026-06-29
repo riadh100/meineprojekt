@@ -18,7 +18,7 @@ const DashboardPage = {
 
             <div class="page dashboard-page">
 
-                <h1>Dashboard</h1>
+                <h1>Dashboard 🚀 AI Empire Pro V9</h1>
 
                 <div class="dashboard-cards">
 
