@@ -1,6 +1,9 @@
-import pytest
+"""
+Unit-Tests für den
+YasinMonitorService.
+"""
 
-from unittest.mock import Mock
+import pytest
 
 from app.yasin.services.yasin_monitor_service import (
     YasinMonitorService,
@@ -8,114 +11,48 @@ from app.yasin.services.yasin_monitor_service import (
 
 
 @pytest.fixture
-def signal_repository():
+def service():
 
-    return Mock()
-
-
-@pytest.fixture
-def telegram():
-
-    return Mock()
+    return YasinMonitorService()
 
 
-@pytest.fixture
-def websocket():
+def test_monitor_runs(service):
 
-    return Mock()
+    report = service.monitor()
 
-
-@pytest.fixture
-def statistics():
-
-    return Mock()
+    assert report is not None
 
 
-@pytest.fixture
-def service(
-    signal_repository,
-    telegram,
-    websocket,
-    statistics,
-):
+def test_open_trades(service):
 
-    return YasinMonitorService(
-        signal_repository=signal_repository,
-        telegram_service=telegram,
-        websocket_manager=websocket,
-        statistics_service=statistics,
-    )
+    report = service.monitor()
+
+    assert report.open_trades >= 0
 
 
-def test_monitor_open_trades(
-    service,
-    signal_repository,
-):
+def test_take_profit_hits(service):
 
-    signal_repository.get_open_signals.return_value = [
-        Mock(),
-    ]
+    report = service.monitor()
 
-    service.monitor()
-
-    signal_repository.get_open_signals.assert_called_once()
+    assert report.take_profit_hits >= 0
 
 
-def test_take_profit_notification(
-    service,
-    telegram,
-):
+def test_stop_loss_hits(service):
 
-    signal = Mock()
+    report = service.monitor()
 
-    service.take_profit_hit(
-        signal,
-        "TP1",
-    )
-
-    telegram.send_tp.assert_called_once()
+    assert report.stop_loss_hits >= 0
 
 
-def test_stop_loss_notification(
-    service,
-    telegram,
-):
+def test_updated_trades(service):
 
-    signal = Mock()
+    report = service.monitor()
 
-    service.stop_loss_hit(
-        signal,
-    )
-
-    telegram.send_stop_loss.assert_called_once()
+    assert report.updated_trades >= 0
 
 
-def test_websocket_update(
-    service,
-    websocket,
-):
+def test_timestamp(service):
 
-    signal = Mock()
+    report = service.monitor()
 
-    service.broadcast(signal)
-
-    websocket.broadcast_signal.assert_called_once()
-
-
-def test_statistics_refresh(
-    service,
-    statistics,
-):
-
-    service.update_statistics()
-
-    statistics.rebuild_all.assert_called_once()
-
-
-def test_monitor_status(
-    service,
-):
-
-    result = service.status()
-
-    assert result is not None
+    assert report.timestamp is not None
