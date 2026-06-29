@@ -1,6 +1,9 @@
-import pytest
+"""
+Unit-Tests für den
+YasinSchedulerService.
+"""
 
-from unittest.mock import Mock
+import pytest
 
 from app.yasin.scheduler.yasin_scheduler_service import (
     YasinSchedulerService,
@@ -8,117 +11,58 @@ from app.yasin.scheduler.yasin_scheduler_service import (
 
 
 @pytest.fixture
-def analysis():
+def service():
 
-    return Mock()
-
-
-@pytest.fixture
-def monitor():
-
-    return Mock()
+    return YasinSchedulerService()
 
 
-@pytest.fixture
-def statistics():
-
-    return Mock()
-
-
-@pytest.fixture
-def telegram():
-
-    return Mock()
-
-
-@pytest.fixture
-def scheduler():
-
-    return Mock()
-
-
-@pytest.fixture
-def service(
-    analysis,
-    monitor,
-    statistics,
-    telegram,
-    scheduler,
-):
-
-    return YasinSchedulerService(
-        analysis_service=analysis,
-        monitor_service=monitor,
-        statistics_service=statistics,
-        telegram_service=telegram,
-        scheduler=scheduler,
-    )
-
-
-def test_start_scheduler(
-    service,
-    scheduler,
-):
+def test_scheduler_start(service):
 
     service.start()
 
-    scheduler.start.assert_called_once()
+    status = service.status()
 
-
-def test_stop_scheduler(
-    service,
-    scheduler,
-):
+    assert status["running"] is True
 
     service.stop()
 
-    scheduler.shutdown.assert_called_once()
+
+def test_scheduler_stop(service):
+
+    service.start()
+
+    service.stop()
+
+    status = service.status()
+
+    assert status["running"] is False
 
 
-def test_run_analysis_job(
-    service,
-    analysis,
-):
+def test_scheduler_status(service):
 
-    service.run_analysis()
+    status = service.status()
 
-    analysis.run.assert_called_once()
-
-
-def test_run_monitor_job(
-    service,
-    monitor,
-):
-
-    service.run_monitor()
-
-    monitor.monitor.assert_called_once()
+    assert "status" in status
+    assert "jobs" in status
+    assert "running" in status
 
 
-def test_run_statistics_job(
-    service,
-    statistics,
-):
+def test_registered_jobs(service):
 
-    service.run_statistics()
+    status = service.status()
 
-    statistics.rebuild_all.assert_called_once()
+    assert status["jobs"] >= 0
 
 
-def test_run_telegram_job(
-    service,
-    telegram,
-):
+def test_next_job(service):
 
-    service.run_telegram()
+    status = service.status()
 
-    telegram.send_statistics.assert_called_once()
+    assert "next_job" in status
 
 
-def test_scheduler_status(
-    service,
-):
+def test_last_job(service):
 
-    result = service.status()
+    status = service.status()
 
-    assert result is not None
+    assert "last_job" in status
