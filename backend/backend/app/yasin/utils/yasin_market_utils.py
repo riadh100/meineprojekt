@@ -1,117 +1,125 @@
-from app.yasin.config.yasin_constants import (
-    MARKET_GOLD,
-    MARKET_NAS100,
-    MARKET_FOREX,
-    MARKET_CRYPTO,
-)
+from dataclasses import dataclass
+from typing import Any, Dict, List, Optional
 
 
-def normalize_price(
-    price: float,
-    digits: int = 5,
-) -> float:
+@dataclass(frozen=True)
+class IndicatorResult:
+    name: str
+    passed: bool
+    value: Optional[float] = None
+    message: str = ""
+
+
+class IndicatorEngine:
     """
-    Rundet Preise auf die gewünschte Genauigkeit.
-    """
-    return round(price, digits)
+    Führt technische Indikator-Prüfungen aus und erzeugt
+    eine standardisierte Liste von Bestätigungen.
 
-
-def pip_size(
-    market: str,
-) -> float:
-    """
-    Liefert die Pip-/Tickgröße.
+    Die Klasse berechnet keine Candle- oder Marktdaten selbst.
+    Sie arbeitet ausschließlich mit bereits vorbereiteten
+    Marktinformationen.
     """
 
-    market = market.upper()
+    def evaluate(self, market_data: Dict[str, Any]) -> List[IndicatorResult]:
+        if not isinstance(market_data, dict):
+            return []
 
-    if market == MARKET_GOLD:
-        return 0.01
+        return [
+            self._ema_trend(market_data),
+            self._rsi(market_data),
+            self._macd(market_data),
+            self._adx(market_data),
+            self._atr(market_data),
+            self._volume(market_data),
+        ]
 
-    if market == MARKET_NAS100:
-        return 1.0
+    def confirmations(self, market_data: Dict[str, Any]) -> Dict[str, bool]:
+        return {
+            result.name: result.passed
+            for result in self.evaluate(market_data)
+        }
 
-    if market == MARKET_CRYPTO:
-        return 0.01
+    def _ema_trend(self, data: Dict[str, Any]) -> IndicatorResult:
+        ema50 = self._to_float(data.get("ema50"))
+        ema200 = self._to_float(data.get("ema200"))
 
-    return 0.0001
+        passed = ema50 is not None and ema200 is not None and ema50 > ema200
 
+        return IndicatorResult(
+            name="EMA Trend",
+            passed=passed,
+            value=ema50,
+            message="EMA50 über EMA200" if passed else "EMA-Trend nicht bestätigt",
+        )
 
-def point_value(
-    market: str,
-) -> float:
-    """
-    Standard Point Value.
-    """
+    def _rsi(self, data: Dict[str, Any]) -> IndicatorResult:
+        rsi = self._to_float(data.get("rsi"))
 
-    market = market.upper()
+        passed = rsi is not None and 40 <= rsi <= 65
 
-    if market == MARKET_NAS100:
-        return 1.0
+        return IndicatorResult(
+            name="RSI",
+            passed=passed,
+            value=rsi,
+            message="RSI im Trendbereich" if passed else "RSI außerhalb des Trendbereichs",
+        )
 
-    return pip_size(market)
+    def _macd(self, data: Dict[str, Any]) -> IndicatorResult:
+        macd = self._to_float(data.get("macd"))
+        signal = self._to_float(data.get("macd_signal"))
 
+        passed = macd is not None and signal is not None and macd > signal
 
-def spread(
-    bid: float,
-    ask: float,
-) -> float:
+        return IndicatorResult(
+            name="MACD",
+            passed=passed,
+            value=macd,
+            message="Bullisches MACD-Signal" if passed else "MACD-Signal nicht bullisch",
+        )
 
-    return abs(ask - bid)
+    def _adx(self, data: Dict[str, Any]) -> IndicatorResult:
+        adx = self._to_float(data.get("adx"))
 
+        passed = adx is not None and adx >= 25
 
-def spread_in_pips(
-    bid: float,
-    ask: float,
-    market: str,
-) -> float:
+        return IndicatorResult(
+            name="ADX",
+            passed=passed,
+            value=adx,
+            message="Trend ausreichend stark" if passed else "Trend zu schwach",
+        )
 
-    return (
-        spread(bid, ask)
-        / pip_size(market)
-    )
+    def _atr(self, data: Dict[str, Any]) -> IndicatorResult:
+        atr = self._to_float(data.get("atr"))
 
+        passed = atr is not None and atr > 0
 
-def price_distance(
-    price1: float,
-    price2: float,
-) -> float:
+        return IndicatorResult(
+            name="ATR",
+            passed=passed,
+            value=atr,
+            message="Volatilität ausreichend" if passed else "Volatilität nicht ausreichend",
+        )
 
-    return abs(price1 - price2)
+    def _volume(self, data: Dict[str, Any]) -> IndicatorResult:
+        volume = self._to_float(data.get("volume"))
+        avg_volume = self._to_float(data.get("avg_volume"))
 
+        passed = volume is not None and avg_volume is not None and volume >= avg_volume
 
-def volatility_level(
-    atr: float,
-):
+        return IndicatorResult(
+            name="Volume",
+            passed=passed,
+            value=volume,
+            message="Volumen bestätigt Bewegung" if passed else "Volumen bestätigt Bewegung nicht",
+        )
 
-    if atr < 0.5:
-        return "LOW"
+    @staticmethod
+    def _to_float(value: Any) -> Optional[float]:
+        if value is None:
+            return None
 
-    if atr < 2:
-        return "MEDIUM"
-
-    return "HIGH"
-
-
-def market_name(
-    market: str,
-):
-
-    names = {
-        MARKET_GOLD: "Gold",
-        MARKET_NAS100: "NAS100",
-        MARKET_FOREX: "Forex",
-        MARKET_CRYPTO: "Crypto",
-    }
-
-    return names.get(
-        market.upper(),
-        market,
-    )
-
-
-def valid_price(
-    price: float,
-):
-
-    return price > 0
+        try:
+            return float(value)
+        except (TypeError, ValueError):
+            return None
