@@ -1,34 +1,74 @@
-import csv
+"""
+Datei- und Verzeichnisfunktionen
+für Yasin AI.
+"""
+
 import json
+import shutil
 from pathlib import Path
-from datetime import datetime
 
 
 def ensure_directory(
-    directory: str,
-):
-    """
-    Erstellt ein Verzeichnis,
-    falls es nicht existiert.
-    """
-
-    Path(directory).mkdir(
+    path: str | Path,
+) -> Path:
+    """Verzeichnis erstellen, falls es nicht existiert."""
+    directory = Path(path)
+    directory.mkdir(
         parents=True,
         exist_ok=True,
     )
+    return directory
+
+
+def file_exists(
+    path: str | Path,
+) -> bool:
+    """Prüfen, ob eine Datei existiert."""
+    return Path(path).exists()
+
+
+def read_text(
+    path: str | Path,
+    encoding: str = "utf-8",
+) -> str:
+    """Textdatei lesen."""
+    return Path(path).read_text(
+        encoding=encoding
+    )
+
+
+def write_text(
+    path: str | Path,
+    content: str,
+    encoding: str = "utf-8",
+) -> None:
+    """Textdatei schreiben."""
+    Path(path).write_text(
+        content,
+        encoding=encoding,
+    )
+
+
+def read_json(
+    path: str | Path,
+):
+    """JSON-Datei lesen."""
+    with open(
+        path,
+        "r",
+        encoding="utf-8",
+    ) as file:
+
+        return json.load(file)
 
 
 def write_json(
-    file_path: str,
+    path: str | Path,
     data,
-):
-
-    ensure_directory(
-        Path(file_path).parent
-    )
-
+) -> None:
+    """JSON-Datei schreiben."""
     with open(
-        file_path,
+        path,
         "w",
         encoding="utf-8",
     ) as file:
@@ -41,98 +81,47 @@ def write_json(
         )
 
 
-def read_json(
-    file_path: str,
-):
-
-    with open(
-        file_path,
-        "r",
-        encoding="utf-8",
-    ) as file:
-
-        return json.load(file)
-
-
-def write_csv(
-    file_path: str,
-    rows: list[dict],
-):
-
-    if not rows:
-        return
-
-    ensure_directory(
-        Path(file_path).parent
-    )
-
-    with open(
-        file_path,
-        "w",
-        newline="",
-        encoding="utf-8",
-    ) as file:
-
-        writer = csv.DictWriter(
-            file,
-            fieldnames=rows[0].keys(),
-        )
-
-        writer.writeheader()
-
-        writer.writerows(rows)
-
-
-def read_csv(
-    file_path: str,
-):
-
-    with open(
-        file_path,
-        newline="",
-        encoding="utf-8",
-    ) as file:
-
-        return list(
-            csv.DictReader(file)
-        )
-
-
-def write_text(
-    file_path: str,
-    content: str,
-):
-
-    ensure_directory(
-        Path(file_path).parent
-    )
-
-    Path(file_path).write_text(
-        content,
-        encoding="utf-8",
+def copy_file(
+    source: str | Path,
+    destination: str | Path,
+) -> None:
+    """Datei kopieren."""
+    shutil.copy2(
+        source,
+        destination,
     )
 
 
-def read_text(
-    file_path: str,
-):
-
-    return Path(file_path).read_text(
-        encoding="utf-8",
+def move_file(
+    source: str | Path,
+    destination: str | Path,
+) -> None:
+    """Datei verschieben."""
+    shutil.move(
+        source,
+        destination,
     )
 
 
-def backup_name(
-    filename: str,
-):
+def delete_file(
+    path: str | Path,
+) -> None:
+    """Datei löschen."""
 
-    timestamp = datetime.utcnow().strftime(
-        "%Y%m%d_%H%M%S"
-    )
+    file = Path(path)
 
-    path = Path(filename)
+    if file.exists():
 
-    return (
-        f"{path.stem}_{timestamp}"
-        f"{path.suffix}"
-    )
+        file.unlink()
+
+
+def delete_directory(
+    path: str | Path,
+) -> None:
+    """Verzeichnis löschen."""
+
+    directory = Path(path)
+
+    if directory.exists():
+
+        shutil.rmtree(directory)
