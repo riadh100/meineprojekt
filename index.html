@@ -1,132 +1,124 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta charset="UTF-8">
+  <title>AI Empire Pro V9</title>
+  <meta name="theme-color" content="#0f17ff" />
+  <meta name="description" content="AI Empire Pro V9 Dashboard App" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AI Empire Pro V8</title>
-
-    <link rel="stylesheet" href="assets/css/style.css">
-
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
-
-    <div id="sidebar"></div>
-
-    <div class="main-layout">
-
-        <div id="navbar"></div>
-
-        <main id="app"></main>
-
+  <noscript>
+    <div style="padding:20px;font-family:Arial,sans-serif;">
+      Bitte JavaScript aktivieren, damit AI Empire Pro V9 funktioniert.
     </div>
+  </noscript>
 
-    <!-- Core -->
+  <div id="sidebar"></div>
 
-    <script src="core/state.js"></script>
-    <script src="core/storage.js"></script>
-    <script src="core/router.js"></script>
-    <script src="core/app.js"></script>
-    <script src="core/theme.js"></script>
-    <script src="core/settings.js"></script>
-    <script src="core/notifications.js"></script>
-    <script src="core/utils.js"></script>
+  <div class="main-layout">
+    <div id="navbar"></div>
 
-    <!-- Components -->
+    <main id="app">
+      <section class="app-loading">
+        <h1>🚀 AI Empire Pro V9</h1>
+        <p>System wird geladen...</p>
+      </section>
+    </main>
+  </div>
 
-    <script src="components/sidebar.js"></script>
-    <script src="components/navbar.js"></script>
-    <script src="components/card.js"></script>
-    <script src="components/modal.js"></script>
-    <script src="components/table.js"></script>
-    <script src="components/chart.js"></script>
-    <script src="components/toast.js"></script>
-    <script src="components/dialog.js"></script>
-    <script src="components/loader.js"></script>
-    <script src="components/tabs.js"></script>
+  <!-- Core -->
+  <script src="core/state.js"></script>
+  <script src="core/storage.js"></script>
+  <script src="core/router.js"></script>
+  <script src="core/app.js"></script>
+  <script src="core/theme.js"></script>
+  <script src="core/settings.js"></script>
+  <script src="core/notifications.js"></script>
+  <script src="core/utils.js"></script>
 
-    <!-- Dashboard -->
+  <!-- Components -->
+  <script src="components/sidebar.js"></script>
+  <script src="components/navbar.js"></script>
+  <script src="components/card.js"></script>
+  <script src="components/modal.js"></script>
+  <script src="components/table.js"></script>
+  <script src="components/chart.js"></script>
+  <script src="components/toast.js"></script>
+  <script src="components/dialog.js"></script>
+  <script src="components/loader.js"></script>
+  <script src="components/tabs.js"></script>
 
-    <script src="modules/dashboard/dashboard.js"></script>
-    <script src="modules/dashboard/dashboard-ui.js"></script>
-    <script src="modules/dashboard/dashboard-charts.js"></script>
-    <script src="modules/dashboard/dashboard-kpi.js"></script>
-    <script src="modules/dashboard/dashboard-activity.js"></script>
-    <script src="modules/dashboard/dashboard-missions.js"></script>
+  <!-- Dashboard -->
+  <script src="modules/dashboard/dashboard.js"></script>
+  <script src="modules/dashboard/dashboard-ui.js"></script>
+  <script src="modules/dashboard/dashboard-charts.js"></script>
+  <script src="modules/dashboard/dashboard-kpi.js"></script>
+  <script src="modules/dashboard/dashboard-activity.js"></script>
+  <script src="modules/dashboard/dashboard-missions.js"></script>
 
-    <!-- Assistant -->
+  <!-- Assistant -->
+  <script src="modules/assistant/assistant.js"></script>
+  <script src="modules/assistant/chat-engine.js"></script>
+  <script src="modules/assistant/prompt-library.js"></script>
+  <script src="modules/assistant/conversation-history.js"></script>
+  <script src="modules/assistant/openai-api.js"></script>
 
-    <script src="modules/assistant/assistant.js"></script>
-    <script src="modules/assistant/chat-engine.js"></script>
-    <script src="modules/assistant/prompt-library.js"></script>
-    <script src="modules/assistant/conversation-history.js"></script>
-    <script src="modules/assistant/openai-api.js"></script>
+  <!-- Trading -->
+  <script src="modules/trading/trading.js"></script>
+  <script src="modules/trading/portfolio.js"></script>
+  <script src="modules/trading/signal-engine.js"></script>
+  <script src="modules/trading/trade-history.js"></script>
+  <script src="modules/trading/market-data.js"></script>
 
-    <!-- Trading -->
+  <!-- Telegram -->
+  <script src="modules/telegram/telegram.js"></script>
+  <script src="modules/telegram/bot-manager.js"></script>
+  <script src="modules/telegram/broadcast-system.js"></script>
+  <script src="modules/telegram/webhook.js"></script>
 
-    <script src="modules/trading/trading.js"></script>
-    <script src="modules/trading/portfolio.js"></script>
-    <script src="modules/trading/signal-engine.js"></script>
-    <script src="modules/trading/trade-history.js"></script>
-    <script src="modules/trading/market-data.js"></script>
+  <!-- Video -->
+  <script src="modules/video/video.js"></script>
+  <script src="modules/video/project-manager.js"></script>
+  <script src="modules/video/render-queue.js"></script>
+  <script src="modules/video/export-manager.js"></script>
 
-    <!-- Telegram -->
+  <!-- Game -->
+  <script src="modules/game/game.js"></script>
+  <script src="modules/game/xp-engine.js"></script>
+  <script src="modules/game/achievement-system.js"></script>
+  <script src="modules/game/daily-missions.js"></script>
+  <script src="modules/game/rewards.js"></script>
 
-    <script src="modules/telegram/telegram.js"></script>
-    <script src="modules/telegram/bot-manager.js"></script>
-    <script src="modules/telegram/broadcast-system.js"></script>
-    <script src="modules/telegram/webhook.js"></script>
+  <!-- Tools -->
+  <script src="modules/tools/tools.js"></script>
+  <script src="modules/tools/api-manager.js"></script>
+  <script src="modules/tools/log-manager.js"></script>
+  <script src="modules/tools/debug-center.js"></script>
 
-    <!-- Video -->
+  <!-- Setup -->
+  <script src="modules/setup/setup.js"></script>
+  <script src="modules/setup/profile-manager.js"></script>
+  <script src="modules/setup/security-manager.js"></script>
+  <script src="modules/setup/backup-manager.js"></script>
+  <script src="modules/setup/system-config.js"></script>
 
-    <script src="modules/video/video.js"></script>
-    <script src="modules/video/project-manager.js"></script>
-    <script src="modules/video/render-queue.js"></script>
-    <script src="modules/video/export-manager.js"></script>
+  <!-- Pages -->
+  <script src="pages/dashboard.js"></script>
+  <script src="pages/assistant.js"></script>
+  <script src="pages/trading.js"></script>
+  <script src="pages/telegram.js"></script>
+  <script src="pages/video.js"></script>
+  <script src="pages/game.js"></script>
+  <script src="pages/tools.js"></script>
+  <script src="pages/setup.js"></script>
+  <script src="pages/router.js"></script>
 
-    <!-- Game -->
-
-    <script src="modules/game/game.js"></script>
-    <script src="modules/game/xp-engine.js"></script>
-    <script src="modules/game/achievement-system.js"></script>
-    <script src="modules/game/daily-missions.js"></script>
-    <script src="modules/game/rewards.js"></script>
-
-    <!-- Tools -->
-
-    <script src="modules/tools/tools.js"></script>
-    <script src="modules/tools/api-manager.js"></script>
-    <script src="modules/tools/log-manager.js"></script>
-    <script src="modules/tools/debug-center.js"></script>
-
-    <!-- Setup -->
-
-    <script src="modules/setup/setup.js"></script>
-    <script src="modules/setup/profile-manager.js"></script>
-    <script src="modules/setup/security-manager.js"></script>
-    <script src="modules/setup/backup-manager.js"></script>
-    <script src="modules/setup/system-config.js"></script>
-
-    <!-- Pages -->
-
-    <script src="pages/dashboard.js"></script>
-    <script src="pages/assistant.js"></script>
-    <script src="pages/trading.js"></script>
-    <script src="pages/telegram.js"></script>
-    <script src="pages/video.js"></script>
-    <script src="pages/game.js"></script>
-    <script src="pages/tools.js"></script>
-    <script src="pages/setup.js"></script>
-    <script src="pages/router.js"></script>
-
-    <!-- Main -->
-
-    <script src="main.js"></script>
-
+  <!-- Main -->
+  <script src="main.js"></script>
 </body>
-
 </html>
