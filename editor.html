@@ -1,34 +1,287 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>AI Empire Pro V9 – Video Editor</title>
 
-<title>Video Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 
-<link rel="stylesheet" href="style.css">
+    <style>
+        :root{
+            --bg:#07101f;
+            --card:rgba(255,255,255,.07);
+            --border:rgba(255,255,255,.12);
+            --primary:#7b5cff;
+            --cyan:#00d4ff;
+            --green:#29e3a5;
+            --text:#f5f7ff;
+            --muted:#9aa4bf;
+            --radius:22px;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Inter,Arial,sans-serif;
+        }
+
+        body{
+            background:
+            radial-gradient(circle at top left,#6f45ff33,transparent 40%),
+            radial-gradient(circle at top right,#00d4ff22,transparent 35%),
+            #07101f;
+            color:var(--text);
+            min-height:100vh;
+            padding:25px;
+        }
+
+        .container{
+            max-width:1250px;
+            margin:auto;
+        }
+
+        header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:25px;
+        }
+
+        h1{
+            font-size:2rem;
+        }
+
+        .back{
+            text-decoration:none;
+            color:white;
+            background:linear-gradient(135deg,var(--primary),var(--cyan));
+            padding:12px 20px;
+            border-radius:50px;
+            font-weight:bold;
+        }
+
+        .hero{
+            background:var(--card);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:30px;
+            margin-bottom:25px;
+            backdrop-filter:blur(15px);
+        }
+
+        .hero h2{
+            font-size:2.2rem;
+            margin-bottom:15px;
+        }
+
+        .hero p{
+            color:var(--muted);
+            line-height:1.7;
+        }
+
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:var(--card);
+            border:1px solid var(--border);
+            border-radius:20px;
+            padding:20px;
+            backdrop-filter:blur(15px);
+        }
+
+        .card h3{
+            margin-bottom:15px;
+        }
+
+        .card p{
+            color:var(--muted);
+            line-height:1.6;
+            margin-bottom:18px;
+        }
+
+        button{
+            border:none;
+            cursor:pointer;
+            padding:12px 18px;
+            border-radius:50px;
+            color:white;
+            background:linear-gradient(135deg,var(--primary),var(--cyan));
+            font-weight:bold;
+        }
+
+        textarea{
+            width:100%;
+            height:140px;
+            resize:vertical;
+            background:#0d1730;
+            border:1px solid var(--border);
+            border-radius:16px;
+            color:white;
+            padding:15px;
+            margin-bottom:15px;
+        }
+
+        .result{
+            margin-top:15px;
+            padding:15px;
+            border-radius:15px;
+            background:#0d1730;
+            color:var(--muted);
+            line-height:1.6;
+        }
+
+        footer{
+            text-align:center;
+            margin-top:35px;
+            color:var(--muted);
+        }
+    </style>
 
 </head>
 
 <body>
 
+<div class="container">
+
 <header>
 
-<h1>✂️ Video Editor</h1>
+<div>
+<h1>🎬 Video Editor</h1>
+<p style="color:#9aa4bf">AI Empire Pro V9</p>
+</div>
 
-<a href="video.html">← Zurück</a>
+<a href="bildvideo.html" class="back">← Zurück</a>
 
 </header>
 
-<div class="container">
+<section class="hero">
 
-<h2>Videos bearbeiten</h2>
+<h2>AI Video Editor</h2>
 
-<p>Hier kommen später deine Werkzeuge.</p>
+<p>
+
+Bearbeite künftig Videos direkt im Browser.
+Hier entstehen später automatische Schnitte,
+Untertitel, Voiceovers, Avatare und Exportfunktionen.
+
+</p>
+
+</section>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>✂ Video bearbeiten</h3>
+
+<p>
+
+Später können hier Upload,
+Trimmen,
+Zusammenfügen
+und Export erfolgen.
+
+</p>
+
+<button>Editor starten</button>
 
 </div>
 
-</body>
+<div class="card">
 
+<h3>🎙 AI Voiceover</h3>
+
+<p>
+
+Automatische Sprecher,
+Übersetzungen,
+Untertitel
+und Stimmen.
+
+</p>
+
+<button>Voice Generator</button>
+
+</div>
+
+<div class="card">
+
+<h3>📝 Projekt Notizen</h3>
+
+<textarea id="notes" placeholder="Ideen für dein Video..."></textarea>
+
+<button onclick="saveNotes()">Speichern</button>
+
+<div class="result" id="status">
+
+Noch keine Notizen gespeichert.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>🚀 Geplante Funktionen</h3>
+
+<p>
+
+• AI Video Generator<br>
+• Avatar Videos<br>
+• Auto Shorts<br>
+• TikTok Export<br>
+• YouTube Export<br>
+• Social Media Optimierung
+
+</p>
+
+</div>
+
+</div>
+
+<footer>
+
+AI Empire Pro V9 • Video Editor Center
+
+</footer>
+
+</div>
+
+<script>
+
+function saveNotes(){
+
+const value=document.getElementById("notes").value;
+
+localStorage.setItem("video_editor_notes",value);
+
+document.getElementById("status").innerHTML="✅ Notizen gespeichert.";
+
+}
+
+window.onload=function(){
+
+const saved=localStorage.getItem("video_editor_notes");
+
+if(saved){
+
+document.getElementById("notes").value=saved;
+
+document.getElementById("status").innerHTML="📂 Gespeicherte Notizen geladen.";
+
+}
+
+}
+
+</script>
+
+</body>
 </html>
