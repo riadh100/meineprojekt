@@ -1,35 +1,472 @@
 <!DOCTYPE html>
-
 <html lang="de">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<meta charset="UTF-8">
+  <title>AI Empire Pro V9 – Krypto</title>
 
-<title>Krypto</title>
+  <link rel="stylesheet" href="style.css" />
 
-<link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --bg: #070b18;
+      --card: rgba(255, 255, 255, 0.075);
+      --border: rgba(255, 255, 255, 0.12);
+      --text: #f6f8ff;
+      --muted: #9aa4bf;
+      --primary: #7c5cff;
+      --cyan: #00d4ff;
+      --green: #27e0a3;
+      --yellow: #ffcc66;
+      --red: #ff5c7a;
+      --radius: 24px;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124, 92, 255, 0.32), transparent 35%),
+        radial-gradient(circle at top right, rgba(0, 212, 255, 0.22), transparent 32%),
+        linear-gradient(135deg, #050814, #0a1024 55%, #050814);
+      color: var(--text);
+      padding: 24px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .app {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding: 20px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+    }
+
+    .brand h1 {
+      font-size: 1.5rem;
+      letter-spacing: -0.04em;
+    }
+
+    .brand p {
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 0.92rem;
+    }
+
+    .back-link {
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), var(--cyan));
+      font-weight: 900;
+    }
+
+    .hero {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(124, 92, 255, 0.28), rgba(0, 212, 255, 0.12));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(39, 224, 163, 0.12);
+      color: var(--green);
+      border: 1px solid rgba(39, 224, 163, 0.24);
+      font-weight: 900;
+      font-size: 0.8rem;
+      margin-bottom: 14px;
+    }
+
+    .hero h2 {
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin-bottom: 14px;
+    }
+
+    .hero h2 span {
+      background: linear-gradient(135deg, #fff, var(--cyan));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1.04rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+
+    .panel {
+      padding: 22px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.095), rgba(255,255,255,.04));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+    }
+
+    .col-4 {
+      grid-column: span 4;
+    }
+
+    .col-6 {
+      grid-column: span 6;
+    }
+
+    .col-8 {
+      grid-column: span 8;
+    }
+
+    .col-12 {
+      grid-column: span 12;
+    }
+
+    h3 {
+      margin-bottom: 14px;
+      font-size: 1.2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .muted {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.94rem;
+    }
+
+    .coin {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding: 15px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid var(--border);
+      margin-bottom: 12px;
+    }
+
+    .coin strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .coin span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .price {
+      text-align: right;
+      font-weight: 900;
+    }
+
+    .green {
+      color: var(--green);
+    }
+
+    .yellow {
+      color: var(--yellow);
+    }
+
+    .red {
+      color: var(--red);
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    label {
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.065);
+      color: var(--text);
+      border-radius: 16px;
+      padding: 13px 14px;
+      outline: none;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      padding: 13px 18px;
+      border-radius: 999px;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--cyan));
+      font-weight: 900;
+    }
+
+    .result {
+      margin-top: 14px;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(0, 212, 255, 0.08);
+      border: 1px solid rgba(0, 212, 255, 0.18);
+      color: var(--muted);
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      padding: 22px 0 8px;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .col-4,
+      .col-6,
+      .col-8,
+      .col-12 {
+        grid-column: span 1;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .coin {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body {
+        padding: 14px;
+      }
+
+      header,
+      .hero,
+      .panel {
+        padding: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <main class="app">
+    <header>
+      <div class="brand">
+        <h1>🪙 Krypto</h1>
+        <p>AI Empire Pro V9 · Krypto Bereich</p>
+      </div>
 
-<header>
+      <a class="back-link" href="trading.html">← Zurück</a>
+    </header>
 
-<h1>💰 Krypto</h1>
+    <section class="hero">
+      <span class="badge">● Crypto Watch aktiv</span>
+      <h2>Krypto Märkte <span>beobachten & planen.</span></h2>
+      <p>
+        Verwalte Watchlist, Coin-Ideen, Risiko-Einschätzung und mögliche Trading-Szenarien.
+        Diese Seite ist vorbereitet für spätere Live-Daten und Trading-Signale.
+      </p>
+    </section>
 
-<a href="trading.html">← Zurück</a>
+    <section class="grid">
+      <div class="panel col-8">
+        <h3>Crypto Watchlist</h3>
 
-</header>
+        <div class="coin">
+          <div>
+            <strong>Bitcoin</strong>
+            <span>BTC · Marktführer</span>
+          </div>
+          <div class="price green">Trend: Stark</div>
+        </div>
 
-<div class="container">
+        <div class="coin">
+          <div>
+            <strong>Ethereum</strong>
+            <span>ETH · Smart Contracts</span>
+          </div>
+          <div class="price green">Trend: Stabil</div>
+        </div>
 
-<h2>Krypto Bereich</h2>
+        <div class="coin">
+          <div>
+            <strong>Solana</strong>
+            <span>SOL · High Performance Chain</span>
+          </div>
+          <div class="price yellow">Trend: Beobachten</div>
+        </div>
 
-<p>Hier kommen später Coins.</p>
+        <div class="coin">
+          <div>
+            <strong>Altcoin Setup</strong>
+            <span>Individuelle Chance prüfen</span>
+          </div>
+          <div class="price red">Risiko: Hoch</div>
+        </div>
+      </div>
 
-</div>
+      <aside class="panel col-4">
+        <h3>Trading Hinweise</h3>
+        <p class="muted">
+          Diese Seite zeigt keine Live-Kurse und ist keine Finanzberatung.
+          Nutze sie als Planungs- und Analysebereich für dein AI Empire Trading-System.
+        </p>
 
+        <br />
+
+        <p class="muted">
+          Später können API-Daten, Signale, Portfolio-Werte und Telegram-Alerts ergänzt werden.
+        </p>
+      </aside>
+
+      <div class="panel col-6">
+        <h3>Coin Analyse</h3>
+
+        <div class="field">
+          <label for="coinName">Coin / Symbol</label>
+          <input id="coinName" type="text" placeholder="z. B. BTC, ETH, SOL" />
+        </div>
+
+        <div class="field">
+          <label for="riskLevel">Risiko</label>
+          <select id="riskLevel">
+            <option>Niedrig</option>
+            <option>Mittel</option>
+            <option>Hoch</option>
+            <option>Sehr hoch</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="coinNotes">Notizen</label>
+          <textarea id="coinNotes" placeholder="Warum ist dieser Coin interessant? Trend, Setup, Risiko..."></textarea>
+        </div>
+
+        <button onclick="createCoinAnalysis()">Analyse erstellen</button>
+
+        <div class="result" id="analysisResult">
+          Deine Coin-Analyse erscheint hier.
+        </div>
+      </div>
+
+      <div class="panel col-6">
+        <h3>Strategie Framework</h3>
+
+        <div class="coin">
+          <div>
+            <strong>1. Markttrend prüfen</strong>
+            <span>Bitcoin-Dominanz, News, Volumen und allgemeine Stimmung.</span>
+          </div>
+        </div>
+
+        <div class="coin">
+          <div>
+            <strong>2. Risiko begrenzen</strong>
+            <span>Positionsgröße, Stop-Loss und maximale Verlustgrenze festlegen.</span>
+          </div>
+        </div>
+
+        <div class="coin">
+          <div>
+            <strong>3. Signal bestätigen</strong>
+            <span>Setup erst handeln, wenn mehrere Faktoren zusammenpassen.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      AI Empire Pro V9 · Krypto Center
+    </footer>
+  </main>
+
+  <script>
+    function createCoinAnalysis() {
+      const coinName = document.getElementById("coinName").value.trim();
+      const riskLevel = document.getElementById("riskLevel").value;
+      const coinNotes = document.getElementById("coinNotes").value.trim();
+      const result = document.getElementById("analysisResult");
+
+      if (!coinName || !coinNotes) {
+        result.textContent = "Bitte gib Coin/Symbol und Notizen ein.";
+        return;
+      }
+
+      result.innerHTML = `
+<strong>${escapeHtml(coinName.toUpperCase())}</strong>
+
+Risiko: ${escapeHtml(riskLevel)}
+
+Kurzbewertung:
+Der Coin sollte anhand von Trend, Volumen, News, Marktumfeld und persönlichem Risikomanagement geprüft werden.
+
+Notizen:
+${escapeHtml(coinNotes)}
+
+Nächster Schritt:
+Lege ein klares Setup fest: Einstieg, Ziel, Stop-Loss, maximale Positionsgröße und Grund für den Trade.
+      `;
+    }
+
+    function escapeHtml(value) {
+      return value
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+  </script>
 </body>
-
 </html>
