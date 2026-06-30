@@ -1,131 +1,180 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Empire Pro V7 - Tools</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Empire Pro V9 - Tools</title>
 
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 
 <body>
+  <div class="app-layout">
 
-<div class="app-layout">
-
-    <!-- SIDEBAR -->
     <aside class="sidebar">
+      <div class="logo">
+        <h2>🚀 AI Empire Pro V9</h2>
+        <span>V9 Tools</span>
+      </div>
 
-        <div class="logo">
-            <h2>🚀 AI Empire</h2>
-            <span>V7 Tools</span>
-        </div>
-
-        <nav>
-            <ul>
-                <li><a href="dashboard.html">🏠 Dashboard</a></li>
-                <li><a href="assistant.html">🤖 Assistant</a></li>
-                <li><a href="trading.html">📈 Trading</a></li>
-                <li><a href="telegram.html">💬 Telegram</a></li>
-                <li><a href="video.html">🎬 Video</a></li>
-                <li><a href="game.html">🎮 Game</a></li>
-                <li class="active"><a href="tools.html">🛠 Tools</a></li>
-                <li><a href="setup.html">⚙ Setup</a></li>
-            </ul>
-        </nav>
-
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">🏠 Dashboard</a></li>
+          <li><a href="assistant.html">🤖 Assistant</a></li>
+          <li><a href="trading.html">📈 Trading</a></li>
+          <li><a href="telegram.html">💬 Telegram</a></li>
+          <li><a href="bildvideo.html">🎬 Video Studio</a></li>
+          <li><a href="game.html">🎮 Game Studio</a></li>
+          <li class="active"><a href="tools.html">🛠 Tools</a></li>
+          <li><a href="setup.html">⚙ Setup</a></li>
+        </ul>
+      </nav>
     </aside>
 
-    <!-- MAIN -->
     <main class="main-content">
 
-        <!-- TOPBAR -->
-        <header class="topbar">
+      <header class="topbar">
+        <div>
+          <h1>Tools 🛠 AI Empire Pro V9</h1>
+          <p>Systemwerkzeuge, KI-Helfer, Trading-Tools, Backups und Exporte.</p>
+        </div>
 
-            <div>
-                <h1>Tools Center</h1>
-                <p>System Kontrolle & Module Verwaltung</p>
-            </div>
+        <div class="top-actions">
+          <span id="clock">00:00:00</span>
+          <input type="text" placeholder="Tool suchen..." />
+          <button>🔔</button>
+          <button>👤</button>
+        </div>
+      </header>
 
-            <div class="topbar-right">
+      <section class="stats-grid">
+        <div class="stat-card">
+          <h3>System Tools</h3>
+          <strong>18</strong>
+          <span>Verfügbar</span>
+        </div>
 
-                <button class="icon-btn">⚙ System</button>
-                <button class="icon-btn">📡 Status</button>
+        <div class="stat-card">
+          <h3>Exports</h3>
+          <strong>42</strong>
+          <span>Erstellt</span>
+        </div>
 
-            </div>
+        <div class="stat-card">
+          <h3>Backups</h3>
+          <strong>10</strong>
+          <span>Gesichert</span>
+        </div>
 
-        </header>
+        <div class="stat-card">
+          <h3>Status</h3>
+          <strong>100%</strong>
+          <span>Bereit</span>
+        </div>
+      </section>
 
-        <!-- SYSTEM STATUS -->
-        <section class="stats-grid">
+      <section class="hero-card">
+        <div>
+          <h2>Werkzeug-Zentrale bereit ⚙️</h2>
+          <p>
+            Starte Systemchecks, Backups, Exporte, Datenbank-Tools,
+            AI-Helfer und Trading-Werkzeuge direkt aus einer Oberfläche.
+          </p>
 
-            <div class="stat-card">
-                <h3>System Load</h3>
-                <span class="number">42%</span>
-                <small>CPU Usage</small>
-            </div>
+          <button onclick="alert('Systemcheck gestartet ✅')">
+            Systemcheck starten
+          </button>
+        </div>
 
-            <div class="stat-card">
-                <h3>API Calls</h3>
-                <span class="number">1.240</span>
-                <small>Heute</small>
-            </div>
+        <div class="status-box">
+          <h3>Tool Status</h3>
+          <p>🟢 Online</p>
+          <p>Backup bereit</p>
+          <p>Export bereit</p>
+          <p>Datenbank erreichbar</p>
+        </div>
+      </section>
 
-            <div class="stat-card">
-                <h3>Aktive Module</h3>
-                <span class="number">6</span>
-                <small>Running</small>
-            </div>
+      <section class="modules">
+        <h2>Tool Kategorien</h2>
+        <p>Alle wichtigen Werkzeuge für AI Empire Pro V9</p>
 
-            <div class="stat-card">
-                <h3>Status</h3>
-                <span class="number">OK</span>
-                <small>Stable</small>
-            </div>
+        <div class="module-grid">
+          <div class="module-card">
+            <div class="module-icon">🧠</div>
+            <h3>AI Tools</h3>
+            <p>Prompt Builder, Textgenerator, Ideenfinder und Analyse-Helfer.</p>
+            <span class="badge">● Bereit</span>
+            <a href="#">Öffnen</a>
+          </div>
 
-        </section>
+          <div class="module-card">
+            <div class="module-icon">📈</div>
+            <h3>Trading Tools</h3>
+            <p>Risk-Rechner, Positionsgröße, Pip-Rechner und RR-Rechner.</p>
+            <span class="badge">● Aktiv</span>
+            <a href="#">Öffnen</a>
+          </div>
 
-        <!-- MODULE CONTROL -->
-        <section class="modules-section">
+          <div class="module-card">
+            <div class="module-icon">📤</div>
+            <h3>Export Tools</h3>
+            <p>Exportiere Daten als JSON, CSV, Excel, Markdown oder PDF.</p>
+            <span class="badge">● 42 Exports</span>
+            <a href="#">Öffnen</a>
+          </div>
 
-            <div class="section-title">
-                <h2>🧩 Modul Steuerung</h2>
-                <p>Aktiviere oder deaktiviere Systemmodule</p>
-            </div>
+          <div class="module-card">
+            <div class="module-icon">💾</div>
+            <h3>Backup & Restore</h3>
+            <p>Sichere Datenbank, Konfigurationen, Reports und Exporte.</p>
+            <span class="badge">● 10 Backups</span>
+            <a href="#">Öffnen</a>
+          </div>
+        </div>
+      </section>
 
-            <div class="modules-grid">
+      <section class="modules">
+        <h2>Schnellaktionen</h2>
+        <p>Häufig verwendete Aktionen direkt starten</p>
 
-                <div class="module-card">
-                    <div class="module-icon">🤖</div>
-                    <h3>Assistant</h3>
-                    <p>KI Chat System</p>
-                    <div class="module-status online">● Active</div>
-                    <a href="#" class="module-btn">Toggle</a>
-                </div>
+        <div class="module-grid">
+          <div class="module-card">
+            <div class="module-icon">🩺</div>
+            <h3>Health Check</h3>
+            <p>Prüft System, API, Datenbank, Scheduler und Dashboard.</p>
+            <span class="badge">● Sicher</span>
+            <a href="#" onclick="alert('Health Check abgeschlossen ✅')">Starten</a>
+          </div>
 
-                <div class="module-card">
-                    <div class="module-icon">📈</div>
-                    <h3>Trading</h3>
-                    <p>Signal Engine</p>
-                    <div class="module-status online">● Active</div>
-                    <a href="#" class="module-btn">Toggle</a>
-                </div>
+          <div class="module-card">
+            <div class="module-icon">🧹</div>
+            <h3>Cleanup</h3>
+            <p>Bereinigt Cache, Logs, temporäre Daten und alte Reports.</p>
+            <span class="badge">● Bereit</span>
+            <a href="#" onclick="alert('Cleanup gestartet ✅')">Starten</a>
+          </div>
 
-                <div class="module-card">
-                    <div class="module-icon">💬</div>
-                    <h3>Telegram</h3>
-                    <p>Bot System</p>
-                    <div class="module-status online">● Active</div>
-                    <a href="#" class="module-btn">Toggle</a>
-                </div>
+          <div class="module-card">
+            <div class="module-icon">📊</div>
+            <h3>Report Generator</h3>
+            <p>Erstellt Performance-, Trading- und Systemberichte.</p>
+            <span class="badge">● Bereit</span>
+            <a href="#" onclick="alert('Report erstellt ✅')">Starten</a>
+          </div>
 
-            </div>
-
-        </section>
+          <div class="module-card">
+            <div class="module-icon">🔄</div>
+            <h3>System Update</h3>
+            <p>Aktualisiert Projekt, Abhängigkeiten und Datenbankmigrationen.</p>
+            <span class="badge">● Kontrolliert</span>
+            <a href="#" onclick="alert('Update vorbereitet ✅')">Starten</a>
+          </div>
+        </div>
+      </section>
 
     </main>
-
-</div>
-
+  </div>
 </body>
 </html>
