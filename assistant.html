@@ -1,438 +1,162 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Empire Pro V7 - Assistant</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Empire Pro V9 - Assistant</title>
 
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 
 <body>
+  <div class="app-layout">
 
-<div class="app-layout">
-
-    <!-- SIDEBAR -->
     <aside class="sidebar">
+      <div class="logo">
+        <h2>🚀 AI Empire Pro V9</h2>
+        <span>V9 Assistant</span>
+      </div>
 
-        <div class="logo">
-            <h2>🚀 AI Empire</h2>
-            <span>V7 Assistant</span>
-        </div>
-
-        <nav>
-            <ul>
-                <li><a href="dashboard.html">🏠 Dashboard</a></li>
-                <li class="active"><a href="assistant.html">🤖 Assistant</a></li>
-                <li><a href="trading.html">📈 Trading</a></li>
-                <li><a href="telegram.html">💬 Telegram</a></li>
-                <li><a href="video.html">🎬 Video</a></li>
-                <li><a href="game.html">🎮 Game</a></li>
-                <li><a href="tools.html">🛠 Tools</a></li>
-                <li><a href="setup.html">⚙ Setup</a></li>
-            </ul>
-        </nav>
-
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">🏠 Dashboard</a></li>
+          <li class="active"><a href="assistant.html">🤖 Assistant</a></li>
+          <li><a href="trading.html">📈 Trading</a></li>
+          <li><a href="telegram.html">💬 Telegram</a></li>
+          <li><a href="bildvideo.html">🎬 Video Studio</a></li>
+          <li><a href="game.html">🎮 Game Studio</a></li>
+          <li><a href="tools.html">🛠 Tools</a></li>
+          <li><a href="setup.html">⚙ Setup</a></li>
+        </ul>
+      </nav>
     </aside>
 
-    <!-- MAIN -->
     <main class="main-content">
 
-        <!-- TOPBAR -->
-        <header class="topbar">
-
-            <div>
-                <h1>AI Assistant</h1>
-                <p>Dein intelligenter KI-Arbeitsbereich</p>
-            </div>
-
-            <div class="topbar-right">
-
-                <button class="icon-btn">🧠 Model</button>
-                <button class="icon-btn">⚙</button>
-
-            </div>
-
-        </header>
-
-        <!-- CHAT LAYOUT -->
-        <section class="assistant-layout">
-
-            <!-- CHAT AREA -->
-            <div class="chat-container">
-
-                <div class="chat-header">
-                    <h2>Chat</h2>
-                    <p>KI antwortet in Echtzeit</p>
-                </div>
-
-                <div class="chat-box" id="chatBox">
-
-                    <div class="message bot">
-                        <span>AI:</span>
-                        Willkommen im AI Assistant. Wie kann ich helfen?
-                    </div>
-
-                </div>
-
-                <div class="chat-input">
-
-                    <input type="text" id="userInput" placeholder="Nachricht eingeben...">
-
-                    <button onclick="sendMessage()">Senden</button>
-
-                </div>
-
-            </div>
-
-            <!-- TOOL PANEL -->
-            <aside class="assistant-tools">
-
-                <h3>Tools</h3>
-
-                <button>📄 Prompt Generator</button>
-                <button>🧠 Ideen</button>
-                <button>📊 Analyse</button>
-                <button>⚡ Quick Tasks</button>
-
-                <hr>
-
-                <h3>Model</h3>
-
-                <select>
-                    <option>GPT Mode</option>
-                    <option>Fast Mode</option>
-                    <option>Deep Mode</option>
-                </select>
-
-            </aside>
-
-        </section>
-
-    </main>
-
-</div>
-
-</body>
-</html>
-<script>
-
-/* =======================================================
-   AI Assistant Chat Engine (V7)
-======================================================= */
-
-function sendMessage(){
-
-    const input=document.getElementById("userInput");
-
-    const chat=document.getElementById("chatBox");
-
-    if(!input || !chat) return;
-
-    const text=input.value.trim();
-
-    if(text==="") return;
-
-    /* USER MESSAGE */
-    const userMsg=document.createElement("div");
-
-    userMsg.className="message user";
-
-    userMsg.innerHTML="<span>Du:</span> "+text;
-
-    chat.appendChild(userMsg);
-
-    input.value="";
-
-    chat.scrollTop=chat.scrollHeight;
-
-    /* BOT TYPING */
-    const typing=document.createElement("div");
-
-    typing.className="message bot";
-
-    typing.innerHTML="<span>AI:</span> tippt...";
-
-    chat.appendChild(typing);
-
-    chat.scrollTop=chat.scrollHeight;
-
-    /* SIMULATED RESPONSE */
-    setTimeout(()=>{
-
-        typing.remove();
-
-        const reply=document.createElement("div");
-
-        reply.className="message bot";
-
-        reply.innerHTML="<span>AI:</span> "+generateResponse(text);
-
-        chat.appendChild(reply);
-
-        chat.scrollTop=chat.scrollHeight;
-
-    },1000);
-
-}
-
-/* =======================================================
-   Fake AI Engine
-======================================================= */
-
-function generateResponse(input){
-
-    input=input.toLowerCase();
-
-    if(input.includes("hallo") || input.includes("hi")){
-
-        return "Hallo 👋 Ich bin dein AI Assistant. Wie kann ich helfen?";
-
-    }
-
-    if(input.includes("trading")){
-
-        return "Trading-Modul ist aktiv 📈 Soll ich dir aktuelle Signale anzeigen?";
-
-    }
-
-    if(input.includes("video")){
-
-        return "Video Studio bereit 🎬 Ich kann dir ein Video erstellen lassen.";
-
-    }
-
-    if(input.includes("hilfe")){
-
-        return "Ich kann dich bei Trading, KI, Telegram und Automatisierung unterstützen.";
-
-    }
-
-    return "Ich habe deine Anfrage erhalten. Analyse läuft... 🤖";
-
-}
-
-/* =======================================================
-   Enter Taste Support
-======================================================= */
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-    const input=document.getElementById("userInput");
-
-    if(input){
-
-        input.addEventListener("keypress",(e)=>{
-
-            if(e.key==="Enter"){
-
-                sendMessage();
-
-            }
-
-        });
-
-    }
-
-});
-
-</script>
-<script>
-
-/* =======================================================
-   AI Assistant PRO FEATURES (V7)
-======================================================= */
-
-/* ================================
-   CHAT HISTORY (LOCALSTORAGE)
-================================ */
-
-function saveChat(){
-
-    const chat=document.getElementById("chatBox");
-
-    if(!chat) return;
-
-    localStorage.setItem("ai_chat_v7", chat.innerHTML);
-
-}
-
-function loadChat(){
-
-    const chat=document.getElementById("chatBox");
-
-    if(!chat) return;
-
-    const saved=localStorage.getItem("ai_chat_v7");
-
-    if(saved){
-
-        chat.innerHTML=saved;
-
-    }
-
-}
-
-/* ================================
-   AUTO SAVE CHAT
-================================ */
-
-setInterval(()=>{
-
-    saveChat();
-
-},5000);
-
-/* ================================
-   EXPORT CHAT
-================================ */
-
-function exportChat(){
-
-    const chat=document.getElementById("chatBox");
-
-    if(!chat) return;
-
-    const text=chat.innerText;
-
-    const blob=new Blob([text],{type:"text/plain"});
-
-    const url=URL.createObjectURL(blob);
-
-    const a=document.createElement("a");
-
-    a.href=url;
-
-    a.download="ai-chat-export.txt";
-
-    a.click();
-
-    URL.revokeObjectURL(url);
-
-}
-
-/* ================================
-   PROMPT SHORTCUTS
-================================ */
-
-function insertPrompt(text){
-
-    const input=document.getElementById("userInput");
-
-    if(!input) return;
-
-    input.value=text;
-
-    input.focus();
-
-}
-
-/* ================================
-   SHORTCUT BUTTONS (optional UI)
-================================ */
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-    loadChat();
-
-    const tools=document.querySelector(".assistant-tools");
-
-    if(tools){
-
-        const box=document.createElement("div");
-
-        box.style.marginTop="15px";
-
-        box.innerHTML=`
-
-            <h3>Shortcuts</h3>
-
-            <button onclick="insertPrompt('Erstelle eine Trading Analyse')">📈 Trading Analyse</button>
-
-            <button onclick="insertPrompt('Gib mir 5 Business Ideen')">💡 Ideen</button>
-
-            <button onclick="insertPrompt('Erstelle ein Video Script')">🎬 Video Script</button>
-
-            <button onclick="exportChat()">⬇ Chat Export</button>
-
-        `;
-
-        tools.appendChild(box);
-
-    }
-
-});
-
-/* ================================
-   CLEAR CHAT
-================================ */
-
-function clearChat(){
-
-    const chat=document.getElementById("chatBox");
-
-    if(!chat) return;
-
-    chat.innerHTML=`
-
-        <div class="message bot">
-
-            <span>AI:</span>
-
-            Chat wurde zurückgesetzt.
-
+      <header class="topbar">
+        <div>
+          <h1>AI Assistant 🤖</h1>
+          <p>Dein intelligenter KI-Arbeitsbereich für Trading, Automatisierung und Ideen.</p>
         </div>
 
-    `;
+        <div class="top-actions">
+          <span id="clock">00:00:00</span>
+          <input type="text" placeholder="Suche..." />
+          <button>🔔</button>
+          <button>👤</button>
+        </div>
+      </header>
 
-    localStorage.removeItem("ai_chat_v7");
+      <section class="hero-card">
+        <div>
+          <h2>KI-Assistent bereit 🧠</h2>
+          <p>
+            Stelle Fragen, erstelle Trading-Analysen, generiere Business-Ideen,
+            schreibe Telegram-Nachrichten oder plane neue Automationen.
+          </p>
+          <button onclick="alert('AI Assistant ist bereit ✅')">Assistant starten</button>
+        </div>
 
-}
+        <div class="status-box">
+          <h3>Assistant Status</h3>
+          <p>🟢 Online</p>
+          <p>GPT-Modus aktiv</p>
+          <p>Trading Analyse bereit</p>
+          <p>Ideen Generator bereit</p>
+        </div>
+      </section>
 
-/* ================================
-   ENHANCED RESPONSE HOOK (FUTURE AI API)
-================================ */
+      <section class="stats-grid">
+        <div class="stat-card">
+          <h3>KI Aufgaben</h3>
+          <strong>24</strong>
+          <span>Offen</span>
+        </div>
 
-function setAIResponseHandler(callback){
+        <div class="stat-card">
+          <h3>Chats</h3>
+          <strong>128</strong>
+          <span>Gesamt</span>
+        </div>
 
-    window.aiResponseHandler=callback;
+        <div class="stat-card">
+          <h3>Analysen</h3>
+          <strong>42</strong>
+          <span>Heute</span>
+        </div>
 
-}
+        <div class="stat-card">
+          <h3>AI Score</h3>
+          <strong>96%</strong>
+          <span>Sehr stark</span>
+        </div>
+      </section>
 
-/* ================================
-   OVERRIDE generateResponse (optional upgrade hook)
-================================ */
+      <section class="modules">
+        <h2>Chat</h2>
+        <p>Kommuniziere mit deinem AI Empire Pro V9 Assistant</p>
 
-function generateResponse(input){
+        <div class="hero-card">
+          <div style="width: 100%;">
+            <h3>Live Chat</h3>
 
-    if(window.aiResponseHandler){
+            <div class="status-box" style="margin: 18px 0; max-width: none;">
+              <p><strong>AI:</strong> Willkommen bei AI Empire Pro V9. Wie kann ich helfen?</p>
+              <p><strong>Du:</strong> Erstelle eine Trading Analyse</p>
+              <p><strong>AI:</strong> 📈 Trading Analyse bereit. GOLD zeigt aktuell Stärke.</p>
+              <p><strong>Du:</strong> Gib mir 5 Business Ideen</p>
+              <p><strong>AI:</strong> 💡 Analyse abgeschlossen. Ideen wurden erstellt.</p>
+            </div>
 
-        return window.aiResponseHandler(input);
+            <div class="top-actions" style="justify-content: flex-start;">
+              <input type="text" placeholder="Nachricht eingeben..." style="width: 100%;" />
+              <button onclick="alert('Nachricht gesendet ✅')">Senden</button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    }
+      <section class="modules">
+        <h2>Tools</h2>
+        <p>Schnellaktionen für deinen KI-Assistenten</p>
 
-    input=input.toLowerCase();
+        <div class="module-grid">
+          <div class="module-card">
+            <div class="module-icon">📈</div>
+            <h3>Trading Analyse</h3>
+            <p>Analysiere Märkte, Trends, Signale und Risiko.</p>
+            <span class="badge">● Aktiv</span>
+            <a href="#">Starten</a>
+          </div>
 
-    if(input.includes("hallo")) return "Hallo 👋";
+          <div class="module-card">
+            <div class="module-icon">💡</div>
+            <h3>Ideen Generator</h3>
+            <p>Erstelle neue Business-, Content- und Produktideen.</p>
+            <span class="badge">● Bereit</span>
+            <a href="#">Starten</a>
+          </div>
 
-    if(input.includes("trading")) return "📈 Trading Analyse bereit.";
+          <div class="module-card">
+            <div class="module-icon">🎬</div>
+            <h3>Video Script</h3>
+            <p>Erstelle Skripte für Shorts, Reels und YouTube.</p>
+            <span class="badge">● Bereit</span>
+            <a href="#">Starten</a>
+          </div>
 
-    if(input.includes("video")) return "🎬 Video Modul aktiv.";
+          <div class="module-card">
+            <div class="module-icon">⚡</div>
+            <h3>Quick Tasks</h3>
+            <p>Automatisiere schnelle Aufgaben und Workflows.</p>
+            <span class="badge">● Online</span>
+            <a href="#">Starten</a>
+          </div>
+        </div>
+      </section>
 
-    if(input.includes("hilfe")) return "Ich unterstütze dich im gesamten System.";
-
-    return "Analyse abgeschlossen 🤖";
-}
-
-/* ================================
-   INIT
-================================ */
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-    loadChat();
-
-});
-
-</script>
+    </main>
+  </div>
+</body>
+</html>
