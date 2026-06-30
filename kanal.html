@@ -1,35 +1,483 @@
 <!DOCTYPE html>
-
 <html lang="de">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<meta charset="UTF-8">
+  <title>AI Empire Pro V9 – Telegram Kanal</title>
 
-<title>Telegram Kanal</title>
+  <link rel="stylesheet" href="style.css" />
 
-<link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --bg: #070b18;
+      --card: rgba(255, 255, 255, 0.075);
+      --border: rgba(255, 255, 255, 0.12);
+      --text: #f6f8ff;
+      --muted: #9aa4bf;
+      --primary: #7c5cff;
+      --cyan: #00d4ff;
+      --green: #27e0a3;
+      --yellow: #ffcc66;
+      --red: #ff5c7a;
+      --radius: 24px;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124, 92, 255, 0.32), transparent 35%),
+        radial-gradient(circle at top right, rgba(0, 212, 255, 0.22), transparent 32%),
+        linear-gradient(135deg, #050814, #0a1024 55%, #050814);
+      color: var(--text);
+      padding: 24px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .app {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding: 20px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+    }
+
+    .brand h1 {
+      font-size: 1.5rem;
+      letter-spacing: -0.04em;
+    }
+
+    .brand p {
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 0.92rem;
+    }
+
+    .back-link {
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), var(--cyan));
+      font-weight: 900;
+    }
+
+    .hero {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(124, 92, 255, 0.28), rgba(0, 212, 255, 0.12));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(39, 224, 163, 0.12);
+      color: var(--green);
+      border: 1px solid rgba(39, 224, 163, 0.24);
+      font-weight: 900;
+      font-size: 0.8rem;
+      margin-bottom: 14px;
+    }
+
+    .hero h2 {
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin-bottom: 14px;
+    }
+
+    .hero h2 span {
+      background: linear-gradient(135deg, #fff, var(--cyan));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1.04rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+
+    .panel {
+      padding: 22px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.095), rgba(255,255,255,.04));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+    }
+
+    .col-4 {
+      grid-column: span 4;
+    }
+
+    .col-6 {
+      grid-column: span 6;
+    }
+
+    .col-8 {
+      grid-column: span 8;
+    }
+
+    .col-12 {
+      grid-column: span 12;
+    }
+
+    h3 {
+      margin-bottom: 14px;
+      font-size: 1.2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .muted {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.94rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    label {
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.065);
+      color: var(--text);
+      border-radius: 16px;
+      padding: 13px 14px;
+      outline: none;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      padding: 13px 18px;
+      border-radius: 999px;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--cyan));
+      font-weight: 900;
+    }
+
+    .card {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid var(--border);
+      margin-bottom: 12px;
+    }
+
+    .card h4 {
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.9rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      letter-spacing: -0.05em;
+      margin-bottom: 6px;
+    }
+
+    .result {
+      margin-top: 14px;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(0, 212, 255, 0.08);
+      border: 1px solid rgba(0, 212, 255, 0.18);
+      color: var(--muted);
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      padding: 22px 0 8px;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .col-4,
+      .col-6,
+      .col-8,
+      .col-12 {
+        grid-column: span 1;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body {
+        padding: 14px;
+      }
+
+      header,
+      .hero,
+      .panel {
+        padding: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <main class="app">
+    <header>
+      <div class="brand">
+        <h1>📢 Telegram Kanal</h1>
+        <p>AI Empire Pro V9 · Kanal Verwaltung</p>
+      </div>
 
-<header>
+      <a class="back-link" href="telegram.html">← Zurück</a>
+    </header>
 
-<h1>📢 Telegram Kanal</h1>
+    <section class="hero">
+      <span class="badge">● Kanal Center aktiv</span>
+      <h2>Telegram Kanäle <span>planen & steuern.</span></h2>
+      <p>
+        Verwalte Kanal-Ideen, Posts, Zielgruppen und Content-Strategien.
+        Diese Seite ist vorbereitet für spätere Bot-, Broadcast- und Automationsfunktionen.
+      </p>
+    </section>
 
-<a href="telegram.html">← Zurück</a>
+    <section class="grid">
+      <div class="panel col-8">
+        <h3>Kanal-Konzept erstellen</h3>
 
-</header>
+        <div class="field">
+          <label for="channelName">Kanalname</label>
+          <input id="channelName" type="text" placeholder="z. B. AI Empire Signals" />
+        </div>
 
-<div class="container">
+        <div class="field">
+          <label for="channelTopic">Thema</label>
+          <select id="channelTopic">
+            <option>Trading Signale</option>
+            <option>Krypto News</option>
+            <option>AI Tools</option>
+            <option>Business Ideen</option>
+            <option>Motivation & Produktivität</option>
+            <option>Premium Community</option>
+          </select>
+        </div>
 
-<h2>Kanal Verwaltung</h2>
+        <div class="field">
+          <label for="channelText">Beschreibung</label>
+          <textarea id="channelText" placeholder="Beschreibe deinen Kanal, Zielgruppe und Inhalte..."></textarea>
+        </div>
 
-<p>Hier kommen später deine Kanäle.</p>
+        <button onclick="generateChannelPlan()">Kanalplan erstellen</button>
 
-</div>
+        <div class="result" id="channelResult">
+          Dein Kanalplan erscheint hier.
+        </div>
+      </div>
 
+      <aside class="panel col-4">
+        <h3>Kanal Status</h3>
+
+        <div class="card stat">
+          <strong id="postCount">0</strong>
+          <p>geplante Posts</p>
+        </div>
+
+        <div class="card">
+          <h4>💬 Ziel</h4>
+          <p>Reichweite aufbauen, Vertrauen schaffen und später monetarisieren.</p>
+        </div>
+
+        <div class="card">
+          <h4>💰 Monetarisierung</h4>
+          <p>Premium-Gruppe, Affiliate-Angebote, Signale, digitale Produkte oder Beratung.</p>
+        </div>
+      </aside>
+
+      <div class="panel col-6">
+        <h3>Post-Ideen</h3>
+
+        <div class="field">
+          <label for="postInput">Neue Post-Idee</label>
+          <input id="postInput" type="text" placeholder="z. B. Marktupdate Montagmorgen" />
+        </div>
+
+        <button onclick="addPost()">Post hinzufügen</button>
+
+        <div class="result" id="postList">
+          Noch keine Posts geplant.
+        </div>
+      </div>
+
+      <div class="panel col-6">
+        <h3>Empfohlene Kanalstruktur</h3>
+
+        <div class="card">
+          <h4>1. Kostenloser Kanal</h4>
+          <p>Mehrwert, Updates, kurze Analysen und Vertrauen aufbauen.</p>
+        </div>
+
+        <div class="card">
+          <h4>2. Premium Bereich</h4>
+          <p>Exklusive Signale, Vorlagen, Strategien, Calls oder persönliche Unterstützung.</p>
+        </div>
+
+        <div class="card">
+          <h4>3. Automationen</h4>
+          <p>Später Bot-Befehle, automatische Posts, Alerts und Broadcasts ergänzen.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      AI Empire Pro V9 · Telegram Kanal Center
+    </footer>
+  </main>
+
+  <script>
+    const STORAGE_KEY = "ai_empire_v9_channel_posts";
+    let posts = [];
+
+    function loadPosts() {
+      posts = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+      renderPosts();
+    }
+
+    function savePosts() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(posts));
+    }
+
+    function addPost() {
+      const input = document.getElementById("postInput");
+      const value = input.value.trim();
+
+      if (!value) return;
+
+      posts.unshift(value);
+      input.value = "";
+
+      savePosts();
+      renderPosts();
+    }
+
+    function renderPosts() {
+      const postList = document.getElementById("postList");
+      const postCount = document.getElementById("postCount");
+
+      postCount.textContent = posts.length;
+
+      if (posts.length === 0) {
+        postList.textContent = "Noch keine Posts geplant.";
+        return;
+      }
+
+      postList.innerHTML = posts
+        .map((post, index) => `${index + 1}. ${escapeHtml(post)}`)
+        .join("<br>");
+    }
+
+    function generateChannelPlan() {
+      const name = document.getElementById("channelName").value.trim();
+      const topic = document.getElementById("channelTopic").value;
+      const text = document.getElementById("channelText").value.trim();
+      const result = document.getElementById("channelResult");
+
+      if (!name || !text) {
+        result.textContent = "Bitte gib Kanalname und Beschreibung ein.";
+        return;
+      }
+
+      result.innerHTML = `
+<strong>${escapeHtml(name)}</strong>
+
+Thema: ${escapeHtml(topic)}
+
+Positionierung:
+Ein Telegram-Kanal für eine klare Zielgruppe mit regelmäßigem Mehrwert, Updates und Vertrauen.
+
+Content-Plan:
+• 3–5 kurze Posts pro Woche
+• 1 ausführliche Analyse pro Woche
+• 1 Call-to-Action Richtung Premium-Angebot
+• Wiederkehrende Formate wie Marktupdate, Tool-Tipp oder Wochenplan
+
+Monetarisierung:
+Premium-Gruppe, Affiliate-Angebote, digitale Produkte oder persönliche Beratung.
+
+Nächster Schritt:
+Erstelle 5 Startposts und veröffentliche danach täglich einen kleinen Mehrwert-Beitrag.
+      `;
+    }
+
+    function escapeHtml(value) {
+      return value
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    loadPosts();
+  </script>
 </body>
-
 </html>
