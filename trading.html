@@ -1,319 +1,163 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Empire Pro V7 - Trading</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Empire Pro V9 - Trading</title>
 
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+
+  <meta name="theme-color" content="#0f172a" />
 </head>
 
 <body>
+  <div class="app-layout">
 
-<div class="app-layout">
-
-    <!-- SIDEBAR -->
     <aside class="sidebar">
+      <div class="logo">
+        <h2>🚀 AI Empire Pro V9</h2>
+        <span>V9 Trading</span>
+      </div>
 
-        <div class="logo">
-            <h2>🚀 AI Empire</h2>
-            <span>V7 Trading</span>
-        </div>
-
-        <nav>
-            <ul>
-                <li><a href="dashboard.html">🏠 Dashboard</a></li>
-                <li><a href="assistant.html">🤖 Assistant</a></li>
-                <li class="active"><a href="trading.html">📈 Trading</a></li>
-                <li><a href="telegram.html">💬 Telegram</a></li>
-                <li><a href="video.html">🎬 Video</a></li>
-                <li><a href="game.html">🎮 Game</a></li>
-                <li><a href="tools.html">🛠 Tools</a></li>
-                <li><a href="setup.html">⚙ Setup</a></li>
-            </ul>
-        </nav>
-
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">🏠 Dashboard</a></li>
+          <li><a href="assistant.html">🤖 Assistant</a></li>
+          <li class="active"><a href="trading.html">📈 Trading</a></li>
+          <li><a href="telegram.html">💬 Telegram</a></li>
+          <li><a href="bildvideo.html">🎬 Video Studio</a></li>
+          <li><a href="game.html">🎮 Game Studio</a></li>
+          <li><a href="tools.html">🛠 Tools</a></li>
+          <li><a href="setup.html">⚙ Setup</a></li>
+        </ul>
+      </nav>
     </aside>
 
-    <!-- MAIN -->
     <main class="main-content">
 
-        <!-- TOPBAR -->
-        <header class="topbar">
+      <header class="topbar">
+        <div>
+          <h1>Trading 📈 AI Empire Pro V9</h1>
+          <p>Live-Signale, Marktanalyse und offene Positionen.</p>
+        </div>
 
-            <div>
-                <h1>Trading Dashboard</h1>
-                <p>Live Marktübersicht & KI Trading Signale</p>
-            </div>
+        <div class="top-actions">
+          <span id="clock">00:00:00</span>
+          <input type="text" placeholder="Symbol suchen..." />
+          <button>🔔</button>
+          <button>👤</button>
+        </div>
+      </header>
 
-            <div class="topbar-right">
+      <section class="stats-grid">
+        <div class="stat-card">
+          <h3>Kontostand</h3>
+          <strong>25.000 €</strong>
+          <span>Demo Account</span>
+        </div>
 
-                <button class="icon-btn">📊 Live</button>
-                <button class="icon-btn">⚙</button>
+        <div class="stat-card">
+          <h3>Gewinn</h3>
+          <strong>+1.240 €</strong>
+          <span>Heute</span>
+        </div>
 
-            </div>
+        <div class="stat-card">
+          <h3>Offene Trades</h3>
+          <strong>4</strong>
+          <span>Aktiv</span>
+        </div>
 
-        </header>
+        <div class="stat-card">
+          <h3>AI Score</h3>
+          <strong>92%</strong>
+          <span>Sehr stark</span>
+        </div>
+      </section>
 
-        <!-- KPI SECTION -->
-        <section class="stats-grid">
+      <section class="hero-card">
+        <div>
+          <h2>Marktanalyse läuft 🧠</h2>
+          <p>
+            Die KI analysiert aktuell Gold, Forex, Nasdaq, Bitcoin und Ethereum.
+            Signale werden nach Trend, Volumen, Momentum und Risiko bewertet.
+          </p>
 
-            <div class="stat-card">
-                <h3>Portfolio</h3>
-                <span class="number">+18.240 €</span>
-                <small>Gesamtwert</small>
-            </div>
+          <button onclick="alert('AI Marktanalyse gestartet ✅')">
+            Analyse starten
+          </button>
+        </div>
 
-            <div class="stat-card">
-                <h3>Gewinn heute</h3>
-                <span class="number">+540 €</span>
-                <small>24h Performance</small>
-            </div>
+        <div class="status-box">
+          <h3>Trading Status</h3>
+          <p>🟢 Markt offen</p>
+          <p>KI aktiv</p>
+          <p>Risiko kontrolliert</p>
+          <p>Telegram bereit</p>
+        </div>
+      </section>
 
-            <div class="stat-card">
-                <h3>Aktive Trades</h3>
-                <span class="number">7</span>
-                <small>Laufend</small>
-            </div>
+      <section class="modules">
+        <h2>Live Trading</h2>
+        <p>Marktübersicht und aktuelle Signale</p>
 
-            <div class="stat-card">
-                <h3>Signal Accuracy</h3>
-                <span class="number">92%</span>
-                <small>KI Bewertung</small>
-            </div>
+        <div class="module-grid">
+          <div class="module-card">
+            <div class="module-icon">🥇</div>
+            <h3>GOLD / XAUUSD</h3>
+            <p>
+              Signal: BUY<br />
+              Entry: 2350.50<br />
+              SL: 2345.00<br />
+              TP: 2365.00
+            </p>
+            <span class="badge">● Confidence 94%</span>
+            <a href="#">BUY öffnen</a>
+          </div>
 
-        </section>
+          <div class="module-card">
+            <div class="module-icon">💶</div>
+            <h3>EUR/USD</h3>
+            <p>
+              Signal: SELL<br />
+              Entry: 1.0840<br />
+              SL: 1.0880<br />
+              TP: 1.0760
+            </p>
+            <span class="badge">● Confidence 88%</span>
+            <a href="#">SELL öffnen</a>
+          </div>
 
-        <!-- SIGNAL SECTION -->
-        <section class="modules-section">
+          <div class="module-card">
+            <div class="module-icon">₿</div>
+            <h3>BTC / USDT</h3>
+            <p>
+              Signal: BUY<br />
+              Entry: 65.200<br />
+              SL: 64.100<br />
+              TP: 67.800
+            </p>
+            <span class="badge">● Confidence 91%</span>
+            <a href="#">BUY öffnen</a>
+          </div>
 
-            <div class="section-title">
-                <h2>📡 Trading Signale</h2>
-                <p>KI-generierte Marktchancen in Echtzeit</p>
-            </div>
-
-            <div class="modules-grid">
-
-                <div class="module-card">
-                    <div class="module-icon">📈</div>
-                    <h3>BTC/USDT</h3>
-                    <p>Long Signal erkannt</p>
-                    <div class="module-status online">● Strong Buy</div>
-                    <a href="#" class="module-btn">Details</a>
-                </div>
-
-                <div class="module-card">
-                    <div class="module-icon">📉</div>
-                    <h3>ETH/USDT</h3>
-                    <p>Seitwärtsbewegung</p>
-                    <div class="module-status">● Neutral</div>
-                    <a href="#" class="module-btn">Details</a>
-                </div>
-
-                <div class="module-card">
-                    <div class="module-icon">⚡</div>
-                    <h3>SOL/USDT</h3>
-                    <p>Volatilität hoch</p>
-                    <div class="module-status online">● Watch</div>
-                    <a href="#" class="module-btn">Details</a>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- PORTFOLIO SECTION -->
-        <section class="activity-section">
-
-            <div class="section-title">
-                <h2>Portfolio Übersicht</h2>
-            </div>
-
-            <div class="activity-card">
-
-                <div class="activity-item">
-                    <span class="activity-time">BTC</span>
-                    <span>+12% Position offen</span>
-                </div>
-
-                <div class="activity-item">
-                    <span class="activity-time">ETH</span>
-                    <span>-2% leicht im Minus</span>
-                </div>
-
-                <div class="activity-item">
-                    <span class="activity-time">SOL</span>
-                    <span>+6% im Gewinn</span>
-                </div>
-
-            </div>
-
-        </section>
+          <div class="module-card">
+            <div class="module-icon">📊</div>
+            <h3>NASDAQ</h3>
+            <p>
+              Signal: WAIT<br />
+              Trend: Bullish<br />
+              Momentum: Stark<br />
+              Risiko: Mittel
+            </p>
+            <span class="badge">● Beobachten</span>
+            <a href="#">Analyse öffnen</a>
+          </div>
+        </div>
+      </section>
 
     </main>
-
-</div>
-
+  </div>
 </body>
 </html>
-<!-- ========================================= -->
-<!-- LIVE CHART SIMULATION -->
-<!-- ========================================= -->
-
-<section class="system-status">
-
-    <div class="section-title">
-        <h2>📊 Markt Chart (Simulation)</h2>
-        <p>Echtzeit Bewegungen (UI Demo)</p>
-    </div>
-
-    <div class="status-card">
-
-        <h3>BTC/USDT Trend</h3>
-
-        <div class="progress">
-            <div class="progress-bar" id="btcBar" style="width:65%;"></div>
-        </div>
-
-        <span id="btcValue">65%</span>
-
-    </div>
-
-    <div class="status-card">
-
-        <h3>ETH/USDT Trend</h3>
-
-        <div class="progress">
-            <div class="progress-bar" id="ethBar" style="width:45%;"></div>
-        </div>
-
-        <span id="ethValue">45%</span>
-
-    </div>
-
-    <div class="status-card">
-
-        <h3>SOL/USDT Trend</h3>
-
-        <div class="progress">
-            <div class="progress-bar" id="solBar" style="width:72%;"></div>
-        </div>
-
-        <span id="solValue">72%</span>
-
-    </div>
-
-</section>
-
-<!-- ========================================= -->
-<!-- TRADE HISTORY -->
-<!-- ========================================= -->
-
-<section class="activity-section">
-
-    <div class="section-title">
-        <h2>📜 Trade History</h2>
-    </div>
-
-    <div class="activity-card" id="tradeHistory">
-
-        <div class="activity-item">
-            <span class="activity-time">BTC</span>
-            <span>+120€ Profit abgeschlossen</span>
-        </div>
-
-        <div class="activity-item">
-            <span class="activity-time">ETH</span>
-            <span>-35€ Stop Loss</span>
-        </div>
-
-        <div class="activity-item">
-            <span class="activity-time">SOL</span>
-            <span>+78€ Take Profit</span>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ========================================= -->
-<!-- SCRIPT: LIVE UPDATES -->
-<!-- ========================================= -->
-
-<script>
-
-/* =======================================================
-   Trading Live Simulation Engine
-======================================================= */
-
-function random(min,max){
-    return Math.floor(Math.random()*(max-min+1))+min;
-}
-
-function updateMarket(){
-
-    const btc=random(40,85);
-    const eth=random(30,70);
-    const sol=random(50,90);
-
-    document.getElementById("btcBar").style.width=btc+"%";
-    document.getElementById("ethBar").style.width=eth+"%";
-    document.getElementById("solBar").style.width=sol+"%";
-
-    document.getElementById("btcValue").textContent=btc+"%";
-    document.getElementById("ethValue").textContent=eth+"%";
-    document.getElementById("solValue").textContent=sol+"%";
-
-}
-
-/* =======================================================
-   Fake Trade Generator
-======================================================= */
-
-function addTrade(){
-
-    const list=document.getElementById("tradeHistory");
-
-    if(!list) return;
-
-    const coins=["BTC","ETH","SOL"];
-
-    const coin=coins[random(0,2)];
-
-    const profit=random(-50,150);
-
-    const item=document.createElement("div");
-
-    item.className="activity-item";
-
-    item.innerHTML=`
-        <span class="activity-time">${coin}</span>
-        <span>${profit >= 0 ? "+" : ""}${profit}€ Trade ${profit >= 0 ? "Profit" : "Loss"}</span>
-    `;
-
-    list.prepend(item);
-
-    if(list.children.length>6){
-
-        list.removeChild(list.lastElementChild);
-
-    }
-
-}
-
-/* =======================================================
-   INIT
-======================================================= */
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-    updateMarket();
-
-    setInterval(updateMarket,4000);
-
-    setInterval(addTrade,6000);
-
-});
-
-</script>
