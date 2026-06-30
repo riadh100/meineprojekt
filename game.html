@@ -1,369 +1,157 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Empire Pro V7 - Game Hub</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Empire Pro V9 - Game Studio</title>
 
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 
 <body>
+  <div class="app-layout">
 
-<div class="app-layout">
-
-    <!-- SIDEBAR -->
     <aside class="sidebar">
+      <div class="logo">
+        <h2>🚀 AI Empire Pro V9</h2>
+        <span>V9 Game Studio</span>
+      </div>
 
-        <div class="logo">
-            <h2>🚀 AI Empire</h2>
-            <span>V7 Game Hub</span>
-        </div>
-
-        <nav>
-            <ul>
-                <li><a href="dashboard.html">🏠 Dashboard</a></li>
-                <li><a href="assistant.html">🤖 Assistant</a></li>
-                <li><a href="trading.html">📈 Trading</a></li>
-                <li><a href="telegram.html">💬 Telegram</a></li>
-                <li><a href="video.html">🎬 Video</a></li>
-                <li class="active"><a href="game.html">🎮 Game</a></li>
-                <li><a href="tools.html">🛠 Tools</a></li>
-                <li><a href="setup.html">⚙ Setup</a></li>
-            </ul>
-        </nav>
-
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">🏠 Dashboard</a></li>
+          <li><a href="assistant.html">🤖 Assistant</a></li>
+          <li><a href="trading.html">📈 Trading</a></li>
+          <li><a href="telegram.html">💬 Telegram</a></li>
+          <li><a href="bildvideo.html">🎬 Video Studio</a></li>
+          <li class="active"><a href="game.html">🎮 Game Studio</a></li>
+          <li><a href="tools.html">🛠 Tools</a></li>
+          <li><a href="setup.html">⚙ Setup</a></li>
+        </ul>
+      </nav>
     </aside>
 
-    <!-- MAIN -->
     <main class="main-content">
 
-        <!-- TOPBAR -->
-        <header class="topbar">
+      <header class="topbar">
+        <div>
+          <h1>Game Studio 🎮 AI Empire Pro V9</h1>
+          <p>Erstelle Spielideen, Assets, Level, Charaktere und Game-Konzepte mit KI.</p>
+        </div>
 
-            <div>
-                <h1>Game Hub</h1>
-                <p>XP System & AI Missions</p>
+        <div class="top-actions">
+          <span id="clock">00:00:00</span>
+          <input type="text" placeholder="Game-Projekt suchen..." />
+          <button>🔔</button>
+          <button>👤</button>
+        </div>
+      </header>
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <h3>Game-Projekte</h3>
+          <strong>12</strong>
+          <span>Aktiv</span>
+        </div>
+
+        <div class="stat-card">
+          <h3>Assets</h3>
+          <strong>248</strong>
+          <span>Generiert</span>
+        </div>
+
+        <div class="stat-card">
+          <h3>Level</h3>
+          <strong>34</strong>
+          <span>Entworfen</span>
+        </div>
+
+        <div class="stat-card">
+          <h3>AI Score</h3>
+          <strong>95%</strong>
+          <span>Kreativität</span>
+        </div>
+      </section>
+
+      <section class="hero-card">
+        <div>
+          <h2>KI Game Builder bereit 🧠</h2>
+          <p>
+            Entwickle komplette Game-Konzepte mit Story, Charakteren,
+            Levels, Missionen, Gegnern, Items, UI-Ideen und Monetarisierung.
+          </p>
+
+          <button onclick="alert('Game-Idee wird erstellt ✅')">
+            Game-Idee generieren
+          </button>
+        </div>
+
+        <div class="status-box">
+          <h3>Studio Status</h3>
+          <p>🟢 Online</p>
+          <p>Asset Generator bereit</p>
+          <p>Level Builder aktiv</p>
+          <p>Story Engine bereit</p>
+        </div>
+      </section>
+
+      <section class="modules">
+        <h2>Neues Game-Projekt</h2>
+        <p>Beschreibe deine Spielidee und lass die KI ein Konzept erstellen</p>
+
+        <div class="hero-card">
+          <div style="width: 100%;">
+            <h3>Game Prompt</h3>
+
+            <div class="top-actions" style="justify-content: flex-start; margin-top: 18px;">
+              <input type="text" placeholder="z. B. Erstelle ein Mobile Game über Trading..." style="width: 100%;" />
+              <button onclick="alert('Game-Konzept erstellt ✅')">Erstellen</button>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div class="topbar-right">
+      <section class="modules">
+        <h2>Game Module</h2>
+        <p>Werkzeuge für Game-Design und Entwicklung</p>
 
-                <button class="icon-btn">🎯 Mission</button>
-                <button class="icon-btn">⚙</button>
+        <div class="module-grid">
+          <div class="module-card">
+            <div class="module-icon">💡</div>
+            <h3>Game Idea Generator</h3>
+            <p>Erstellt Spielideen, Genres, Mechaniken und Zielgruppen.</p>
+            <span class="badge">● Bereit</span>
+            <a href="#">Starten</a>
+          </div>
 
-            </div>
+          <div class="module-card">
+            <div class="module-icon">🎨</div>
+            <h3>Asset Generator</h3>
+            <p>Generiert Ideen für Charaktere, Items, Icons und UI-Elemente.</p>
+            <span class="badge">● Aktiv</span>
+            <a href="#">Starten</a>
+          </div>
 
-        </header>
+          <div class="module-card">
+            <div class="module-icon">🗺️</div>
+            <h3>Level Builder</h3>
+            <p>Erstellt Level-Strukturen, Missionen und Schwierigkeitskurven.</p>
+            <span class="badge">● 34 Level</span>
+            <a href="#">Öffnen</a>
+          </div>
 
-        <!-- PLAYER STATS -->
-        <section class="stats-grid">
-
-            <div class="stat-card">
-                <h3>Level</h3>
-                <span class="number">12</span>
-                <small>AI User</small>
-            </div>
-
-            <div class="stat-card">
-                <h3>XP</h3>
-                <span class="number">3.450</span>
-                <small>Erfahrung</small>
-            </div>
-
-            <div class="stat-card">
-                <h3>Missions</h3>
-                <span class="number">8</span>
-                <small>Abgeschlossen</small>
-            </div>
-
-            <div class="stat-card">
-                <h3>Rewards</h3>
-                <span class="number">5</span>
-                <small>Freigeschaltet</small>
-            </div>
-
-        </section>
-
-        <!-- MISSIONS -->
-        <section class="modules-section">
-
-            <div class="section-title">
-                <h2>🎯 Missionen</h2>
-                <p>Deine aktiven Aufgaben</p>
-            </div>
-
-            <div class="modules-grid">
-
-                <div class="module-card">
-                    <div class="module-icon">📈</div>
-                    <h3>Trading Analyse</h3>
-                    <p>Analysiere 3 Marktcharts</p>
-                    <div class="module-status online">● +200 XP</div>
-                    <a href="#" class="module-btn">Starten</a>
-                </div>
-
-                <div class="module-card">
-                    <div class="module-icon">🤖</div>
-                    <h3>AI Chat Master</h3>
-                    <p>10 Nachrichten mit Assistant</p>
-                    <div class="module-status online">● +150 XP</div>
-                    <a href="#" class="module-btn">Starten</a>
-                </div>
-
-                <div class="module-card">
-                    <div class="module-icon">🎬</div>
-                    <h3>Video Creator</h3>
-                    <p>Erstelle 1 Video Projekt</p>
-                    <div class="module-status online">● +300 XP</div>
-                    <a href="#" class="module-btn">Starten</a>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- PROGRESS -->
-        <section class="system-status">
-
-            <div class="section-title">
-                <h2>📊 Fortschritt</h2>
-            </div>
-
-            <div class="status-card">
-
-                <h3>Level Fortschritt</h3>
-
-                <div class="progress">
-                    <div class="progress-bar" style="width:68%;"></div>
-                </div>
-
-                <p>68% zum nächsten Level</p>
-
-            </div>
-
-        </section>
+          <div class="module-card">
+            <div class="module-icon">📖</div>
+            <h3>Story Engine</h3>
+            <p>Entwickelt Story, Lore, Dialoge und Charakter-Hintergründe.</p>
+            <span class="badge">● Bereit</span>
+            <a href="#">Öffnen</a>
+          </div>
+        </div>
+      </section>
 
     </main>
-
-</div>
-
+  </div>
 </body>
 </html>
-<!-- ========================================= -->
-<!-- LIVE XP SYSTEM -->
-<!-- ========================================= -->
-
-<section class="system-status">
-
-    <div class="section-title">
-        <h2>⚡ XP Live System</h2>
-        <p>Dynamische Erfahrungspunkte Simulation</p>
-    </div>
-
-    <div class="status-card">
-
-        <h3>XP Fortschritt</h3>
-
-        <div class="progress">
-            <div class="progress-bar" id="xpBar" style="width:68%;"></div>
-        </div>
-
-        <p id="xpText">3.450 / 5.000 XP</p>
-
-    </div>
-
-</section>
-
-<!-- ========================================= -->
-<!-- GAME LOG -->
-<!-- ========================================= -->
-
-<section class="activity-section">
-
-    <div class="section-title">
-        <h2>📡 Game Events</h2>
-    </div>
-
-    <div class="activity-card" id="gameLog">
-
-        <div class="activity-item">
-            <span class="activity-time">SYSTEM</span>
-            <span>Game Hub gestartet</span>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ========================================= -->
-<!-- SCRIPT -->
-<!-- ========================================= -->
-
-<script>
-
-/* =======================================================
-   Helper
-======================================================= */
-
-function random(min,max){
-    return Math.floor(Math.random()*(max-min+1))+min;
-}
-
-/* =======================================================
-   XP SYSTEM
-======================================================= */
-
-let xp=3450;
-let level=12;
-
-function updateXP(){
-
-    const gain=random(20,120);
-
-    xp+=gain;
-
-    const maxXP=5000;
-
-    const percent=Math.min((xp/maxXP)*100,100);
-
-    document.getElementById("xpBar").style.width=percent+"%";
-
-    document.getElementById("xpText").textContent=
-        xp+" / "+maxXP+" XP";
-
-    addGameLog("XP","+ "+gain+" XP erhalten");
-
-    if(xp>=maxXP){
-
-        levelUp();
-
-    }
-
-}
-
-/* =======================================================
-   LEVEL UP SYSTEM
-======================================================= */
-
-function levelUp(){
-
-    level++;
-
-    xp=0;
-
-    addGameLog("LEVEL UP","Du bist jetzt Level "+level+" 🏆");
-
-    document.body.style.transition=".3s";
-
-    document.body.style.boxShadow="inset 0 0 80px #22c55e";
-
-    setTimeout(()=>{
-
-        document.body.style.boxShadow="none";
-
-    },600);
-
-}
-
-/* =======================================================
-   GAME LOG SYSTEM
-======================================================= */
-
-function addGameLog(type,msg){
-
-    const log=document.getElementById("gameLog");
-
-    if(!log) return;
-
-    const item=document.createElement("div");
-
-    item.className="activity-item";
-
-    const time=new Date().toLocaleTimeString("de-DE",{
-        hour:"2-digit",
-        minute:"2-digit"
-    });
-
-    item.innerHTML=`
-        <span class="activity-time">${type}</span>
-        <span>${msg}</span>
-    `;
-
-    log.prepend(item);
-
-    if(log.children.length>8){
-
-        log.removeChild(log.lastElementChild);
-
-    }
-
-}
-
-/* =======================================================
-   MISSION SIMULATION
-======================================================= */
-
-function completeMission(){
-
-    const missions=[
-
-        "Trading Analyse abgeschlossen",
-
-        "AI Chat Mission erfüllt",
-
-        "Video Projekt fertiggestellt"
-
-    ];
-
-    const mission=missions[random(0,missions.length-1)];
-
-    const reward=random(100,300);
-
-    addGameLog("MISSION",mission);
-
-    xp+=reward;
-
-    addGameLog("REWARD","+ "+reward+" XP Bonus");
-
-}
-
-/* =======================================================
-   AUTO GAME EVENTS
-======================================================= */
-
-function autoGameEvents(){
-
-    const events=[
-
-        "Daily Bonus aktiviert",
-
-        "Streak Bonus erhalten",
-
-        "Hidden Quest entdeckt",
-
-        "AI Assistant Bonus XP"
-
-    ];
-
-    const event=events[random(0,events.length-1)];
-
-    addGameLog("EVENT",event);
-
-}
-
-/* =======================================================
-   INIT SYSTEM
-======================================================= */
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-    setInterval(updateXP,5000);
-
-    setInterval(autoGameEvents,7000);
-
-    setInterval(completeMission,10000);
-
-});
-
-</script>
