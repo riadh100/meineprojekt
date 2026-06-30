@@ -1,345 +1,157 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Empire Pro V7 - Telegram</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Empire Pro V9 - Telegram</title>
 
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 
 <body>
+  <div class="app-layout">
 
-<div class="app-layout">
-
-    <!-- SIDEBAR -->
     <aside class="sidebar">
+      <div class="logo">
+        <h2>🚀 AI Empire Pro V9</h2>
+        <span>V9 Telegram</span>
+      </div>
 
-        <div class="logo">
-            <h2>🚀 AI Empire</h2>
-            <span>V7 Telegram</span>
-        </div>
-
-        <nav>
-            <ul>
-                <li><a href="dashboard.html">🏠 Dashboard</a></li>
-                <li><a href="assistant.html">🤖 Assistant</a></li>
-                <li><a href="trading.html">📈 Trading</a></li>
-                <li class="active"><a href="telegram.html">💬 Telegram</a></li>
-                <li><a href="video.html">🎬 Video</a></li>
-                <li><a href="game.html">🎮 Game</a></li>
-                <li><a href="tools.html">🛠 Tools</a></li>
-                <li><a href="setup.html">⚙ Setup</a></li>
-            </ul>
-        </nav>
-
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">🏠 Dashboard</a></li>
+          <li><a href="assistant.html">🤖 Assistant</a></li>
+          <li><a href="trading.html">📈 Trading</a></li>
+          <li class="active"><a href="telegram.html">💬 Telegram</a></li>
+          <li><a href="bildvideo.html">🎬 Video Studio</a></li>
+          <li><a href="game.html">🎮 Game Studio</a></li>
+          <li><a href="tools.html">🛠 Tools</a></li>
+          <li><a href="setup.html">⚙ Setup</a></li>
+        </ul>
+      </nav>
     </aside>
 
-    <!-- MAIN -->
     <main class="main-content">
 
-        <!-- TOPBAR -->
-        <header class="topbar">
-
-            <div>
-                <h1>Telegram Control</h1>
-                <p>Bot Steuerung & Automatisierung</p>
-            </div>
-
-            <div class="topbar-right">
-
-                <button class="icon-btn">📡 Live</button>
-                <button class="icon-btn">⚙</button>
-
-            </div>
-
-        </header>
-
-        <!-- STATUS CARDS -->
-        <section class="stats-grid">
-
-            <div class="stat-card">
-                <h3>Aktive Bots</h3>
-                <span class="number">6</span>
-                <small>Online</small>
-            </div>
-
-            <div class="stat-card">
-                <h3>Gesendete Nachrichten</h3>
-                <span class="number">1.284</span>
-                <small>Heute</small>
-            </div>
-
-            <div class="stat-card">
-                <h3>Kanäle</h3>
-                <span class="number">3</span>
-                <small>Verbunden</small>
-            </div>
-
-            <div class="stat-card">
-                <h3>Erfolgsrate</h3>
-                <span class="number">97%</span>
-                <small>Delivery</small>
-            </div>
-
-        </section>
-
-        <!-- BOT CONTROL PANEL -->
-        <section class="modules-section">
-
-            <div class="section-title">
-                <h2>🤖 Bot Steuerung</h2>
-                <p>Automatisierte Telegram Systeme</p>
-            </div>
-
-            <div class="modules-grid">
-
-                <div class="module-card">
-                    <div class="module-icon">📢</div>
-                    <h3>Signal Bot</h3>
-                    <p>Sendet Trading Signale automatisch</p>
-                    <div class="module-status online">● Aktiv</div>
-                    <a href="#" class="module-btn">Konfigurieren</a>
-                </div>
-
-                <div class="module-card">
-                    <div class="module-icon">💰</div>
-                    <h3>Profit Bot</h3>
-                    <p>Sendet Gewinn Updates</p>
-                    <div class="module-status online">● Aktiv</div>
-                    <a href="#" class="module-btn">Konfigurieren</a>
-                </div>
-
-                <div class="module-card">
-                    <div class="module-icon">⚡</div>
-                    <h3>Alert Bot</h3>
-                    <p>Markt Warnungen in Echtzeit</p>
-                    <div class="module-status online">● Aktiv</div>
-                    <a href="#" class="module-btn">Konfigurieren</a>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- MESSAGE PANEL -->
-        <section class="activity-section">
-
-            <div class="section-title">
-                <h2>💬 Nachrichten Panel</h2>
-            </div>
-
-            <div class="activity-card">
-
-                <div class="activity-item">
-                    <span class="activity-time">Bot</span>
-                    <span>Signal gesendet an Kanal #crypto</span>
-                </div>
-
-                <div class="activity-item">
-                    <span class="activity-time">Bot</span>
-                    <span>Profit Update versendet</span>
-                </div>
-
-                <div class="activity-item">
-                    <span class="activity-time">System</span>
-                    <span>Verbindung stabil</span>
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-</div>
-
-</body>
-</html>
-<!-- ========================================= -->
-<!-- MESSAGE SENDER -->
-<!-- ========================================= -->
-
-<section class="modules-section">
-
-    <div class="section-title">
-        <h2>✍️ Nachricht senden</h2>
-        <p>Sende Broadcasts an alle Telegram Bots (Simulation)</p>
-    </div>
-
-    <div class="module-card">
-
-        <h3>Message Composer</h3>
-
-        <p>Erstelle eine Nachricht für deine Kanäle</p>
-
-        <input id="tgMessage" type="text" placeholder="Nachricht eingeben..." style="
-            width:100%;
-            padding:12px;
-            margin-top:15px;
-            border-radius:10px;
-            border:none;
-            outline:none;
-            background:#1e293b;
-            color:white;
-        ">
-
-        <button class="module-btn" onclick="sendTelegramMessage()">
-            📤 Senden
-        </button>
-
-        <button class="module-btn" onclick="autoBroadcast()">
-            ⚡ Auto Broadcast
-        </button>
-
-    </div>
-
-</section>
-
-<!-- ========================================= -->
-<!-- LIVE LOG -->
-<!-- ========================================= -->
-
-<section class="activity-section">
-
-    <div class="section-title">
-        <h2>📡 Live Telegram Log</h2>
-    </div>
-
-    <div class="activity-card" id="tgLog">
-
-        <div class="activity-item">
-            <span class="activity-time">SYSTEM</span>
-            <span>Telegram Module aktiv</span>
+      <header class="topbar">
+        <div>
+          <h1>Telegram 💬 AI Empire Pro V9</h1>
+          <p>Verwalte Bots, Gruppen, Broadcasts und Trading-Benachrichtigungen.</p>
         </div>
 
-    </div>
+        <div class="top-actions">
+          <span id="clock">00:00:00</span>
+          <input type="text" placeholder="Suche..." />
+          <button>🔔</button>
+          <button>👤</button>
+        </div>
+      </header>
 
-</section>
+      <section class="stats-grid">
+        <div class="stat-card">
+          <h3>Telegram Bots</h3>
+          <strong>6</strong>
+          <span>Aktiv</span>
+        </div>
 
-<!-- ========================================= -->
-<!-- SCRIPT -->
-<!-- ========================================= -->
+        <div class="stat-card">
+          <h3>Nachrichten</h3>
+          <strong>1.248</strong>
+          <span>Gesendet</span>
+        </div>
 
-<script>
+        <div class="stat-card">
+          <h3>Gruppen</h3>
+          <strong>12</strong>
+          <span>Verbunden</span>
+        </div>
 
-/* =======================================================
-   Telegram Message Sender
-======================================================= */
+        <div class="stat-card">
+          <h3>Signal Alerts</h3>
+          <strong>98%</strong>
+          <span>Zustellung</span>
+        </div>
+      </section>
 
-function sendTelegramMessage(){
+      <section class="hero-card">
+        <div>
+          <h2>Telegram Bot verbunden 📲</h2>
+          <p>
+            Dein Bot sendet Trading-Signale, Systemmeldungen, Tagesberichte,
+            Fehlerwarnungen und KI-Benachrichtigungen automatisch an deine Gruppen.
+          </p>
 
-    const input=document.getElementById("tgMessage");
+          <button onclick="alert('Telegram Broadcast gesendet ✅')">
+            Broadcast senden
+          </button>
+        </div>
 
-    const log=document.getElementById("tgLog");
+        <div class="status-box">
+          <h3>Bot Status</h3>
+          <p>🟢 Online</p>
+          <p>API verbunden</p>
+          <p>Gruppen synchronisiert</p>
+          <p>Signal Alerts aktiv</p>
+        </div>
+      </section>
 
-    if(!input || !log) return;
+      <section class="modules">
+        <h2>Nachricht senden</h2>
+        <p>Sende eine Nachricht an deine Telegram-Gruppe</p>
 
-    const text=input.value.trim();
+        <div class="hero-card">
+          <div style="width: 100%;">
+            <h3>Broadcast</h3>
 
-    if(text==="") return;
+            <div class="top-actions" style="justify-content: flex-start; margin-top: 18px;">
+              <input type="text" placeholder="Nachricht eingeben..." style="width: 100%;" />
+              <button onclick="alert('Nachricht an Telegram gesendet ✅')">Senden</button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    addLog("USER","Nachricht gesendet: "+text);
+      <section class="modules">
+        <h2>Telegram Module</h2>
+        <p>Automatische Benachrichtigungen und Bot-Funktionen</p>
 
-    input.value="";
+        <div class="module-grid">
+          <div class="module-card">
+            <div class="module-icon">📈</div>
+            <h3>Trading Signale</h3>
+            <p>Automatische BUY/SELL-Signale mit Entry, SL und TP.</p>
+            <span class="badge">● Aktiv</span>
+            <a href="#">Öffnen</a>
+          </div>
 
-    setTimeout(()=>{
+          <div class="module-card">
+            <div class="module-icon">📊</div>
+            <h3>Tagesberichte</h3>
+            <p>Performance, Trades, Gewinn, Verlust und Systemstatus.</p>
+            <span class="badge">● Täglich</span>
+            <a href="#">Öffnen</a>
+          </div>
 
-        addLog("BOT","Nachricht erfolgreich verteilt 📡");
+          <div class="module-card">
+            <div class="module-icon">⚠️</div>
+            <h3>Fehler Alerts</h3>
+            <p>Warnungen bei API-Fehlern, Trading-Problemen oder Ausfällen.</p>
+            <span class="badge">● Überwacht</span>
+            <a href="#">Öffnen</a>
+          </div>
 
-    },1000);
+          <div class="module-card">
+            <div class="module-icon">🤖</div>
+            <h3>AI Nachrichten</h3>
+            <p>KI-generierte Marktanalysen und Handlungsempfehlungen.</p>
+            <span class="badge">● Bereit</span>
+            <a href="#">Öffnen</a>
+          </div>
+        </div>
+      </section>
 
-}
-
-/* =======================================================
-   Auto Broadcast System
-======================================================= */
-
-function autoBroadcast(){
-
-    const messages=[
-
-        "📈 Trading Signal Update",
-
-        "💰 Profit Ziel erreicht",
-
-        "⚡ Markt Volatilität hoch",
-
-        "🤖 AI Analyse abgeschlossen"
-
-    ];
-
-    const randomMsg=
-
-        messages[Math.floor(Math.random()*messages.length)];
-
-    addLog("AUTO","Broadcast gestartet");
-
-    setTimeout(()=>{
-
-        addLog("BOT","Gesendet: "+randomMsg);
-
-    },1000);
-
-}
-
-/* =======================================================
-   Live Log System
-======================================================= */
-
-function addLog(type,message){
-
-    const log=document.getElementById("tgLog");
-
-    if(!log) return;
-
-    const item=document.createElement("div");
-
-    item.className="activity-item";
-
-    const time=new Date().toLocaleTimeString("de-DE",{
-        hour:"2-digit",
-        minute:"2-digit"
-    });
-
-    item.innerHTML=`
-        <span class="activity-time">${type}</span>
-        <span>${message}</span>
-    `;
-
-    log.prepend(item);
-
-    if(log.children.length>8){
-
-        log.removeChild(log.lastElementChild);
-
-    }
-
-}
-
-/* =======================================================
-   Auto System Simulation
-======================================================= */
-
-setInterval(()=>{
-
-    const events=[
-
-        "Signal Bot aktiv",
-
-        "Profit Update gesendet",
-
-        "Markt Scan abgeschlossen",
-
-        "Neue Nachricht verarbeitet"
-
-    ];
-
-    const event=events[Math.floor(Math.random()*events.length)];
-
-    addLog("SYSTEM",event);
-
-},7000);
-
-</script>
+    </main>
+  </div>
+</body>
+</html>
